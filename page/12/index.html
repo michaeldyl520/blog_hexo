@@ -155,7 +155,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">128</span>
+          <span class="site-state-item-count">129</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -166,7 +166,7 @@
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">132</span>
+        <span class="site-state-item-count">134</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -203,6 +203,86 @@
 
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://www.jiliuke.com/2014/03/27/mysql-e4-b8-bb-e4-bb-8e-e6-9c-8d-e5-8a-a1-e5-99-a8-e9-85-8d-e7-bd-ae/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="michaeldyl520">
+      <meta itemprop="description" content="Bring the crowds together, inspire unlimited">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Jiliuke">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2014/03/27/mysql-e4-b8-bb-e4-bb-8e-e6-9c-8d-e5-8a-a1-e5-99-a8-e9-85-8d-e7-bd-ae/" class="post-title-link" itemprop="url">MYSQL 主从服务器配置</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2014-03-27 13:06:47" itemprop="dateCreated datePublished" datetime="2014-03-27T13:06:47+08:00">2014-03-27</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2022-04-15 13:04:50" itemprop="dateModified" datetime="2022-04-15T13:04:50+08:00">2022-04-15</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/MYSQL/" itemprop="url" rel="index"><span itemprop="name">MYSQL</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>mysql服务器的主从配置，本来是一件很简单的事情，无奈不是从零开始，总是在别人已经安装好的mysql服务器之上 ，这就会牵扯到，mysql的版本，启动文件，等一些问题。 不过没关系，先问清楚两点 1、mysql配置文件my.cnf的位置 2、如何启动、停止mysql，找好启动文件 假设有两台机器，已经安装好了mysql（尽量同版本，且两台机器同一网络，可以ping通） 有朋友说：“从服务器，不能低于主服务器的版本”，不过我是低于的，没有出现问题。 主机A: 192.168.1.100 从机B:192.168.1.101 可以有多台从机 1、先登录主机 A mysql&gt;GRANT REPLICATION SLAVE ON <em>.</em> TO ‘backup’@’192.168.1.101‘ IDENTIFIED BY ‘123456’; 赋予从机权限，有多台丛机，就执行多次 2、 打开主机A的my.cnf，输入 server-id = 1 #主机标示，整数 log_bin = /var/log/mysql/mysql-bin.log #确保此文件可写 read-only =0 #主机，读写都可以 binlog-do-db =test #需要备份数据，多个写多行 binlog-ignore-db=mysql #不需要备份的数据库，多个写多行 3、打开从机B的my.cnf，输入 server-id = 2 log_bin = /var/log/mysql/mysql-bin.log master-host =192.168.1.100 master-user =backup master-pass =123456 master-port =3306 master-connect-retry=60 #如果从服务器发现主服务器断掉，重新连接的时间差(秒) replicate-do-db =test #只复制某个库 replicate-ignore-db=mysql #不复制某个库 4、同步数据库 有多种方法，我说最笨的一种，先mysqldump导出主机A的数据test为 test.sql 然后在，从机B上建立数据库test，mysql导入 test.sql到test库中 5、先重启主机A的mysql，再重启从机B的mysql 6、验证 在主机A中，mysql&gt;show master statusG; 在从机B中，mysql&gt;show slave statusG; 能看到大致这些内容 File: mysql-bin.000001 Position: 1374 Binlog_Do_DB: test Binlog_Ignore_DB: mysql 可以在主机A中，做一些INSERT, UPDATE, DELETE 操作，看看主机B中，是否已经被修改 以下是一些其他朋友写的，我也做了参考 <a target="_blank" rel="noopener" href="http://www.ningoo.net/html/2007/mysql/_replication/_configuration.html">http://www.ningoo.net/html/2007/mysql\_replication\_configuration.html</a> <a target="_blank" rel="noopener" href="http://leftleg.hzpub.com/post/645/">http://leftleg.hzpub.com/post/645/</a> <a target="_blank" rel="noopener" href="http://blog.zhangjianfeng.com/article/705">http://blog.zhangjianfeng.com/article/705</a></p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -906,86 +986,6 @@
     
     <div class="post-body" itemprop="articleBody">
           <p>安装crontab: yum install crontabs 说明： /sbin/service crond start //启动服务 /sbin/service crond stop //关闭服务 /sbin/service crond restart //重启服务 /sbin/service crond reload //重新载入配置 查看crontab服务状态：service crond status 手动启动crontab服务：service crond start 查看crontab服务是否已设置为开机启动，执行命令：ntsysv 加入开机自动启动: chkconfig –level 35 crond on 1，crontab命令 功能说明：设置计时器。 语　　法：crontab [-u &lt;用户名称&gt;][配置文件] 或crontab [-u &lt;用户名称&gt;][-elr] 补充说明：cron是一个常驻服务，它提供计时器的功能，让用户在特定的时间得以执行预设的指令或程序。只要用户会编辑计时器的配置文件，就可以使 用计时器的功能。其配置文件格式如下： Minute Hour Day Month DayOFWeek Command 参　　数： -e 　编辑该用户的计时器设置。 -l 　列出该用户的计时器设置。 -r 　删除该用户的计时器设置。 -u&lt;用户名称&gt; 　指定要设定计时器的用户名称。 2，crontab 格式 基本格式: * *　*　*　*　　command 分　时　日　月　周　 命令 第1列表示分钟1～59 每分钟用<em>或者</em>/1表示 第2列表示小时1～23（0表示0点） 第3列表示日期1～31 第4列 表示月份1～12 第5列标识号星期0～6（0表示星期天） 第6列要运行的命令 # Use the hash sign to prefix a comment # +—————- minute (0 – 59) # | +————- hour (0 – 23) # | | +———- day of month (1 – 31) # | | | +——- month (1 – 12) # | | | | +—- day of week (0 – 7) (Sunday=0 or 7) # | | | | | # * * * * * command to be executed crontab文件的一些例子： 30 21 * * * /etc/init.d/nginx restart 每晚的21:30重启nginx。 45 4 1,10,22 * * /etc/init.d/nginx restart 每月1、10、22日的4 : 45重启nginx。 10 1 * * 6,0 /etc/init.d/nginx restart 每周六、周日的1 : 10重启nginx。 0,30 18-23 * * * /etc/init.d/nginx restart 每天18 : 00至23 : 00之间每隔30分钟重启nginx。 0 23 * * 6 /etc/init.d/nginx restart 每星期六的11 : 00 pm重启nginx。 * */1 * * * /etc/init.d/nginx restart 每一小时重启nginx * 23-7/1 * * * /etc/init.d/nginx restart 晚上11点到早上7点之间，每 隔一小时重启nginx 0 11 4 * mon-wed /etc/init.d/nginx restart 每月的4号与每周一到周三 的11点重启nginx 0 4 1 jan * /etc/init.d/nginx restart 一月一号的4点重启nginx */30 * * * * /usr/sbin/ntpdate 210.72.145.20 每半小时同步一下时间</p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://www.jiliuke.com/2014/03/03/e7-b1-b3-e7-b1-b3-e4-b9-90-e5-95-86-e5-9f-8e-e4-bc-98-e6-83-a0-e5-88-b8-e9-a2-86-e5-8f-96-e4-b8-ad-e5-bf-83-ef-bc-88-e4-b8-8d-e5-ae-9a-e6-9c-9f-e6-9b-b4-e6-96-b0-ef-bc-89/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="michaeldyl520">
-      <meta itemprop="description" content="Bring the crowds together, inspire unlimited">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Jiliuke">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2014/03/03/e7-b1-b3-e7-b1-b3-e4-b9-90-e5-95-86-e5-9f-8e-e4-bc-98-e6-83-a0-e5-88-b8-e9-a2-86-e5-8f-96-e4-b8-ad-e5-bf-83-ef-bc-88-e4-b8-8d-e5-ae-9a-e6-9c-9f-e6-9b-b4-e6-96-b0-ef-bc-89/" class="post-title-link" itemprop="url">米米乐商城优惠券领取中心（不定期更新）</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2014-03-03 10:54:37" itemprop="dateCreated datePublished" datetime="2014-03-03T10:54:37+08:00">2014-03-03</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-04-15 13:04:50" itemprop="dateModified" datetime="2022-04-15T13:04:50+08:00">2022-04-15</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E6%9C%AA%E5%88%86%E7%B1%BB/" itemprop="url" rel="index"><span itemprop="name">未分类</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>使用方法： 注册会员（会员才能使用米券），购买商品，进入购物车，点击立即结算，下边会出现输入优惠券码，输入即可使用 米米乐商城21元米券满500使用（2014年3月31日前有效） 米券码：1850143008 米券码：1850764249 米券码：1850618653 米券码：1850515784 米券码：1849357355 米券码：1849956739 米券码：1849752200 米券码：1849386209 米米乐商城20元米券满100使用（2014年8月1日前有效） 米券码：2014185646 米券码：2014185650 米券码：2014185652 米券码：2014185655 米券码：2014185726 米券码：2014185727 米券码：2014185741 米券码：2014185750 米券码：2014185776 米券码：2014185778 米券码：2014185818</p>
 
       
     </div>

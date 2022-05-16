@@ -155,7 +155,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">128</span>
+          <span class="site-state-item-count">129</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -166,7 +166,7 @@
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">132</span>
+        <span class="site-state-item-count">134</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -203,6 +203,86 @@
 
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://www.jiliuke.com/2015/08/11/mysql-e6-90-9c-e7-b4-a2-e6-8c-89-e7-85-a7in-e4-b8-ad-e9-a1-ba-e5-ba-8f-e6-8e-92-e5-ba-8f/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="michaeldyl520">
+      <meta itemprop="description" content="Bring the crowds together, inspire unlimited">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Jiliuke">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2015/08/11/mysql-e6-90-9c-e7-b4-a2-e6-8c-89-e7-85-a7in-e4-b8-ad-e9-a1-ba-e5-ba-8f-e6-8e-92-e5-ba-8f/" class="post-title-link" itemprop="url">mysql 搜索按照in中顺序排序</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2015-08-11 09:52:38" itemprop="dateCreated datePublished" datetime="2015-08-11T09:52:38+08:00">2015-08-11</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2022-04-15 13:04:50" itemprop="dateModified" datetime="2022-04-15T13:04:50+08:00">2022-04-15</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/MYSQL/" itemprop="url" rel="index"><span itemprop="name">MYSQL</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>select * from shopnc_order where order_id in (1225,1228,1231,1233) order by FIND_IN_SET(order_id,’1228,1225,1231,1233’);</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -970,86 +1050,6 @@
     
     <div class="post-body" itemprop="articleBody">
           <p>kill -HUP pid pid 是进程标识。<strong>如果想要更改配置而不需停止并重新启动服务，请使用该命令。在对配置文件作必要的更改后，发出该命令以动态更新服务配置。</strong> 根据约定，当您发送一个挂起信号（信号 1 或 HUP）时，大多数服务器进程（所有常用的进程）都会进行复位操作并重新加载它们的配置文件。清单 2 显示了向所有正在运行的 Web 服务器进程发送挂起信号的一种方法。 清单 2. 告诉 Web 服务器重新加载其配置文件并对文件进行复位操作 root@holy [507]$ ps -A | grep httpd | grep -v grep | awk ‘{ print $1; }’ | xargs -L 1 sudo kill -HUP 上面的命令中包含了很多的操作，所以让我们来仔细地看一下管道的每个部分。ps 和 grep 命令用来在所有的进程中搜索 httpd（并且忽略用来搜索 httpd 进程的 grep 进程）。接下来，awk 只显示输出结果中的进程 ID，并将它传递给 xargs。然后，xargs 命令接受每个进程 ID（因为使用了 -L 1 以便一次提取一行内容），并使用 sudo kill -HUP 向相应的进程发送一个挂起信号。 LINUX和Unix都适用： 改/etc/ssh/sshd_config，将里面的Port改为新端口，比如10022，然后 kill -HUP `cat /var/run/sshd.pid` 就行了。 现有连接自己不会断，因为kill -HUP `cat /var/run/sshd.pid` 只是HUP监听的那个，已经建立的连接（不同的 pid）不会断。 然后你在现有账号下面exit，在用新的端口登陆就可以了。 <strong>PS:</strong> HUP(1)是让进程挂起，睡眠; kill (9)六亲不认的杀掉 term(15)正常的退出进程 因为进程可能屏蔽某些信号，所以它们的用处也就不一样。。。</p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://www.jiliuke.com/2015/08/11/nginx-e6-97-a5-e5-bf-97-e8-87-aa-e5-8a-a8-e5-88-86-e5-89-b2-e7-9a-84-e5-ae-8c-e7-be-8e-e5-ae-9e-e7-8e-b0/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="michaeldyl520">
-      <meta itemprop="description" content="Bring the crowds together, inspire unlimited">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Jiliuke">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2015/08/11/nginx-e6-97-a5-e5-bf-97-e8-87-aa-e5-8a-a8-e5-88-86-e5-89-b2-e7-9a-84-e5-ae-8c-e7-be-8e-e5-ae-9e-e7-8e-b0/" class="post-title-link" itemprop="url">nginx日志自动分割的完美实现</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2015-08-11 09:44:40" itemprop="dateCreated datePublished" datetime="2015-08-11T09:44:40+08:00">2015-08-11</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-04-15 13:04:50" itemprop="dateModified" datetime="2022-04-15T13:04:50+08:00">2022-04-15</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/nginx/" itemprop="url" rel="index"><span itemprop="name">nginx</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>文件名nginx_access_log.sh 以下是脚本 #!/bin/bash - #1.nginx日志存放路径 first_path=”/lnmp/nginx/logs” path_array=($first_path) #2.日志标识前缀数组 first_prefix_sign=”first” prefix_array=($first_prefix_sign) #3.日志成功错误标识后缀数组 bool_array=(“access” “error”) #4.nginx日志切割备份后缀 postfix=`date -d ‘+0 days’ +%Y%m%d`“.log” #5.备份当前的日志文件，重命名改为日期后缀 for path in ${path_array[*]} do for prefix in ${prefix_array[*]} do for bool in ${bool_array[*]} do file=$path/$bool.log backfile=$path/$prefix.$bool.$postfix echo $file echo $backfile if [ -e $file ];then mv $file  $backfile fi done done done #6.查找nginx进程号,让其产生新的日志文件 nginx_pid=`ps -ef|grep -E ‘nginx: master process nginx’|grep -v ‘grep’|awk ‘{print $2}’` #USR1:Reopen log files,刷新nginx日志文件 kill -HUP $nginx_pid</p>
 
       
     </div>

@@ -3605,4 +3605,14 @@ $("#datepicker").datepicker('option', 'dateFormat','yy-mm-dd');//set dateFormat
         <tag>xunsearch</tag>
       </tags>
   </entry>
+  <entry>
+    <title>MYSQL Tips</title>
+    <url>/2022/05/16/mysql-tips/</url>
+    <content><![CDATA[<p>一些有用mysql tips</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">#统计数据库大小</span><br><span class="line">select round(SUM(DATA_LENGTH + INDEX_LENGTH)/1024/1024,2) as data from information_schema.tables where TABLE_SCHEMA=&quot;xxxxxx&quot;;</span><br><span class="line">#统计数据表大小</span><br><span class="line">select table_name,round(SUM(DATA_LENGTH + INDEX_LENGTH)/1024/1024,2) as data from information_schema.tables where TABLE_SCHEMA=&quot;xxxxxx&quot; GROUP BY table_name order by data desc;</span><br></pre></td></tr></table></figure>]]></content>
+      <tags>
+        <tag>mysql</tag>
+        <tag>统计</tag>
+      </tags>
+  </entry>
 </search>
