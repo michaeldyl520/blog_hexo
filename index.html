@@ -235,9 +235,15 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">发表于</span>
-      
 
-      <time title="创建时间：2022-05-16 10:24:37 / 修改时间：10:30:24" itemprop="dateCreated datePublished" datetime="2022-05-16T10:24:37+08:00">2022-05-16</time>
+      <time title="创建时间：2022-05-16 10:24:37" itemprop="dateCreated datePublished" datetime="2022-05-16T10:24:37+08:00">2022-05-16</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2022-05-27 13:17:33" itemprop="dateModified" datetime="2022-05-27T13:17:33+08:00">2022-05-27</time>
     </span>
 
   
@@ -251,7 +257,7 @@
     
     <div class="post-body" itemprop="articleBody">
           <p>一些有用mysql tips</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">#统计数据库大小</span><br><span class="line">select round(SUM(DATA_LENGTH + INDEX_LENGTH)/1024/1024,2) as data from information_schema.tables where TABLE_SCHEMA=&quot;xxxxxx&quot;;</span><br><span class="line">#统计数据表大小</span><br><span class="line">select table_name,round(SUM(DATA_LENGTH + INDEX_LENGTH)/1024/1024,2) as data from information_schema.tables where TABLE_SCHEMA=&quot;xxxxxx&quot; GROUP BY table_name order by data desc;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">#统计所有数据库从大到小排列</span><br><span class="line">select TABLE_SCHEMA,round(SUM(DATA_LENGTH + INDEX_LENGTH)/1024/1024,2) as data from information_schema.tables GROUP BY TABLE_SCHEMA order by data desc;</span><br><span class="line">#统计数据库大小</span><br><span class="line">select round(SUM(DATA_LENGTH + INDEX_LENGTH)/1024/1024,2) as data from information_schema.tables where TABLE_SCHEMA=&quot;xxxxxx&quot;;</span><br><span class="line">#统计数据表大小</span><br><span class="line">select table_name,round(SUM(DATA_LENGTH + INDEX_LENGTH)/1024/1024,2) as data from information_schema.tables where TABLE_SCHEMA=&quot;xxxxxx&quot; GROUP BY table_name order by data desc;</span><br></pre></td></tr></table></figure>
       
     </div>
 
