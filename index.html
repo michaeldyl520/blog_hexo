@@ -155,7 +155,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">129</span>
+          <span class="site-state-item-count">130</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -166,7 +166,7 @@
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">134</span>
+        <span class="site-state-item-count">136</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -212,6 +212,71 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://www.jiliuke.com/2022/06/30/reduce-size-after-mysqldump/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="michaeldyl520">
+      <meta itemprop="description" content="Bring the crowds together, inspire unlimited">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Jiliuke">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2022/06/30/reduce-size-after-mysqldump/" class="post-title-link" itemprop="url">使用mysqldump备份文件后删除日志数据</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2022-06-30 09:58:31 / 修改时间：10:02:58" itemprop="dateCreated datePublished" datetime="2022-06-30T09:58:31+08:00">2022-06-30</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>实际应用中会出现需要减少导出的备份体积，然后在本地导入再开发，可以大幅缩短导入等待时间,方法如下</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sed &#x27;/INSERT INTO `tablelog1`/d&#x27; xxxx.sql | sed &#x27;/INSERT INTO `tablelog2`/d&#x27; | sed &#x27;/INSERT INTO `tablelog3`/d&#x27; | sed &#x27;/INSERT INTO `tablelog4`/d&#x27; | sed &#x27;/INSERT INTO `tablelog5`/d&#x27; &gt; reduced.sql</span><br></pre></td></tr></table></figure>
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
     <link itemprop="mainEntityOfPage" href="http://www.jiliuke.com/2022/05/16/mysql-tips/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -243,7 +308,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-05-27 13:17:33" itemprop="dateModified" datetime="2022-05-27T13:17:33+08:00">2022-05-27</time>
+      <time title="修改时间：2022-06-30 09:58:51" itemprop="dateModified" datetime="2022-06-30T09:58:51+08:00">2022-06-30</time>
     </span>
 
   
@@ -257,7 +322,7 @@
     
     <div class="post-body" itemprop="articleBody">
           <p>一些有用mysql tips</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">#统计所有数据库从大到小排列</span><br><span class="line">select TABLE_SCHEMA,round(SUM(DATA_LENGTH + INDEX_LENGTH)/1024/1024,2) as data from information_schema.tables GROUP BY TABLE_SCHEMA order by data desc;</span><br><span class="line">#统计数据库大小</span><br><span class="line">select round(SUM(DATA_LENGTH + INDEX_LENGTH)/1024/1024,2) as data from information_schema.tables where TABLE_SCHEMA=&quot;xxxxxx&quot;;</span><br><span class="line">#统计数据表大小</span><br><span class="line">select table_name,round(SUM(DATA_LENGTH + INDEX_LENGTH)/1024/1024,2) as data from information_schema.tables where TABLE_SCHEMA=&quot;xxxxxx&quot; GROUP BY table_name order by data desc;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">#统计所有数据库从大到小排列</span><br><span class="line">select TABLE_SCHEMA,round(SUM(DATA_LENGTH + INDEX_LENGTH)/1024/1024,2) as data from information_schema.tables GROUP BY TABLE_SCHEMA order by data desc;</span><br><span class="line">#统计数据库大小</span><br><span class="line">select round(SUM(DATA_LENGTH + INDEX_LENGTH)/1024/1024,2) as data from information_schema.tables where TABLE_SCHEMA=&quot;xxxxxx&quot;;</span><br><span class="line">#统计数据表大小</span><br><span class="line">select table_name,round(SUM(DATA_LENGTH + INDEX_LENGTH)/1024/1024,2) as data from information_schema.tables where TABLE_SCHEMA=&quot;xxxxxx&quot; GROUP BY table_name order by data desc;</span><br><span class="line">#批量修改域名</span><br><span class="line">UPDATE core_config_data SET value = replace (value,&#x27;xxx.xxx.com&#x27;,&#x27;xxx.xxx.local&#x27;) WHERE value LIKE &#x27;%xxx.xxx.com%&#x27;;</span><br></pre></td></tr></table></figure>
       
     </div>
 
@@ -883,77 +948,6 @@
           <p>多版本PHP共存的Debian系统中，特定版本的xdebug支持特定PHP版本，所以需要安装不同的版本的xdebug</p>
 <p>前提条件： Debian系统 已安装php7.3-dev php7.4-dev</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">#</span><span class="language-bash">设定默认php环境变量为7.3</span></span><br><span class="line">sudo update-alternatives --set php /usr/bin/php7.3</span><br><span class="line">sudo update-alternatives --set phpize /usr/bin/phpize7.3</span><br><span class="line">sudo update-alternatives --set php-config /usr/bin/php-config7.3</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">安装xdebug 2.9.8</span></span><br><span class="line">sudo pecl -d php_suffix=7.3 install http://pecl.php.net/get/xdebug-2.9.8.tgz</span><br><span class="line">sudo pecl uninstall xdebug</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">设定默认php环境变量为7.4</span></span><br><span class="line">sudo update-alternatives --set php /usr/bin/php7.4</span><br><span class="line">sudo update-alternatives --set phpize /usr/bin/phpize7.4</span><br><span class="line">sudo update-alternatives --set php-config /usr/bin/php-config7.4</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">安装xdebug 3.0.2</span></span><br><span class="line">sudo proxychains pecl -d php_suffix=7.4 install http://pecl.php.net/get/xdebug-3.0.2.tgz</span><br><span class="line">sudo pecl uninstall xdebug</span><br></pre></td></tr></table></figure>
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://www.jiliuke.com/2021/01/18/flatpak-tips/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="michaeldyl520">
-      <meta itemprop="description" content="Bring the crowds together, inspire unlimited">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Jiliuke">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2021/01/18/flatpak-tips/" class="post-title-link" itemprop="url">关于国内使用flatpak</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2021-01-18 10:26:07" itemprop="dateCreated datePublished" datetime="2021-01-18T10:26:07+08:00">2021-01-18</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-04-15 13:04:50" itemprop="dateModified" datetime="2022-04-15T13:04:50+08:00">2022-04-15</time>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>国内用户可以使用上海交通大学的flatpak源，修改代码如下：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo flatpak remote-modify flathub --url=https://mirror.sjtu.edu.cn/flathub</span><br></pre></td></tr></table></figure>
       
     </div>
 

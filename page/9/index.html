@@ -155,7 +155,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">129</span>
+          <span class="site-state-item-count">130</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -166,7 +166,7 @@
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">134</span>
+        <span class="site-state-item-count">136</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -203,6 +203,276 @@
 
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://www.jiliuke.com/2014/08/29/js-e5-8a-a0-e5-87-8f-e4-b9-98-e9-99-a4-e4-b8-a2-e5-a4-b1-e7-b2-be-e5-ba-a6-e9-97-ae-e9-a2-98-e8-a7-a3-e5-86-b3-e6-96-b9-e6-b3-95/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="michaeldyl520">
+      <meta itemprop="description" content="Bring the crowds together, inspire unlimited">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Jiliuke">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2014/08/29/js-e5-8a-a0-e5-87-8f-e4-b9-98-e9-99-a4-e4-b8-a2-e5-a4-b1-e7-b2-be-e5-ba-a6-e9-97-ae-e9-a2-98-e8-a7-a3-e5-86-b3-e6-96-b9-e6-b3-95/" class="post-title-link" itemprop="url">js加减乘除丢失精度问题解决方法</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2014-08-29 15:37:15" itemprop="dateCreated datePublished" datetime="2014-08-29T15:37:15+08:00">2014-08-29</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2022-04-15 13:04:50" itemprop="dateModified" datetime="2022-04-15T13:04:50+08:00">2022-04-15</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/javascript/" itemprop="url" rel="index"><span itemprop="name">javascript</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>在javascript中，当你使用小数进行加减乘除运算时，你会发现，所得到的结果有时后面带有长长的一段小数，使运算变得复杂，并且影响计算结果。上网查询了一下原因，大致如下：在javascript中，带小数的数据运算时总会出现好多位小数.这是因为在javascript中浮点数的计算是以2进制计算的。</p>
+<p>解决办法：</p>
+<p>/**</p>
+<p>* 加法运算，避免数据相加小数点后产生多位数和计算精度损失。</p>
+<p>*</p>
+<p>* @param num1加数1 | num2加数2</p>
+<p>*/</p>
+<p>function numAdd(num1, num2) {</p>
+<blockquote>
+<p>var baseNum, baseNum1, baseNum2;</p>
+<p>try {</p>
+</blockquote>
+<blockquote>
+<blockquote>
+<p>baseNum1 = num1.toString().split(“.”)[1].length;</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<p>} catch (e) {</p>
+</blockquote>
+<blockquote>
+<blockquote>
+<p>baseNum1 = 0;</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<p>}</p>
+<p>try {</p>
+</blockquote>
+<blockquote>
+<blockquote>
+<p>baseNum2 = num2.toString().split(“.”)[1].length;</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<p>} catch (e) {</p>
+</blockquote>
+<blockquote>
+<blockquote>
+<p>baseNum2 = 0;</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<p>}</p>
+<p>baseNum = Math.pow(10, Math.max(baseNum1, baseNum2));</p>
+<p>return (num1 * baseNum + num2 * baseNum) / baseNum;</p>
+</blockquote>
+<p>};</p>
+<p>/**</p>
+<p>* 加法运算，避免数据相减小数点后产生多位数和计算精度损失。</p>
+<p>*</p>
+<p>* @param num1被减数 | num2减数</p>
+<p>*/</p>
+<p>function numSub(num1, num2) {</p>
+<blockquote>
+<p>var baseNum, baseNum1, baseNum2;</p>
+<p>var precision;// 精度</p>
+<p>try {</p>
+</blockquote>
+<blockquote>
+<blockquote>
+<p>baseNum1 = num1.toString().split(“.”)[1].length;</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<p>} catch (e) {</p>
+</blockquote>
+<blockquote>
+<blockquote>
+<p>baseNum1 = 0;</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<p>}</p>
+<p>try {</p>
+</blockquote>
+<blockquote>
+<blockquote>
+<p>baseNum2 = num2.toString().split(“.”)[1].length;</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<p>} catch (e) {</p>
+</blockquote>
+<blockquote>
+<blockquote>
+<p>baseNum2 = 0;</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<p>}</p>
+<p>baseNum = Math.pow(10, Math.max(baseNum1, baseNum2));</p>
+<p>precision = (baseNum1 &gt;= baseNum2) ? baseNum1 : baseNum2;</p>
+<p>return ((num1 * baseNum - num2 * baseNum) / baseNum).toFixed(precision);</p>
+</blockquote>
+<p>};</p>
+<p>/**</p>
+<p>* 乘法运算，避免数据相乘小数点后产生多位数和计算精度损失。</p>
+<p>*</p>
+<p>* @param num1被乘数 | num2乘数</p>
+<p>*/</p>
+<p>function numMulti(num1, num2) {</p>
+<blockquote>
+<p>var baseNum = 0;</p>
+<p>try {</p>
+</blockquote>
+<blockquote>
+<blockquote>
+<p>baseNum += num1.toString().split(“.”)[1].length;</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<p>} catch (e) {</p>
+<p>}</p>
+<p>try {</p>
+</blockquote>
+<blockquote>
+<blockquote>
+<p>baseNum += num2.toString().split(“.”)[1].length;</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<p>} catch (e) {</p>
+<p>}</p>
+<p>return Number(num1.toString().replace(“.”, “”)) * Number(num2.toString().replace(“.”, “”)) / Math.pow(10, baseNum);</p>
+</blockquote>
+<p>};</p>
+<p>/**</p>
+<p>* 除法运算，避免数据相除小数点后产生多位数和计算精度损失。</p>
+<p>*</p>
+<p>* @param num1被除数 | num2除数</p>
+<p>*/</p>
+<p>function numDiv(num1, num2) {</p>
+<blockquote>
+<p>var baseNum1 = 0, baseNum2 = 0;</p>
+<p>var baseNum3, baseNum4;</p>
+<p>try {</p>
+</blockquote>
+<blockquote>
+<blockquote>
+<p>baseNum1 = num1.toString().split(“.”)[1].length;</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<p>} catch (e) {</p>
+</blockquote>
+<blockquote>
+<blockquote>
+<p>baseNum1 = 0;</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<p>}</p>
+<p>try {</p>
+</blockquote>
+<blockquote>
+<blockquote>
+<p>baseNum2 = num2.toString().split(“.”)[1].length;</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<p>} catch (e) {</p>
+</blockquote>
+<blockquote>
+<blockquote>
+<p>baseNum2 = 0;</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<p>}</p>
+<p>with (Math) {</p>
+</blockquote>
+<blockquote>
+<blockquote>
+<p>baseNum3 = Number(num1.toString().replace(“.”, “”));</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<p>baseNum4 = Number(num2.toString().replace(“.”, “”));</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<p>return (baseNum3 / baseNum4) * pow(10, baseNum2 - baseNum1);</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<p>}</p>
+</blockquote>
+<p>};</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -1325,86 +1595,6 @@
     
     <div class="post-body" itemprop="articleBody">
           <p>在VMware里克隆出来的CentOS Linux。。 ifconfig…没有看到eth0.。然后重启网卡又报下面错误。 故障现象： service network restart Shutting down loopback insterface: [ OK ] Bringing up loopback insterface: [ OK ] Bringing up interface eth0: Device eth0 does not seem to be present,delaying initialization. [FAILED] 解决办法： 首先，打开/etc/udev/rules.d/70-persistent-net.rules内容如下面例子所示： # vi /etc/udev/rules.d/70-persistent-net.rules # This file was automatically generated by the /lib/udev/write_net_rules # program, run by the persistent-net-generator.rules rules file. # # You can modify it, as long as you keep each rule on a single # line, and change only the value of the NAME= key. # PCI device 0x1022:0x2000 (pcnet32) SUBSYSTEM==”net”, ACTION==”add”, DRIVERS==”?<em>“, ATTR{address}==”00:0c:29:8f:89:9 7”, ATTR{type}==”1”, KERNEL==”eth</em>“, NAME=”eth0” # PCI device 0x1022:0x2000 (pcnet32) SUBSYSTEM==”net”, ACTION==”add”, DRIVERS==”?<em>“, ATTR{address}==”00:0c:29:50:bd:1 7”, ATTR{type}==”1”, KERNEL==”eth</em>“, NAME=”eth1” 记录下，eth1网卡的mac地址00:0c:29:50:bd:17 接下来，打开/etc/sysconfig/network-scripts/ifcfg-eth0 # vi /etc/sysconfig/network-scripts/ifcfg-eth0 将 DEVICE=”eth0” 改成 DEVICE=”eth1” , 将 HWADDR=”00:0c:29:8f:89:97” 改成上面的mac地址 HWADDR=”00:0c:29:50:bd:17” 最后，重启网络 # service network restart 或者 # /etc/init.d/network restart 正常了。</p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://www.jiliuke.com/2014/05/15/centos-e4-b8-8b-e6-9f-a5-e7-9c-8b-e5-b7-b2-e7-bb-8f-e7-99-bb-e5-bd-95-e7-94-a8-e6-88-b7-e5-b9-b6-e8-b8-a2-e5-87-ba-e7-9a-84-e6-96-b9-e6-b3-95/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="michaeldyl520">
-      <meta itemprop="description" content="Bring the crowds together, inspire unlimited">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Jiliuke">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2014/05/15/centos-e4-b8-8b-e6-9f-a5-e7-9c-8b-e5-b7-b2-e7-bb-8f-e7-99-bb-e5-bd-95-e7-94-a8-e6-88-b7-e5-b9-b6-e8-b8-a2-e5-87-ba-e7-9a-84-e6-96-b9-e6-b3-95/" class="post-title-link" itemprop="url">CentOS下查看已经登录用户并踢出的方法</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2014-05-15 09:26:16" itemprop="dateCreated datePublished" datetime="2014-05-15T09:26:16+08:00">2014-05-15</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-04-15 13:04:50" itemprop="dateModified" datetime="2022-04-15T13:04:50+08:00">2022-04-15</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/CentOS/" itemprop="url" rel="index"><span itemprop="name">CentOS</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p># pkill -kill -t pts/0 （pts/0为w指令看到的用户终端号）</p>
 
       
     </div>
