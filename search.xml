@@ -3626,4 +3626,24 @@ $("#datepicker").datepicker('option', 'dateFormat','yy-mm-dd');//set dateFormat
         <tag>reduce</tag>
       </tags>
   </entry>
+  <entry>
+    <title>ssd-tips</title>
+    <url>/2023/02/14/ssd-tips/</url>
+    <content><![CDATA[<p>在debian查看SSD寿命</p>
+<ol>
+<li>查看<code>Wear_Leveling_Count</code>和<code>SSD_Life_Left</code><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo smartctl -a /dev/sdb</span><br></pre></td></tr></table></figure>
+不同的SSD使用<code>smartctl</code>展示不同</li>
+</ol>
+<p><code>wear leveling count</code>是 磨损均衡计数（WLC）的意思，当前值代表的剩余耐力，以百分比表示，意味着它从100开始减少。</p>
+<p><code>SSD_Life_Left</code>代表着SSD的生命周期还剩下多少</p>
+<ol start="2">
+<li>查看 <code>Percentage Used Endurance Indicator</code><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo smartctl -l devstat /dev/sdb</span><br></pre></td></tr></table></figure>
+最重要和直观<code>Percentage Used Endurance Indicator</code>，单位是百分比，新的是<code>0%</code></li>
+</ol>
+]]></content>
+      <tags>
+        <tag>linux</tag>
+        <tag>ssd</tag>
+      </tags>
+  </entry>
 </search>
