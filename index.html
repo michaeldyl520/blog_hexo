@@ -155,7 +155,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">131</span>
+          <span class="site-state-item-count">132</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -166,7 +166,7 @@
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">137</span>
+        <span class="site-state-item-count">139</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -203,6 +203,71 @@
 
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://www.jiliuke.com/2023/03/01/postman-tips/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="michaeldyl520">
+      <meta itemprop="description" content="Bring the crowds together, inspire unlimited">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Jiliuke">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2023/03/01/postman-tips/" class="post-title-link" itemprop="url">postman自动为当前envirionment设置token</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2023-03-01 15:36:39 / 修改时间：15:46:37" itemprop="dateCreated datePublished" datetime="2023-03-01T15:36:39+08:00">2023-03-01</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="自动设置token"><a href="#自动设置token" class="headerlink" title="自动设置token"></a>自动设置token</h1><p>为了简化操作，有时候需要<code>postman</code>在请求接口后自动设置<code>token</code>，方法如下<br>打开<code>postman</code>，在一个请求下面点击<code>Tests</code>，输入以下代码</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> responseData = responseBody;</span><br><span class="line">pm.environment.set(<span class="string">&quot;token&quot;</span>, responseData.replace(<span class="regexp">/\&quot;/g</span>,<span class="string">&#x27;&#x27;</span>));</span><br></pre></td></tr></table></figure>
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -877,79 +942,6 @@
     <div class="post-body" itemprop="articleBody">
           <h1 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h1><p>打包后安装出现双图标</p>
 <h1 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h1><p>desktop中添加StartupWMClass=xxx<br>xxx通过终端中执行xprop WM_CLASS点击应用程序获取。</p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://www.jiliuke.com/2021/03/17/wine/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="michaeldyl520">
-      <meta itemprop="description" content="Bring the crowds together, inspire unlimited">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Jiliuke">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2021/03/17/wine/" class="post-title-link" itemprop="url">一些 deepin-wine 事例</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2021-03-17 18:42:58" itemprop="dateCreated datePublished" datetime="2021-03-17T18:42:58+08:00">2021-03-17</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-04-15 13:04:50" itemprop="dateModified" datetime="2022-04-15T13:04:50+08:00">2022-04-15</time>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="使用MIDI游戏问题"><a href="#使用MIDI游戏问题" class="headerlink" title="使用MIDI游戏问题"></a>使用MIDI游戏问题</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">WINEPREFIX=~/.deepinwine/apps/XXX_1 WINEDEBUG=+seh deepin-wine5-stable ~/.deepinwine/apps/XXX_1/drive_c/Program\ Files/XXXX/XXX5/LinLink5.exe</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">调试字体</span></span><br><span class="line">WINEPREFIX=/data/home/dyl/.deepinwine/apps/XXX_1 WINEDEBUG=+font,+tid deepin-wine5-stable /data/home/dyl/.deepinwine/apps/XXX_1/drive_c/Program\ Files/XXXX/XXX5/LinLink5.exe &amp;&gt; /data/home/dyl/fonts.log</span><br><span class="line"></span><br><span class="line">WINEPREFIX=/data/home/dyl/.deepinwine/apps/XXX_1 WINEDEBUG=+seh deepin-wine5-stable /data/home/dyl/.deepinwine/apps/XXX_1/drive_c/Program\ Files/XXXX/XXX5/LinLink5.exe</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">解决midi声音问题</span></span><br><span class="line">sudo apt-get install timidity</span><br><span class="line"></span><br><span class="line">timidity -iAD -B2,8 -Os1l -s 44100</span><br><span class="line"></span><br><span class="line">WINE=/usr/bin/deepin-wine5-stable WINEPREFIX=/home/dyl/.deepinwine/apps/XXX_1 winetricks -q directmusic gmdls</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<h1 id="解决dotnet40安装卡死问题"><a href="#解决dotnet40安装卡死问题" class="headerlink" title="解决dotnet40安装卡死问题"></a>解决dotnet40安装卡死问题</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">LC_ALL=en_US.UTF-8 WINEPREFIX=/home/dyl/.deepinwine/apps/XXXXXX_1 WINEDEBUG=+seh deepin-wine5-stable /home/dyl/.deepinwine/apps/XXXXXX_1/drive_c/yscq_tanwan/Update.exe</span><br><span class="line"></span><br><span class="line">WINE=/usr/bin/deepin-wine5-stable WINEPREFIX=/home/dyl/.deepinwine/apps/XXXXXX_1 winetricks -q dotnet40 gdiplus</span><br></pre></td></tr></table></figure>
-
 
       
     </div>

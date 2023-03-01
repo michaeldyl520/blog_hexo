@@ -3646,4 +3646,14 @@ $("#datepicker").datepicker('option', 'dateFormat','yy-mm-dd');//set dateFormat
         <tag>ssd</tag>
       </tags>
   </entry>
+  <entry>
+    <title>postman自动为当前envirionment设置token</title>
+    <url>/2023/03/01/postman-tips/</url>
+    <content><![CDATA[<h1 id="自动设置token"><a href="#自动设置token" class="headerlink" title="自动设置token"></a>自动设置token</h1><p>为了简化操作，有时候需要<code>postman</code>在请求接口后自动设置<code>token</code>，方法如下<br>打开<code>postman</code>，在一个请求下面点击<code>Tests</code>，输入以下代码</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> responseData = responseBody;</span><br><span class="line">pm.environment.set(<span class="string">&quot;token&quot;</span>, responseData.replace(<span class="regexp">/\&quot;/g</span>,<span class="string">&#x27;&#x27;</span>));</span><br></pre></td></tr></table></figure>]]></content>
+      <tags>
+        <tag>postman</tag>
+        <tag>token</tag>
+      </tags>
+  </entry>
 </search>
