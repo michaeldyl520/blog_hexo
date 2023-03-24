@@ -155,7 +155,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">132</span>
+          <span class="site-state-item-count">133</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -166,7 +166,7 @@
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">139</span>
+        <span class="site-state-item-count">141</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -203,6 +203,79 @@
 
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://www.jiliuke.com/2023/03/24/magento-coding-standard/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="michaeldyl520">
+      <meta itemprop="description" content="Bring the crowds together, inspire unlimited">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Jiliuke">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2023/03/24/magento-coding-standard/" class="post-title-link" itemprop="url">magento2 代码规范设置方法</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2023-03-24 13:19:28 / 修改时间：13:41:13" itemprop="dateCreated datePublished" datetime="2023-03-24T13:19:28+08:00">2023-03-24</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="安装代码标准"><a href="#安装代码标准" class="headerlink" title="安装代码标准"></a>安装代码标准</h1><p>使用magento2官方的代码标准，如果需要在开发工具中提示代码规范的问题，需要在安装magento2后执行以下shell</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vendor/bin/phpcs --config-set installed_paths vendor/magento/magento-coding-standard,vendor/phpcompatibility/php-compatibility/PHPCompatibility</span><br></pre></td></tr></table></figure>
+<h1 id="PhpStorm-自动格式化的一些配置"><a href="#PhpStorm-自动格式化的一些配置" class="headerlink" title="PhpStorm 自动格式化的一些配置"></a>PhpStorm 自动格式化的一些配置</h1><h2 id="自动对齐的问题"><a href="#自动对齐的问题" class="headerlink" title="自动对齐的问题"></a>自动对齐的问题</h2><p>高版本PhpStorm Function如果有多个变量并换行，会自动两边对齐属性，不符合代码规范，需要在<code>Settings&gt;Editor&gt;Code Style&gt;PHP-&gt;Wrapping and Braces-&gt;Function declaration parameters</code>中去掉<code>Align when multiline</code>的勾选框且勾选<code>Keep &#39;)&#39; and &#39;&#123;&#39; on one line</code></p>
+<p><img src="/images/%E5%BC%BA%E7%B1%BB%E5%9E%8B%E6%8F%90%E7%A4%BA%E7%9A%84%E9%97%AE%E9%A2%98.png" alt="自动对齐的问题"></p>
+<h2 id="强制限定类型的提示问题"><a href="#强制限定类型的提示问题" class="headerlink" title="强制限定类型的提示问题"></a>强制限定类型的提示问题</h2><p>Magento2 PHP不需要做强制类型限定参照图去掉以下两个复选框。</p>
+<p><img src="/images/%E5%BC%BA%E7%B1%BB%E5%9E%8B%E6%8F%90%E7%A4%BA%E7%9A%84%E9%97%AE%E9%A2%98.png" alt="强制限定类型的提示问题"></p>
+<p>eslint 搭法</p>
+<p><img src="/images/eslint-1.png" alt="eslint 搭法"><br><img src="/images/eslint-2.png" alt="eslint 搭法"></p>
+<p>phpcs搭法<br>最新的vendor如果没有包含phpcs等检测工具，我们可以间接使用默认的2.4.5-p1中的phpcs进行项目的检测</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -871,78 +944,6 @@
     <div class="post-body" itemprop="articleBody">
           <h2 id="开发中，如果遇到某种特殊情况下，无法访问外网，则可以设置代理"><a href="#开发中，如果遇到某种特殊情况下，无法访问外网，则可以设置代理" class="headerlink" title="开发中，如果遇到某种特殊情况下，无法访问外网，则可以设置代理"></a>开发中，如果遇到某种特殊情况下，无法访问外网，则可以设置代理</h2><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//file vendor/magento/framework/HTTP/Adapter/Curl.php after line 26</span></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">    * Parameters array</span></span><br><span class="line"><span class="comment">    *</span></span><br><span class="line"><span class="comment">    * <span class="doctag">@var</span> array</span></span><br><span class="line"><span class="comment">    */</span></span><br><span class="line"><span class="keyword">protected</span> <span class="variable">$_config</span> = [</span><br><span class="line">    <span class="string">&#x27;protocols&#x27;</span> =&gt; (CURLPROTO_HTTP</span><br><span class="line">        | CURLPROTO_HTTPS</span><br><span class="line">        | CURLPROTO_FTP</span><br><span class="line">        | CURLPROTO_FTPS</span><br><span class="line">    ),</span><br><span class="line">    <span class="string">&#x27;verifypeer&#x27;</span> =&gt; <span class="literal">true</span>,</span><br><span class="line">    <span class="string">&#x27;verifyhost&#x27;</span> =&gt; <span class="number">2</span>,</span><br><span class="line">    <span class="string">&#x27;proxy&#x27;</span> =&gt; <span class="string">&quot;http://127.0.0.1:8888&quot;</span><span class="comment">//add http proxy here</span></span><br><span class="line">];</span><br></pre></td></tr></table></figure>
 <figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//file vendor/magento/zendframework1/library/Zend/Http/Client.php after line 1089</span></span><br><span class="line"><span class="variable">$response</span> = <span class="variable language_">$this</span>-&gt;adapter-&gt;<span class="title function_ invoke__">read</span>();</span><br><span class="line"><span class="comment">//remove extra response afteradd proxy</span></span><br><span class="line"><span class="keyword">if</span> (<span class="literal">false</span> !== <span class="title function_ invoke__">stripos</span>(<span class="variable">$response</span>, <span class="string">&quot;HTTP/1.1 200 Connection established\r\n\r\n&quot;</span>)) &#123;</span><br><span class="line">    <span class="variable">$response</span> = <span class="title function_ invoke__">str_ireplace</span>(<span class="string">&quot;HTTP/1.1 200 Connection established\r\n\r\n&quot;</span>, <span class="string">&#x27;&#x27;</span>, <span class="variable">$response</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://www.jiliuke.com/2021/07/01/package-deb-tips/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="michaeldyl520">
-      <meta itemprop="description" content="Bring the crowds together, inspire unlimited">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Jiliuke">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2021/07/01/package-deb-tips/" class="post-title-link" itemprop="url">deepin中打包出现的问题汇总</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2021-07-01 11:11:05" itemprop="dateCreated datePublished" datetime="2021-07-01T11:11:05+08:00">2021-07-01</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-04-15 13:04:50" itemprop="dateModified" datetime="2022-04-15T13:04:50+08:00">2022-04-15</time>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h1><p>打包后安装出现双图标</p>
-<h1 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h1><p>desktop中添加StartupWMClass=xxx<br>xxx通过终端中执行xprop WM_CLASS点击应用程序获取。</p>
-
       
     </div>
 

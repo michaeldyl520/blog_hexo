@@ -3656,4 +3656,23 @@ $("#datepicker").datepicker('option', 'dateFormat','yy-mm-dd');//set dateFormat
         <tag>token</tag>
       </tags>
   </entry>
+  <entry>
+    <title>magento2 代码规范设置方法</title>
+    <url>/2023/03/24/magento-coding-standard/</url>
+    <content><![CDATA[<h1 id="安装代码标准"><a href="#安装代码标准" class="headerlink" title="安装代码标准"></a>安装代码标准</h1><p>使用magento2官方的代码标准，如果需要在开发工具中提示代码规范的问题，需要在安装magento2后执行以下shell</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">vendor/bin/phpcs --config-set installed_paths vendor/magento/magento-coding-standard,vendor/phpcompatibility/php-compatibility/PHPCompatibility</span><br></pre></td></tr></table></figure>
+<h1 id="PhpStorm-自动格式化的一些配置"><a href="#PhpStorm-自动格式化的一些配置" class="headerlink" title="PhpStorm 自动格式化的一些配置"></a>PhpStorm 自动格式化的一些配置</h1><h2 id="自动对齐的问题"><a href="#自动对齐的问题" class="headerlink" title="自动对齐的问题"></a>自动对齐的问题</h2><p>高版本PhpStorm Function如果有多个变量并换行，会自动两边对齐属性，不符合代码规范，需要在<code>Settings&gt;Editor&gt;Code Style&gt;PHP-&gt;Wrapping and Braces-&gt;Function declaration parameters</code>中去掉<code>Align when multiline</code>的勾选框且勾选<code>Keep &#39;)&#39; and &#39;&#123;&#39; on one line</code></p>
+<p><img src="/images/%E5%BC%BA%E7%B1%BB%E5%9E%8B%E6%8F%90%E7%A4%BA%E7%9A%84%E9%97%AE%E9%A2%98.png" alt="自动对齐的问题"></p>
+<h2 id="强制限定类型的提示问题"><a href="#强制限定类型的提示问题" class="headerlink" title="强制限定类型的提示问题"></a>强制限定类型的提示问题</h2><p>Magento2 PHP不需要做强制类型限定参照图去掉以下两个复选框。</p>
+<p><img src="/images/%E5%BC%BA%E7%B1%BB%E5%9E%8B%E6%8F%90%E7%A4%BA%E7%9A%84%E9%97%AE%E9%A2%98.png" alt="强制限定类型的提示问题"></p>
+<p>eslint 搭法</p>
+<p><img src="/images/eslint-1.png" alt="eslint 搭法"><br><img src="/images/eslint-2.png" alt="eslint 搭法"></p>
+<p>phpcs搭法<br>最新的vendor如果没有包含phpcs等检测工具，我们可以间接使用默认的2.4.5-p1中的phpcs进行项目的检测</p>
+]]></content>
+      <tags>
+        <tag>magento2</tag>
+        <tag>phpcs</tag>
+        <tag>phpstorm</tag>
+      </tags>
+  </entry>
 </search>
