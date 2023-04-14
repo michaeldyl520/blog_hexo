@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>http://www.jiliuke.com/2021/02/09/multiple-pecl-php-xdebug/</loc>
+    <lastmod>2023-04-14</lastmod>
+  </url>
+  <url>
     <loc>http://www.jiliuke.com/2023/03/24/magento-coding-standard/</loc>
     <lastmod>2023-03-24</lastmod>
   </url>
@@ -90,10 +94,6 @@
   </url>
   <url>
     <loc>http://www.jiliuke.com/2014/03/28/msql-e9-97-ae-e9-a2-98-e9-9b-86-e4-b8-ad-e8-90-a5/</loc>
-    <lastmod>2022-04-15</lastmod>
-  </url>
-  <url>
-    <loc>http://www.jiliuke.com/2021/02/09/multiple-pecl-php-xdebug/</loc>
     <lastmod>2022-04-15</lastmod>
   </url>
   <url>
