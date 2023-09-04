@@ -3,20 +3,19 @@
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width">
-<meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 5.4.2">
-
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 5.4.2">
 
 
 <link rel="stylesheet" href="/css/main.css">
 
 
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha256-mUZM63G8m73Mcidfrv5E+Y61y7a12O5mW4ezU3bxqW4=" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha256-HtsXJanqjKTc8vVQjO4YMhiqFoXkfBsjBWcX91T1jr8=" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
 
-<script class="next-config" data-name="main" type="application/json">{"hostname":"www.jiliuke.com","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.9.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":true}}</script><script src="/js/config.js"></script>
-<meta name="description" content="最近有些时间，开始接触负载均衡方面的东西，从硬件F5再到Citrix Netscalar。不过因为硬件的配置虽然不复杂，但昂贵的价格也让一般用户望而却步(十几万到几十万)，所以只能转向nginx,squid这类有反向代理功能的软件了。好在其设置都不是很麻烦。 本文就之前所做过的安装和配置步骤做一下总结分享出来，以免日后忘记了。 首先是windows系统，这里建议使用window 2003企业版，而">
+<script class="next-config" data-name="main" type="application/json">{"hostname":"www.jiliuke.com","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.17.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":true}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="最近有些时间，开始接触负载均衡方面的东西，从硬件F5再到Citrix Netscalar。不过因为硬件的配置虽然不复杂，但昂贵的价格也让一般用户望而却步(十几万到几十万)，所以只能转向nginx,squid这类有反向代理功能的软件了。好在其设置都不是很麻烦。 本文就之前所做过的安装和配置步骤做一下总结分享出来，以免日后忘记了。 首先是windows系统，这里建议使用window 2003企业版，而">
 <meta property="og:type" content="article">
 <meta property="og:title" content="玩玩负载均衡---在window与linux下配置nginx">
 <meta property="og:url" content="http://www.jiliuke.com/2015/08/11/e7-8e-a9-e7-8e-a9-e8-b4-9f-e8-bd-bd-e5-9d-87-e8-a1-a1-e5-9c-a8window-e4-b8-8elinux-e4-b8-8b-e9-85-8d-e7-bd-aenginx/index.html">
@@ -52,6 +51,10 @@
 
 
 
+
+
+
+
   <noscript>
     <link rel="stylesheet" href="/css/noscript.css">
   </noscript>
@@ -61,8 +64,8 @@
   <div class="headband"></div>
 
   <main class="main">
-    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-container">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
   <div class="site-nav-toggle">
     <div class="toggle" aria-label="切换导航栏" role="button">
         <span class="toggle-line"></span>
@@ -82,7 +85,7 @@
   </div>
 
   <div class="site-nav-right">
-    <div class="toggle popup-trigger">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
         <i class="fa fa-search fa-fw fa-lg"></i>
     </div>
   </div>
@@ -91,12 +94,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu">
-        <li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li>
-        <li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li>
-        <li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li>
-        <li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li>
-        <li class="menu-item menu-item-sitemap"><a href="/sitemap.xml" rel="section"><i class="fa fa-sitemap fa-fw"></i>站点地图</a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li><li class="menu-item menu-item-sitemap"><a href="/sitemap.xml" rel="section"><i class="fa fa-sitemap fa-fw"></i>站点地图</a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
         </a>
@@ -129,15 +127,9 @@
     </div>
   </div>
 
-</div>
+</header>
         
   
-  <div class="toggle sidebar-toggle" role="button">
-    <span class="toggle-line"></span>
-    <span class="toggle-line"></span>
-    <span class="toggle-line"></span>
-  </div>
-
   <aside class="sidebar">
 
     <div class="sidebar-inner sidebar-overview-active">
@@ -157,11 +149,11 @@
         <!--/noindex-->
 
         <div class="site-overview-wrap sidebar-panel">
-          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
   <p class="site-author-name" itemprop="name">michaeldyl520</p>
   <div class="site-description" itemprop="description">Bring the crowds together, inspire unlimited</div>
 </div>
-<div class="site-state-wrap site-overview-item animated">
+<div class="site-state-wrap animated">
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
@@ -181,36 +173,24 @@
       </div>
   </nav>
 </div>
-  <div class="links-of-author site-overview-item animated">
+  <div class="links-of-author animated">
       <span class="links-of-author-item">
-        <a href="https://github.com/michaeldyl520" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;michaeldyl520" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+        <a href="https://github.com/michaeldyl520" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;michaeldyl520" rel="noopener me" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
       </span>
       <span class="links-of-author-item">
-        <a href="mailto:michaeldyl520@gmail.com" title="E-Mail → mailto:michaeldyl520@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+        <a href="mailto:michaeldyl520@gmail.com" title="E-Mail → mailto:michaeldyl520@gmail.com" rel="noopener me" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
       </span>
   </div>
-
-
 
         </div>
       </div>
     </div>
-  </aside>
-  <div class="sidebar-dimmer"></div>
-
-
-    </header>
 
     
-  <div class="back-to-top" role="button" aria-label="返回顶部">
-    <i class="fa fa-arrow-up"></i>
-    <span>0%</span>
-  </div>
+  </aside>
 
-<noscript>
-  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
-</noscript>
 
+    </div>
 
     <div class="main-inner post posts-expand">
 
@@ -228,11 +208,16 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
       <meta itemprop="name" content="michaeldyl520">
-      <meta itemprop="description" content="Bring the crowds together, inspire unlimited">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="Jiliuke">
+      <meta itemprop="description" content="Bring the crowds together, inspire unlimited">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="玩玩负载均衡---在window与linux下配置nginx | Jiliuke">
+      <meta itemprop="description" content="">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
@@ -282,8 +267,7 @@
     
     
     
-    <div class="post-body" itemprop="articleBody">
-        <p>最近有些时间，开始接触负载均衡方面的东西，从硬件F5再到Citrix Netscalar。不过因为硬件的配置虽然不复杂，但昂贵的价格也让一般用户望而却步(十几万到几十万)，所以只能转向<a target="_blank" rel="noopener" href="http://nginx.net/">nginx</a>,squid这类有反向代理功能的软件了。好在其设置都不是很麻烦。 本文就之前所做过的安装和配置步骤做一下总结分享出来，以免日后忘记了。 首先是windows系统，这里建议使用window 2003企业版，而不要作用win7（太新了，我遇到无法启动nginx的问题）。要说的是，在windows下配置安装nginx还是很容易的，少了linux下下载tar再配置编译参数等等步骤，我们只要从下面的地址下载相应的zip包(大约750kb)即可，地址如下： <a target="_blank" rel="noopener" href="http://sysoev.ru/nginx/nginx-0.8.21.zip">http://sysoev.ru/nginx/nginx-0.8.21.zip</a>       需要说明的是这个下载包是nginx 0.8.21开发版，换句话说其只能用于搭建测试环境等用途的，不能用于实际的生产环境（受限于windows文件句柄数限制）。 下载并将该包中的文件解压到c盘上，为了配置使用方便，我将其解压后的文件夹名称从“nginx-0.8.19”改为”nginx”，这样我们只要将要负载均衡的站点在iis中设置好之后，将相应的链接地址放到nginx的相应配置文件中即可，这里我们打开C:\nginx\conf\nginx.conf文件，将下面的内容放到该文件的“server { ”上方行处：</p>
+    <div class="post-body" itemprop="articleBody"><p>最近有些时间，开始接触负载均衡方面的东西，从硬件F5再到Citrix Netscalar。不过因为硬件的配置虽然不复杂，但昂贵的价格也让一般用户望而却步(十几万到几十万)，所以只能转向<a target="_blank" rel="noopener" href="http://nginx.net/">nginx</a>,squid这类有反向代理功能的软件了。好在其设置都不是很麻烦。 本文就之前所做过的安装和配置步骤做一下总结分享出来，以免日后忘记了。 首先是windows系统，这里建议使用window 2003企业版，而不要作用win7（太新了，我遇到无法启动nginx的问题）。要说的是，在windows下配置安装nginx还是很容易的，少了linux下下载tar再配置编译参数等等步骤，我们只要从下面的地址下载相应的zip包(大约750kb)即可，地址如下： <a target="_blank" rel="noopener" href="http://sysoev.ru/nginx/nginx-0.8.21.zip">http://sysoev.ru/nginx/nginx-0.8.21.zip</a>       需要说明的是这个下载包是nginx 0.8.21开发版，换句话说其只能用于搭建测试环境等用途的，不能用于实际的生产环境（受限于windows文件句柄数限制）。 下载并将该包中的文件解压到c盘上，为了配置使用方便，我将其解压后的文件夹名称从“nginx-0.8.19”改为”nginx”，这样我们只要将要负载均衡的站点在iis中设置好之后，将相应的链接地址放到nginx的相应配置文件中即可，这里我们打开C:\nginx\conf\nginx.conf文件，将下面的内容放到该文件的“server { ”上方行处：</p>
 <p>upstream  mylocalsite { server   10.0.2.137:8088; server   10.0.2.137:8089; }</p>
 <p>  因为nginx无法运行动态脚本，所以这里要使用proxy_pass属性进行代理，所以找到该配置文件的如下内容：</p>
 <p>location / { root   html; index  index.html index.htm; }</p>
@@ -339,7 +323,7 @@
 
     <footer class="post-footer">
           <div class="reward-container">
-  <div>请我喝杯咖啡</div>
+  <div>请我一杯咖啡吧！</div>
   <button>
     赞赏
   </button>
@@ -421,13 +405,25 @@
   </footer>
 
   
-  <script size="300" alpha="0.6" zIndex="-1" src="https://cdn.jsdelivr.net/npm/ribbon.js@1.0.2/dist/ribbon.min.js"></script>
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script size="300" alpha="0.6" zIndex="-1" src="https://cdnjs.cloudflare.com/ajax/libs/ribbon.js/1.0.2/ribbon.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
 <script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
 
-  
-<script src="https://cdn.jsdelivr.net/npm/hexo-generator-searchdb@1.4.0/dist/search.js" integrity="sha256-vXZMYLEqsROAXkEw93GGIvaB2ab+QW6w3+1ahD9nXXA=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.1/search.js" integrity="sha256-1kfA5uHPf65M5cphT2dvymhkuyHPQp5A53EGZOnOLmc=" crossorigin="anonymous"></script>
 <script src="/js/third-party/search/local-search.js"></script>
+
+
 
 
 

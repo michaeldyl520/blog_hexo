@@ -3,20 +3,19 @@
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width">
-<meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 5.4.2">
-
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 5.4.2">
 
 
 <link rel="stylesheet" href="/css/main.css">
 
 
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha256-mUZM63G8m73Mcidfrv5E+Y61y7a12O5mW4ezU3bxqW4=" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha256-HtsXJanqjKTc8vVQjO4YMhiqFoXkfBsjBWcX91T1jr8=" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
 
-<script class="next-config" data-name="main" type="application/json">{"hostname":"www.jiliuke.com","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.9.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":true}}</script><script src="/js/config.js"></script>
-<meta name="description" content="CentOS系统的确很好用，但是还是很多地方需要我们进行正确的设置，进行优化的。在Apache, PHP, MySQL的体系架构中,MySQL对于性能的影响最大,也是关键的核心部分。对于Discuz!论坛程序也是如此,MySQL的设置是否合理优化,直接影响到论坛的速度和承载量!同时,MySQL也是优化难度最大的一个部分,不但需要理解一些MySQL专业知识,同时还需要长时间的观察统计并且根据经验进行">
+<script class="next-config" data-name="main" type="application/json">{"hostname":"www.jiliuke.com","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.17.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":true}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="CentOS系统的确很好用，但是还是很多地方需要我们进行正确的设置，进行优化的。在Apache, PHP, MySQL的体系架构中,MySQL对于性能的影响最大,也是关键的核心部分。对于Discuz!论坛程序也是如此,MySQL的设置是否合理优化,直接影响到论坛的速度和承载量!同时,MySQL也是优化难度最大的一个部分,不但需要理解一些MySQL专业知识,同时还需要长时间的观察统计并且根据经验进行">
 <meta property="og:type" content="article">
 <meta property="og:title" content="CentOS系统MySQL优化详解 ">
 <meta property="og:url" content="http://www.jiliuke.com/2014/03/17/centos-e7-b3-bb-e7-bb-9fmysql-e4-bc-98-e5-8c-96-e8-af-a6-e8-a7-a3/index.html">
@@ -46,6 +45,10 @@
 
 
 
+
+
+
+
   <noscript>
     <link rel="stylesheet" href="/css/noscript.css">
   </noscript>
@@ -55,8 +58,8 @@
   <div class="headband"></div>
 
   <main class="main">
-    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-container">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
   <div class="site-nav-toggle">
     <div class="toggle" aria-label="切换导航栏" role="button">
         <span class="toggle-line"></span>
@@ -76,7 +79,7 @@
   </div>
 
   <div class="site-nav-right">
-    <div class="toggle popup-trigger">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
         <i class="fa fa-search fa-fw fa-lg"></i>
     </div>
   </div>
@@ -85,12 +88,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu">
-        <li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li>
-        <li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li>
-        <li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li>
-        <li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li>
-        <li class="menu-item menu-item-sitemap"><a href="/sitemap.xml" rel="section"><i class="fa fa-sitemap fa-fw"></i>站点地图</a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li><li class="menu-item menu-item-sitemap"><a href="/sitemap.xml" rel="section"><i class="fa fa-sitemap fa-fw"></i>站点地图</a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
         </a>
@@ -123,15 +121,9 @@
     </div>
   </div>
 
-</div>
+</header>
         
   
-  <div class="toggle sidebar-toggle" role="button">
-    <span class="toggle-line"></span>
-    <span class="toggle-line"></span>
-    <span class="toggle-line"></span>
-  </div>
-
   <aside class="sidebar">
 
     <div class="sidebar-inner sidebar-overview-active">
@@ -151,11 +143,11 @@
         <!--/noindex-->
 
         <div class="site-overview-wrap sidebar-panel">
-          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
   <p class="site-author-name" itemprop="name">michaeldyl520</p>
   <div class="site-description" itemprop="description">Bring the crowds together, inspire unlimited</div>
 </div>
-<div class="site-state-wrap site-overview-item animated">
+<div class="site-state-wrap animated">
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
@@ -175,36 +167,24 @@
       </div>
   </nav>
 </div>
-  <div class="links-of-author site-overview-item animated">
+  <div class="links-of-author animated">
       <span class="links-of-author-item">
-        <a href="https://github.com/michaeldyl520" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;michaeldyl520" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+        <a href="https://github.com/michaeldyl520" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;michaeldyl520" rel="noopener me" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
       </span>
       <span class="links-of-author-item">
-        <a href="mailto:michaeldyl520@gmail.com" title="E-Mail → mailto:michaeldyl520@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+        <a href="mailto:michaeldyl520@gmail.com" title="E-Mail → mailto:michaeldyl520@gmail.com" rel="noopener me" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
       </span>
   </div>
-
-
 
         </div>
       </div>
     </div>
-  </aside>
-  <div class="sidebar-dimmer"></div>
-
-
-    </header>
 
     
-  <div class="back-to-top" role="button" aria-label="返回顶部">
-    <i class="fa fa-arrow-up"></i>
-    <span>0%</span>
-  </div>
+  </aside>
 
-<noscript>
-  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
-</noscript>
 
+    </div>
 
     <div class="main-inner post posts-expand">
 
@@ -222,11 +202,16 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
       <meta itemprop="name" content="michaeldyl520">
-      <meta itemprop="description" content="Bring the crowds together, inspire unlimited">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="Jiliuke">
+      <meta itemprop="description" content="Bring the crowds together, inspire unlimited">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="CentOS系统MySQL优化详解  | Jiliuke">
+      <meta itemprop="description" content="">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
@@ -276,8 +261,7 @@
     
     
     
-    <div class="post-body" itemprop="articleBody">
-        <p>CentOS系统的确很好用，但是还是很多地方需要我们进行正确的设置，进行优化的。在Apache, PHP, MySQL的体系架构中,MySQL对于性能的影响最大,也是关键的核心部分。对于Discuz!论坛程序也是如此,MySQL的设置是否合理优化,直接影响到论坛的速度和承载量!同时,MySQL也是优化难度最大的一个部分,不但需要理解一些MySQL专业知识,同时还需要长时间的观察统计并且根据经验进行判断,然后设置合理的参数。下面我们就来对CentOS系统MySQL优化进行详细解析、 下面我们了解一下MySQL优化的一些基础,MySQL的优化我分为两个部分,一是服务器物理硬件的优化;二是MySQL自身(my.cnf)的优化。 (1) 服务器硬件对MySQL性能的影响 a) 磁盘寻道能力(磁盘I/O),以目前高转速SCSI硬盘(7200转/秒)为例,这种硬盘理论上每秒寻道7200次,这是物理特性决定的,没有办法改变。 MySQL每秒钟都在进行大量、复杂的查询操作,对磁盘的读写量可想而知。所以,通常认为磁盘I/O是制约MySQL性能的最大因素之一,对于日均访问量在100万PV以上的Discuz!论坛,由于磁盘I/O的制约,MySQL的性能会非常低下!在CentOS系统中解决这一制约因素可以考虑以下几种解决方案:使用RAID-0+1磁盘阵列,注意不要尝试使用RAID-5,MySQL在RAID-5磁盘阵列上的效率不会像你期待的那样快; 抛弃传统的硬盘,使用速度更快的闪存式存储设备。经过Discuz!公司技术工程的测试,使用闪存式存储设备可比传统硬盘速度高出6-10倍左右。 b) CPU 对于MySQL应用,推荐使用S.M.P.架构的多路对称CPU,例如:可以使用两颗Intel Xeon 3.6GHz的CPU。 c) 物理内存对于一台使用MySQL的Database Server来说,服务器内存建议不要小于2GB,推荐使用4GB以上的物理内存。 (2) MySQL自身因素当解决了上述服务器硬件制约因素后,让我们看看MySQL自身的优化是如何操作的。对MySQL自身的优化主要是对其配置文件 my.cnf中的各项参数进行优化调整。下面我们介绍一些对性能影响较大的参数。 由于my.cnf文件的优化设置是与服务器硬件配置息息相关的,因而我们指定一个假想的服务器硬件环境: CPU: 2颗Intel Xeon 2.4GHz 内存: 4GB DDR 硬盘: SCSI 73GB 下面,我们根据以上硬件配置结合一份已经优化好的my.cnf进行说明:# vi /etc/my.cnf 以下只列出my.cnf文件中[mysqld]段落中的内容,其他段落内容对MySQL运行性能影响甚微,因而姑且忽略。 [mysqld] port = 3306 serverid = 1 socket = /tmp/mysql.sock skip-locking 避免MySQL的外部锁定,减少出错几率增强稳定性。 skip-name-resolve 禁止MySQL对外部连接进行DNS解析,使用这一选项可以消除MySQL进行DNS解析的时间。但需要注意,如果开启该选项,则所有远程主机连接授权都要使用IP地址方式,否则MySQL 将无法正常处理连接请求! back_log = 384 指定MySQL可能的连接数量。当MySQL主线程在很短的时间内接收到非常多的连接请求,该参数生效,主线程花费很短的时间检查连接并且启动一个新线程。back_log 参数的值指出在MySQL暂时停止响应新请求之前的短时间内多少个请求可以被存在堆栈中。如果CentOS系统在一个短时间内有很多连接,则需要增大该参数的值,该参数值指定到来的TCP/IP连接的侦听队列的大小。不同的操作系统在这个队列大小上有它自己的限制。试图设定back_log高于你的CentOS系统的限制将是无效的。默认值为50。对于Linux系统推荐设置为小于512的整数。 key_buffer_size = 256M key_buffer_size指定用于索引的缓冲区大小,增加它可得到更好的索引处理性能。对于内存在4GB左右的服务器该参数可设置为256M或384M。注意:该参数值设置的过大反而会是服务器整体效率降低! max_allowed_packet = 4M thread_stack = 256K table_cache = 128K sort_buffer_size = 6M 查询排序时所能使用的缓冲区大小。注意:该参数对应的分配内存是每连接独占!如果有100个连接,那么实际分配的总共排序缓冲区大小为100 × 6 = 600MB。所以,对于内存在4GB左右的服务器推荐设置为6-8M。 read_buffer_size = 4M 读查询操作所能使用的缓冲区大小。和sort_buffer_size一样,该参数对应的分配内存也是每连接独享! join_buffer_size = 8M 联合查询操作所能使用的缓冲区大小,和sort_buffer_size一样,该参数对应的分配内存也是每连接独享! myisam_sort_buffer_size = 64M table_cache = 512 thread_cache_size = 64 query_cache_size = 64M 指定CentOS系统MySQL查询缓冲区的大小。可以通过在MySQL控制台执行以下命令观察: &gt; SHOW VARIABLES LIKE ‘%query_cache%’; &gt; SHOW STATUS LIKE ‘Qcache%’; 如果Qcache_lowmem_prunes的值非常大,则表明经常出现缓冲不够的情况; 如果Qcache_hits的值非常大,则表明查询缓冲使用非常频繁,如果该值较小反而会影响效率,那么可以考虑不用查询缓冲;Qcache_free_blocks,如果该值非常大,则表明缓冲区中碎片很多。 tmp_table_size = 256M max_connections = 768 指定MySQL允许的最大连接进程数。如果在访问论坛时经常出现Too Many Connections的错误提示,则需要增大该参数值。 max_connect_errors = 10000000 wait_timeout = 10 指定一个请求的最大连接时间,对于4GB左右内存的服务器可以设置为5-10。 thread_concurrency = 8 该参数取值为服务器逻辑CPU数量×2,在本例中,服务器有2颗物理CPU,而每颗物理CPU又支持H.T超线程,所以实际取值为4 × 2 = 8skip-networking 开启该选项可以彻底关闭MySQL的TCP/IP连接方式,如果CentOS系统WEB服务器是以远程连接的方式访问MySQL数据库服务器则不要开启该选项!否则将无法正常连接! 以上,我们对一份my.cnf做了简单的说明,MySQL的优化是一项需要长期观察,长期积累经验,长期试验的工作。有兴趣的用户可以边查阅文档资料边做试验,在实际应用中获得更多的经验的收获。 在所有优化操作完成后,需要重新启动CentOS系统MySQL服务.这样，登陆后，我们会发现有很大的变化。</p>
+    <div class="post-body" itemprop="articleBody"><p>CentOS系统的确很好用，但是还是很多地方需要我们进行正确的设置，进行优化的。在Apache, PHP, MySQL的体系架构中,MySQL对于性能的影响最大,也是关键的核心部分。对于Discuz!论坛程序也是如此,MySQL的设置是否合理优化,直接影响到论坛的速度和承载量!同时,MySQL也是优化难度最大的一个部分,不但需要理解一些MySQL专业知识,同时还需要长时间的观察统计并且根据经验进行判断,然后设置合理的参数。下面我们就来对CentOS系统MySQL优化进行详细解析、 下面我们了解一下MySQL优化的一些基础,MySQL的优化我分为两个部分,一是服务器物理硬件的优化;二是MySQL自身(my.cnf)的优化。 (1) 服务器硬件对MySQL性能的影响 a) 磁盘寻道能力(磁盘I/O),以目前高转速SCSI硬盘(7200转/秒)为例,这种硬盘理论上每秒寻道7200次,这是物理特性决定的,没有办法改变。 MySQL每秒钟都在进行大量、复杂的查询操作,对磁盘的读写量可想而知。所以,通常认为磁盘I/O是制约MySQL性能的最大因素之一,对于日均访问量在100万PV以上的Discuz!论坛,由于磁盘I/O的制约,MySQL的性能会非常低下!在CentOS系统中解决这一制约因素可以考虑以下几种解决方案:使用RAID-0+1磁盘阵列,注意不要尝试使用RAID-5,MySQL在RAID-5磁盘阵列上的效率不会像你期待的那样快; 抛弃传统的硬盘,使用速度更快的闪存式存储设备。经过Discuz!公司技术工程的测试,使用闪存式存储设备可比传统硬盘速度高出6-10倍左右。 b) CPU 对于MySQL应用,推荐使用S.M.P.架构的多路对称CPU,例如:可以使用两颗Intel Xeon 3.6GHz的CPU。 c) 物理内存对于一台使用MySQL的Database Server来说,服务器内存建议不要小于2GB,推荐使用4GB以上的物理内存。 (2) MySQL自身因素当解决了上述服务器硬件制约因素后,让我们看看MySQL自身的优化是如何操作的。对MySQL自身的优化主要是对其配置文件 my.cnf中的各项参数进行优化调整。下面我们介绍一些对性能影响较大的参数。 由于my.cnf文件的优化设置是与服务器硬件配置息息相关的,因而我们指定一个假想的服务器硬件环境: CPU: 2颗Intel Xeon 2.4GHz 内存: 4GB DDR 硬盘: SCSI 73GB 下面,我们根据以上硬件配置结合一份已经优化好的my.cnf进行说明:# vi /etc/my.cnf 以下只列出my.cnf文件中[mysqld]段落中的内容,其他段落内容对MySQL运行性能影响甚微,因而姑且忽略。 [mysqld] port = 3306 serverid = 1 socket = /tmp/mysql.sock skip-locking 避免MySQL的外部锁定,减少出错几率增强稳定性。 skip-name-resolve 禁止MySQL对外部连接进行DNS解析,使用这一选项可以消除MySQL进行DNS解析的时间。但需要注意,如果开启该选项,则所有远程主机连接授权都要使用IP地址方式,否则MySQL 将无法正常处理连接请求! back_log = 384 指定MySQL可能的连接数量。当MySQL主线程在很短的时间内接收到非常多的连接请求,该参数生效,主线程花费很短的时间检查连接并且启动一个新线程。back_log 参数的值指出在MySQL暂时停止响应新请求之前的短时间内多少个请求可以被存在堆栈中。如果CentOS系统在一个短时间内有很多连接,则需要增大该参数的值,该参数值指定到来的TCP/IP连接的侦听队列的大小。不同的操作系统在这个队列大小上有它自己的限制。试图设定back_log高于你的CentOS系统的限制将是无效的。默认值为50。对于Linux系统推荐设置为小于512的整数。 key_buffer_size = 256M key_buffer_size指定用于索引的缓冲区大小,增加它可得到更好的索引处理性能。对于内存在4GB左右的服务器该参数可设置为256M或384M。注意:该参数值设置的过大反而会是服务器整体效率降低! max_allowed_packet = 4M thread_stack = 256K table_cache = 128K sort_buffer_size = 6M 查询排序时所能使用的缓冲区大小。注意:该参数对应的分配内存是每连接独占!如果有100个连接,那么实际分配的总共排序缓冲区大小为100 × 6 = 600MB。所以,对于内存在4GB左右的服务器推荐设置为6-8M。 read_buffer_size = 4M 读查询操作所能使用的缓冲区大小。和sort_buffer_size一样,该参数对应的分配内存也是每连接独享! join_buffer_size = 8M 联合查询操作所能使用的缓冲区大小,和sort_buffer_size一样,该参数对应的分配内存也是每连接独享! myisam_sort_buffer_size = 64M table_cache = 512 thread_cache_size = 64 query_cache_size = 64M 指定CentOS系统MySQL查询缓冲区的大小。可以通过在MySQL控制台执行以下命令观察: &gt; SHOW VARIABLES LIKE ‘%query_cache%’; &gt; SHOW STATUS LIKE ‘Qcache%’; 如果Qcache_lowmem_prunes的值非常大,则表明经常出现缓冲不够的情况; 如果Qcache_hits的值非常大,则表明查询缓冲使用非常频繁,如果该值较小反而会影响效率,那么可以考虑不用查询缓冲;Qcache_free_blocks,如果该值非常大,则表明缓冲区中碎片很多。 tmp_table_size = 256M max_connections = 768 指定MySQL允许的最大连接进程数。如果在访问论坛时经常出现Too Many Connections的错误提示,则需要增大该参数值。 max_connect_errors = 10000000 wait_timeout = 10 指定一个请求的最大连接时间,对于4GB左右内存的服务器可以设置为5-10。 thread_concurrency = 8 该参数取值为服务器逻辑CPU数量×2,在本例中,服务器有2颗物理CPU,而每颗物理CPU又支持H.T超线程,所以实际取值为4 × 2 = 8skip-networking 开启该选项可以彻底关闭MySQL的TCP/IP连接方式,如果CentOS系统WEB服务器是以远程连接的方式访问MySQL数据库服务器则不要开启该选项!否则将无法正常连接! 以上,我们对一份my.cnf做了简单的说明,MySQL的优化是一项需要长期观察,长期积累经验,长期试验的工作。有兴趣的用户可以边查阅文档资料边做试验,在实际应用中获得更多的经验的收获。 在所有优化操作完成后,需要重新启动CentOS系统MySQL服务.这样，登陆后，我们会发现有很大的变化。</p>
 
     </div>
 
@@ -287,7 +271,7 @@
 
     <footer class="post-footer">
           <div class="reward-container">
-  <div>请我喝杯咖啡</div>
+  <div>请我一杯咖啡吧！</div>
   <button>
     赞赏
   </button>
@@ -370,13 +354,25 @@
   </footer>
 
   
-  <script size="300" alpha="0.6" zIndex="-1" src="https://cdn.jsdelivr.net/npm/ribbon.js@1.0.2/dist/ribbon.min.js"></script>
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script size="300" alpha="0.6" zIndex="-1" src="https://cdnjs.cloudflare.com/ajax/libs/ribbon.js/1.0.2/ribbon.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
 <script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
 
-  
-<script src="https://cdn.jsdelivr.net/npm/hexo-generator-searchdb@1.4.0/dist/search.js" integrity="sha256-vXZMYLEqsROAXkEw93GGIvaB2ab+QW6w3+1ahD9nXXA=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.1/search.js" integrity="sha256-1kfA5uHPf65M5cphT2dvymhkuyHPQp5A53EGZOnOLmc=" crossorigin="anonymous"></script>
 <script src="/js/third-party/search/local-search.js"></script>
+
+
 
 
 
