@@ -3676,4 +3676,15 @@ $("#datepicker").datepicker('option', 'dateFormat','yy-mm-dd');//set dateFormat
         <tag>xunsearch</tag>
       </tags>
   </entry>
+  <entry>
+    <title>composer tips</title>
+    <url>/2023/10/09/composer-tips/</url>
+    <content><![CDATA[<h1 id="Composer-小技巧"><a href="#Composer-小技巧" class="headerlink" title="Composer 小技巧"></a>Composer 小技巧</h1><h2 id="1-自定义安装包的方法"><a href="#1-自定义安装包的方法" class="headerlink" title="1. 自定义安装包的方法"></a>1. 自定义安装包的方法</h2><p>adobe 官方已不支持stripe-payment 3.2.8,需要用composer 自定义的方式安装包<br>composer配置方法</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    ......</span><br><span class="line">    &quot;repositories&quot;: &#123;</span><br><span class="line">        &quot;0&quot;:&#123;</span><br><span class="line">            &quot;type&quot;: &quot;composer&quot;,</span><br><span class="line">            &quot;url&quot;: &quot;https://repo.magento.com/&quot;</span><br><span class="line">        &#125;,</span><br><span class="line">        &quot;1&quot;: &#123;</span><br><span class="line">            &quot;type&quot;: &quot;package&quot;,</span><br><span class="line">            &quot;package&quot;: &#123;</span><br><span class="line">                &quot;name&quot;: &quot;stripe/module-payments&quot;,</span><br><span class="line">                &quot;version&quot;: &quot;3.2.8&quot;,</span><br><span class="line">                &quot;dist&quot;: &#123;</span><br><span class="line">                    &quot;url&quot;: &quot;https://github.com/stripe/stripe-magento2-releases/raw/master/stripe-magento2-3.2.8.tgz&quot;,</span><br><span class="line">                    &quot;type&quot;: &quot;tar&quot;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    ......</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>然后终端中在项目目录下使用 <code>composer require stripe/module-payments:3.2.8</code> 安装。</p>
+]]></content>
+      <tags>
+        <tag>composer</tag>
+      </tags>
+  </entry>
 </search>

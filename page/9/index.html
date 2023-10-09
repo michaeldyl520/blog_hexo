@@ -147,7 +147,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">133</span>
+          <span class="site-state-item-count">134</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -158,7 +158,7 @@
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">141</span>
+        <span class="site-state-item-count">142</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -183,6 +183,165 @@
     </div>
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://www.jiliuke.com/2014/09/23/jquery-e4-b8-adprop-e6-96-b9-e6-b3-95-e5-92-8cattr-e6-96-b9-e6-b3-95-e7-9a-84-e5-8c-ba-e5-88-ab/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="michaeldyl520">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Jiliuke">
+      <meta itemprop="description" content="Bring the crowds together, inspire unlimited">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Jiliuke">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2014/09/23/jquery-e4-b8-adprop-e6-96-b9-e6-b3-95-e5-92-8cattr-e6-96-b9-e6-b3-95-e7-9a-84-e5-8c-ba-e5-88-ab/" class="post-title-link" itemprop="url">jQuery中prop()方法和attr()方法的区别</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2014-09-23 10:22:11" itemprop="dateCreated datePublished" datetime="2014-09-23T10:22:11+08:00">2014-09-23</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2022-04-15 13:04:50" itemprop="dateModified" datetime="2022-04-15T13:04:50+08:00">2022-04-15</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/jquery/" itemprop="url" rel="index"><span itemprop="name">jquery</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>从jQuery 1.6开始，新加入了一个prop方法。这个方法和attr方法功能非常的相近。</p>
+<p>以下是官网建议的使用情况：</p>
+<p>Attribute/Property</p>
+<p><code>.attr()</code></p>
+<p><code>.prop()</code></p>
+<p>accesskey</p>
+<p>√</p>
+<p>align</p>
+<p>√</p>
+<p>async</p>
+<p>√</p>
+<p>√</p>
+<p>autofocus</p>
+<p>√</p>
+<p>√</p>
+<p>checked</p>
+<p>√</p>
+<p>√</p>
+<p>class</p>
+<p>√</p>
+<p>contenteditable</p>
+<p>√</p>
+<p>draggable</p>
+<p>√</p>
+<p>href</p>
+<p>√</p>
+<p>id</p>
+<p>√</p>
+<p>label</p>
+<p>√</p>
+<p>location ( i.e. window.location )</p>
+<p>√</p>
+<p>√</p>
+<p>multiple</p>
+<p>√</p>
+<p>√</p>
+<p>readOnly</p>
+<p>√</p>
+<p>√</p>
+<p>rel</p>
+<p>√</p>
+<p>selected</p>
+<p>√</p>
+<p>√</p>
+<p>src</p>
+<p>√</p>
+<p>tabindex</p>
+<p>√</p>
+<p>title</p>
+<p>√</p>
+<p>type</p>
+<p>√</p>
+<p>width ( if needed over <code>.width()</code> )</p>
+<p>√</p>
+<p>个人简要总结了一下：</p>
+<p>1、赋值时候，如果是<input type="checkbox" checked>这样的只有属性名就能生效的属性</p>
+<p>推荐prop，即：$(‘input’).prop(‘checked’,true);</p>
+<p>同时，false表示取消，即：$(‘input’).prop(‘checked’,false);</p>
+<p>当然attr也行的：$(‘input’).attr(‘checked’,’这里写什么都行的’);</p>
+<p>取消属性就是移除：$(‘input’).removeAttr(‘checked’);</p>
+<p>2、取值的时候，如果是<input  id="input1" type="checkbox" checked><input  id="input2" type="checkbox"></p>
+<p>推荐使用prop，即：</p>
+<p>$(‘#input1’).prop(‘checked’); //返回true</p>
+<p>$(‘#input2’).prop(‘checked’); //返回false</p>
+<p>而使用attr，则：</p>
+<p>$(‘#input1’).attr(‘checked’); //返回checked</p>
+<p>$(‘#input2’).attr(‘checked’); //返回undefined</p>
+<p>3、特殊属性赋值取值</p>
+<p>这个特殊说明下，获取很多人都用不到呢。</p>
+<p>比如需要在input中追加一个data-tips属性。变成这样子 <input type="text" value="" data-tips="aa"></p>
+<p>这时候只能写：$(‘input’).attr(‘data-tips’,’aa’);</p>
+<p>使用prop是不管用的。</p>
+<p>但是读值时候，两个都可以的：</p>
+<p>$(‘input’).attr(‘data-tips’);//返回aa</p>
+<p>$(‘input’).prop(‘data-tips’);//返回aa</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -1553,91 +1712,6 @@
 <li><p>              }</p>
 </li>
 </ol>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://www.jiliuke.com/2014/08/04/jquery-e7-89-b9-e6-95-88-e6-8f-92-e4-bb-b6flexslider/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="michaeldyl520">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Jiliuke">
-      <meta itemprop="description" content="Bring the crowds together, inspire unlimited">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | Jiliuke">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2014/08/04/jquery-e7-89-b9-e6-95-88-e6-8f-92-e4-bb-b6flexslider/" class="post-title-link" itemprop="url">jquery特效插件flexslider</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2014-08-04 09:37:10" itemprop="dateCreated datePublished" datetime="2014-08-04T09:37:10+08:00">2014-08-04</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-04-15 13:04:50" itemprop="dateModified" datetime="2022-04-15T13:04:50+08:00">2022-04-15</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/jquery/" itemprop="url" rel="index"><span itemprop="name">jquery</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>1.flexslider 预览地址：FlexSlider2 下载插件 网盘地址：FlexSlider2简版demo HTML关键代码说明 //使用flexslider插件 $(window).load(function() { $(‘.flexslider’).flexslider({ //参数设置在这里 animation: “slide”,//使用滑动效果 slideshowSpeed: 2300//切换速度 }); }); FlexSlisder参数说明 $(window).load(function() { $(‘.flexslider’).flexslider({ animation: “fade”, //String: Select your animation type, “fade” or “slide”图片变换方式：淡入淡出或者滑动 direction: “horizontal”, //String: Select the sliding direction, “horizontal” or “vertical”图片设置为滑动式时的滑动方向：左右或者上下 slideshow: true, //Boolean: Animate slider automatically 载入页面时，是否自动播放 slideshowSpeed: 7000, //Integer: Set the speed of the slideshow cycling, in milliseconds 自动播放速度毫秒 animationDuration: 600, //Integer: Set the speed of animations, in milliseconds动画淡入淡出效果延时 directionNav: true, //Boolean: Create navigation for previous/next navigation? (true/false)是否显示左右控制按钮 controlNav: true, //Boolean: Create navigation for paging control of each clide? Note: Leave true for manualControls usage是否显示控制菜单 keyboardNav: true, //Boolean: Allow slider navigating via keyboard left/right keys键盘左右方向键控制图片滑动 mousewheel: false, //Boolean: Allow slider navigating via mousewheel鼠标滚轮控制制图片滑动 prevText: “Previous”, //String: Set the text for the “previous” directionNav item nextText: “Next”, //String: Set the text for the “next” directionNav item pausePlay: false, //Boolean: Create pause/play dynamic element pauseText: ‘Pause’, //String: Set the text for the “pause” pausePlay item playText: ‘Play’, //String: Set the text for the “play” pausePlay item randomize: false, //Boolean: Randomize slide order 是否随即幻灯片 slideToStart: 0, //Integer: The slide that the slider should start on. Array notation (0 = first slide)初始化第一次显示图片位置 animationLoop: true, //Boolean: Should the animation loop? If false, directionNav will received “disable” classes at either end 是否循环滚动 pauseOnAction: true, //Boolean: Pause the slideshow when interacting with control elements, highly recommended. pauseOnHover: false, //Boolean: Pause the slideshow when hovering over slider, then resume when no longer hovering controlsContainer: “”, //Selector: Declare which container the navigation elements should be appended too. Default container is the flexSlider element. Example use would be “.flexslider-container”, “#container”, etc. If the given element is not found, the default action will be taken. manualControls: “”, //Selector: Declare custom control navigation. Example would be “.flex-control-nav li” or “#tabs-nav li img”, etc. The number of elements in your controlNav should match the number of slides/tabs.自定义控制导航 manualControlEvent:””, //String:自定义导航控制触发事件:默认是click,可以设定hover start: function(){}, //Callback: function(slider) - Fires when the slider loads the first slide before: function(){}, //Callback: function(slider) - Fires asynchronously with each slider animation after: function(){}, //Callback: function(slider) - Fires after each slider animation completes end: function(){} //Callback: function(slider) - Fires when the slider reaches the last slide (asynchronous) }); });</p>
 
       
     </div>

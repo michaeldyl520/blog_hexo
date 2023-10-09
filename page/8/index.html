@@ -147,7 +147,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">133</span>
+          <span class="site-state-item-count">134</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -158,7 +158,7 @@
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">141</span>
+        <span class="site-state-item-count">142</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -183,6 +183,105 @@
     </div>
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://www.jiliuke.com/2015/01/07/php-16-e4-bd-8d-md5-e5-8a-a0-e5-af-86-e4-b9-b1-e7-a0-81-e7-9a-84-e8-a7-a3-e5-86-b3-e6-96-b9-e6-b3-95/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="michaeldyl520">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Jiliuke">
+      <meta itemprop="description" content="Bring the crowds together, inspire unlimited">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Jiliuke">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2015/01/07/php-16-e4-bd-8d-md5-e5-8a-a0-e5-af-86-e4-b9-b1-e7-a0-81-e7-9a-84-e8-a7-a3-e5-86-b3-e6-96-b9-e6-b3-95/" class="post-title-link" itemprop="url">php 16位 md5加密乱码的解决方法</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2015-01-07 17:07:37" itemprop="dateCreated datePublished" datetime="2015-01-07T17:07:37+08:00">2015-01-07</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2022-04-15 13:04:50" itemprop="dateModified" datetime="2022-04-15T13:04:50+08:00">2022-04-15</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/PHP/" itemprop="url" rel="index"><span itemprop="name">PHP</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>    PHP默认的md5加密是32位的, 虽然php从5.0开始说是可以16位加密的, 但是16位加密会出现乱码问题.</p>
+<p>md5($str, true)后跟true参数时为16位，但很多时候会出现乱码（因为生成的二进制有不可显示字符！）</p>
+<p>其实32位的加密字符串的第8到24位，和16位MD5的字符串是一样的。</p>
+<p> 我们可以先32位加密，再用substr()来截取；</p>
+<p>    function md5_16($str){</p>
+<p>         return substr(md5($str),8,16);</p>
+<p>    }</p>
+<p>    $str = “<a target="_blank" rel="noopener" href="http://tools.jiliuke.com&quot;/">http://tools.jiliuke.com&quot;</a>;</p>
+<p>    echo md5($str);</p>
+<p>    echo md5_16($str);</p>
+<p>输出结果：</p>
+<p>    0b8e0d6246125a11a1223bd9c6977770</p>
+<p>    46125a11a1223bd9</p>
+<p>php 16位加密也可以这样来写:</p>
+<p>    substr(md5(“admin”),8,-8);</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -1200,165 +1299,6 @@ $("#datepicker").datepicker('option', 'dateFormat','yy-mm-dd');//set dateFormat
     <div class="post-body" itemprop="articleBody">
           <p>在andriod项目中引用另一个library project时，报</p>
 <p>The container ‘Android Dependencies’ references non existing library ‘xxxxxxx’ 错误，解决办法是右击library project，选择Build Path-&gt;Configure Build Path-&gt;Order and Export-&gt;Select All将所有包都选上</p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://www.jiliuke.com/2014/09/23/jquery-e4-b8-adprop-e6-96-b9-e6-b3-95-e5-92-8cattr-e6-96-b9-e6-b3-95-e7-9a-84-e5-8c-ba-e5-88-ab/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="michaeldyl520">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Jiliuke">
-      <meta itemprop="description" content="Bring the crowds together, inspire unlimited">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | Jiliuke">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2014/09/23/jquery-e4-b8-adprop-e6-96-b9-e6-b3-95-e5-92-8cattr-e6-96-b9-e6-b3-95-e7-9a-84-e5-8c-ba-e5-88-ab/" class="post-title-link" itemprop="url">jQuery中prop()方法和attr()方法的区别</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2014-09-23 10:22:11" itemprop="dateCreated datePublished" datetime="2014-09-23T10:22:11+08:00">2014-09-23</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-04-15 13:04:50" itemprop="dateModified" datetime="2022-04-15T13:04:50+08:00">2022-04-15</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/jquery/" itemprop="url" rel="index"><span itemprop="name">jquery</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>从jQuery 1.6开始，新加入了一个prop方法。这个方法和attr方法功能非常的相近。</p>
-<p>以下是官网建议的使用情况：</p>
-<p>Attribute/Property</p>
-<p><code>.attr()</code></p>
-<p><code>.prop()</code></p>
-<p>accesskey</p>
-<p>√</p>
-<p>align</p>
-<p>√</p>
-<p>async</p>
-<p>√</p>
-<p>√</p>
-<p>autofocus</p>
-<p>√</p>
-<p>√</p>
-<p>checked</p>
-<p>√</p>
-<p>√</p>
-<p>class</p>
-<p>√</p>
-<p>contenteditable</p>
-<p>√</p>
-<p>draggable</p>
-<p>√</p>
-<p>href</p>
-<p>√</p>
-<p>id</p>
-<p>√</p>
-<p>label</p>
-<p>√</p>
-<p>location ( i.e. window.location )</p>
-<p>√</p>
-<p>√</p>
-<p>multiple</p>
-<p>√</p>
-<p>√</p>
-<p>readOnly</p>
-<p>√</p>
-<p>√</p>
-<p>rel</p>
-<p>√</p>
-<p>selected</p>
-<p>√</p>
-<p>√</p>
-<p>src</p>
-<p>√</p>
-<p>tabindex</p>
-<p>√</p>
-<p>title</p>
-<p>√</p>
-<p>type</p>
-<p>√</p>
-<p>width ( if needed over <code>.width()</code> )</p>
-<p>√</p>
-<p>个人简要总结了一下：</p>
-<p>1、赋值时候，如果是<input type="checkbox" checked>这样的只有属性名就能生效的属性</p>
-<p>推荐prop，即：$(‘input’).prop(‘checked’,true);</p>
-<p>同时，false表示取消，即：$(‘input’).prop(‘checked’,false);</p>
-<p>当然attr也行的：$(‘input’).attr(‘checked’,’这里写什么都行的’);</p>
-<p>取消属性就是移除：$(‘input’).removeAttr(‘checked’);</p>
-<p>2、取值的时候，如果是<input  id="input1" type="checkbox" checked><input  id="input2" type="checkbox"></p>
-<p>推荐使用prop，即：</p>
-<p>$(‘#input1’).prop(‘checked’); //返回true</p>
-<p>$(‘#input2’).prop(‘checked’); //返回false</p>
-<p>而使用attr，则：</p>
-<p>$(‘#input1’).attr(‘checked’); //返回checked</p>
-<p>$(‘#input2’).attr(‘checked’); //返回undefined</p>
-<p>3、特殊属性赋值取值</p>
-<p>这个特殊说明下，获取很多人都用不到呢。</p>
-<p>比如需要在input中追加一个data-tips属性。变成这样子 <input type="text" value="" data-tips="aa"></p>
-<p>这时候只能写：$(‘input’).attr(‘data-tips’,’aa’);</p>
-<p>使用prop是不管用的。</p>
-<p>但是读值时候，两个都可以的：</p>
-<p>$(‘input’).attr(‘data-tips’);//返回aa</p>
-<p>$(‘input’).prop(‘data-tips’);//返回aa</p>
 
       
     </div>

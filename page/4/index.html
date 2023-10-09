@@ -147,7 +147,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">133</span>
+          <span class="site-state-item-count">134</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -158,7 +158,7 @@
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">141</span>
+        <span class="site-state-item-count">142</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -183,6 +183,91 @@
     </div>
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://www.jiliuke.com/2015/08/11/e7-a8-8d-e6-98-be-e5-a4-8d-e6-9d-82sql-e8-af-ad-e5-8f-a5-e7-9a-84-e7-94-a8-e6-b3-95/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="michaeldyl520">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Jiliuke">
+      <meta itemprop="description" content="Bring the crowds together, inspire unlimited">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Jiliuke">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2015/08/11/e7-a8-8d-e6-98-be-e5-a4-8d-e6-9d-82sql-e8-af-ad-e5-8f-a5-e7-9a-84-e7-94-a8-e6-b3-95/" class="post-title-link" itemprop="url">稍显复杂sql语句的用法</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2015-08-11 09:56:13" itemprop="dateCreated datePublished" datetime="2015-08-11T09:56:13+08:00">2015-08-11</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2022-04-15 13:04:50" itemprop="dateModified" datetime="2022-04-15T13:04:50+08:00">2022-04-15</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/MYSQL/" itemprop="url" rel="index"><span itemprop="name">MYSQL</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>select case order_state when ‘0’ then ‘已取消’ when ‘10’ then ‘已下单’ when ‘20’ then if(payment_code = ‘offline’,’货到付款’,’已付款’) when ‘30’ then ‘已发货’ when ‘40’ then ‘已完成’ end from shopnc_order;</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -1001,92 +1086,6 @@
 <p>location ~ .*\.(gif|jpg|jpeg|png|bmp|swf|js|html|htm|css)$ {        #指定缓存文件类型 expires 7d;      #设置浏览器过期时间7天 root data/nginx_cache/iis;          #静态文件根目录目录(必须对应proxy_temp_path) proxy_store on;        #开启缓存机制 proxy_store_access user:rw group:rw all:rw;       #缓存读写规则 proxy_temp_path data/nginx_cache/iis;            #存放静态文件的缓存目录 #    include proxy.conf;          # 外联proxy理的详细配置如proxy_set_header， client_max_body_size <img src="file:///C:/Users/yunlong/AppData/Local/YNote/data/qqAB881ABE4AEE31C2A6CFF94728E8E5E9/a60b929bb5fd45f2a1bac4de1ace414c/dot.gif">. if (!-e $request_filename) { proxy_pass <a target="_blank" rel="noopener" href="http://10.0.2.136;/">http://10.0.2.136;/</a> } }</p>
 <p><img src="file:///C:/Users/yunlong/AppData/Local/YNote/data/qqAB881ABE4AEE31C2A6CFF94728E8E5E9/6cf311f22a2c49a3935c5e093260d0a3/copycode.gif" alt="复制代码"></p>
 <p>  这样就会在data/nginx_cache/iis目前下生成相应的gif,jpg等文件的临时信息，当客户端请求到来时，就会从该目录中检索相应文件绑定之后返回给客户端，以减轻iis服务器和网络带宽的压力。 最后附上一个我在那台Centos上的配置文件，大家可以对比参照一下，因为nginx本身提供的配置结点信息过多，更多信息可以参见<a target="_blank" rel="noopener" href="http://www.bordf.com.cn/220">这篇文章</a>。 相关链接如下： 张宴 <a target="_blank" rel="noopener" href="http://blog.s135.com/nginx_php_v5/">搭建胜过Apache十倍的Web服务器（第5版）[原创]</a> 守住每一天（网名）       <a target="_blank" rel="noopener" href="http://liuyu.blog.51cto.com/183345/166381">nginx反向代理配置及优化</a>   原文链接: <a target="_blank" rel="noopener" href="http://www.cnblogs.com/daizhj/archive/2009/11/03/1595292.html" title="view: 玩玩负载均衡---在window与linux下配置nginx">http://www.cnblogs.com/daizhj/archive/2009/11/03/1595292.html</a> 作者: daizhj, 代震军 Tags: nginx,负载均衡 网址: <a target="_blank" rel="noopener" href="http://daizhj.cnblogs.com/">http://daizhj.cnblogs.com/</a></p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://www.jiliuke.com/2015/08/11/e5-85-81-e8-ae-b8-e8-bf-9c-e7-ab-af-e4-bd-bf-e7-94-a8mysql/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="michaeldyl520">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Jiliuke">
-      <meta itemprop="description" content="Bring the crowds together, inspire unlimited">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | Jiliuke">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2015/08/11/e5-85-81-e8-ae-b8-e8-bf-9c-e7-ab-af-e4-bd-bf-e7-94-a8mysql/" class="post-title-link" itemprop="url">允许远端使用mysql</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2015-08-11 09:48:47" itemprop="dateCreated datePublished" datetime="2015-08-11T09:48:47+08:00">2015-08-11</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-04-15 13:04:50" itemprop="dateModified" datetime="2022-04-15T13:04:50+08:00">2022-04-15</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/MYSQL/" itemprop="url" rel="index"><span itemprop="name">MYSQL</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>mysql中敲命令</p>
-<p>grant all privileges on <em>.</em> to ‘root’@’%’ identified by ‘123456’ with grant option;</p>
 
       
     </div>
