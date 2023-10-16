@@ -147,7 +147,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">134</span>
+          <span class="site-state-item-count">135</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -158,7 +158,7 @@
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">142</span>
+        <span class="site-state-item-count">143</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -183,6 +183,81 @@
     </div>
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://www.jiliuke.com/2021/10/19/dbbackshell/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="michaeldyl520">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Jiliuke">
+      <meta itemprop="description" content="Bring the crowds together, inspire unlimited">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Jiliuke">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2021/10/19/dbbackshell/" class="post-title-link" itemprop="url">数据库shell备份与超时自动删除</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2021-10-19 10:38:24" itemprop="dateCreated datePublished" datetime="2021-10-19T10:38:24+08:00">2021-10-19</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2022-04-15 13:04:50" itemprop="dateModified" datetime="2022-04-15T13:04:50+08:00">2022-04-15</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">!/bin/bash</span> </span><br><span class="line">id=&quot;user&quot;</span><br><span class="line">pwd=&quot;password&quot;</span><br><span class="line"><span class="meta">$</span><span class="bash">db=<span class="string">&quot;db&quot;</span></span></span><br><span class="line">backuppath=&quot;/app/&quot;$user&quot;/var/dbbackup&quot;</span><br><span class="line">day=15</span><br><span class="line">[ ! -d $backuppath ] &amp;&amp; mkdir -p $backuppath</span><br><span class="line">cd $backuppath</span><br><span class="line"></span><br><span class="line">dbname=$db&#x27;_&#x27;</span><br><span class="line">backupname=$dbname`date +%Y%m%d%H%M%S`</span><br><span class="line">mysqldump -h127.0.0.1 -u$id -p$pwd $db --single-transaction --triggers --skip-tz-utc --ignore-table-data=$db.quote_id_mask | gzip -&gt; $backupname.sql.gz</span><br><span class="line">find $backuppath -name $dbname&quot;*.sql.gz&quot; -type f -mtime +$day -exec rm -rf &#123;&#125; \;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -876,100 +951,6 @@
 <li>然后使用以下命令删除 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rsync --delete-before -a -H -v /tmp/test/ /home/dyl/test/</span><br></pre></td></tr></table></figure>
  如果不想看到日志，参数换成<code>-d</code>. <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rsync --delete-before -d /tmp/test/ /home/dyl/test/</span><br></pre></td></tr></table></figure></li>
 </ol>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://www.jiliuke.com/2019/08/19/about-ssh-config/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="michaeldyl520">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Jiliuke">
-      <meta itemprop="description" content="Bring the crowds together, inspire unlimited">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | Jiliuke">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2019/08/19/about-ssh-config/" class="post-title-link" itemprop="url">ssh 配置不同key对应不同的git仓库</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2019-08-19 10:11:03" itemprop="dateCreated datePublished" datetime="2019-08-19T10:11:03+08:00">2019-08-19</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2023-09-04 11:14:10" itemprop="dateModified" datetime="2023-09-04T11:14:10+08:00">2023-09-04</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/ssh/" itemprop="url" rel="index"><span itemprop="name">ssh</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/ssh/git/" itemprop="url" rel="index"><span itemprop="name">git</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="需求"><a href="#需求" class="headerlink" title="需求"></a>需求</h1><p>我们有很多仓库账号，每个仓库的登录用户又不同，这个时候就需要使用多个ssh keys配置不同的仓库，否则将会出现权限问题</p>
-<h1 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h1><p>1.首先生成<code>ssh key</code>，参见<a target="_blank" rel="noopener" href="https://help.github.com/articles/generating-an-ssh-key/">生成ssk key</a>.<br>2.配置<code>config</code>(~/.ssh/config)</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">Host            git.us.magento.cloud</span><br><span class="line">    Hostname        git.us.magento.cloud</span><br><span class="line">    IdentityFile    ~/.ssh/id_rsa_mage_cloud</span><br><span class="line">    IdentitiesOnly yes</span><br><span class="line">Host            michaeldyl520.github.com</span><br><span class="line">    Hostname        ssh.github.com</span><br><span class="line">    IdentityFile    ~/.ssh/id_rsa_michaeldyl520</span><br><span class="line">    IdentitiesOnly yes</span><br><span class="line">    User git</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>如果都是使用github，建议别名项目仓库Host避免冲突，例如<code>git@michaeldyl520.github.com:xxxx/xxxx.git</code></p>
-</blockquote>
 
       
     </div>

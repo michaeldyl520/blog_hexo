@@ -147,7 +147,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">134</span>
+          <span class="site-state-item-count">135</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -158,7 +158,7 @@
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">142</span>
+        <span class="site-state-item-count">143</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -183,6 +183,109 @@
     </div>
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://www.jiliuke.com/2015/03/30/php-e6-b5-ae-e7-82-b9-e6-95-b0-e7-9a-84-e4-b8-80-e4-b8-aa-e5-b8-b8-e8-a7-81-e9-97-ae-e9-a2-98-e7-9a-84-e8-a7-a3-e7-ad-94/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="michaeldyl520">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Jiliuke">
+      <meta itemprop="description" content="Bring the crowds together, inspire unlimited">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Jiliuke">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2015/03/30/php-e6-b5-ae-e7-82-b9-e6-95-b0-e7-9a-84-e4-b8-80-e4-b8-aa-e5-b8-b8-e8-a7-81-e9-97-ae-e9-a2-98-e7-9a-84-e8-a7-a3-e7-ad-94/" class="post-title-link" itemprop="url">PHP浮点数的一个常见问题的解答</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2015-03-30 10:57:55" itemprop="dateCreated datePublished" datetime="2015-03-30T10:57:55+08:00">2015-03-30</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2022-04-15 13:04:50" itemprop="dateModified" datetime="2022-04-15T13:04:50+08:00">2022-04-15</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/PHP/" itemprop="url" rel="index"><span itemprop="name">PHP</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>作者: <a target="_blank" rel="noopener" href="http://www.laruence.com/">Laruence</a> 本文地址: <a target="_blank" rel="noopener" href="http://www.laruence.com/2013/03/26/2884.html" title="Permanet Link to PHP浮点数的一个常见问题的解答">http://www.laruence.com/2013/03/26/2884.html</a> 转载请注明出处</p>
+<p>关于PHP的浮点数, 我之前写过一篇文章: <a target="_blank" rel="noopener" href="http://www.laruence.com/2011/12/19/2399.html">关于PHP浮点数你应该知道的(All ‘bogus’ about the float in PHP)</a> 不过, 我当时遗漏了一点, 也就是对于如下的这个常见问题的回答:</p>
+<ol>
+<li> <?php</li>
+<li>     $f=0.58;</li>
+<li>     var_dump(intval($f*100));//为啥输出57</li>
+<li> ?&gt;</li>
+</ol>
+<p>为啥输出是57啊? PHP的bug么? 我相信有很多的同学有过这样的疑问, 因为光问我类似问题的人就很多, 更不用说bugs.php.net上经常有人问… 要搞明白这个原因, 首先我们要知道浮点数的表示(<a target="_blank" rel="noopener" href="http://en.wikipedia.org/wiki/IEEE_754-2008">IEEE 754</a>): 浮点数, 以64位的长度(双精度)为例, 会采用1位符号位(E), 11指数位(Q), 52位尾数(M)表示(一共64位). 符号位：最高位表示数据的正负，0表示正数，1表示负数。 指数位：表示数据以2为底的幂，指数采用偏移码表示 尾数：表示数据小数点后的有效数字. 这里的关键点就在于, 小数在二进制的表示, 关于小数如何用二进制表示, 大家可以百度一下, 我这里就不再赘述, 我们关键的要了解, 0.58 对于二进制表示来说, 是无限长的值(下面的数字省掉了隐含的1)..</p>
+<ol>
+<li> 0.58的二进制表示基本上(52位)是: 0010100011110101110000101000111101011100001010001111</li>
+<li> 0.57的二进制表示基本上(52位)是: 0010001111010111000010100011110101110000101000111101</li>
+</ol>
+<p>而两者的二进制, 如果只是通过这52位计算的话,分别是:</p>
+<ol>
+<li> 0.58 -&gt; 0.57999999999999996</li>
+<li> 0.57 -&gt; 0.56999999999999995</li>
+</ol>
+<p>至于0.58 * 100的具体浮点数乘法, 我们不考虑那么细, 有兴趣的可以看(<a target="_blank" rel="noopener" href="http://en.wikipedia.org/wiki/Floating_point">Floating point</a>), 我们就模糊的以心算来看… 0.58 * 100 = 57.999999999 那你intval一下, 自然就是57了…. 可见, 这个问题的关键点就是: “你看似有穷的小数, 在计算机的二进制表示里却是无穷的” so, 不要再以为这是PHP的bug了, 这就是这样的…..</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -1009,91 +1112,6 @@
     
     <div class="post-body" itemprop="articleBody">
           <p>安装crontab: yum install crontabs 说明： /sbin/service crond start //启动服务 /sbin/service crond stop //关闭服务 /sbin/service crond restart //重启服务 /sbin/service crond reload //重新载入配置 查看crontab服务状态： service crond status 手动启动crontab服务： service crond start 查看crontab服务是否已设置为开机启动，执行命令： ntsysv 加入开机自动启动: chkconfig –level 35 crond on 1，crontab命令 功能说明：设置计时器。 语　　法：crontab [-u &lt;用户名称&gt;][配置文件] 或 crontab [-u &lt;用户名称&gt;][-elr] 补充说明：cron是一个常驻服务，它提供计时器的功能，让用户在特定的时间得以执行预设的指令或程序。只要用户会编辑计时器的配置文件，就可以使 用计时器的功能。其配置文件格式如下： Minute Hour Day Month DayOFWeek Command 参　　数： -e 　编辑该用户的计时器设置。 -l 　列出该用户的计时器设置。 -r 　删除该用户的计时器设置。 -u&lt;用户名称&gt; 　指定要设定计时器的用户名称。 2，crontab 格式 基本格式 : * *　 *　 *　 *　　command 分　时　日　月　周　 命令 第1列表示分钟1～59 每分钟用<em>或者 <em>/1表示 第2列表示小时1～23（0表示0点） 第3列表示日期1～31 第4列 表示月份1～12 第5列标识号星期0～6（0表示星期天） 第6列要运行的命令 crontab特殊的符号说明： “</em>“代表所有的取值范围内的数字。特别要注意哦！ “/“代表每的意思，如”</em>/5”表示每5个单位 “-“代表从某个数字到某个数字 “,”分散的数字 crontab文件的一些例子： 30 21 * * * /usr/local/etc/rc.d/lighttpd restart 上面的例子表示每晚的21:30重启 apache。 45 4 1,10,22 * * /usr/local/etc/rc.d/lighttpd restart 上面的例子表示每月1、 10、22日的4 : 45重启apache。 10 1 * * 6,0 /usr/local/etc/rc.d/lighttpd restart 上面的例子表示每周六、周日的1 : 10重启apache。 0,30 18-23 * * * /usr/local/etc/rc.d/lighttpd restart 上面的例子表示在每天18 : 00至23 : 00之间每隔30分钟重启apache。 0 23 * * 6 /usr/local/etc/rc.d/lighttpd restart 上面的例子表示每星期六的11 : 00 pm重启apache。 * */1 * * * /usr/local/etc/rc.d/lighttpd restart 每一小时重启apache * 23-7/1 * * * /usr/local/etc/rc.d/lighttpd restart 晚上11点到早上7点之间，每 隔一小时重启apache 0 11 4 * mon-wed /usr/local/etc/rc.d/lighttpd restart 每月的4号与每周一到周三 的11点重启apache 0 4 1 jan * /usr/local/etc/rc.d/lighttpd restart 一月一号的4点重启apache */30 * * * * /usr/sbin/ntpdate 210.72.145.44 每半小时同步一下时间 ——————————– 如何查看crontab的日志记录 ——————————————————– 昨天crontab中的同步任务没有执行，不知道是什么原因没有执行，貌似任务hang住了，想查询一下crontab到底问题出在哪里，或者hang在了什么地方。 1. linux 看 /var/log/cron这个文件就可以，可以用tail -f /var/log/cron观察 2. unix 在 /var/spool/cron/tmp文件中，有croutXXX001864的tmp文件，tail 这些文件就可以看到正在执行的任务了。 3. mail任务 在 /var/spool/mail/root 文件中，有crontab执行日志的记录，用tail -f /var/spool/mail/root 即可查看最近的crontab执行情况。</p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://www.jiliuke.com/2015/01/20/264/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="michaeldyl520">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Jiliuke">
-      <meta itemprop="description" content="Bring the crowds together, inspire unlimited">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | Jiliuke">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2015/01/20/264/" class="post-title-link" itemprop="url">关于PHP str_replace()</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2015-01-20 16:53:26" itemprop="dateCreated datePublished" datetime="2015-01-20T16:53:26+08:00">2015-01-20</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-04-15 13:04:50" itemprop="dateModified" datetime="2022-04-15T13:04:50+08:00">2022-04-15</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/PHP/" itemprop="url" rel="index"><span itemprop="name">PHP</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>关于PHP str_replace() $string = ‘2’; $array1 = array(‘0’,’1’,’2’); $array2 = array(‘替换0’,’替换1’,’替换2’); str_replace($array1,$array2,$string); 上述方法可以实现，但是如果是： $string = ‘10’; $array1 = array(‘0’,’1’,’2’，’10’); $array2 = array(‘替换0’,’替换1’,’替换2’,’替换10’); str_replace($array1,$array2,$string); 则不能成功！</p>
 
       
     </div>

@@ -147,7 +147,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">134</span>
+          <span class="site-state-item-count">135</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -158,7 +158,7 @@
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">142</span>
+        <span class="site-state-item-count">143</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -183,6 +183,91 @@
     </div>
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://www.jiliuke.com/2014/02/26/centos-e4-b8-8b-e6-9f-a5-e7-9c-8b-e6-9c-8d-e5-8a-a1-e5-99-a8-e7-9a-84cpu-e7-9a-84-e4-bf-a1-e6-81-af/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="michaeldyl520">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Jiliuke">
+      <meta itemprop="description" content="Bring the crowds together, inspire unlimited">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Jiliuke">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2014/02/26/centos-e4-b8-8b-e6-9f-a5-e7-9c-8b-e6-9c-8d-e5-8a-a1-e5-99-a8-e7-9a-84cpu-e7-9a-84-e4-bf-a1-e6-81-af/" class="post-title-link" itemprop="url">Centos 下查看服务器的CPU的信息</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2014-02-26 17:10:37" itemprop="dateCreated datePublished" datetime="2014-02-26T17:10:37+08:00">2014-02-26</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2022-04-15 13:04:50" itemprop="dateModified" datetime="2022-04-15T13:04:50+08:00">2022-04-15</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/CentOS/" itemprop="url" rel="index"><span itemprop="name">CentOS</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>实时查看CPU每核的线程利用率 top 后按 1，如下图所示，我们可以看到有8个CPU，每行显示的就是该CPU的使用率： 查看当前操作系统内核信息 # uname -a Linux db1.xxx.com 2.6.18-194.el5xen #1 SMP Fri Apr 2 15:34:40 EDT 2010 x86_64 x86_64 x86_64 GNU/Linux 依次是 操作系统名称： Linux uname -s 可以单独看到这个信息 计算机名： db1.xxx.com uname -n 可以单独看到这个信息 操作系统发行编号： 2.6.18-194.el5xen uname -r 可以单独看到这个信息 操作系统发行时间： #1 SMP Fri Apr 2 15:34:40 EDT 2010 uname -v 可以单独看到这个信息 计算机类型，进程类型，硬件平台：x86_64 uname –m,uname –p,uname -i 可以单独看到这个信息 操作系统信息：GNU/Linux uname -o 可以单独看到这个信息 参数说明： -a或—all 显示全部的信息。 -m或—machine 显示电脑类型。 -n或-nodename 显示在网络上的主机名称。 -r或—release 显示操作系统的发行编号。 -s或—sysname 显示操作系统名称。 -v 显示操作系统的版本。 –help 显示帮助。 –version 显示版本信息。 参看：<a target="_blank" rel="noopener" href="http://www.lx138.com/page.php?ID=100">http://www.lx138.com/page.php?ID=100</a> 查看当前操作系统发行版信息 # lsb_release -a LSB Version: :core-3.1-amd64:core-3.1-ia32:core-3.1-noarch:graphics-3.1-amd64:graphics-3.1-ia32:graphics-3.1-noarch Distributor ID: CentOS Description: CentOS release 5.5 (Final) Release: 5.5 Codename: Final 查看有几个逻辑CPU，以及CPU型号 # cat /proc/cpuinfo | grep name | cut -f2 -d: | uniq -c 8 Intel(R) Xeon(R) CPU E5620 @ 2.40GHz 上面可以看到有8个逻辑CPU。 型号是 Intel(R) Xeon(R) CPU的 E5620 ，主频是 2.40GHz 实际是有几个CPU # cat /proc/cpuinfo | grep physical | uniq -c 1 physical id : 0 1 address sizes : 40 bits physical, 48 bits virtual 1 physical id : 1 1 address sizes : 40 bits physical, 48 bits virtual 1 physical id : 2 1 address sizes : 40 bits physical, 48 bits virtual 1 physical id : 3 1 address sizes : 40 bits physical, 48 bits virtual 1 physical id : 4 1 address sizes : 40 bits physical, 48 bits virtual 1 physical id : 5 1 address sizes : 40 bits physical, 48 bits virtual 1 physical id : 6 1 address sizes : 40 bits physical, 48 bits virtual 1 physical id : 7 1 address sizes : 40 bits physical, 48 bits virtual 说明实际上是8颗1核的CPU，因为是多核CPU，所以这里有这个显示。其实这台机子是 1个Xeon 四核 E5620处理器 参看： 超线程技术的介绍 <a target="_blank" rel="noopener" href="http://wenwen.soso.com/z/q168813991.htm">http://wenwen.soso.com/z/q168813991.htm</a> # more /proc/cpuinfo | grep “model name” model name : Intel(R) Xeon(R) CPU E5620 @ 2.40GHz model name : Intel(R) Xeon(R) CPU E5620 @ 2.40GHz model name : Intel(R) Xeon(R) CPU E5620 @ 2.40GHz model name : Intel(R) Xeon(R) CPU E5620 @ 2.40GHz model name : Intel(R) Xeon(R) CPU E5620 @ 2.40GHz model name : Intel(R) Xeon(R) CPU E5620 @ 2.40GHz model name : Intel(R) Xeon(R) CPU E5620 @ 2.40GHz model name : Intel(R) Xeon(R) CPU E5620 @ 2.40GHz # grep “model name” /proc/cpuinfo model name : Intel(R) Xeon(R) CPU E5620 @ 2.40GHz model name : Intel(R) Xeon(R) CPU E5620 @ 2.40GHz model name : Intel(R) Xeon(R) CPU E5620 @ 2.40GHz model name : Intel(R) Xeon(R) CPU E5620 @ 2.40GHz model name : Intel(R) Xeon(R) CPU E5620 @ 2.40GHz model name : Intel(R) Xeon(R) CPU E5620 @ 2.40GHz model name : Intel(R) Xeon(R) CPU E5620 @ 2.40GHz model name : Intel(R) Xeon(R) CPU E5620 @ 2.40GHz # grep “model name” /proc/cpuinfo | cut -f2 -d: Intel(R) Xeon(R) CPU E5620 @ 2.40GHz Intel(R) Xeon(R) CPU E5620 @ 2.40GHz Intel(R) Xeon(R) CPU E5620 @ 2.40GHz Intel(R) Xeon(R) CPU E5620 @ 2.40GHz Intel(R) Xeon(R) CPU E5620 @ 2.40GHz Intel(R) Xeon(R) CPU E5620 @ 2.40GHz Intel(R) Xeon(R) CPU E5620 @ 2.40GHz Intel(R) Xeon(R) CPU E5620 @ 2.40GHz 当前是32位还是64位工作模式 # getconf LONG_BIT 64 是否支持64bit计算 结果大于0, 说明支持64bit计算. lm指long mode, 支持lm则是64bit # cat /proc/cpuinfo | grep flags | grep ‘ lm ‘ | wc -l 8 参考资料 Linux下如何查看CPU信息, 包括位数和多核信息 <a target="_blank" rel="noopener" href="http://hi.baidu.com/go_status/blog/item/4a095937ce3aa745251f1431.html">http://hi.baidu.com/go_status/blog/item/4a095937ce3aa745251f1431.html</a> CentOS系统如何查看cpu <a target="_blank" rel="noopener" href="http://os.51cto.com/art/201004/192592.htm">http://os.51cto.com/art/201004/192592.htm</a> centos下如何查看cpu是多少核，及每核的线程 <a target="_blank" rel="noopener" href="http://zhidao.baidu.com/question/165109144">http://zhidao.baidu.com/question/165109144</a></p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
