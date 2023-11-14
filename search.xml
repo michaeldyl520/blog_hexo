@@ -3701,4 +3701,22 @@ $("#datepicker").datepicker('option', 'dateFormat','yy-mm-dd');//set dateFormat
         <tag>xhgui</tag>
       </tags>
   </entry>
+  <entry>
+    <title>Magento2 Frontend Tips</title>
+    <url>/2023/11/14/magento2-frontend-tips/</url>
+    <content><![CDATA[<h2 id="1-在自定义dom上显示数据loading状态"><a href="#1-在自定义dom上显示数据loading状态" class="headerlink" title="1.在自定义dom上显示数据loading状态"></a>1.在自定义dom上显示数据loading状态</h2><p>define 引用 loader 组件并初始化为loader变量，接着设置加载icon，然后调用show显示加载中，调用hide隐藏加载中。</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">define([</span><br><span class="line">    ...</span><br><span class="line">    <span class="string">&#x27;loader&#x27;</span>,</span><br><span class="line">    ...</span><br><span class="line">],<span class="function"><span class="keyword">function</span>(<span class="params">...,loader,...</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">let</span> overviewContent = $(<span class="built_in">this</span>).parent().find(<span class="string">&#x27;.overview-content&#x27;</span>);</span><br><span class="line">    </span><br><span class="line">    overviewContent.loader(&#123;<span class="attr">icon</span>: self.options.loadingImg&#125;);</span><br><span class="line">    overviewContent.loader(<span class="string">&#x27;show&#x27;</span>);<span class="comment">//显示loader</span></span><br><span class="line">    ...</span><br><span class="line">    overviewContent.loader(<span class="string">&#x27;hide&#x27;</span>);<span class="comment">//数据加载完成后隐藏loader</span></span><br><span class="line"></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>参考链接<br><a href="https://developer.adobe.com/commerce/frontend-core/javascript/jquery-widgets/loader/">https://developer.adobe.com/commerce/frontend-core/javascript/jquery-widgets/loader/</a></p>
+</blockquote>
+<h2 id="2-在Magento2-Js-中再加载js组件"><a href="#2-在Magento2-Js-中再加载js组件" class="headerlink" title="2.在Magento2 Js 中再加载js组件"></a>2.在Magento2 Js 中再加载js组件</h2><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">define([</span><br><span class="line">    ...</span><br><span class="line">    <span class="string">&#x27;mage/apply/main&#x27;</span>,</span><br><span class="line">    ...</span><br><span class="line">],<span class="function"><span class="keyword">function</span>(<span class="params">...,main,...</span>)</span>&#123;</span><br><span class="line">    main.applyFor(<span class="string">&#x27;.content-card&#x27;</span>,<span class="string">&#x27;&#123;&#125;&#x27;</span>,<span class="string">&#x27;swiperOverviewImages&#x27;</span>);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>参考链接<br><a href="https://fishpig.co.uk/magento/tutorials/manually-load-js-component-magento-2/">https://fishpig.co.uk/magento/tutorials/manually-load-js-component-magento-2/</a></p>
+</blockquote>
+]]></content>
+      <tags>
+        <tag>magento2</tag>
+        <tag>modal</tag>
+      </tags>
+  </entry>
 </search>
