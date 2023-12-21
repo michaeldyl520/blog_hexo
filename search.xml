@@ -2016,7 +2016,9 @@ echo bindec( decbin( ip2long( $strIp ) ) ); // 输出3061186560，与MySQL函数
     <title>elasticsearch-tips</title>
     <url>/2019/03/25/elasticsearch-tips/</url>
     <content><![CDATA[<h3 id="Tips"><a href="#Tips" class="headerlink" title="Tips"></a>Tips</h3><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">show elasticsearch database</span></span><br><span class="line">curl localhost:9200/_cat/indices?v</span><br><span class="line"><span class="meta">#</span><span class="bash">delete elasticsearch database</span></span><br><span class="line">curl -XDELETE localhost:9200/xxxxxxx?pretty</span><br><span class="line"><span class="meta">#</span><span class="bash"><span class="built_in">set</span> <span class="built_in">limit</span> variable</span></span><br><span class="line">curl -XPUT localhost:9200/_template/template_name -d &#x27;&#123;&quot;template&quot;: &quot;*&quot;, &quot;order&quot;: 0, &quot;settings&quot;: &#123;&quot;index&quot;: &#123;&quot;mapping&quot;: &#123;&quot;total_fields&quot;: &#123;&quot;limit&quot;: 10000&#125;&#125;&#125;&#125;, &quot;version&quot;: 1&#125;&#x27;</span><br><span class="line"><span class="meta">#</span><span class="bash">show use percent of elasticsearch</span></span><br><span class="line">curl http://localhost:9200/_nodes/stats?pretty&amp;human -s |grep heap_used</span><br></pre></td></tr></table></figure>
-]]></content>
+
+<p>本地开发减少docker elasticsearch的内存占用</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">docker cp elasticsearch7177:/usr/share/elasticsearch/config/jvm.options ~/</span><br><span class="line">cd ~</span><br><span class="line">sed -i &#x27;s/-Xms6g/-Xms2g/g&#x27; jvm.options</span><br><span class="line">sed -i &#x27;s/-Xmx6g/-Xmx2g/g&#x27; jvm.options</span><br><span class="line">docker cp ~/jvm.options elasticsearch7177:/usr/share/elasticsearch/config</span><br><span class="line">rm ~/jvm.options</span><br></pre></td></tr></table></figure>]]></content>
       <categories>
         <category>magento2</category>
         <category>elasticsearch</category>
