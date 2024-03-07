@@ -3721,4 +3721,16 @@ $("#datepicker").datepicker('option', 'dateFormat','yy-mm-dd');//set dateFormat
         <tag>modal</tag>
       </tags>
   </entry>
+  <entry>
+    <title>Magento 同步生产数据的一些问题</title>
+    <url>/2024/03/07/sync-block-page/</url>
+    <content><![CDATA[<h1 id="1-同步生产站点的静态内容数据"><a href="#1-同步生产站点的静态内容数据" class="headerlink" title="1.同步生产站点的静态内容数据"></a>1.同步生产站点的静态内容数据</h1><p>例如首页幻灯片，contact-us页面内容等,需要同步的表如下</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">cms_block</span><br><span class="line">cms_block_store</span><br><span class="line">cms_page</span><br><span class="line">cms_page_store</span><br><span class="line">sequence_block</span><br><span class="line">sequence_page</span><br><span class="line">staging_update</span><br><span class="line">flag //其中的staging的值必须在staging_update中存在</span><br></pre></td></tr></table></figure>
+]]></content>
+      <tags>
+        <tag>Magento2</tag>
+        <tag>cms_page</tag>
+        <tag>cms_block</tag>
+      </tags>
+  </entry>
 </search>

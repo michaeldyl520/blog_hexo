@@ -148,7 +148,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">136</span>
+          <span class="site-state-item-count">137</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -159,7 +159,7 @@
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">144</span>
+        <span class="site-state-item-count">147</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -184,6 +184,107 @@
     </div>
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://www.jiliuke.com/2015/08/11/centos-mini-e9-bb-98-e8-ae-a4-e6-97-a0-e6-b3-95-e4-b8-8a-e7-bd-91-e5-92-8c-e9-85-8d-e7-bd-aeip/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="michaeldyl520">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Jiliuke">
+      <meta itemprop="description" content="Bring the crowds together, inspire unlimited">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Jiliuke">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2015/08/11/centos-mini-e9-bb-98-e8-ae-a4-e6-97-a0-e6-b3-95-e4-b8-8a-e7-bd-91-e5-92-8c-e9-85-8d-e7-bd-aeip/" class="post-title-link" itemprop="url">CentOS mini 默认无法上网和配置IP</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2015-08-11 09:43:03" itemprop="dateCreated datePublished" datetime="2015-08-11T09:43:03+08:00">2015-08-11</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2022-04-15 13:04:50" itemprop="dateModified" datetime="2022-04-15T13:04:50+08:00">2022-04-15</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/CentOS/" itemprop="url" rel="index"><span itemprop="name">CentOS</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>CentOS　 mini默认是无法上网，需要进行如下设置： 一、编辑网络设置： 修改ONBOOT值为yes</p>
+<p><code>1</code></p>
+<p><code>DEVICE=eth0</code></p>
+<p><code>2</code></p>
+<p><code>HWADDR=00:0C:29:4E:B7:C9</code></p>
+<p><code>3</code></p>
+<p><code>TYPE=Ethernet</code></p>
+<p><code>4</code></p>
+<p><code>UUID=a3d55d06-78fe-4542-a44a-d95cb5667cd6</code></p>
+<p><code>5</code></p>
+<p><code>ONBOOT=no</code></p>
+<p><code>6</code></p>
+<p><code>NM_CONTROLLED=yes</code></p>
+<p><code>7</code></p>
+<p><code>BOOTPROTO=dhcp</code></p>
+<p>二、重启network服务 service network restart <strong>手动配置IP：</strong> vi  /etc/sysconfig/network-scripts/ifcfg-ethx</p>
+<p><img src="file:///C:/Users/yunlong/AppData/Local/YNote/data/qqAB881ABE4AEE31C2A6CFF94728E8E5E9/f291a0c53bcf4d6bb92703fe4bf4ee81/linux-ip.jpeg" alt="linux-ip">linux-ip</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -1083,99 +1184,6 @@
 
 
 
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://www.jiliuke.com/2015/03/30/android-sdk-e6-9b-b4-e6-96-b0-e4-bb-a5-e5-8f-8aadt-e6-9b-b4-e6-96-b0-e5-87-ba-e7-8e-b0-e9-97-ae-e9-a2-98-e7-9a-84-e8-a7-a3-e5-86-b3-e5-8a-9e-e6-b3-95/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="michaeldyl520">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Jiliuke">
-      <meta itemprop="description" content="Bring the crowds together, inspire unlimited">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | Jiliuke">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2015/03/30/android-sdk-e6-9b-b4-e6-96-b0-e4-bb-a5-e5-8f-8aadt-e6-9b-b4-e6-96-b0-e5-87-ba-e7-8e-b0-e9-97-ae-e9-a2-98-e7-9a-84-e8-a7-a3-e5-86-b3-e5-8a-9e-e6-b3-95/" class="post-title-link" itemprop="url">Android SDK更新以及ADT更新出现问题的解决办法</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2015-03-30 11:05:15" itemprop="dateCreated datePublished" datetime="2015-03-30T11:05:15+08:00">2015-03-30</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-04-15 13:04:50" itemprop="dateModified" datetime="2022-04-15T13:04:50+08:00">2022-04-15</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E5%AE%89%E5%8D%93%E9%97%AE%E9%A2%98%E9%9B%86%E9%94%A6/" itemprop="url" rel="index"><span itemprop="name">安卓问题集锦</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>使用SDK Manager更新时出现问题Failed to fetch URL <a target="_blank" rel="noopener" href="https://dl-ssl.google.com/android/repository/repository-6.xml">https://dl-ssl.google.com/android/repository/repository-6.xml</a>, reason: Connection to <a target="_blank" rel="noopener" href="https://dl-ssl.google.com/">https://dl-ssl.google.com</a> refusedFailed to fetch URL <a target="_blank" rel="noopener" href="http://dl-ssl.google.com/android/repository/addons/_list-1.xml">http://dl-ssl.google.com/android/repository/addons\_list-1.xml</a>, reason: Connection to <a target="_blank" rel="noopener" href="http://dl-ssl.google.com/">http://dl-ssl.google.com</a> refusedFailed to fetch URL <a target="_blank" rel="noopener" href="https://dl-ssl.google.com/android/repository/addons/_list-1.xml">https://dl-ssl.google.com/android/repository/addons\_list-1.xml</a>, reason: hostname in certificate didn’t match: &lt;dl-ssl.google.com&gt; != &lt;<a target="_blank" rel="noopener" href="http://www.google.com&gt;更新adt时无法解析https//dl-ssl.google.com/android/eclipse">www.google.com&gt;更新ADT时无法解析https://dl-ssl.google.com/android/eclipse</a></p>
-<p><a target="_blank" rel="noopener" href="http://jingyan.baidu.com/album/148a192196209d4d70c3b168.html?picindex=1"><img src="file:///C:/Users/yunlong/AppData/Local/YNote/data/qqAB881ABE4AEE31C2A6CFF94728E8E5E9/79312f33971647b381a2ae311045ef37/9245d78821dd.png" alt="Android SDK更新以及ADT更新出现问题的解决办法"></a><a href="http://www.jiliuke.com/wp-content/uploads/2015/03/3.png"><img src="http://www.jiliuke.com/wp-content/uploads/2015/03/3.png" alt="3"></a></p>
-<h2 id="方法-步骤"><a href="#方法-步骤" class="headerlink" title="方法/步骤"></a>方法/步骤</h2><ol>
-<li>大家肯定很急，我就不废话了，直接上解决办法了！ 打开SDK Manager下Tools-&gt;Options，选中“Force https://… sources to be fetched using http://…”，强制使用http协议。 <a target="_blank" rel="noopener" href="http://jingyan.baidu.com/album/148a192196209d4d70c3b168.html?picindex=2"><img src="file:///C:/Users/yunlong/AppData/Local/YNote/data/qqAB881ABE4AEE31C2A6CFF94728E8E5E9/863a9ce28c9246c9839f70746eeec9b9/42a7d8330e9c.png" alt="Android SDK更新以及ADT更新出现问题的解决办法"></a><a href="http://www.jiliuke.com/wp-content/uploads/2015/03/4.png"><img src="http://www.jiliuke.com/wp-content/uploads/2015/03/4.png" alt="4"></a><a href="http://www.jiliuke.com/wp-content/uploads/2015/03/5.png"><img src="http://www.jiliuke.com/wp-content/uploads/2015/03/5.png" alt="5"></a></li>
-<li>上一步选取之后，有的用户可以更新出列表来。如果还是不能，继续下面的操作。 在地址栏里输入：C:\WINDOWS\system32\drivers\etc <a target="_blank" rel="noopener" href="http://jingyan.baidu.com/album/148a192196209d4d70c3b168.html?picindex=4"><img src="file:///C:/Users/yunlong/AppData/Local/YNote/data/qqAB881ABE4AEE31C2A6CFF94728E8E5E9/e31caa6448914b11847ae40958cef736/d158cdbf4ebb.png" alt="Android SDK更新以及ADT更新出现问题的解决办法"></a><a href="http://www.jiliuke.com/wp-content/uploads/2015/03/6.png"><img src="http://www.jiliuke.com/wp-content/uploads/2015/03/6.png" alt="6"></a></li>
-<li>我们会看到hosts文件，右击打开方式选择记事本。在里面把下面文字复制进去，内容如下（_<strong>特别强调：是在原本的内容后面粘贴下面的内容，而不是覆盖</strong>_）： #Google主页 203.208.46.146 <a target="_blank" rel="noopener" href="http://www.google.com/">www.google.com</a> #这行是为了方便打开Android开发官网 现在好像不VPN也可以打开 74.125.113.121 developer.android.com #更新的内容从以下地址下载 203.208.46.146 dl.google.com 203.208.46.146 dl-ssl.google.com <a target="_blank" rel="noopener" href="http://jingyan.baidu.com/album/148a192196209d4d70c3b168.html?picindex=5"><img src="file:///C:/Users/yunlong/AppData/Local/YNote/data/qqAB881ABE4AEE31C2A6CFF94728E8E5E9/1bcd78e4df9f4a06a79aeff0a6785119/81cb38db3d42.png" alt="Android SDK更新以及ADT更新出现问题的解决办法"></a><a href="http://www.jiliuke.com/wp-content/uploads/2015/03/7.png"><img src="http://www.jiliuke.com/wp-content/uploads/2015/03/7.png" alt="7"></a></li>
-<li>有的用户接着就会看到加载出列表了。如果没有变化，重新打开SDK Manager。就会发现问题解决了。如图1 如果还是无法加载出列表，还是出现如图2红色内容，建议过几天再试试！ <a target="_blank" rel="noopener" href="http://jingyan.baidu.com/album/148a192196209d4d70c3b168.html?picindex=6"><img src="file:///C:/Users/yunlong/AppData/Local/YNote/data/qqAB881ABE4AEE31C2A6CFF94728E8E5E9/a573d2ab12344a6a9f30e7fb055a8121/d42a2934a449.png" alt="Android SDK更新以及ADT更新出现问题的解决办法"></a><a href="http://www.jiliuke.com/wp-content/uploads/2015/03/8.png"><img src="http://www.jiliuke.com/wp-content/uploads/2015/03/8.png" alt="8"></a> <a target="_blank" rel="noopener" href="http://jingyan.baidu.com/album/148a192196209d4d70c3b168.html?picindex=7"><img src="file:///C:/Users/yunlong/AppData/Local/YNote/data/qqAB881ABE4AEE31C2A6CFF94728E8E5E9/01bf322253c94506b8452718248233e1/62309f7d3ca.jpeg" alt="Android SDK更新以及ADT更新出现问题的解决办法"></a><a href="http://www.jiliuke.com/wp-content/uploads/2015/03/9.jpeg"><img src="http://www.jiliuke.com/wp-content/uploads/2015/03/9.jpeg" alt="9"></a></li>
-<li>5 更新ADT插件的时候则使用网址<a target="_blank" rel="noopener" href="http://dl-ssl.google.com/android/eclipse%EF%BC%8C%E8%80%8C%E4%B8%8D%E6%98%AFhttps://dl-ssl.google.com/android/eclipse%EF%BC%8C%E8%BF%99%E4%B8%AA%E5%9C%A8%E5%AE%98%E6%96%B9%E5%BC%80%E5%8F%91%E6%96%87%E6%A1%A3%E9%87%8C%E4%B9%9F%E6%9C%89%E4%BB%8B%E7%BB%8D%E3%80%82">http://dl-ssl.google.com/android/eclipse，而不是https://dl-ssl.google.com/android/eclipse，这个在官方开发文档里也有介绍。</a></li>
-</ol>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
   <nav class="pagination">
     <a class="extend prev" rel="prev" title="上一页" aria-label="上一页" href="/page/5/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><span class="page-number current">6</span><a class="page-number" href="/page/7/">7</a><span class="space">&hellip;</span><a class="page-number" href="/page/14/">14</a><a class="extend next" rel="next" title="下一页" aria-label="下一页" href="/page/7/"><i class="fa fa-angle-right"></i></a>
   </nav>
@@ -1188,7 +1196,7 @@
 
   <div class="copyright">
     &copy; 
-    <span itemprop="copyrightYear">2023</span>
+    <span itemprop="copyrightYear">2024</span>
     <span class="with-love">
       <i class="fa fa-heart"></i>
     </span>
