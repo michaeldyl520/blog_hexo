@@ -148,7 +148,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">137</span>
+          <span class="site-state-item-count">138</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -184,6 +184,97 @@
     </div>
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://www.jiliuke.com/2015/08/11/centos-e5-ae-89-e8-a3-85sensors-e6-9f-a5-e7-9c-8bcpu-e6-b8-a9-e5-ba-a6/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="michaeldyl520">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Jiliuke">
+      <meta itemprop="description" content="Bring the crowds together, inspire unlimited">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Jiliuke">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2015/08/11/centos-e5-ae-89-e8-a3-85sensors-e6-9f-a5-e7-9c-8bcpu-e6-b8-a9-e5-ba-a6/" class="post-title-link" itemprop="url">centos 安装sensors查看cpu温度</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2015-08-11 09:52:08" itemprop="dateCreated datePublished" datetime="2015-08-11T09:52:08+08:00">2015-08-11</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2022-04-15 13:04:50" itemprop="dateModified" datetime="2022-04-15T13:04:50+08:00">2022-04-15</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/CentOS/" itemprop="url" rel="index"><span itemprop="name">CentOS</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>root#:yum -y install lm_sensors</p>
+<p>root#:sensors</p>
+<p>如果提示No sensors found</p>
+<p>运行：</p>
+<p>root#:sensors-detect</p>
+<p>一路回车就行了</p>
+<p><img src="file:///C:/Users/yunlong/AppData/Local/YNote/data/qqAB881ABE4AEE31C2A6CFF94728E8E5E9/10809dbc100a41c19a9c96dabce12936/clipboard.png"></p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -990,95 +1081,6 @@
     
     <div class="post-body" itemprop="articleBody">
           <p>文件名nginx_access_log.sh 以下是脚本 #!/bin/bash - #1.nginx日志存放路径 first_path=”/lnmp/nginx/logs” path_array=($first_path) #2.日志标识前缀数组 first_prefix_sign=”first” prefix_array=($first_prefix_sign) #3.日志成功错误标识后缀数组 bool_array=(“access” “error”) #4.nginx日志切割备份后缀 postfix=`date -d ‘+0 days’ +%Y%m%d`“.log” #5.备份当前的日志文件，重命名改为日期后缀 for path in ${path_array[*]} do for prefix in ${prefix_array[*]} do for bool in ${bool_array[*]} do file=$path/$bool.log backfile=$path/$prefix.$bool.$postfix echo $file echo $backfile if [ -e $file ];then mv $file  $backfile fi done done done #6.查找nginx进程号,让其产生新的日志文件 nginx_pid=`ps -ef|grep -E ‘nginx: master process nginx’|grep -v ‘grep’|awk ‘{print $2}’` #USR1:Reopen log files,刷新nginx日志文件 kill -HUP $nginx_pid</p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://www.jiliuke.com/2015/08/11/centos-mini-e3-80-80-e6-8f-92-e5-85-a5-e5-85-89-e9-a9-b1-e9-9c-80-e8-a6-81-e6-8c-82-e8-bd-bd-e5-85-89-e9-a9-b1-e6-89-8d-e8-83-bd-e8-af-bb-e5-8f-96-e6-95-b0-e6-8d-ae/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="michaeldyl520">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Jiliuke">
-      <meta itemprop="description" content="Bring the crowds together, inspire unlimited">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | Jiliuke">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2015/08/11/centos-mini-e3-80-80-e6-8f-92-e5-85-a5-e5-85-89-e9-a9-b1-e9-9c-80-e8-a6-81-e6-8c-82-e8-bd-bd-e5-85-89-e9-a9-b1-e6-89-8d-e8-83-bd-e8-af-bb-e5-8f-96-e6-95-b0-e6-8d-ae/" class="post-title-link" itemprop="url">CentOS mini　插入光驱需要挂载光驱才能读取数据</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2015-08-11 09:43:51" itemprop="dateCreated datePublished" datetime="2015-08-11T09:43:51+08:00">2015-08-11</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-04-15 13:04:50" itemprop="dateModified" datetime="2022-04-15T13:04:50+08:00">2022-04-15</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/CentOS/" itemprop="url" rel="index"><span itemprop="name">CentOS</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>操作方法：</p>
-<p>mkdir /mnt/cdrom</p>
-<p>mount /dev/cdrom /mnt/cdrom</p>
-<p>卸载方法：</p>
-<p>umount /mnt/cdrom</p>
 
       
     </div>

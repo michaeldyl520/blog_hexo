@@ -148,7 +148,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">137</span>
+          <span class="site-state-item-count">138</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -184,6 +184,91 @@
     </div>
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://www.jiliuke.com/2014/03/20/e8-bd-ac-ef-bc-9amysql-e9-9b-86-e7-be-a4-e5-ae-89-e8-a3-85-e4-b8-8e-e9-85-8d-e7-bd-ae/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="michaeldyl520">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Jiliuke">
+      <meta itemprop="description" content="Bring the crowds together, inspire unlimited">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Jiliuke">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2014/03/20/e8-bd-ac-ef-bc-9amysql-e9-9b-86-e7-be-a4-e5-ae-89-e8-a3-85-e4-b8-8e-e9-85-8d-e7-bd-ae/" class="post-title-link" itemprop="url">转：MySQL集群安装与配置</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2014-03-20 13:06:57" itemprop="dateCreated datePublished" datetime="2014-03-20T13:06:57+08:00">2014-03-20</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2022-04-15 13:04:50" itemprop="dateModified" datetime="2022-04-15T13:04:50+08:00">2022-04-15</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/MYSQL/" itemprop="url" rel="index"><span itemprop="name">MYSQL</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>MySQL Cluster 是 MySQL 适合于分布式计算环境的高实用、高冗余版本。它采用了NDB Cluster 存储引擎，允许在1个 Cluster 中运行多个MySQL服务器。MySQL Cluster 能够使用多种故障切换和负载平衡选项配置NDB存储引擎，但在 Cluster 级别上的存储引擎上做这个最简单。下面我们简单介绍MySQL Cluster如何安装与配置。 基本设定 管理(MGM)节点:192.168.0.111 MySQL服务器(SQL)节点:192.168.0.110 数据(NDBD)节点”A”:192.168.0.112 数据(NDBD)节点”B”:192.168.0.113 一、mysql集群安装 mysql的集群安装可以有三种方式，一是直接下载二进制使用，二是使用rpm安装，三是源码编译。我们这里使用第一种安装。 1、每个节点做相同的操作 cd /tmp wget <a target="_blank" rel="noopener" href="http://cdn.mysql.com/Downloads/MySQL-Cluster-7.2/mysql-cluster-gpl-7.2.8-linux2.6-i686.tar.gz">http://cdn.mysql.com/Downloads/MySQL-Cluster-7.2/mysql-cluster-gpl-7.2.8-linux2.6-i686.tar.gz</a> tar xzf mysql-cluster-gpl-7.2.8-linux2.6-i686.tar.gz mv mysql-cluster-gpl-7.2.8-linux2.6-i686 /usr/local/mysql 注意：这里下载的是32位的二进制包，如果你的系统是64位，需要下载64位的包。 2、存储节点和SQL节点安装 groupadd mysql useradd -g mysql mysql /usr/local/mysql/scripts/mysql_install_db –basedir=/usr/local/mysql –datadir=/usr/local/mysql/data –user=mysql chown -R root /usr/local/mysql chown -R mysql /usr/local/mysql/data chgrp -R mysql /usr/local/mysql cp /usr/local/mysql/support-files/my-medium.cnf /etc/my.cnf 二、节点配置 1、配置存储节点和SQL节点 vi /etc/my.cnf 类似于： # Options for mysqld process: [MYSQLD] ndbcluster # run NDB engine ndb-connectstring=198.168.0.111 # location of MGM node # Options for ndbd process: [MYSQL_CLUSTER] ndb-connectstring=198.168.0.111 # location of MGM node 2、配置管理节点 mkdir /var/lib/mysql-cluster cd /var/lib/mysql-cluster vi config.ini config.ini文件应类似于： # Options affecting ndbd processes on all data nodes: [NDBD DEFAULT] NoOfReplicas=2 # Number of replicas DataMemory=80M # How much memory to allocate for data storage IndexMemory=18M # How much memory to allocate for index storage # For DataMemory and IndexMemory, we have used the # default values. Since the “world” database takes up # only about 500KB, this should be more than enough for # this example Cluster setup. # TCP/IP options: [TCP DEFAULT] portnumber=2202 # This the default; however, you can use any # port that is free for all the hosts in cluster # Note: It is recommended beginning with MySQL 5.0 that # you do not specify the portnumber at all and simply allow # the default value to be used instead # Management process options: [NDB_MGMD] hostname=198.168.0.111 # Hostname or IP address of MGM node datadir=/var/lib/mysql-cluster # Directory for MGM node logfiles # Options for data node “A”: [NDBD] # (one [NDBD] section per data node) hostname=198.168.0.112 # Hostname or IP address datadir=/usr/local/mysql/data # Directory for this data node’s datafiles # Options for data node “B”: [NDBD] hostname=198.168.0.113 # Hostname or IP address datadir=/usr/local/mysql/data # Directory for this data node’s datafiles # SQL node options: [MYSQLD] hostname=198.168.0.110 # Hostname or IP address # (additional mysqld connections can be # specified for this node for various # purposes such as running ndb_restore) 三、首次启动节点 1、启动管理节点 /usr/local/mysql/bin/ndb_mgmd –configdir=/var/lib/mysql-cluster -f /var/lib/mysql-cluster/config.ini 2、启动数据节点 首次启动需要–initial参数初始化，下一次启动就不需要了。 /usr/local/mysql/bin/ndbd –initial 3、启动SQL节点 /usr/local/mysql/bin/mysqld_safe &amp; 4、检查状态 如果一切正常，执行命令 /usr/local/mysql/bin/ndb_mgm -e show应该会输出类似信息： [root@localhost mysql-cluster]# /usr/local/mysql/bin/ndb_mgm -e show Connected to Management Server at: localhost:1186 Cluster Configuration ——————— [ndbd(NDB)] 2 node(s) id=2 @192.168.0.112 (mysql-5.5.27 ndb-7.2.8, Nodegroup: 0, Master) id=3 @192.168.0.113 (mysql-5.5.27 ndb-7.2.8, Nodegroup: 0) [ndb_mgmd(MGM)] 1 node(s) id=1 @192.168.0.111 (mysql-5.5.27 ndb-7.2.8) [mysqld(API)] 1 node(s) id=4 @192.168.0.110 (mysql-5.5.27 ndb-7.2.8) 四、测试服务是否正常 在SQL节点上执行如下数据库操作： /usr/local/mysql/bin/mysql -uroot -p mysql&gt; create database clusterdb;use clusterdb; mysql&gt; create table simples (id int not null primary key) engine=ndb; mysql&gt; insert into simples values (1),(2),(3),(4); mysql&gt; select * from simples; 如果出现： +—-+ | id | +—-+ | 1 | | 2 | | 4 | | 3 | +—-+ 则表示工作正常。 五、安全关闭和重启 1、关闭mysql集群，可在管理节点在执行如下命令： /usr/local/mysql/bin/ndb_mgm -e shutdown 2、重启管理节点 /usr/local/mysql/bin/ndb_mgmd –configdir=/var/lib/mysql-cluster -f /var/lib/mysql-cluster/config.ini 3、重启数据节点 /usr/local/mysql/bin/ndbd 参考：<a target="_blank" rel="noopener" href="http://dev.mysql.com/doc/refman/5.1/zh/ndbcluster.html">http://dev.mysql.com/doc/refman/5.1/zh/ndbcluster.html</a></p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -932,91 +1017,6 @@
     
     <div class="post-body" itemprop="articleBody">
           <p>使用方法： 注册会员（会员才能使用米券），购买商品，进入购物车，点击立即结算，下边会出现输入优惠券码，输入即可使用 米米乐商城21元米券满500使用（2014年3月31日前有效） 米券码：1850143008 米券码：1850764249 米券码：1850618653 米券码：1850515784 米券码：1849357355 米券码：1849956739 米券码：1849752200 米券码：1849386209 米米乐商城20元米券满100使用（2014年8月1日前有效） 米券码：2014185646 米券码：2014185650 米券码：2014185652 米券码：2014185655 米券码：2014185726 米券码：2014185727 米券码：2014185741 米券码：2014185750 米券码：2014185776 米券码：2014185778 米券码：2014185818</p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://www.jiliuke.com/2014/03/03/linux-e5-91-bd-e4-bb-a4-e6-89-a7-e8-a1-8c-e7-bd-91-e9-a1-b5/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="michaeldyl520">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Jiliuke">
-      <meta itemprop="description" content="Bring the crowds together, inspire unlimited">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | Jiliuke">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2014/03/03/linux-e5-91-bd-e4-bb-a4-e6-89-a7-e8-a1-8c-e7-bd-91-e9-a1-b5/" class="post-title-link" itemprop="url">linux命令执行网页</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2014-03-03 10:30:52" itemprop="dateCreated datePublished" datetime="2014-03-03T10:30:52+08:00">2014-03-03</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-04-15 13:04:50" itemprop="dateModified" datetime="2022-04-15T13:04:50+08:00">2022-04-15</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/CentOS/" itemprop="url" rel="index"><span itemprop="name">CentOS</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>curl <a target="_blank" rel="noopener" href="http://localhost/api/baidu.php?act=FullIndex">http://localhost/api/baidu.php?act=FullIndex</a></p>
 
       
     </div>

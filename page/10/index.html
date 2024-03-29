@@ -148,7 +148,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">137</span>
+          <span class="site-state-item-count">138</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -184,6 +184,119 @@
     </div>
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://www.jiliuke.com/2014/08/27/linux-scp-e4-b8-a4-e5-8f-b0-e6-9c-8d-e5-8a-a1-e5-99-a8-e4-b9-8b-e9-97-b4-e4-bc-a0-e8-be-93-e6-95-b0-e6-8d-ae-e7-9a-84-e5-91-bd-e4-bb-a4/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="michaeldyl520">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Jiliuke">
+      <meta itemprop="description" content="Bring the crowds together, inspire unlimited">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Jiliuke">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2014/08/27/linux-scp-e4-b8-a4-e5-8f-b0-e6-9c-8d-e5-8a-a1-e5-99-a8-e4-b9-8b-e9-97-b4-e4-bc-a0-e8-be-93-e6-95-b0-e6-8d-ae-e7-9a-84-e5-91-bd-e4-bb-a4/" class="post-title-link" itemprop="url">linux scp-两台服务器之间传输数据的命令</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2014-08-27 12:42:45" itemprop="dateCreated datePublished" datetime="2014-08-27T12:42:45+08:00">2014-08-27</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2022-04-15 13:04:50" itemprop="dateModified" datetime="2022-04-15T13:04:50+08:00">2022-04-15</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/CentOS/" itemprop="url" rel="index"><span itemprop="name">CentOS</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>我们在管理服务器或vps的时候，经常要上传和下载数据。比如当我们需要把数据从一个服务器搬到另一个服务器的时候，通常是从第一个服务器下载数据到我们电脑，再到ftp工具上传下载好的数据到远程服务器。但这样即浪费时间，又浪费精力。我们何不先在第一台服务器打包好，就直接传输数据到另一台服务器呢？而<a target="_blank" rel="noopener" href="http://www.centos.bz/" title="Linux">Linux</a> scp命令则刚好能实现两台服务器之间传输数据的作用。</p>
+<h3 id="什么是scp"><a href="#什么是scp" class="headerlink" title="什么是scp"></a>什么是scp</h3><p>　scp就是secure copy，是用来进行远程文件拷贝的。数据传输使用 ssh，并且和ssh 使用相同的认证方式，提供相同的安全保证 。 与rcp 不同的是，scp 在需要进行验证时会要求你输入密码或口令。</p>
+<h3 id="scp的用法"><a href="#scp的用法" class="headerlink" title="scp的用法"></a>scp的用法</h3><p><strong>从 本地 复制到 远程</strong> 命令基本格式： scp [可选参数] 本地文件名 远程用户名@远程地址:远程文件或目录 复制文件例子：</p>
+<ol>
+<li> scp /home/backup.zip <a href="mailto:&#114;&#111;&#111;&#116;&#64;&#119;&#x77;&#x77;&#46;&#101;&#x78;&#97;&#109;&#112;&#108;&#101;&#x2e;&#99;&#111;&#109;">&#114;&#111;&#111;&#116;&#64;&#119;&#x77;&#x77;&#46;&#101;&#x78;&#97;&#109;&#112;&#108;&#101;&#x2e;&#99;&#111;&#109;</a>:/home/others/backup</li>
+<li> scp /home/backup.zip <a href="mailto:&#x72;&#111;&#x6f;&#x74;&#x40;&#119;&#x77;&#119;&#46;&#101;&#120;&#97;&#x6d;&#112;&#108;&#x65;&#x2e;&#x63;&#111;&#x6d;">&#x72;&#111;&#x6f;&#x74;&#x40;&#119;&#x77;&#119;&#46;&#101;&#120;&#97;&#x6d;&#112;&#108;&#x65;&#x2e;&#x63;&#111;&#x6d;</a>:/home/others/otherbackup.zip</li>
+</ol>
+<p>第一个是本地文件backup.zip发送到远程backup目录下。 第二个是本地文件backup.zip发送到远程otherbackup.zip文件。 复制目录例子：</p>
+<ol>
+<li> scp -r /home/backup <a href="mailto:&#114;&#111;&#x6f;&#x74;&#64;&#x77;&#x77;&#119;&#x2e;&#101;&#x78;&#x61;&#109;&#x70;&#108;&#x65;&#46;&#99;&#x6f;&#109;">&#114;&#111;&#x6f;&#x74;&#64;&#x77;&#x77;&#119;&#x2e;&#101;&#x78;&#x61;&#109;&#x70;&#108;&#x65;&#46;&#99;&#x6f;&#109;</a>:/home/others/</li>
+</ol>
+<p>复制本地目录backup到远程目录others <strong>从 远程 复制到 本地</strong> 命令基本格式： scp [可选参数] 远程用户名@远程地址:远程文件或目录 本地文件名 例子：</p>
+<ol>
+<li> scp <a href="mailto:&#x72;&#x6f;&#x6f;&#116;&#64;&#x77;&#119;&#119;&#46;&#x65;&#x78;&#97;&#109;&#112;&#x6c;&#x65;&#x2e;&#99;&#x6f;&#x6d;">&#x72;&#x6f;&#x6f;&#116;&#64;&#x77;&#119;&#119;&#46;&#x65;&#x78;&#97;&#109;&#112;&#x6c;&#x65;&#x2e;&#99;&#x6f;&#x6d;</a>:/home/others/bakcup.zip /home/newbackup.zip</li>
+<li> scp -r <a href="mailto:&#x72;&#111;&#111;&#x74;&#x40;&#x77;&#x77;&#119;&#46;&#x65;&#x78;&#97;&#109;&#x70;&#x6c;&#101;&#x2e;&#x63;&#x6f;&#x6d;">&#x72;&#111;&#111;&#x74;&#x40;&#x77;&#x77;&#119;&#46;&#x65;&#x78;&#97;&#109;&#x70;&#x6c;&#101;&#x2e;&#x63;&#x6f;&#x6d;</a>:/home/backup /home/other/</li>
+</ol>
+<p>第一个是下载远程文件backup.zip到本地文件newbackup.zip。 第二个是下载远程目录bakcup到本地目录other。 <strong>scp可选参数：</strong></p>
+<p>参数</p>
+<p>解释</p>
+<p>-v</p>
+<p>和大多数 <a target="_blank" rel="noopener" href="https://www.centos.bz/tag/linux/" title="linux">linux</a> 命令中的 -v 意思一样 , 用来显示进度 . 可以用来查看连接 , 认证 , 或是配置错误 .</p>
+<p>-C</p>
+<p>使能压缩选项</p>
+<p>-P</p>
+<p>选择端口 . 注意 -p 已经被 rcp 使用 .</p>
+<p>-4</p>
+<p>强行使用 IPV4 地址 .</p>
+<p>-6</p>
+<p>强行使用 IPV6 地址 .</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -1306,91 +1419,6 @@
     
     <div class="post-body" itemprop="articleBody">
           <p>解决办法： 登入root（VPS）。 进入/etc/resolv.conf。 修改内容为下 nameserver 8.8.8.8 #google域名服务器 nameserver 8.8.4.4 #google域名服务器</p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://www.jiliuke.com/2014/05/15/linux-centos-e4-bf-ae-e6-94-b9ip-e5-9c-b0-e5-9d-80-ef-bc-8c-e9-87-8d-e5-90-af-e4-b8-a2-e5-a4-b1-e8-ae-be-e7-bd-ae-e7-9a-84-e9-97-ae-e9-a2-98/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="michaeldyl520">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Jiliuke">
-      <meta itemprop="description" content="Bring the crowds together, inspire unlimited">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | Jiliuke">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2014/05/15/linux-centos-e4-bf-ae-e6-94-b9ip-e5-9c-b0-e5-9d-80-ef-bc-8c-e9-87-8d-e5-90-af-e4-b8-a2-e5-a4-b1-e8-ae-be-e7-bd-ae-e7-9a-84-e9-97-ae-e9-a2-98/" class="post-title-link" itemprop="url">linux CentOS 修改IP地址，重启丢失设置的问题</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2014-05-15 09:24:57" itemprop="dateCreated datePublished" datetime="2014-05-15T09:24:57+08:00">2014-05-15</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-04-15 13:04:50" itemprop="dateModified" datetime="2022-04-15T13:04:50+08:00">2022-04-15</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/CentOS/" itemprop="url" rel="index"><span itemprop="name">CentOS</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>修改对应网卡的IP地址的配置文件 # vi /etc/sysconfig/network-scripts/ifcfg-eth0 修改以下内容 DEVICE=eth0 #描述网卡对应的设备别名，例如ifcfg-eth0的文件中它为eth0 BOOTPROTO=static #设置网卡获得ip地址的方式，可能的选项为static，dhcp或bootp，分别对应静态指定的 ip地址，通过dhcp协议获得的ip地址，通过bootp协议获得的ip地址 BROADCAST=192.168.0.255 #对应的子网广播地址 HWADDR=00:07:E9:05:E8:B4 #对应的网卡物理地址 IPADDR=12.168.1.2 #如果设置网卡获得 ip地址的方式为静态指定，此字段就指定了网卡对应的ip地址 IPV6INIT=no IPV6_AUTOCONF=no NETMASK=255.255.255.0 #网卡对应的网络掩码 NETWORK=192.168.1.0 #网卡对应的网络地址 ONBOOT=yes #系统启动时是否设置此网络接口，设置为yes时，系统启动时激活此设备 二、CentOS 修改网关 修改对应网卡的网关的配置文件 [root@centos]# vi /etc/sysconfig/network 修改以下内容 NETWORKING=yes(表示系统是否使用网络，一般设置为yes。如果设为no，则不能使用网络，而且很多系统服务程序将无法启动) HOSTNAME=centos(设置本机的主机名，这里设置的主机名要和/etc/hosts中设置的主机名对应) GATEWAY=192.168.1.1(设置本机连接的网关的IP地址。例如，网关为10.0.0.2) 三、CentOS 修改DNS 修改对应网卡的DNS的配置文件 # vi /etc/resolv.conf 修改以下内容 nameserver 8.8.8.8 #google域名服务器 nameserver 8.8.4.4 #google域名服务器 四、重新启动网络配置 # service network restart 或 # /etc/init.d/network restart 修改 IP 地址 即时生效: # ifconfig eth0 192.168.0.2 netmask 255.255.255.0 启动生效: 修改 /etc/sysconfig/network-scripts/ifcfg-eth0 修改网关 Default Gateway 即时生效: # route add default gw 192.168.0.1 dev eth0 启动生效: 修改 /etc/sysconfig/network 修改 DNS 修改/etc/resolv.conf 修改后可即时生效，启动同样有效 修改 host name 即时生效: # hostname centos1 启动生效: 修改/etc/sysconfig/network</p>
 
       
     </div>
