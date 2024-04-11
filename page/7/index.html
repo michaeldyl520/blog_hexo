@@ -148,7 +148,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">138</span>
+          <span class="site-state-item-count">139</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -159,7 +159,7 @@
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">147</span>
+        <span class="site-state-item-count">150</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -184,6 +184,123 @@
     </div>
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://www.jiliuke.com/2015/03/30/centos-6-3-nfs-e7-9a-84-e5-ae-89-e8-a3-85-e9-85-8d-e7-bd-ae-e3-80-81-e5-90-af-e5-8a-a8-e5-8f-8amount-e6-8c-82-e8-bd-bd-e6-96-b9-e6-b3-95-2/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="michaeldyl520">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Jiliuke">
+      <meta itemprop="description" content="Bring the crowds together, inspire unlimited">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Jiliuke">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2015/03/30/centos-6-3-nfs-e7-9a-84-e5-ae-89-e8-a3-85-e9-85-8d-e7-bd-ae-e3-80-81-e5-90-af-e5-8a-a8-e5-8f-8amount-e6-8c-82-e8-bd-bd-e6-96-b9-e6-b3-95-2/" class="post-title-link" itemprop="url">CentOS 6.3 NFS的安装配置、启动及mount挂载方法</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2015-03-30 11:08:23" itemprop="dateCreated datePublished" datetime="2015-03-30T11:08:23+08:00">2015-03-30</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2022-04-15 13:04:50" itemprop="dateModified" datetime="2022-04-15T13:04:50+08:00">2022-04-15</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/CentOS/" itemprop="url" rel="index"><span itemprop="name">CentOS</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p><strong>一、环境介绍：</strong> 服务器：centos 192.168.1.225 客户端：centos 192.168.1.226 <strong>二、安装：</strong> NFS的安装配置： centos 5 :</p>
+<p>yum -y install nfs-utils portmap</p>
+<p>centos 6(在CentOS 6.3当中，portmap服务由rpcbind负责) :</p>
+<p>yum -y install nfs-utils rpcbind</p>
+<p><strong>三、服务器端配置：</strong> 1、创建共享目录：</p>
+<p>[root@centos2 /]# mkdir /usr/local/test</p>
+<p>2、NFS文件配置：</p>
+<p>[root@centos2 /]# vi /etc/exports<br>#增加一行：<br>/usr/local/test/ 192.168.1.226(rw,no_root_squash,no_all_squash,sync)</p>
+<p>:x保存退出； 使配置生效：</p>
+<p>[root@centos2 /]# exportfs -r</p>
+<p>注：配置文件说明： /usr/local/test/ 为共享的目录，使用绝对路径。 192.168.1.226(rw,no_root_squash,no_all_squash,sync) 为客户端的地址及权限，地址可以是一个网段，一个IP地址或者是一个域名，域名支持通配符，如：*.youxia.com，地址与权限中间没有空格，权限说明： rw：read-write，可读写； ro：read-only，只读； sync：文件同时写入硬盘和内存； async：文件暂存于内存，而不是直接写入内存； no_root_squash：NFS客户端连接服务端时如果使用的是root的话，那么对服务端分享的目录来说，也拥有root权限。显然开启这项是不安全的。 root_squash：NFS客户端连接服务端时如果使用的是root的话，那么对服务端分享的目录来说，拥有匿名用户权限，通常他将使用nobody或nfsnobody身份； all_squash：不论NFS客户端连接服务端时使用什么用户，对服务端分享的目录来说都是拥有匿名用户权限； anonuid：匿名用户的UID值，通常是nobody或nfsnobody，可以在此处自行设定； anongid：匿名用户的GID值。 3、启动: centos6: [root@centos2 /]# service rpcbind start</p>
+<p>Starting rpcbind:                                          [  OK  ]<br>[root@centos2 /]# service nfs start<br>Starting NFS services:                                     [  OK  ]<br>Starting NFS quotas:                                       [  OK  ]<br>Starting NFS mountd:                                       [  OK  ]<br>Stopping RPC idmapd:                                       [  OK  ]<br>Starting RPC idmapd:                                       [  OK  ]<br>Starting NFS daemon:                                       [  OK  ]<br>[root@centos2 /]#</p>
+<p>centos 5</p>
+<p>[root@centos2 /]# service portmap start<br>[root@centos2 /]# service nfs start<br>[root@centos2 /]#</p>
+<p><strong>四、客户端挂载：</strong> 1、创建需要挂载的目录：</p>
+<p>[root@localhost ~]# mkdir /usr/local/test<br>[root@localhost ~]#</p>
+<p>2、测试挂载：</p>
+<p>[root@localhost ~]# showmount -e 192.168.1.225<br>Export list for 192.168.1.225:<br>/usr/local/test 192.168.1.226<br>[root@localhost ~]#</p>
+<p>如果显示：rpc mount export: RPC: Unable to receive; errno = No route to host，则需要在服务端关闭防火墙（稍候会详细说）。 3、挂载： [root@localhost ~]# mount -t nfs 192.168.1.225:/usr/local/test /usr/local/test</p>
+<p>[root@localhost ~]# mount<br>/dev/mapper/VolGroup-lv_root on / type ext4 (rw)<br>proc on /proc type proc (rw)<br>sysfs on /sys type sysfs (rw)<br>devpts on /dev/pts type devpts (rw,gid=5,mode=620)<br>tmpfs on /dev/shm type tmpfs (rw)<br>/dev/sda1 on /boot type ext4 (rw)<br>none on /proc/sys/fs/binfmt_misc type binfmt_misc (rw)<br>sunrpc on /var/lib/nfs/rpc_pipefs type rpc_pipefs (rw)<br>nfsd on /proc/fs/nfsd type nfsd (rw)<br>192.168.1.225:/usr/local/test on /usr/local/test type nfs (rw,vers=4,addr=192.168.1.225,clientaddr=192.168.1.226)<br>[root@localhost ~]#</p>
+<p>如果信息如上显示则挂载成功！ 4、测试： 客户端生成一个文件：</p>
+<p>[root@centos2 /]# cd /usr/local/test/<br>[root@centos2 test]# echo “hello nfs test”&gt;&gt;test<br>[root@centos2 test]# ll<br>total 4<br>-rw-r–r– 1 root root 15 Apr  9 13:24 test<br>[root@centos2 test]#</p>
+<p>服务端检查：</p>
+<p>[root@centos2 /]# cd /usr/local/test/<br>[root@centos2 test]# ll<br>total 4<br>-rw-r–r– 1 root root 15 Apr  9 13:24 test<br>[root@centos2 test]#</p>
+<p>挂载成功！ <strong>五、解除挂载：</strong> [root@localhost ~]# umount /usr/local/test</p>
+<p>[root@localhost ~]# mount<br>/dev/mapper/VolGroup-lv_root on / type ext4 (rw)<br>proc on /proc type proc (rw)<br>sysfs on /sys type sysfs (rw)<br>devpts on /dev/pts type devpts (rw,gid=5,mode=620)<br>tmpfs on /dev/shm type tmpfs (rw)<br>/dev/sda1 on /boot type ext4 (rw)<br>none on /proc/sys/fs/binfmt_misc type binfmt_misc (rw)<br>sunrpc on /var/lib/nfs/rpc_pipefs type rpc_pipefs (rw)<br>nfsd on /proc/fs/nfsd type nfsd (rw)<br>[root@localhost ~]#</p>
+<p>如果遇到：umount.nfs: /usr/local/test: device is busy 可能用命令： [root@localhost /]# fuser -m -v /usr/local/test</p>
+<pre><code>                 用户     进程号 权限   命令
+</code></pre>
+<p>/usr/local/test/:              root       2798 ..c.. bash<br>                     root       2996 ..c.. su<br>[root@localhost /]# kill -9 2798</p>
+<p>[root@localhost /]# kill -9 2996</p>
+<p>[root@localhost /]# umount /usr/local/test<br>[root@localhost /]#</p>
+<p>六、服务器端防火墙设置（NFS 开启防墙配置）： 1、修改/etc/service,添加以下内容（端口号必须在1024以下,且未被占用） # Local services mountd 1011/tcp #rpc.mountd mountd 1011/udp #rpc.mountd rquotad 1012/tcp #rpc.rquotad rquotad 1012/udp #rpc.rquotad 2、重起Linux NFS服务 service nfs restart 3、此时rpc相关端口已经被固定,可以为Linux NFS添加防火墙规则 #portmap /sbin/iptables -A INPUT -s 192.168.1.0/254 -p tcp –dport 111 -j ACCEPT /sbin/iptables -A INPUT -s 192.168.1.0/254 -p udp –dport 111 -j ACCEPT #nfsd /sbin/iptables -A INPUT -s 192.168.1.0/254 -p tcp –dport 2049 -j ACCEPT /sbin/iptables -A INPUT -s 192.168.1.0/254 -p udp –dport 2049 -j ACCEPT #mountd /sbin/iptables -A INPUT -s 192.168.1.0/254 -p tcp –dport 1011 -j ACCEPT /sbin/iptables -A INPUT -s 192.168.1.0/254 -p udp –dport 1011 -j ACCEPT #rquotad /sbin/iptables -A INPUT -s 192.168.1.0/254 -p tcp –dport 1012 -j ACCEPT /sbin/iptables -A INPUT -s 192.168.1.0/254 -p udp –dport 1012 -j ACCEPT #rpc.statd /sbin/iptables -A INPUT -s 192.168.1.0/254 -p tcp –dport 32768 -j ACCEPT /sbin/iptables -A INPUT -s 192.168.1.0/254 -p udp –dport 32768 -j ACCEPT —TCP方法成功——————————————- -A INPUT -m state –state NEW -m tcp -p tcp –dport 111 -j ACCEPT -A INPUT -m state –state NEW -m tcp -p tcp –dport 2049 -j ACCEPT -A INPUT -m state –state NEW -m tcp -p tcp –dport 1011 -j ACCEPT -A INPUT -m state –state NEW -m tcp -p tcp –dport 1012 -j ACCEPT -A INPUT -m state –state NEW -m tcp -p tcp –dport 32768 -j ACCEPT 客户端在挂载的时候遇到的一个问题如下，可能是网络不太稳定，NFS默认是用UDP协议，换成TCP协议即可： mount -t nfs 192.168.1.225:/usr/local/test /usr/local/test  -o proto=tcp -o nolock /etc/init.d/iptables restart #最后重启防火墙使配置生效 防火墙端口说明： portmap或者rpcbind(CentOS 6.x)使用：tcp/udp 111 nfs使用:tcp/udp 2049 mountd使用: TCP/UDP 892 rquotad使用：tcp/udp 875 status使用: TCP/UDP 1001-1004共四个端口 nlockmgr使用:TCP/32803端口 UDP/32769端口 <strong><em>rpcinfo -p 查看rpcbind使用的端口号</em></strong></p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -1036,91 +1153,6 @@
     
     <div class="post-body" itemprop="articleBody">
           <p>目标 SMTP 服务器 mail1.fabrikam.com 源域 contoso.com 发件人的电子邮件地址 <a href="mailto:&#x63;&#x68;&#x72;&#x69;&#x73;&#64;&#99;&#111;&#110;&#116;&#x6f;&#x73;&#111;&#46;&#99;&#x6f;&#x6d;">&#x63;&#x68;&#x72;&#x69;&#x73;&#64;&#99;&#111;&#110;&#116;&#x6f;&#x73;&#111;&#46;&#99;&#x6f;&#x6d;</a> 收件人的电子邮件地址 <a href="mailto:&#107;&#97;&#x74;&#101;&#64;&#102;&#97;&#x62;&#x72;&#105;&#x6b;&#97;&#x6d;&#46;&#x63;&#x6f;&#x6d;">&#107;&#97;&#x74;&#101;&#64;&#102;&#97;&#x62;&#x72;&#105;&#x6b;&#97;&#x6d;&#46;&#x63;&#x6f;&#x6d;</a> 邮件主题 来自 Contoso 的测试 邮件正文 这是一封测试邮件 使用 Telnet 端口 25 测试 SMTP 通信 在命令提示符下，键入 telnet，再按 Enter 键。此命令将打开 Telnet 会话。 键入 set localecho，再按 Enter 键。此可选命令可使您在键入字符时查看这些字符。某些 SMTP 服务器可能需要此设置。 键入 set logfile &lt;文件名&gt;。此可选命令可以将 Telnet 会话记录到指定的日志文件中。如果您仅指定了文件名，则日志文件的位置将是当前工作目录。如果您指定了路径和文件名，该路径必须位于计算机本地。指定的路径和文件名都必须以 Microsoft DOS 8.3 格式输入。您指定的路径必须已存在。如果您指定了一个不存在的日志文件，系统将为您创建一个日志文件。 键入 open mail1.fabrikam.com 25，再按 ENTER 键。 键入 EHLO contoso.com，再按 ENTER 键。 键入 MAIL FROM:<a href="mailto:&#99;&#x68;&#114;&#105;&#115;&#64;&#x63;&#111;&#110;&#x74;&#x6f;&#x73;&#111;&#x2e;&#99;&#x6f;&#109;">&#99;&#x68;&#114;&#105;&#115;&#64;&#x63;&#111;&#110;&#x74;&#x6f;&#x73;&#111;&#x2e;&#99;&#x6f;&#109;</a>，再按 ENTER 键。 键入 RCPT TO:<a href="mailto:&#x6b;&#97;&#116;&#101;&#x40;&#x66;&#97;&#x62;&#114;&#x69;&#x6b;&#x61;&#109;&#46;&#99;&#111;&#109;">&#x6b;&#97;&#116;&#101;&#x40;&#x66;&#97;&#x62;&#114;&#x69;&#x6b;&#x61;&#109;&#46;&#99;&#111;&#109;</a> NOTIFY=success,failure，再按 ENTER 键。可选的 NOTIFY 命令可定义目标 SMTP 服务器必须向发件人提供的特定传递状态通知 (DSN) 邮件。DSN 邮件是在 RFC 1891 中定义的。在本例中，您要查询有关邮件传递成功或失败的 DSN 邮件。 键入 DATA，再按 Enter 键。您将收到与以下类似的响应： 354 Start mail input; end with . 键入 主题：来自 Contoso 的测试，再按 ENTER 键。 按 Enter 键。RFC 2822 需要在 Subject: 头字段和邮件正文间留一个空行。 键入 这是一封测试邮件，再按 ENTER 键。 按 ENTER 键，键入句点 ( . )，再按 ENTER 键。您将收到与以下类似的响应： 250 2.6.0 Queued mail for delivery 若要与目标 SMTP 服务器断开连接，请键入 QUIT，再按 ENTER 键。您将收到与以下类似的响应： 221 2.0.0 Service closing transmission channel 若要关闭 Telnet 会话，请键入 quit，再按 ENTER 键。 解释 Telnet 会话与 SMTP 服务器的结果 针对您在以上示例中输入的命令，本节提供有关这些命令响应的详细信息。 注意： 在 RFC 2821 中定义的三位数 SMTP 响应代码对于所有 SMTP 邮件服务器都相同。对于某些 SMTP 邮件服务器，文本说明可能稍有不同。在本示例中，目标计算机正在运行 Exchange Server 2007。 打开 mail1.fabrikam.com 25 成功响应 220 mail1.fabrikam.com Microsoft ESMTP MAIL Service ready at 失败响应 Connecting to mail1.fabrikam.com…Could not open connection to the host, on port 25: Connect failed 失败的可能原因 目标 SMTP 服务不可用。 对目标防火墙有所限制。 对源防火墙有所限制。 指定的目标 SMTP 服务器的 FQDN 或 IP 地址不正确。 指定的端口号不正确。 EHLO contoso.com 成功响应 250 mail1.fabrikam.com Hello [] 失败响应 501 5.5.4 Invalid domain name 失败的可能原因 域名中存在无效字符。或者，存在有关目标 SMTP 服务器的连接限制。 注意： EHLO 是扩展的简单邮件传输协议 (ESMTP) 命令动词，该命令动词是在 RFC 2821 中定义的。ESMTP 服务器可在初始连接时公布其功能。这些功能包括其最大的可接受邮件大小以及其支持的身份验证方法。HELO 是 RFC 821 中定义的旧版 SMTP 命令动词。多数 SMTP 邮件服务器都支持 ESMTP 和 EHLO。 MAIL FROM:<a href="mailto:&#x63;&#x68;&#x72;&#105;&#x73;&#x40;&#99;&#111;&#x6e;&#116;&#x6f;&#115;&#x6f;&#x2e;&#x63;&#111;&#x6d;">&#x63;&#x68;&#x72;&#105;&#x73;&#x40;&#99;&#111;&#x6e;&#116;&#x6f;&#115;&#x6f;&#x2e;&#x63;&#111;&#x6d;</a> 成功响应 250 2.1.0 Sender OK 失败响应 550 5.1.7 Invalid address 可能的失败原因 发件人的电子邮件地址中存在语法错误。 失败响应 530 5.7.1 Client was not authenticated 可能的失败原因 目标服务器不接受匿名邮件提交。如果您试图使用 Telnet 直接向集线器传输服务器提交邮件，则将收到此错误消息。 RCPT TO:<a href="mailto:&#x6b;&#97;&#x74;&#101;&#64;&#102;&#97;&#98;&#114;&#x69;&#x6b;&#x61;&#x6d;&#x2e;&#x63;&#x6f;&#x6d;">&#x6b;&#97;&#x74;&#101;&#64;&#102;&#97;&#98;&#114;&#x69;&#x6b;&#x61;&#x6d;&#x2e;&#x63;&#x6f;&#x6d;</a> NOTIFY=success,failure 成功响应 250 2.1.5 Recipient OK 失败响应 550 5.1.1 User unknown 可能的失败原因 指定的收件人在组织中不存在。</p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://www.jiliuke.com/2015/03/11/iredmail-e9-97-ae-e9-a2-98-e9-9b-86-e9-94-a6/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="michaeldyl520">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Jiliuke">
-      <meta itemprop="description" content="Bring the crowds together, inspire unlimited">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | Jiliuke">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2015/03/11/iredmail-e9-97-ae-e9-a2-98-e9-9b-86-e9-94-a6/" class="post-title-link" itemprop="url">iredmail 问题集锦</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2015-03-11 13:39:31" itemprop="dateCreated datePublished" datetime="2015-03-11T13:39:31+08:00">2015-03-11</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-04-15 13:04:50" itemprop="dateModified" datetime="2022-04-15T13:04:50+08:00">2022-04-15</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/iredMail/" itemprop="url" rel="index"><span itemprop="name">iredMail</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>配置好后发现收邮件很慢 多半是灰名单引起的， telnet 25测试出现这个Recipient address rejected: Greylisting in effect，请到/etc/policyd/cluebringer.conf中查找Greylisting, # Greylisting module [Greylisting] enable=1 enable=1改为0 然后重启灰名单处理即可 /etc/init.d/cbpolicyd restart</p>
 
       
     </div>

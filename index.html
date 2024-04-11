@@ -148,7 +148,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">138</span>
+          <span class="site-state-item-count">139</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -159,7 +159,7 @@
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">147</span>
+        <span class="site-state-item-count">150</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -193,6 +193,84 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://www.jiliuke.com/2024/04/11/wakeonlan/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="michaeldyl520">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Jiliuke">
+      <meta itemprop="description" content="Bring the crowds together, inspire unlimited">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Jiliuke">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2024/04/11/wakeonlan/" class="post-title-link" itemprop="url">Linux 系统远程开机(WOL)</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2024-04-11 09:45:26 / 修改时间：10:02:17" itemprop="dateCreated datePublished" datetime="2024-04-11T09:45:26+08:00">2024-04-11</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="局域网远程开机-WOL"><a href="#局域网远程开机-WOL" class="headerlink" title="局域网远程开机(WOL)"></a>局域网远程开机(WOL)</h1><p>前置条件，主板需要支持wakonlan，Deepin 20.9 为例</p>
+<h2 id="1-查看lan网卡是否开启WOL"><a href="#1-查看lan网卡是否开启WOL" class="headerlink" title="1.查看lan网卡是否开启WOL"></a>1.查看lan网卡是否开启WOL</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo ethtool enp3s0</span><br></pre></td></tr></table></figure>
+<p>如果 <code>Wake-on: d</code> 表示未开启</p>
+<h2 id="2-设置-wake-on-g-开启WOL"><a href="#2-设置-wake-on-g-开启WOL" class="headerlink" title="2.设置 wake-on: g 开启WOL"></a>2.设置 <code>wake-on: g</code> 开启WOL</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo ethtool -s enp3s0 wol g</span><br></pre></td></tr></table></figure>
+<h2 id="3-设置开机自启动"><a href="#3-设置开机自启动" class="headerlink" title="3.设置开机自启动"></a>3.设置开机自启动</h2><p>添加rc.local文件<br><code>sudo vim /etc/rc.local</code></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">!/bin/bash</span></span><br><span class="line"><span class="meta">#</span><span class="bash"></span></span><br><span class="line"><span class="bash"><span class="comment"># rc.local</span></span></span><br><span class="line"><span class="meta">#</span><span class="bash"></span></span><br><span class="line"><span class="bash"><span class="comment"># This script is executed at the end of each multiuser runlevel.</span></span></span><br><span class="line"><span class="meta">#</span><span class="bash"> Make sure that the script will <span class="string">&quot;exit 0&quot;</span> on success or any other</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> value on error.</span></span><br><span class="line"><span class="meta">#</span><span class="bash"></span></span><br><span class="line"><span class="bash"><span class="comment"># In order to enable or disable this script just change the execution</span></span></span><br><span class="line"><span class="meta">#</span><span class="bash"> bits.</span></span><br><span class="line"><span class="meta">#</span><span class="bash"></span></span><br><span class="line"><span class="bash"><span class="comment"># By default this script does nothing.</span></span></span><br><span class="line"></span><br><span class="line">/usr/sbin/ethtool -s enp3s0 wol g</span><br><span class="line"></span><br><span class="line">exit 0</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo chmod +x /etc/rc.local</span><br><span class="line">sudo systemctl enable rc-local</span><br></pre></td></tr></table></figure>
+<p>然后重启计算机</p>
+<h2 id="4-另外一台局域网电脑安装wakeonlan"><a href="#4-另外一台局域网电脑安装wakeonlan" class="headerlink" title="4.另外一台局域网电脑安装wakeonlan"></a>4.另外一台局域网电脑安装wakeonlan</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install etherwake</span><br></pre></td></tr></table></figure>
+<h2 id="5-发送数据包到上面配置的电脑的MAC地址启动"><a href="#5-发送数据包到上面配置的电脑的MAC地址启动" class="headerlink" title="5.发送数据包到上面配置的电脑的MAC地址启动"></a>5.发送数据包到上面配置的电脑的MAC地址启动</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wakeonlan &#123;MAC Address&#125;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
     <link itemprop="mainEntityOfPage" href="http://www.jiliuke.com/2024/03/29/magento2-phpunit-test/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -211,7 +289,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/2024/03/29/magento2-phpunit-test/" class="post-title-link" itemprop="url">magento2-unit-test</a>
+          <a href="/2024/03/29/magento2-phpunit-test/" class="post-title-link" itemprop="url">magento2 单元测试</a>
         </h2>
 
         <div class="post-meta-container">
@@ -221,9 +299,15 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">发表于</span>
-      
 
-      <time title="创建时间：2024-03-29 18:42:45 / 修改时间：18:53:39" itemprop="dateCreated datePublished" datetime="2024-03-29T18:42:45+08:00">2024-03-29</time>
+      <time title="创建时间：2024-03-29 18:42:45" itemprop="dateCreated datePublished" datetime="2024-03-29T18:42:45+08:00">2024-03-29</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2024-04-11 10:03:14" itemprop="dateModified" datetime="2024-04-11T10:03:14+08:00">2024-04-11</time>
     </span>
 
   
@@ -837,82 +921,6 @@
     <div class="post-body" itemprop="articleBody">
           <p>实际应用中会出现需要减少导出的备份体积，然后在本地导入再开发，可以大幅缩短导入等待时间,方法如下</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sed &#x27;/INSERT INTO `tablelog1`/d&#x27; xxxx.sql | sed &#x27;/INSERT INTO `tablelog2`/d&#x27; | sed &#x27;/INSERT INTO `tablelog3`/d&#x27; | sed &#x27;/INSERT INTO `tablelog4`/d&#x27; | sed &#x27;/INSERT INTO `tablelog5`/d&#x27; &gt; reduced.sql</span><br></pre></td></tr></table></figure>
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://www.jiliuke.com/2022/05/16/mysql-tips/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="michaeldyl520">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Jiliuke">
-      <meta itemprop="description" content="Bring the crowds together, inspire unlimited">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | Jiliuke">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2022/05/16/mysql-tips/" class="post-title-link" itemprop="url">MYSQL Tips</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2022-05-16 10:24:37" itemprop="dateCreated datePublished" datetime="2022-05-16T10:24:37+08:00">2022-05-16</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-06-30 09:58:51" itemprop="dateModified" datetime="2022-06-30T09:58:51+08:00">2022-06-30</time>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>一些有用mysql tips</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">#统计所有数据库从大到小排列</span><br><span class="line">select TABLE_SCHEMA,round(SUM(DATA_LENGTH + INDEX_LENGTH)/1024/1024,2) as data from information_schema.tables GROUP BY TABLE_SCHEMA order by data desc;</span><br><span class="line">#统计数据库大小</span><br><span class="line">select round(SUM(DATA_LENGTH + INDEX_LENGTH)/1024/1024,2) as data from information_schema.tables where TABLE_SCHEMA=&quot;xxxxxx&quot;;</span><br><span class="line">#统计数据表大小</span><br><span class="line">select table_name,round(SUM(DATA_LENGTH + INDEX_LENGTH)/1024/1024,2) as data from information_schema.tables where TABLE_SCHEMA=&quot;xxxxxx&quot; GROUP BY table_name order by data desc;</span><br><span class="line">#批量修改域名</span><br><span class="line">UPDATE core_config_data SET value = replace (value,&#x27;xxx.xxx.com&#x27;,&#x27;xxx.xxx.local&#x27;) WHERE value LIKE &#x27;%xxx.xxx.com%&#x27;;</span><br></pre></td></tr></table></figure>
       
     </div>
 

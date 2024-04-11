@@ -148,7 +148,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">138</span>
+          <span class="site-state-item-count">139</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -159,7 +159,7 @@
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">147</span>
+        <span class="site-state-item-count">150</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -184,6 +184,95 @@
     </div>
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://www.jiliuke.com/2014/10/31/android-e4-b8-ad-getapplicationcontext-e3-80-81this-e3-80-81getapplication-e4-b9-8b-e9-97-b4-e7-9a-84-e5-8c-ba-e5-88-ab/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="michaeldyl520">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Jiliuke">
+      <meta itemprop="description" content="Bring the crowds together, inspire unlimited">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Jiliuke">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2014/10/31/android-e4-b8-ad-getapplicationcontext-e3-80-81this-e3-80-81getapplication-e4-b9-8b-e9-97-b4-e7-9a-84-e5-8c-ba-e5-88-ab/" class="post-title-link" itemprop="url">Android 中 getApplicationContext()、this、getApplication()之间的区别</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2014-10-31 11:14:39" itemprop="dateCreated datePublished" datetime="2014-10-31T11:14:39+08:00">2014-10-31</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2022-04-15 13:04:50" itemprop="dateModified" datetime="2022-04-15T13:04:50+08:00">2022-04-15</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/android/" itemprop="url" rel="index"><span itemprop="name">android</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/android/%E5%AE%89%E5%8D%93%E9%97%AE%E9%A2%98%E9%9B%86%E9%94%A6/" itemprop="url" rel="index"><span itemprop="name">安卓问题集锦</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>1. getApplicationContext():生命周期是整个应用，应用摧毁，它才摧毁。 2. this:代表当前,在Activity当中就是代表当前的Activity，换句话说就是Activity.this在Activity当中可以缩写为this. 3. getApplication():andorid 开发中共享全局数据; 我们在平时的开发中，有时候可能会需要一些全局数据，来让应用中得所有Activity和View都能访问到，大家在遇到这种情况时，可能首先会想到自己定义一个类，然后创建很多静态成员，不过andorid已经为我们提供了这种情况的解决方案：在Android中，有一个名为Application的类，我们可以在Activity中使用getApplication()，方法来获得，它是代表我们的应用程序的类，使用它可以获得当前应用的主题，资源文件中的内容等，这个类更灵活的一个特性就是可以被我们继承，来添加我们自己的全局属性。</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -1210,108 +1299,6 @@
 <p>}</p>
 </blockquote>
 <p>};</p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://www.jiliuke.com/2014/08/28/cdn-e5-8a-a0-e9-80-9f-e5-90-8e-e8-8e-b7-e5-8f-96-e7-9c-9f-e5-ae-9eip-e7-9a-84-e6-96-b9-e6-b3-95/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="michaeldyl520">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Jiliuke">
-      <meta itemprop="description" content="Bring the crowds together, inspire unlimited">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | Jiliuke">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2014/08/28/cdn-e5-8a-a0-e9-80-9f-e5-90-8e-e8-8e-b7-e5-8f-96-e7-9c-9f-e5-ae-9eip-e7-9a-84-e6-96-b9-e6-b3-95/" class="post-title-link" itemprop="url">cdn加速后获取真实IP的方法</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2014-08-28 09:12:34" itemprop="dateCreated datePublished" datetime="2014-08-28T09:12:34+08:00">2014-08-28</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-04-15 13:04:50" itemprop="dateModified" datetime="2022-04-15T13:04:50+08:00">2022-04-15</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/cdn/" itemprop="url" rel="index"><span itemprop="name">cdn</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>请把以下程序相应的部分加到贵司的源程序中，以实现获取最终客户IP代码的功能。</p>
-<p>如果您需要其它语言的例子，我们也可以提供。需要注意的是这些代码是在您切换CDN后生效，如未使用CDN服务，这些代码是无法获得用户IP的。</p>
-<p>CDN回源请求时会在请求中加一个头,该头中的ip是最终客户的ip：</p>
-<p>Cdn-Src-Ip:192.168.0.10</p>
-<p>下面是分别用java和C#，Asp写的取头的片段。</p>
-<p>Java:</p>
-<p>String srcIp = request.getHeader(“Cdn-Src-Ip”); if(srcIp == null){ srcIp = request.getRemoteAddr();</p>
-<p>}</p>
-<p>[注]request是HttpServletRequest类型的参数，无论是直接写serverlet还是用struts都会传入该参数。</p>
-<p>Asp(用C#):</p>
-<p>String srcIp = Request.Headers[“Cdn-Src-Ip”];</p>
-<p>if(srcIp == null){</p>
-<p>  srcIp = Request.UserHostAddress;</p>
-<p>}</p>
-<p>Asp:</p>
-<p>&lt;% Request.ServerVariables(“HTTP_Cdn-Src-Ip”) %&gt;</p>
-<p>PHP：</p>
-<p>$user_IP = ($_SERVER[“HTTP_CDN_SRC_IP”]);</p>
 
       
     </div>
