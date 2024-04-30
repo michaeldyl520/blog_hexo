@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://www.jiliuke.com/2024/03/29/magento2-phpunit-test/</loc>
+    <loc>http://www.jiliuke.com/2024/03/29/magento2-unit-test/</loc>
     
     <lastmod>2024-04-30</lastmod>
     
@@ -2323,7 +2323,14 @@
   </url>
   
   <url>
-    <loc>http://www.jiliuke.com/tags/phpunit/</loc>
+    <loc>http://www.jiliuke.com/tags/phpunit-testing/</loc>
+    <lastmod>2024-04-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.jiliuke.com/tags/javascript-testing/</loc>
     <lastmod>2024-04-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>

@@ -3734,23 +3734,6 @@ $("#datepicker").datepicker('option', 'dateFormat','yy-mm-dd');//set dateFormat
       </tags>
   </entry>
   <entry>
-    <title>magento2 单元测试</title>
-    <url>/2024/03/29/magento2-phpunit-test/</url>
-    <content><![CDATA[<h1 id="1-PHP-Unit-Testing"><a href="#1-PHP-Unit-Testing" class="headerlink" title="1.PHP Unit Testing"></a>1.PHP Unit Testing</h1><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line"></span><br><span class="line">namespace DYL\Test\Test\Unit\Plugin\Framework\DB;</span><br><span class="line"></span><br><span class="line">use PHPUnit\Framework\TestCase;</span><br><span class="line">use DYL\Test\Plugin\Framework\DB\FieldDataConverter;</span><br><span class="line">use Magento\Framework\DB\Query\BatchRangeIteratorFactory;</span><br><span class="line"></span><br><span class="line">class FieldDataConverterTest extends TestCase</span><br><span class="line">&#123;</span><br><span class="line">    public function setUp(): void</span><br><span class="line">    &#123;</span><br><span class="line">        $test1 = $this-&gt;createMock(\DYL\Test\Model\Test1::class);</span><br><span class="line">        $selectFactory = $this-&gt;createMock(\Magento\Framework\DB\SelectFactory::class);</span><br><span class="line">        $test2 = $this-&gt;createMock(\DYL\Test\Helper\Test2::class);</span><br><span class="line">        $batchRangeIteratorFactory = $this-&gt;createMock(BatchRangeIteratorFactory::class);</span><br><span class="line">        $this-&gt;fieldDataConverter = new FieldDataConverter(</span><br><span class="line">            $test1,</span><br><span class="line">            $selectFactory,</span><br><span class="line">            $test2,</span><br><span class="line">            $batchRangeIteratorFactory</span><br><span class="line">        );</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    /**</span><br><span class="line">     * @dataProvider getExampleKeys</span><br><span class="line">     * @return void</span><br><span class="line">     */</span><br><span class="line">    public function testGetExampleKey($key, $expected)</span><br><span class="line">    &#123;</span><br><span class="line">        $result = $this-&gt;fieldDataConverter-&gt;getExampleKey($key);</span><br><span class="line">        $this-&gt;assertEquals($expected, $result);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    /**</span><br><span class="line">     * Get example values</span><br><span class="line">     * @return array[]</span><br><span class="line">     */</span><br><span class="line">    public function getExampleKeys()</span><br><span class="line">    &#123;</span><br><span class="line">        return [</span><br><span class="line">            [&#x27;test1-test2-test3&#x27;, &#x27;test3&#x27;],</span><br><span class="line">        ];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<h1 id="2-JavaScript-testing"><a href="#2-JavaScript-testing" class="headerlink" title="2.JavaScript testing"></a>2.JavaScript testing</h1><p>首先需要进入项目目录<br>使用最新的package.json</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">cp package.json.sample package.json</span><br><span class="line">npm install</span><br></pre></td></tr></table></figure>
-<p>启动testing，添加参数-v可以看到更多调试信息</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">node /home/dyl/.config/nvm/versions/node/v20.12.1/bin/grunt spec:luma --file=&quot;dev/tests/js/jasmine/tests/app/code/Magento/Ui/base/js/grid/columns/actions.test.js&quot;</span><br></pre></td></tr></table></figure>
-<p>调试启动</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">node --inspect-brk /home/dyl/.config/nvm/versions/node/v20.12.1/bin/grunt spec:luma --file=&quot;dev/tests/js/jasmine/tests/app/code/Magento/Ui/base/js/grid/columns/actions.test.js&quot;</span><br></pre></td></tr></table></figure>
-<p>chrome浏览器输入<code>chrome://inspect</code>，应该能看到监听的node请求</p>
-]]></content>
-      <tags>
-        <tag>magento2</tag>
-        <tag>phpunit</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Linux 系统远程开机(WOL)</title>
     <url>/2024/04/11/wakeonlan/</url>
     <content><![CDATA[<h1 id="局域网远程开机-WOL"><a href="#局域网远程开机-WOL" class="headerlink" title="局域网远程开机(WOL)"></a>局域网远程开机(WOL)</h1><p>前置条件，主板需要支持wakonlan，Deepin 20.9 为例</p>
@@ -3767,6 +3750,24 @@ $("#datepicker").datepicker('option', 'dateFormat','yy-mm-dd');//set dateFormat
         <tag>deepin</tag>
         <tag>wakeonlan</tag>
         <tag>wol</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>magento2 单元测试</title>
+    <url>/2024/03/29/magento2-unit-test/</url>
+    <content><![CDATA[<h1 id="1-PHP-Unit-Testing"><a href="#1-PHP-Unit-Testing" class="headerlink" title="1.PHP Unit Testing"></a>1.PHP Unit Testing</h1><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line"></span><br><span class="line">namespace DYL\Test\Test\Unit\Plugin\Framework\DB;</span><br><span class="line"></span><br><span class="line">use PHPUnit\Framework\TestCase;</span><br><span class="line">use DYL\Test\Plugin\Framework\DB\FieldDataConverter;</span><br><span class="line">use Magento\Framework\DB\Query\BatchRangeIteratorFactory;</span><br><span class="line"></span><br><span class="line">class FieldDataConverterTest extends TestCase</span><br><span class="line">&#123;</span><br><span class="line">    public function setUp(): void</span><br><span class="line">    &#123;</span><br><span class="line">        $test1 = $this-&gt;createMock(\DYL\Test\Model\Test1::class);</span><br><span class="line">        $selectFactory = $this-&gt;createMock(\Magento\Framework\DB\SelectFactory::class);</span><br><span class="line">        $test2 = $this-&gt;createMock(\DYL\Test\Helper\Test2::class);</span><br><span class="line">        $batchRangeIteratorFactory = $this-&gt;createMock(BatchRangeIteratorFactory::class);</span><br><span class="line">        $this-&gt;fieldDataConverter = new FieldDataConverter(</span><br><span class="line">            $test1,</span><br><span class="line">            $selectFactory,</span><br><span class="line">            $test2,</span><br><span class="line">            $batchRangeIteratorFactory</span><br><span class="line">        );</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    /**</span><br><span class="line">     * @dataProvider getExampleKeys</span><br><span class="line">     * @return void</span><br><span class="line">     */</span><br><span class="line">    public function testGetExampleKey($key, $expected)</span><br><span class="line">    &#123;</span><br><span class="line">        $result = $this-&gt;fieldDataConverter-&gt;getExampleKey($key);</span><br><span class="line">        $this-&gt;assertEquals($expected, $result);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    /**</span><br><span class="line">     * Get example values</span><br><span class="line">     * @return array[]</span><br><span class="line">     */</span><br><span class="line">    public function getExampleKeys()</span><br><span class="line">    &#123;</span><br><span class="line">        return [</span><br><span class="line">            [&#x27;test1-test2-test3&#x27;, &#x27;test3&#x27;],</span><br><span class="line">        ];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h1 id="2-JavaScript-testing"><a href="#2-JavaScript-testing" class="headerlink" title="2.JavaScript testing"></a>2.JavaScript testing</h1><p>首先需要进入项目目录<br>使用最新的package.json</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">cp package.json.sample package.json</span><br><span class="line">npm install</span><br></pre></td></tr></table></figure>
+<p>启动testing，添加参数-v可以看到更多调试信息</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">node /home/dyl/.config/nvm/versions/node/v20.12.1/bin/grunt spec:luma --file=&quot;dev/tests/js/jasmine/tests/app/code/Magento/Ui/base/js/grid/columns/actions.test.js&quot;</span><br></pre></td></tr></table></figure>
+<p>调试启动</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">node --inspect-brk /home/dyl/.config/nvm/versions/node/v20.12.1/bin/grunt spec:luma --file=&quot;dev/tests/js/jasmine/tests/app/code/Magento/Ui/base/js/grid/columns/actions.test.js&quot;</span><br></pre></td></tr></table></figure>
+<p>chrome浏览器输入<code>chrome://inspect</code>，应该能看到监听的node请求</p>
+]]></content>
+      <tags>
+        <tag>magento2</tag>
+        <tag>phpunit testing</tag>
+        <tag>javascript testing</tag>
       </tags>
   </entry>
 </search>
