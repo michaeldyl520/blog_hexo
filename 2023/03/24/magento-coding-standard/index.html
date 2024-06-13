@@ -27,8 +27,9 @@
 <meta property="og:image" content="http://www.jiliuke.com/images/%E5%8E%BB%E6%8E%89js%E7%9B%B8%E7%AD%89%E8%AD%A6%E5%91%8A.png">
 <meta property="og:image" content="http://www.jiliuke.com/images/eslint-1.png">
 <meta property="og:image" content="http://www.jiliuke.com/images/eslint-2.png">
+<meta property="og:image" content="http://www.jiliuke.com/images/%E5%8F%B3%E9%94%AEphpcs%E8%AE%BE%E7%BD%AE%E6%96%B9%E6%B3%95.png">
 <meta property="article:published_time" content="2023-03-24T05:19:28.000Z">
-<meta property="article:modified_time" content="2024-05-11T08:39:49.513Z">
+<meta property="article:modified_time" content="2024-06-13T10:35:50.431Z">
 <meta property="article:author" content="michaeldyl520">
 <meta property="article:tag" content="magento2">
 <meta property="article:tag" content="phpcs">
@@ -147,7 +148,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AE%89%E8%A3%85%E4%BB%A3%E7%A0%81%E6%A0%87%E5%87%86"><span class="nav-number">1.</span> <span class="nav-text">安装代码标准</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#PhpStorm-%E8%87%AA%E5%8A%A8%E6%A0%BC%E5%BC%8F%E5%8C%96%E7%9A%84%E4%B8%80%E4%BA%9B%E9%85%8D%E7%BD%AE"><span class="nav-number">2.</span> <span class="nav-text">PhpStorm 自动格式化的一些配置</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%87%AA%E5%8A%A8%E5%AF%B9%E9%BD%90%E7%9A%84%E9%97%AE%E9%A2%98"><span class="nav-number">2.1.</span> <span class="nav-text">自动对齐的问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BC%BA%E5%88%B6%E9%99%90%E5%AE%9A%E7%B1%BB%E5%9E%8B%E7%9A%84%E6%8F%90%E7%A4%BA%E9%97%AE%E9%A2%98"><span class="nav-number">2.2.</span> <span class="nav-text">强制限定类型的提示问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8E%BB%E6%8E%89js%E7%9B%B8%E7%AD%89%E8%AD%A6%E5%91%8A"><span class="nav-number">2.3.</span> <span class="nav-text">去掉js相等警告</span></a></li></ol></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AE%89%E8%A3%85%E4%BB%A3%E7%A0%81%E6%A0%87%E5%87%86"><span class="nav-number">1.</span> <span class="nav-text">安装代码标准</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#PhpStorm-%E8%87%AA%E5%8A%A8%E6%A0%BC%E5%BC%8F%E5%8C%96%E7%9A%84%E4%B8%80%E4%BA%9B%E9%85%8D%E7%BD%AE"><span class="nav-number">2.</span> <span class="nav-text">PhpStorm 自动格式化的一些配置</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%87%AA%E5%8A%A8%E5%AF%B9%E9%BD%90%E7%9A%84%E9%97%AE%E9%A2%98"><span class="nav-number">2.1.</span> <span class="nav-text">自动对齐的问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BC%BA%E5%88%B6%E9%99%90%E5%AE%9A%E7%B1%BB%E5%9E%8B%E7%9A%84%E6%8F%90%E7%A4%BA%E9%97%AE%E9%A2%98"><span class="nav-number">2.2.</span> <span class="nav-text">强制限定类型的提示问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8E%BB%E6%8E%89js%E7%9B%B8%E7%AD%89%E8%AD%A6%E5%91%8A"><span class="nav-number">2.3.</span> <span class="nav-text">去掉js相等警告</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#eslint-%E6%90%AD%E6%B3%95"><span class="nav-number">2.4.</span> <span class="nav-text">eslint 搭法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#phpcs%E6%90%AD%E6%B3%95"><span class="nav-number">2.5.</span> <span class="nav-text">phpcs搭法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%B3%E9%94%AEphpcs%E6%B7%BB%E5%8A%A0%E6%96%B9%E6%B3%95"><span class="nav-number">2.6.</span> <span class="nav-text">右键phpcs添加方法</span></a></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -242,7 +243,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2024-05-11 16:39:49" itemprop="dateModified" datetime="2024-05-11T16:39:49+08:00">2024-05-11</time>
+      <time title="修改时间：2024-06-13 18:35:50" itemprop="dateModified" datetime="2024-06-13T18:35:50+08:00">2024-06-13</time>
     </span>
 
   
@@ -261,9 +262,9 @@
 <h2 id="强制限定类型的提示问题"><a href="#强制限定类型的提示问题" class="headerlink" title="强制限定类型的提示问题"></a>强制限定类型的提示问题</h2><p>Magento2 PHP不需要做强制类型限定参照图去掉以下两个复选框。</p>
 <p><img src="/images/%E5%BC%BA%E7%B1%BB%E5%9E%8B%E6%8F%90%E7%A4%BA%E7%9A%84%E9%97%AE%E9%A2%98.png" alt="强制限定类型的提示问题"></p>
 <h2 id="去掉js相等警告"><a href="#去掉js相等警告" class="headerlink" title="去掉js相等警告"></a>去掉js相等警告</h2><p><img src="/images/%E5%8E%BB%E6%8E%89js%E7%9B%B8%E7%AD%89%E8%AD%A6%E5%91%8A.png" alt="去掉js相等警告"></p>
-<p>eslint 搭法</p>
-<p><img src="/images/eslint-1.png" alt="eslint 搭法"><br><img src="/images/eslint-2.png" alt="eslint 搭法"></p>
-<p>phpcs搭法<br>最新的vendor如果没有包含phpcs等检测工具，我们可以间接使用默认的2.4.5-p1中的phpcs进行项目的检测</p>
+<h2 id="eslint-搭法"><a href="#eslint-搭法" class="headerlink" title="eslint 搭法"></a>eslint 搭法</h2><p><img src="/images/eslint-1.png" alt="eslint 搭法"><br><img src="/images/eslint-2.png" alt="eslint 搭法"></p>
+<h2 id="phpcs搭法"><a href="#phpcs搭法" class="headerlink" title="phpcs搭法"></a>phpcs搭法</h2><p>如果最新的vendor如果没有包含phpcs等检测工具，我们可以间接使用默认的2.4.5-p1中的phpcs进行项目的检测</p>
+<h2 id="右键phpcs添加方法"><a href="#右键phpcs添加方法" class="headerlink" title="右键phpcs添加方法"></a>右键phpcs添加方法</h2><p><img src="/images/%E5%8F%B3%E9%94%AEphpcs%E8%AE%BE%E7%BD%AE%E6%96%B9%E6%B3%95.png" alt="右键phpcs设置方法.png"></p>
 
     </div>
 
