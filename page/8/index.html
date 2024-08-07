@@ -148,7 +148,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">139</span>
+          <span class="site-state-item-count">140</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -159,7 +159,7 @@
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">151</span>
+        <span class="site-state-item-count">153</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -184,6 +184,91 @@
     </div>
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://www.jiliuke.com/2015/03/11/e4-bd-bf-e7-94-a8-telnet-e7-ab-af-e5-8f-a3-25-e6-b5-8b-e8-af-95-smtp-e9-80-9a-e4-bf-a1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="michaeldyl520">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Jiliuke">
+      <meta itemprop="description" content="Bring the crowds together, inspire unlimited">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Jiliuke">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2015/03/11/e4-bd-bf-e7-94-a8-telnet-e7-ab-af-e5-8f-a3-25-e6-b5-8b-e8-af-95-smtp-e9-80-9a-e4-bf-a1/" class="post-title-link" itemprop="url">使用 Telnet 端口 25 测试 SMTP 通信</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2015-03-11 13:40:43" itemprop="dateCreated datePublished" datetime="2015-03-11T13:40:43+08:00">2015-03-11</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2022-04-15 13:04:50" itemprop="dateModified" datetime="2022-04-15T13:04:50+08:00">2022-04-15</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/iredMail/" itemprop="url" rel="index"><span itemprop="name">iredMail</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>目标 SMTP 服务器 mail1.fabrikam.com 源域 contoso.com 发件人的电子邮件地址 <a href="mailto:&#x63;&#x68;&#x72;&#x69;&#x73;&#64;&#99;&#111;&#110;&#116;&#x6f;&#x73;&#111;&#46;&#99;&#x6f;&#x6d;">&#x63;&#x68;&#x72;&#x69;&#x73;&#64;&#99;&#111;&#110;&#116;&#x6f;&#x73;&#111;&#46;&#99;&#x6f;&#x6d;</a> 收件人的电子邮件地址 <a href="mailto:&#107;&#97;&#x74;&#101;&#64;&#102;&#97;&#x62;&#x72;&#105;&#x6b;&#97;&#x6d;&#46;&#x63;&#x6f;&#x6d;">&#107;&#97;&#x74;&#101;&#64;&#102;&#97;&#x62;&#x72;&#105;&#x6b;&#97;&#x6d;&#46;&#x63;&#x6f;&#x6d;</a> 邮件主题 来自 Contoso 的测试 邮件正文 这是一封测试邮件 使用 Telnet 端口 25 测试 SMTP 通信 在命令提示符下，键入 telnet，再按 Enter 键。此命令将打开 Telnet 会话。 键入 set localecho，再按 Enter 键。此可选命令可使您在键入字符时查看这些字符。某些 SMTP 服务器可能需要此设置。 键入 set logfile &lt;文件名&gt;。此可选命令可以将 Telnet 会话记录到指定的日志文件中。如果您仅指定了文件名，则日志文件的位置将是当前工作目录。如果您指定了路径和文件名，该路径必须位于计算机本地。指定的路径和文件名都必须以 Microsoft DOS 8.3 格式输入。您指定的路径必须已存在。如果您指定了一个不存在的日志文件，系统将为您创建一个日志文件。 键入 open mail1.fabrikam.com 25，再按 ENTER 键。 键入 EHLO contoso.com，再按 ENTER 键。 键入 MAIL FROM:<a href="mailto:&#99;&#x68;&#114;&#105;&#115;&#64;&#x63;&#111;&#110;&#x74;&#x6f;&#x73;&#111;&#x2e;&#99;&#x6f;&#109;">&#99;&#x68;&#114;&#105;&#115;&#64;&#x63;&#111;&#110;&#x74;&#x6f;&#x73;&#111;&#x2e;&#99;&#x6f;&#109;</a>，再按 ENTER 键。 键入 RCPT TO:<a href="mailto:&#x6b;&#97;&#116;&#101;&#x40;&#x66;&#97;&#x62;&#114;&#x69;&#x6b;&#x61;&#109;&#46;&#99;&#111;&#109;">&#x6b;&#97;&#116;&#101;&#x40;&#x66;&#97;&#x62;&#114;&#x69;&#x6b;&#x61;&#109;&#46;&#99;&#111;&#109;</a> NOTIFY=success,failure，再按 ENTER 键。可选的 NOTIFY 命令可定义目标 SMTP 服务器必须向发件人提供的特定传递状态通知 (DSN) 邮件。DSN 邮件是在 RFC 1891 中定义的。在本例中，您要查询有关邮件传递成功或失败的 DSN 邮件。 键入 DATA，再按 Enter 键。您将收到与以下类似的响应： 354 Start mail input; end with . 键入 主题：来自 Contoso 的测试，再按 ENTER 键。 按 Enter 键。RFC 2822 需要在 Subject: 头字段和邮件正文间留一个空行。 键入 这是一封测试邮件，再按 ENTER 键。 按 ENTER 键，键入句点 ( . )，再按 ENTER 键。您将收到与以下类似的响应： 250 2.6.0 Queued mail for delivery 若要与目标 SMTP 服务器断开连接，请键入 QUIT，再按 ENTER 键。您将收到与以下类似的响应： 221 2.0.0 Service closing transmission channel 若要关闭 Telnet 会话，请键入 quit，再按 ENTER 键。 解释 Telnet 会话与 SMTP 服务器的结果 针对您在以上示例中输入的命令，本节提供有关这些命令响应的详细信息。 注意： 在 RFC 2821 中定义的三位数 SMTP 响应代码对于所有 SMTP 邮件服务器都相同。对于某些 SMTP 邮件服务器，文本说明可能稍有不同。在本示例中，目标计算机正在运行 Exchange Server 2007。 打开 mail1.fabrikam.com 25 成功响应 220 mail1.fabrikam.com Microsoft ESMTP MAIL Service ready at 失败响应 Connecting to mail1.fabrikam.com…Could not open connection to the host, on port 25: Connect failed 失败的可能原因 目标 SMTP 服务不可用。 对目标防火墙有所限制。 对源防火墙有所限制。 指定的目标 SMTP 服务器的 FQDN 或 IP 地址不正确。 指定的端口号不正确。 EHLO contoso.com 成功响应 250 mail1.fabrikam.com Hello [] 失败响应 501 5.5.4 Invalid domain name 失败的可能原因 域名中存在无效字符。或者，存在有关目标 SMTP 服务器的连接限制。 注意： EHLO 是扩展的简单邮件传输协议 (ESMTP) 命令动词，该命令动词是在 RFC 2821 中定义的。ESMTP 服务器可在初始连接时公布其功能。这些功能包括其最大的可接受邮件大小以及其支持的身份验证方法。HELO 是 RFC 821 中定义的旧版 SMTP 命令动词。多数 SMTP 邮件服务器都支持 ESMTP 和 EHLO。 MAIL FROM:<a href="mailto:&#x63;&#x68;&#x72;&#105;&#x73;&#x40;&#99;&#111;&#x6e;&#116;&#x6f;&#115;&#x6f;&#x2e;&#x63;&#111;&#x6d;">&#x63;&#x68;&#x72;&#105;&#x73;&#x40;&#99;&#111;&#x6e;&#116;&#x6f;&#115;&#x6f;&#x2e;&#x63;&#111;&#x6d;</a> 成功响应 250 2.1.0 Sender OK 失败响应 550 5.1.7 Invalid address 可能的失败原因 发件人的电子邮件地址中存在语法错误。 失败响应 530 5.7.1 Client was not authenticated 可能的失败原因 目标服务器不接受匿名邮件提交。如果您试图使用 Telnet 直接向集线器传输服务器提交邮件，则将收到此错误消息。 RCPT TO:<a href="mailto:&#x6b;&#97;&#x74;&#101;&#64;&#102;&#97;&#98;&#114;&#x69;&#x6b;&#x61;&#x6d;&#x2e;&#x63;&#x6f;&#x6d;">&#x6b;&#97;&#x74;&#101;&#64;&#102;&#97;&#98;&#114;&#x69;&#x6b;&#x61;&#x6d;&#x2e;&#x63;&#x6f;&#x6d;</a> NOTIFY=success,failure 成功响应 250 2.1.5 Recipient OK 失败响应 550 5.1.1 User unknown 可能的失败原因 指定的收件人在组织中不存在。</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -1147,154 +1232,6 @@ $("#datepicker").datepicker('option', 'dateFormat','yy-mm-dd');//set dateFormat
 <p>重启apache</p>
 <p>#service httpd restart</p>
 <p>到此安装成功</p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://www.jiliuke.com/2014/10/31/android-layoutinflater-e8-af-a6-e8-a7-a3/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="michaeldyl520">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Jiliuke">
-      <meta itemprop="description" content="Bring the crowds together, inspire unlimited">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | Jiliuke">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2014/10/31/android-layoutinflater-e8-af-a6-e8-a7-a3/" class="post-title-link" itemprop="url">Android LayoutInflater详解</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2014-10-31 11:15:33" itemprop="dateCreated datePublished" datetime="2014-10-31T11:15:33+08:00">2014-10-31</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-04-15 13:04:50" itemprop="dateModified" datetime="2022-04-15T13:04:50+08:00">2022-04-15</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E5%AE%89%E5%8D%93%E9%97%AE%E9%A2%98%E9%9B%86%E9%94%A6/" itemprop="url" rel="index"><span itemprop="name">安卓问题集锦</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>在实际开发中LayoutInflater这个类还是非常有用的，它的作用类似于findViewById()。不同点是LayoutInflater是用来找res/layout/下的xml布局文件，并且实例化；而findViewById()是找xml布局文件下的具体widget控件(如Button、TextView等)。</p>
-<p>具体作用：</p>
-<p>1、对于一个没有被载入或者想要动态载入的界面，都需要使用LayoutInflater.inflate()来载入；</p>
-<p>2、对于一个已经载入的界面，就可以使用Activiyt.findViewById()方法来获得其中的界面元素。</p>
-<p>LayoutInflater 是一个抽象类，在文档中如下声明：</p>
-<p>public abstract class LayoutInflater extends Object</p>
-<p>获得 LayoutInflater 实例的三种方式</p>
-<p>1. LayoutInflater inflater = getLayoutInflater();//调用Activity的getLayoutInflater()</p>
-<p>2. LayoutInflater inflater = LayoutInflater.from(context);</p>
-<p>3. LayoutInflater inflater = (LayoutInflater)context.getSystemService</p>
-<p>                              (Context.LAYOUT_INFLATER_SERVICE);</p>
-<p>其实，这三种方式本质是相同的，从源码中可以看出：</p>
-<p>getLayoutInflater()：</p>
-<p>Activity 的 getLayoutInflater() 方法是调用 PhoneWindow 的getLayoutInflater()方法，看一下该源代码：</p>
-<p>public PhoneWindow(Context context)</p>
-<p>{</p>
-<p> super(context);</p>
-<p>    mLayoutInflater = LayoutInflater.from(context);</p>
-<p>}</p>
-<p>可以看出它其实是调用 LayoutInflater.from(context)。</p>
-<p>LayoutInflater.from(context)：</p>
-<p>public static LayoutInflater from(Context context)</p>
-<p>{</p>
-<p> LayoutInflater LayoutInflater = (LayoutInflater) context.getSystemService</p>
-<p>         (Context.LAYOUT_INFLATER_SERVICE);</p>
-<p>    if (LayoutInflater == null)</p>
-<p>    {</p>
-<p>     throw new AssertionError(“LayoutInflater not found.”);</p>
-<p>    }</p>
-<p>    return LayoutInflater;</p>
-<p>}</p>
-<p>可以看出它其实调用 context.getSystemService()。</p>
-<p>结论：所以这三种方式最终本质是都是调用的Context.getSystemService()。</p>
-<p>另外getSystemService()是Android很重要的一个API，它是Activity的一个方法，根据传入的NAME来取得对应的Object，然后转换成相应的服务对象。以下介绍系统相应的服务。</p>
-<p>传入的Name 返回的对象 说明</p>
-<p>WINDOW_SERVICE WindowManager 管理打开的窗口程序</p>
-<p>LAYOUT_INFLATER_SERVICE LayoutInflater 取得xml里定义的view</p>
-<p>ACTIVITY_SERVICE ActivityManager 管理应用程序的系统状态</p>
-<p>POWER_SERVICE PowerManger 电源的服务</p>
-<p>ALARM_SERVICE AlarmManager 闹钟的服务</p>
-<p>NOTIFICATION_SERVICE NotificationManager 状态栏的服务</p>
-<p>KEYGUARD_SERVICE KeyguardManager 键盘锁的服务</p>
-<p>LOCATION_SERVICE LocationManager 位置的服务，如GPS</p>
-<p>SEARCH_SERVICE SearchManager 搜索的服务</p>
-<p>VEBRATOR_SERVICE Vebrator 手机震动的服务</p>
-<p>CONNECTIVITY_SERVICE Connectivity 网络连接的服务</p>
-<p>WIFI_SERVICE WifiManager Wi-Fi服务</p>
-<p>TELEPHONY_SERVICE TeleponyManager 电话服务</p>
-<p>inflate 方法</p>
-<p>通过 sdk 的 api 文档，可以知道该方法有以下几种过载形式，返回值均是 View 对象，如下：</p>
-<p>public View inflate (int resource, ViewGroup root)</p>
-<p>public View inflate (XmlPullParser parser, ViewGroup root)</p>
-<p>public View inflate (XmlPullParser parser, ViewGroup root, boolean attachToRoot)</p>
-<p>public View inflate (int resource, ViewGroup root, boolean attachToRoot)</p>
-<p>示意代码：</p>
-<p>LayoutInflater inflater = (LayoutInflater)getSystemService(LAYOUT_INFLATER_SERVICE);</p>
-<p>View view = inflater.inflate(R.layout.custom, (ViewGroup)findViewById(R.id.test));</p>
-<p>//EditText editText = (EditText)findViewById(R.id.content);// error</p>
-<p>EditText editText = (EditText)view.findViewById(R.id.content);</p>
-<p>对于上面代码，指定了第二个参数 ViewGroup root，当然你也可以设置为 null 值。</p>
-<p>注意：</p>
-<p>·inflate 方法与 findViewById 方法不同；</p>
-<p>·inflater 是用来找 res/layout 下的 xml 布局文件，并且实例化；</p>
-<p>·findViewById() 是找具体 xml 布局文件中的具体 widget 控件(如:Button、TextView 等)。</p>
 
       
     </div>

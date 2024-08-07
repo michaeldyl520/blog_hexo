@@ -3774,4 +3774,14 @@ $("#datepicker").datepicker('option', 'dateFormat','yy-mm-dd');//set dateFormat
         <tag>javascript testing</tag>
       </tags>
   </entry>
+  <entry>
+    <title>debian-tips</title>
+    <url>/2024/08/07/debian-tips/</url>
+    <content><![CDATA[]]></content>
+      <tags>
+        <tag>debian</tag>
+        <tag>buster</tag>
+        <tag>php</tag>
+      </tags>
+  </entry>
 </search>

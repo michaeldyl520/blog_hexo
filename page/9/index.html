@@ -148,7 +148,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">139</span>
+          <span class="site-state-item-count">140</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -159,7 +159,7 @@
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">151</span>
+        <span class="site-state-item-count">153</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -184,6 +184,154 @@
     </div>
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://www.jiliuke.com/2014/10/31/android-layoutinflater-e8-af-a6-e8-a7-a3/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="michaeldyl520">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Jiliuke">
+      <meta itemprop="description" content="Bring the crowds together, inspire unlimited">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Jiliuke">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2014/10/31/android-layoutinflater-e8-af-a6-e8-a7-a3/" class="post-title-link" itemprop="url">Android LayoutInflater详解</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2014-10-31 11:15:33" itemprop="dateCreated datePublished" datetime="2014-10-31T11:15:33+08:00">2014-10-31</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2022-04-15 13:04:50" itemprop="dateModified" datetime="2022-04-15T13:04:50+08:00">2022-04-15</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E5%AE%89%E5%8D%93%E9%97%AE%E9%A2%98%E9%9B%86%E9%94%A6/" itemprop="url" rel="index"><span itemprop="name">安卓问题集锦</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>在实际开发中LayoutInflater这个类还是非常有用的，它的作用类似于findViewById()。不同点是LayoutInflater是用来找res/layout/下的xml布局文件，并且实例化；而findViewById()是找xml布局文件下的具体widget控件(如Button、TextView等)。</p>
+<p>具体作用：</p>
+<p>1、对于一个没有被载入或者想要动态载入的界面，都需要使用LayoutInflater.inflate()来载入；</p>
+<p>2、对于一个已经载入的界面，就可以使用Activiyt.findViewById()方法来获得其中的界面元素。</p>
+<p>LayoutInflater 是一个抽象类，在文档中如下声明：</p>
+<p>public abstract class LayoutInflater extends Object</p>
+<p>获得 LayoutInflater 实例的三种方式</p>
+<p>1. LayoutInflater inflater = getLayoutInflater();//调用Activity的getLayoutInflater()</p>
+<p>2. LayoutInflater inflater = LayoutInflater.from(context);</p>
+<p>3. LayoutInflater inflater = (LayoutInflater)context.getSystemService</p>
+<p>                              (Context.LAYOUT_INFLATER_SERVICE);</p>
+<p>其实，这三种方式本质是相同的，从源码中可以看出：</p>
+<p>getLayoutInflater()：</p>
+<p>Activity 的 getLayoutInflater() 方法是调用 PhoneWindow 的getLayoutInflater()方法，看一下该源代码：</p>
+<p>public PhoneWindow(Context context)</p>
+<p>{</p>
+<p> super(context);</p>
+<p>    mLayoutInflater = LayoutInflater.from(context);</p>
+<p>}</p>
+<p>可以看出它其实是调用 LayoutInflater.from(context)。</p>
+<p>LayoutInflater.from(context)：</p>
+<p>public static LayoutInflater from(Context context)</p>
+<p>{</p>
+<p> LayoutInflater LayoutInflater = (LayoutInflater) context.getSystemService</p>
+<p>         (Context.LAYOUT_INFLATER_SERVICE);</p>
+<p>    if (LayoutInflater == null)</p>
+<p>    {</p>
+<p>     throw new AssertionError(“LayoutInflater not found.”);</p>
+<p>    }</p>
+<p>    return LayoutInflater;</p>
+<p>}</p>
+<p>可以看出它其实调用 context.getSystemService()。</p>
+<p>结论：所以这三种方式最终本质是都是调用的Context.getSystemService()。</p>
+<p>另外getSystemService()是Android很重要的一个API，它是Activity的一个方法，根据传入的NAME来取得对应的Object，然后转换成相应的服务对象。以下介绍系统相应的服务。</p>
+<p>传入的Name 返回的对象 说明</p>
+<p>WINDOW_SERVICE WindowManager 管理打开的窗口程序</p>
+<p>LAYOUT_INFLATER_SERVICE LayoutInflater 取得xml里定义的view</p>
+<p>ACTIVITY_SERVICE ActivityManager 管理应用程序的系统状态</p>
+<p>POWER_SERVICE PowerManger 电源的服务</p>
+<p>ALARM_SERVICE AlarmManager 闹钟的服务</p>
+<p>NOTIFICATION_SERVICE NotificationManager 状态栏的服务</p>
+<p>KEYGUARD_SERVICE KeyguardManager 键盘锁的服务</p>
+<p>LOCATION_SERVICE LocationManager 位置的服务，如GPS</p>
+<p>SEARCH_SERVICE SearchManager 搜索的服务</p>
+<p>VEBRATOR_SERVICE Vebrator 手机震动的服务</p>
+<p>CONNECTIVITY_SERVICE Connectivity 网络连接的服务</p>
+<p>WIFI_SERVICE WifiManager Wi-Fi服务</p>
+<p>TELEPHONY_SERVICE TeleponyManager 电话服务</p>
+<p>inflate 方法</p>
+<p>通过 sdk 的 api 文档，可以知道该方法有以下几种过载形式，返回值均是 View 对象，如下：</p>
+<p>public View inflate (int resource, ViewGroup root)</p>
+<p>public View inflate (XmlPullParser parser, ViewGroup root)</p>
+<p>public View inflate (XmlPullParser parser, ViewGroup root, boolean attachToRoot)</p>
+<p>public View inflate (int resource, ViewGroup root, boolean attachToRoot)</p>
+<p>示意代码：</p>
+<p>LayoutInflater inflater = (LayoutInflater)getSystemService(LAYOUT_INFLATER_SERVICE);</p>
+<p>View view = inflater.inflate(R.layout.custom, (ViewGroup)findViewById(R.id.test));</p>
+<p>//EditText editText = (EditText)findViewById(R.id.content);// error</p>
+<p>EditText editText = (EditText)view.findViewById(R.id.content);</p>
+<p>对于上面代码，指定了第二个参数 ViewGroup root，当然你也可以设置为 null 值。</p>
+<p>注意：</p>
+<p>·inflate 方法与 findViewById 方法不同；</p>
+<p>·inflater 是用来找 res/layout 下的 xml 布局文件，并且实例化；</p>
+<p>·findViewById() 是找具体 xml 布局文件中的具体 widget 控件(如:Button、TextView 等)。</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -1024,281 +1172,6 @@
 <p>在这个例子，所有在 example.org域名的主机都将被允许访问;其他的都将拒绝。</p>
 <h3 id="2-2-configuration-2"><a href="#2-2-configuration-2" class="headerlink" title="2.2 configuration:"></a>2.2 configuration:</h3><p>Order Deny,Allow<br>Deny from all<br>Allow from example.org</p>
 <h3 id="2-4-configuration-2"><a href="#2-4-configuration-2" class="headerlink" title="2.4 configuration:"></a>2.4 configuration:</h3><p>Require host example.org</p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://www.jiliuke.com/2014/08/29/js-e5-8a-a0-e5-87-8f-e4-b9-98-e9-99-a4-e4-b8-a2-e5-a4-b1-e7-b2-be-e5-ba-a6-e9-97-ae-e9-a2-98-e8-a7-a3-e5-86-b3-e6-96-b9-e6-b3-95/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="michaeldyl520">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Jiliuke">
-      <meta itemprop="description" content="Bring the crowds together, inspire unlimited">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | Jiliuke">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2014/08/29/js-e5-8a-a0-e5-87-8f-e4-b9-98-e9-99-a4-e4-b8-a2-e5-a4-b1-e7-b2-be-e5-ba-a6-e9-97-ae-e9-a2-98-e8-a7-a3-e5-86-b3-e6-96-b9-e6-b3-95/" class="post-title-link" itemprop="url">js加减乘除丢失精度问题解决方法</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2014-08-29 15:37:15" itemprop="dateCreated datePublished" datetime="2014-08-29T15:37:15+08:00">2014-08-29</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-04-15 13:04:50" itemprop="dateModified" datetime="2022-04-15T13:04:50+08:00">2022-04-15</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/javascript/" itemprop="url" rel="index"><span itemprop="name">javascript</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>在javascript中，当你使用小数进行加减乘除运算时，你会发现，所得到的结果有时后面带有长长的一段小数，使运算变得复杂，并且影响计算结果。上网查询了一下原因，大致如下：在javascript中，带小数的数据运算时总会出现好多位小数.这是因为在javascript中浮点数的计算是以2进制计算的。</p>
-<p>解决办法：</p>
-<p>/**</p>
-<p>* 加法运算，避免数据相加小数点后产生多位数和计算精度损失。</p>
-<p>*</p>
-<p>* @param num1加数1 | num2加数2</p>
-<p>*/</p>
-<p>function numAdd(num1, num2) {</p>
-<blockquote>
-<p>var baseNum, baseNum1, baseNum2;</p>
-<p>try {</p>
-</blockquote>
-<blockquote>
-<blockquote>
-<p>baseNum1 = num1.toString().split(“.”)[1].length;</p>
-</blockquote>
-</blockquote>
-<blockquote>
-<p>} catch (e) {</p>
-</blockquote>
-<blockquote>
-<blockquote>
-<p>baseNum1 = 0;</p>
-</blockquote>
-</blockquote>
-<blockquote>
-<p>}</p>
-<p>try {</p>
-</blockquote>
-<blockquote>
-<blockquote>
-<p>baseNum2 = num2.toString().split(“.”)[1].length;</p>
-</blockquote>
-</blockquote>
-<blockquote>
-<p>} catch (e) {</p>
-</blockquote>
-<blockquote>
-<blockquote>
-<p>baseNum2 = 0;</p>
-</blockquote>
-</blockquote>
-<blockquote>
-<p>}</p>
-<p>baseNum = Math.pow(10, Math.max(baseNum1, baseNum2));</p>
-<p>return (num1 * baseNum + num2 * baseNum) / baseNum;</p>
-</blockquote>
-<p>};</p>
-<p>/**</p>
-<p>* 加法运算，避免数据相减小数点后产生多位数和计算精度损失。</p>
-<p>*</p>
-<p>* @param num1被减数 | num2减数</p>
-<p>*/</p>
-<p>function numSub(num1, num2) {</p>
-<blockquote>
-<p>var baseNum, baseNum1, baseNum2;</p>
-<p>var precision;// 精度</p>
-<p>try {</p>
-</blockquote>
-<blockquote>
-<blockquote>
-<p>baseNum1 = num1.toString().split(“.”)[1].length;</p>
-</blockquote>
-</blockquote>
-<blockquote>
-<p>} catch (e) {</p>
-</blockquote>
-<blockquote>
-<blockquote>
-<p>baseNum1 = 0;</p>
-</blockquote>
-</blockquote>
-<blockquote>
-<p>}</p>
-<p>try {</p>
-</blockquote>
-<blockquote>
-<blockquote>
-<p>baseNum2 = num2.toString().split(“.”)[1].length;</p>
-</blockquote>
-</blockquote>
-<blockquote>
-<p>} catch (e) {</p>
-</blockquote>
-<blockquote>
-<blockquote>
-<p>baseNum2 = 0;</p>
-</blockquote>
-</blockquote>
-<blockquote>
-<p>}</p>
-<p>baseNum = Math.pow(10, Math.max(baseNum1, baseNum2));</p>
-<p>precision = (baseNum1 &gt;= baseNum2) ? baseNum1 : baseNum2;</p>
-<p>return ((num1 * baseNum - num2 * baseNum) / baseNum).toFixed(precision);</p>
-</blockquote>
-<p>};</p>
-<p>/**</p>
-<p>* 乘法运算，避免数据相乘小数点后产生多位数和计算精度损失。</p>
-<p>*</p>
-<p>* @param num1被乘数 | num2乘数</p>
-<p>*/</p>
-<p>function numMulti(num1, num2) {</p>
-<blockquote>
-<p>var baseNum = 0;</p>
-<p>try {</p>
-</blockquote>
-<blockquote>
-<blockquote>
-<p>baseNum += num1.toString().split(“.”)[1].length;</p>
-</blockquote>
-</blockquote>
-<blockquote>
-<p>} catch (e) {</p>
-<p>}</p>
-<p>try {</p>
-</blockquote>
-<blockquote>
-<blockquote>
-<p>baseNum += num2.toString().split(“.”)[1].length;</p>
-</blockquote>
-</blockquote>
-<blockquote>
-<p>} catch (e) {</p>
-<p>}</p>
-<p>return Number(num1.toString().replace(“.”, “”)) * Number(num2.toString().replace(“.”, “”)) / Math.pow(10, baseNum);</p>
-</blockquote>
-<p>};</p>
-<p>/**</p>
-<p>* 除法运算，避免数据相除小数点后产生多位数和计算精度损失。</p>
-<p>*</p>
-<p>* @param num1被除数 | num2除数</p>
-<p>*/</p>
-<p>function numDiv(num1, num2) {</p>
-<blockquote>
-<p>var baseNum1 = 0, baseNum2 = 0;</p>
-<p>var baseNum3, baseNum4;</p>
-<p>try {</p>
-</blockquote>
-<blockquote>
-<blockquote>
-<p>baseNum1 = num1.toString().split(“.”)[1].length;</p>
-</blockquote>
-</blockquote>
-<blockquote>
-<p>} catch (e) {</p>
-</blockquote>
-<blockquote>
-<blockquote>
-<p>baseNum1 = 0;</p>
-</blockquote>
-</blockquote>
-<blockquote>
-<p>}</p>
-<p>try {</p>
-</blockquote>
-<blockquote>
-<blockquote>
-<p>baseNum2 = num2.toString().split(“.”)[1].length;</p>
-</blockquote>
-</blockquote>
-<blockquote>
-<p>} catch (e) {</p>
-</blockquote>
-<blockquote>
-<blockquote>
-<p>baseNum2 = 0;</p>
-</blockquote>
-</blockquote>
-<blockquote>
-<p>}</p>
-<p>with (Math) {</p>
-</blockquote>
-<blockquote>
-<blockquote>
-<p>baseNum3 = Number(num1.toString().replace(“.”, “”));</p>
-</blockquote>
-</blockquote>
-<blockquote>
-<blockquote>
-<p>baseNum4 = Number(num2.toString().replace(“.”, “”));</p>
-</blockquote>
-</blockquote>
-<blockquote>
-<blockquote>
-<p>return (baseNum3 / baseNum4) * pow(10, baseNum2 - baseNum1);</p>
-</blockquote>
-</blockquote>
-<blockquote>
-<p>}</p>
-</blockquote>
-<p>};</p>
 
       
     </div>

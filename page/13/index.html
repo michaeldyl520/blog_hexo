@@ -148,7 +148,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">139</span>
+          <span class="site-state-item-count">140</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -159,7 +159,7 @@
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">151</span>
+        <span class="site-state-item-count">153</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -184,6 +184,91 @@
     </div>
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://www.jiliuke.com/2014/03/28/msql-e9-97-ae-e9-a2-98-e9-9b-86-e4-b8-ad-e8-90-a5/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="michaeldyl520">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Jiliuke">
+      <meta itemprop="description" content="Bring the crowds together, inspire unlimited">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Jiliuke">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2014/03/28/msql-e9-97-ae-e9-a2-98-e9-9b-86-e4-b8-ad-e8-90-a5/" class="post-title-link" itemprop="url">msql问题集中营</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2014-03-28 09:18:25" itemprop="dateCreated datePublished" datetime="2014-03-28T09:18:25+08:00">2014-03-28</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2022-04-15 13:04:50" itemprop="dateModified" datetime="2022-04-15T13:04:50+08:00">2022-04-15</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/MYSQL/" itemprop="url" rel="index"><span itemprop="name">MYSQL</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>1、如果遇到mysqld无法启动，提示MySQL Daemon failed to start. 首先使用 #/usr/local/mysql/bin/mysqld_safe &amp; 启动mysqld_safe,再启动mysqld服务试试 2、如果一部机器中有多个数据库，先查看数据库目录，然后再停止 mysql:show variables “%datadir%” cmd:mysqladmin -u root shutdown 3、当遇到mysql locked， 方法1可以使用kill 进程号， 方法2可以使用 mysql&gt; select * from information_schema.processlist order by time ; 查看占用时间多的sql语句进行优化操作。 方法3可以更换存储引擎试试</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -932,91 +1017,6 @@
     
     <div class="post-body" itemprop="articleBody">
           <p>find -type d -name “.svn”|xargs rm -rf;</p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://www.jiliuke.com/2014/03/06/crond-e6-89-a7-e8-a1-8c-e9-a2-84-e5-ae-9a-e4-bb-bb-e5-8a-a1/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="michaeldyl520">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Jiliuke">
-      <meta itemprop="description" content="Bring the crowds together, inspire unlimited">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | Jiliuke">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2014/03/06/crond-e6-89-a7-e8-a1-8c-e9-a2-84-e5-ae-9a-e4-bb-bb-e5-8a-a1/" class="post-title-link" itemprop="url">Crond执行预定任务</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2014-03-06 13:34:22" itemprop="dateCreated datePublished" datetime="2014-03-06T13:34:22+08:00">2014-03-06</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-04-15 13:04:50" itemprop="dateModified" datetime="2022-04-15T13:04:50+08:00">2022-04-15</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/CentOS/" itemprop="url" rel="index"><span itemprop="name">CentOS</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>安装crontab: yum install crontabs 说明： /sbin/service crond start //启动服务 /sbin/service crond stop //关闭服务 /sbin/service crond restart //重启服务 /sbin/service crond reload //重新载入配置 查看crontab服务状态：service crond status 手动启动crontab服务：service crond start 查看crontab服务是否已设置为开机启动，执行命令：ntsysv 加入开机自动启动: chkconfig –level 35 crond on 1，crontab命令 功能说明：设置计时器。 语　　法：crontab [-u &lt;用户名称&gt;][配置文件] 或crontab [-u &lt;用户名称&gt;][-elr] 补充说明：cron是一个常驻服务，它提供计时器的功能，让用户在特定的时间得以执行预设的指令或程序。只要用户会编辑计时器的配置文件，就可以使 用计时器的功能。其配置文件格式如下： Minute Hour Day Month DayOFWeek Command 参　　数： -e 　编辑该用户的计时器设置。 -l 　列出该用户的计时器设置。 -r 　删除该用户的计时器设置。 -u&lt;用户名称&gt; 　指定要设定计时器的用户名称。 2，crontab 格式 基本格式: * *　*　*　*　　command 分　时　日　月　周　 命令 第1列表示分钟1～59 每分钟用<em>或者</em>/1表示 第2列表示小时1～23（0表示0点） 第3列表示日期1～31 第4列 表示月份1～12 第5列标识号星期0～6（0表示星期天） 第6列要运行的命令 # Use the hash sign to prefix a comment # +—————- minute (0 – 59) # | +————- hour (0 – 23) # | | +———- day of month (1 – 31) # | | | +——- month (1 – 12) # | | | | +—- day of week (0 – 7) (Sunday=0 or 7) # | | | | | # * * * * * command to be executed crontab文件的一些例子： 30 21 * * * /etc/init.d/nginx restart 每晚的21:30重启nginx。 45 4 1,10,22 * * /etc/init.d/nginx restart 每月1、10、22日的4 : 45重启nginx。 10 1 * * 6,0 /etc/init.d/nginx restart 每周六、周日的1 : 10重启nginx。 0,30 18-23 * * * /etc/init.d/nginx restart 每天18 : 00至23 : 00之间每隔30分钟重启nginx。 0 23 * * 6 /etc/init.d/nginx restart 每星期六的11 : 00 pm重启nginx。 * */1 * * * /etc/init.d/nginx restart 每一小时重启nginx * 23-7/1 * * * /etc/init.d/nginx restart 晚上11点到早上7点之间，每 隔一小时重启nginx 0 11 4 * mon-wed /etc/init.d/nginx restart 每月的4号与每周一到周三 的11点重启nginx 0 4 1 jan * /etc/init.d/nginx restart 一月一号的4点重启nginx */30 * * * * /usr/sbin/ntpdate 210.72.145.20 每半小时同步一下时间</p>
 
       
     </div>
