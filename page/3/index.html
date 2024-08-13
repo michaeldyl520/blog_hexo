@@ -148,7 +148,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">140</span>
+          <span class="site-state-item-count">141</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -159,7 +159,7 @@
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">153</span>
+        <span class="site-state-item-count">154</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -184,6 +184,84 @@
     </div>
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://www.jiliuke.com/2021/03/17/wine/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="michaeldyl520">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Jiliuke">
+      <meta itemprop="description" content="Bring the crowds together, inspire unlimited">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Jiliuke">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2021/03/17/wine/" class="post-title-link" itemprop="url">一些 deepin-wine 事例</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2021-03-17 18:42:58" itemprop="dateCreated datePublished" datetime="2021-03-17T18:42:58+08:00">2021-03-17</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2022-04-15 13:04:50" itemprop="dateModified" datetime="2022-04-15T13:04:50+08:00">2022-04-15</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="使用MIDI游戏问题"><a href="#使用MIDI游戏问题" class="headerlink" title="使用MIDI游戏问题"></a>使用MIDI游戏问题</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">WINEPREFIX=~/.deepinwine/apps/XXX_1 WINEDEBUG=+seh deepin-wine5-stable ~/.deepinwine/apps/XXX_1/drive_c/Program\ Files/XXXX/XXX5/LinLink5.exe</span><br><span class="line"><span class="meta"></span></span><br><span class="line"><span class="meta">#</span><span class="bash">调试字体</span></span><br><span class="line">WINEPREFIX=/data/home/dyl/.deepinwine/apps/XXX_1 WINEDEBUG=+font,+tid deepin-wine5-stable /data/home/dyl/.deepinwine/apps/XXX_1/drive_c/Program\ Files/XXXX/XXX5/LinLink5.exe &amp;&gt; /data/home/dyl/fonts.log</span><br><span class="line"></span><br><span class="line">WINEPREFIX=/data/home/dyl/.deepinwine/apps/XXX_1 WINEDEBUG=+seh deepin-wine5-stable /data/home/dyl/.deepinwine/apps/XXX_1/drive_c/Program\ Files/XXXX/XXX5/LinLink5.exe</span><br><span class="line"><span class="meta"></span></span><br><span class="line"><span class="meta">#</span><span class="bash">解决midi声音问题</span></span><br><span class="line">sudo apt-get install timidity</span><br><span class="line"></span><br><span class="line">timidity -iAD -B2,8 -Os1l -s 44100</span><br><span class="line"></span><br><span class="line">WINE=/usr/bin/deepin-wine5-stable WINEPREFIX=/home/dyl/.deepinwine/apps/XXX_1 winetricks -q directmusic gmdls</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h1 id="解决dotnet40安装卡死问题"><a href="#解决dotnet40安装卡死问题" class="headerlink" title="解决dotnet40安装卡死问题"></a>解决dotnet40安装卡死问题</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">LC_ALL=en_US.UTF-8 WINEPREFIX=/home/dyl/.deepinwine/apps/XXXXXX_1 WINEDEBUG=+seh deepin-wine5-stable /home/dyl/.deepinwine/apps/XXXXXX_1/drive_c/yscq_tanwan/Update.exe</span><br><span class="line"></span><br><span class="line">WINE=/usr/bin/deepin-wine5-stable WINEPREFIX=/home/dyl/.deepinwine/apps/XXXXXX_1 winetricks -q dotnet40 gdiplus</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -964,110 +1042,8 @@
 
 
 
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://www.jiliuke.com/2018/06/06/PayPal-PayFlow-test-method/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="michaeldyl520">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Jiliuke">
-      <meta itemprop="description" content="Bring the crowds together, inspire unlimited">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | Jiliuke">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2018/06/06/PayPal-PayFlow-test-method/" class="post-title-link" itemprop="url">magento2使用PayPal Payflow测试账号</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2018-06-06 14:14:03" itemprop="dateCreated datePublished" datetime="2018-06-06T14:14:03+08:00">2018-06-06</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-04-15 13:04:50" itemprop="dateModified" datetime="2022-04-15T13:04:50+08:00">2022-04-15</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/magento2/" itemprop="url" rel="index"><span itemprop="name">magento2</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/magento2/PayPal-PayFlow/" itemprop="url" rel="index"><span itemprop="name">PayPal PayFlow</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <ol>
-<li><p>访问<a target="_blank" rel="noopener" href="https://developer.paypal.com/docs/classic/payflow/test_hosted_pages/">开发文档</a>搜索并点击<code>Create a test-only Payflow Gateway account</code>，继续点击<code>Payflow Services</code>开始创建账号，根据需要的类型选择支付处理公司，除了邮件其他随意填继续下一步到结束。完成后会有成功注册信息发送到邮箱。</p>
-</li>
-<li><p>根据邮件登录信息登录登录<a target="_blank" rel="noopener" href="https://manager.paypal.com/">paypal payflow后台</a>,</p>
-</li>
-</ol>
-<ul>
-<li>点击<br><code>Service Setting-&gt;Set Up-&gt;Payment Confirmation</code>中，修改Show confirmation pagew为<code>On my website</code>，修改<code>Return URL Method</code>为<code>Post</code>。转到<code>Security Options</code>，修改<code>Enable Secure Token</code>为<code>Yes</code>，保存;</li>
-<li>导航到<code>Service Setting-&gt;Customize-&gt;Choose a layout and color</code>，选择<code>Layout C</code>,然后保存发布（Save and Publish）;</li>
-<li>导航到<code>Account Administration-&gt;Manage Security-&gt;Transaction Settings</code>，修改<code>Allow reference transactions</code>为<code>Yes</code>，保存（<code>Confirm</code>）;</li>
-</ul>
-<ol start="3">
-<li>magento2后台配置paypal payflow后即可使用测试信用卡测试。</li>
-</ol>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
   <nav class="pagination">
-    <a class="extend prev" rel="prev" title="上一页" aria-label="上一页" href="/page/2/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/14/">14</a><a class="extend next" rel="next" title="下一页" aria-label="下一页" href="/page/4/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" title="上一页" aria-label="上一页" href="/page/2/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/15/">15</a><a class="extend next" rel="next" title="下一页" aria-label="下一页" href="/page/4/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 </div>
