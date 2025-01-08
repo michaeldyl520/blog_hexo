@@ -3692,6 +3692,7 @@ $("#datepicker").datepicker('option', 'dateFormat','yy-mm-dd');//set dateFormat
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    ......</span><br><span class="line">    &quot;repositories&quot;: &#123;</span><br><span class="line">        &quot;0&quot;:&#123;</span><br><span class="line">            &quot;type&quot;: &quot;composer&quot;,</span><br><span class="line">            &quot;url&quot;: &quot;https://repo.magento.com/&quot;</span><br><span class="line">        &#125;,</span><br><span class="line">        &quot;1&quot;: &#123;</span><br><span class="line">            &quot;type&quot;: &quot;path&quot;,</span><br><span class="line">            &quot;url&quot;: &quot;app/vendor/*/*&quot;,</span><br><span class="line">            &quot;options&quot;: &#123;</span><br><span class="line">                &quot;symlink&quot;: true</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    ......</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
       <tags>
         <tag>composer</tag>
+        <tag>composer repositories</tag>
       </tags>
   </entry>
   <entry>

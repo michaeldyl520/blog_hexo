@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://www.jiliuke.com/about/index.html</loc>
+    <loc>http://www.jiliuke.com/2023/10/09/composer-tips/</loc>
     
     <lastmod>2025-01-08</lastmod>
     
@@ -11,7 +11,7 @@
   </url>
   
   <url>
-    <loc>http://www.jiliuke.com/2023/10/09/composer-tips/</loc>
+    <loc>http://www.jiliuke.com/about/index.html</loc>
     
     <lastmod>2025-01-08</lastmod>
     
@@ -2379,6 +2379,13 @@
   
   <url>
     <loc>http://www.jiliuke.com/tags/rabbitmq/</loc>
+    <lastmod>2025-01-08</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.jiliuke.com/tags/composer-repositories/</loc>
     <lastmod>2025-01-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
