@@ -1,363 +1,377 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html>
 <head>
-  <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width">
-<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 5.4.2">
-
-
-<link rel="stylesheet" href="/css/main.css">
-
-
-
-<link rel="stylesheet" href="https://lf6-cdn-tos.bytecdntp.com/cdn/expire-1-M/font-awesome/5.15.4/css/all.min.css">
-  <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
-
-<script class="next-config" data-name="main" type="application/json">{"hostname":"www.jiliuke.com","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.18.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":true}}</script><script src="/js/config.js"></script>
-
-    <meta name="description" content="从程序员的角度来看， Shell本身是一种用C语言编写的程序，从用户的角度来看，Shell是用户与Linux操作系统沟通的桥梁。用户既可以输入命令执行，又可以利用 Shell脚本编程，完成更加复杂的操作。在Linux GUI日益完善的今天，在系统管理等领域，Shell编程仍然起着不可忽视的作用。深入地了解和熟练地掌握Shell编程，是每一个Linux用户的必修 功课之一。 Linux的Shell种">
-<meta property="og:type" content="article">
-<meta property="og:title" content="Centos Shell编程入门">
-<meta property="og:url" content="http://www.jiliuke.com/2015/08/11/centos-shell-e7-bc-96-e7-a8-8b-e5-85-a5-e9-97-a8/index.html">
-<meta property="og:site_name" content="Jiliuke">
-<meta property="og:description" content="从程序员的角度来看， Shell本身是一种用C语言编写的程序，从用户的角度来看，Shell是用户与Linux操作系统沟通的桥梁。用户既可以输入命令执行，又可以利用 Shell脚本编程，完成更加复杂的操作。在Linux GUI日益完善的今天，在系统管理等领域，Shell编程仍然起着不可忽视的作用。深入地了解和熟练地掌握Shell编程，是每一个Linux用户的必修 功课之一。 Linux的Shell种">
-<meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="file:///C:/Users/yunlong/AppData/Local/YNote/data/qqAB881ABE4AEE31C2A6CFF94728E8E5E9/18f272aea603417cb2eef6c5c01d8308/22431433c-0.gif">
-<meta property="og:image" content="file:///C:/Users/yunlong/AppData/Local/YNote/data/qqAB881ABE4AEE31C2A6CFF94728E8E5E9/18f272aea603417cb2eef6c5c01d8308/22431433c-0.gif">
-<meta property="article:published_time" content="2015-08-11T01:51:14.000Z">
-<meta property="article:modified_time" content="2022-04-15T05:04:50.340Z">
-<meta property="article:author" content="michaeldyl520">
-<meta property="article:tag" content="centos">
-<meta property="article:tag" content="shell">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="file:///C:/Users/yunlong/AppData/Local/YNote/data/qqAB881ABE4AEE31C2A6CFF94728E8E5E9/18f272aea603417cb2eef6c5c01d8308/22431433c-0.gif">
-
-
-<link rel="canonical" href="http://www.jiliuke.com/2015/08/11/centos-shell-e7-bc-96-e7-a8-8b-e5-85-a5-e9-97-a8/">
-
-
-
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://www.jiliuke.com/2015/08/11/centos-shell-e7-bc-96-e7-a8-8b-e5-85-a5-e9-97-a8/","path":"2015/08/11/centos-shell-e7-bc-96-e7-a8-8b-e5-85-a5-e9-97-a8/","title":"Centos Shell编程入门"}</script>
-
-<script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>Centos Shell编程入门 | Jiliuke</title>
+  <meta charset="utf-8">
   
+  
+  <title>Centos Shell编程入门 | Jiliuke</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  
+    <meta name="description" content="Bring the crowds together, inspire unlimited">
+  
+  
+  
+    <link rel="alternate" href="/atom.xml" title="Jiliuke" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
 
+  
+  
+<link rel="stylesheet" href="/css/style.css">
 
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
 
+  
+  
+  
+  
+<meta name="generator" content="Hexo 5.4.2"></head>
 
-
-
-
-
-  <script charset="UTF-8" id="LA_COLLECT" src="//sdk.51.la/js-sdk-pro.min.js"></script>
-<script>LA.init({id:"3GZdzbQGrDvdjET8",ck:"3GZdzbQGrDvdjET8",autoTrack:true})</script>
-
-  <noscript>
-    <link rel="stylesheet" href="/css/noscript.css">
-  </noscript>
-</head>
-
-<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
-  <div class="headband"></div>
-
-  <main class="main">
-    <div class="column">
-      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
-  <div class="site-nav-toggle">
-    <div class="toggle" aria-label="切换导航栏" role="button">
-        <span class="toggle-line"></span>
-        <span class="toggle-line"></span>
-        <span class="toggle-line"></span>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Jiliuke</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">激流客</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        
+          <a class="main-nav-link" href="/."><i class="fa fa-home"></i> 首页</a>
+        
+          <a class="main-nav-link" href="/archives/"><i class="fa fa-archive"></i> 归档</a>
+        
+          <a class="main-nav-link" href="/about/"><i class="fa fa-user"></i> 关于</a>
+        
+          <a class="main-nav-link" href="/atom.xml"><i class="fa fa-rss"></i> 订阅</a>
+        
+      </nav>
+    </div>
+    <div id="search-form">
+      <div id="result-mask" class="hide"></div>
+      <label><input id="search-key" type="text" autocomplete="off" placeholder="搜索"></label>
+      <div id="result-wrap" class="hide">
+        <div id="search-result"></div>
+      </div>
+      <div class="hide">
+        <template id="search-tpl">
+          <div class="item">
+            <a href="/{path}" title="{title}">
+              <div class="title">{title}</div>
+              <div class="time">{date}</div>
+              <div class="tags">{tags}</div>
+            </a>
+          </div>
+        </template>
+      </div>
     </div>
   </div>
-
-  <div class="site-meta">
-
-    <a href="/" class="brand" rel="start">
-      <i class="logo-line"></i>
-      <p class="site-title">Jiliuke</p>
-      <i class="logo-line"></i>
-    </a>
-      <p class="site-subtitle" itemprop="description">激流客</p>
-  </div>
-
-  <div class="site-nav-right">
-    <div class="toggle popup-trigger" aria-label="搜索" role="button">
-        <i class="fa fa-search fa-fw fa-lg"></i>
-    </div>
-  </div>
-</div>
-
-
-
-<nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li><li class="menu-item menu-item-sitemap"><a href="/sitemap.xml" rel="section"><i class="fa fa-sitemap fa-fw"></i>站点地图</a></li>
-      <li class="menu-item menu-item-search">
-        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
-        </a>
-      </li>
-  </ul>
-</nav>
-
-
-
-  <div class="search-pop-overlay">
-    <div class="popup search-popup"><div class="search-header">
-  <span class="search-icon">
-    <i class="fa fa-search"></i>
-  </span>
-  <div class="search-input-container">
-    <input autocomplete="off" autocapitalize="off" maxlength="80"
-           placeholder="搜索..." spellcheck="false"
-           type="search" class="search-input">
-  </div>
-  <span class="popup-btn-close" role="button">
-    <i class="fa fa-times-circle"></i>
-  </span>
-</div>
-<div class="search-result-container no-result">
-  <div class="search-result-icon">
-    <i class="fa fa-spinner fa-pulse fa-5x"></i>
-  </div>
-</div>
-
-    </div>
-  </div>
-
 </header>
+
+      <div class="outer">
+        <section id="main"><article id="post-centos-shell-e7-bc-96-e7-a8-8b-e5-85-a5-e9-97-a8" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
         
   
-  <aside class="sidebar">
+    <h1 class="p-name article-title" itemprop="headline name">
+      Centos Shell编程入门
+    </h1>
+  
 
-    <div class="sidebar-inner sidebar-overview-active">
-      <ul class="sidebar-nav">
-        <li class="sidebar-nav-toc">
-          文章目录
-        </li>
-        <li class="sidebar-nav-overview">
-          站点概览
-        </li>
-      </ul>
 
-      <div class="sidebar-panel-container">
-        <!--noindex-->
-        <div class="post-toc-wrap sidebar-panel">
-        </div>
-        <!--/noindex-->
-
-        <div class="site-overview-wrap sidebar-panel">
-          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
-  <p class="site-author-name" itemprop="name">michaeldyl520</p>
-  <div class="site-description" itemprop="description">Bring the crowds together, inspire unlimited</div>
-</div>
-<div class="site-state-wrap animated">
-  <nav class="site-state">
-      <div class="site-state-item site-state-posts">
-        <a href="/archives/">
-          <span class="site-state-item-count">141</span>
-          <span class="site-state-item-name">日志</span>
-        </a>
-      </div>
-      <div class="site-state-item site-state-categories">
-          <a href="/categories/">
-        <span class="site-state-item-count">34</span>
-        <span class="site-state-item-name">分类</span></a>
-      </div>
-      <div class="site-state-item site-state-tags">
-          <a href="/tags/">
-        <span class="site-state-item-count">154</span>
-        <span class="site-state-item-name">标签</span></a>
-      </div>
-  </nav>
-</div>
-  <div class="links-of-author animated">
-      <span class="links-of-author-item">
-        <a href="https://github.com/michaeldyl520" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;michaeldyl520" rel="noopener me" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
-      </span>
-      <span class="links-of-author-item">
-        <a href="mailto:michaeldyl520@gmail.com" title="E-Mail → mailto:michaeldyl520@gmail.com" rel="noopener me" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
-      </span>
+      </header>
+    
+    <div class="article-meta">
+      
+      <span class="article-date">
+  <i class="fa fa-date"></i>
+  <time class="dt-published" datetime="2015-08-11T01:51:14.000Z" itemprop="datePublished">2015年08月11日</time>
+</span>
+      
+  <div class="article-category">
+    <i class="fa fa-classify"></i>
+    <a class="article-category-link" href="/categories/CentOS/">CentOS</a>
   </div>
 
-        </div>
-      </div>
+      
+        <span class="article-views">
+  <i class="fa fa-views"></i>
+  <i id="busuanzi_container_page_pv">
+      <i id="busuanzi_value_page_pv"></i>
+  </i>
+</span>
+
+      
+      
+<a href="/2015/08/11/centos-shell-e7-bc-96-e7-a8-8b-e5-85-a5-e9-97-a8/#comments" class="article-comment-link">
+  
+    
+    
+    
+    
+    
+  
+  <i class="fa fa-commt"></i>
+  留言
+</a>
+
+
     </div>
-
-    
-  </aside>
-
-
-    </div>
-
-    <div class="main-inner post posts-expand">
-
-
-  
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://www.jiliuke.com/2015/08/11/centos-shell-e7-bc-96-e7-a8-8b-e5-85-a5-e9-97-a8/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="michaeldyl520">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Jiliuke">
-      <meta itemprop="description" content="Bring the crowds together, inspire unlimited">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="Centos Shell编程入门 | Jiliuke">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          Centos Shell编程入门
-        </h1>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2015-08-11 09:51:14" itemprop="dateCreated datePublished" datetime="2015-08-11T09:51:14+08:00">2015-08-11</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-04-15 13:04:50" itemprop="dateModified" datetime="2022-04-15T13:04:50+08:00">2022-04-15</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/CentOS/" itemprop="url" rel="index"><span itemprop="name">CentOS</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody"><p>从程序员的角度来看， Shell本身是一种用C语言编写的程序，从用户的角度来看，Shell是用户与Linux操作系统沟通的桥梁。用户既可以输入命令执行，又可以利用 Shell脚本编程，完成更加复杂的操作。在Linux GUI日益完善的今天，在系统管理等领域，Shell编程仍然起着不可忽视的作用。深入地了解和熟练地掌握Shell编程，是每一个Linux用户的必修 功课之一。 Linux的Shell种类众多，常见的有：Bourne Shell（/usr/bin/sh或/bin/sh）、Bourne Again Shell（/bin/bash）、C Shell（/usr/bin/csh）、K Shell（/usr/bin/ksh）、Shell for Root（/sbin/sh），等等。不同的Shell语言的语法有所不同，所以不能交换使用。每种Shell都有其特色之处，基本上，掌握其中任何一种 就足够了。在本文中，我们关注的重点是Bash，也就是Bourne Again Shell，由于易用和免费，Bash在日常工作中被广泛使用；同时，Bash也是大多数Linux系统默认的Shell。在一般情况下，人们并不区分 Bourne Shell和Bourne Again Shell，所以，在下面的文字中，我们可以看到#!/bin/sh，它同样也可以改为#!/bin/bash。 利用vi等文本编辑器编写Shell脚本的格式是固定的，如下： #!/bin/sh #comments Your commands go here 首行中的符号#!告诉系统其后路径所指定的程序即是解释此脚本文件的Shell程 序。如果首行没有这句话，在执行脚本文件的时候，将会出现错误。后续的部分就是主程序，Shell脚本像高级语言一样，也有变量赋值，也有控制语句。除第 一行外，以#开头的行就是注释行，直到此行的结束。如果一行未完成，可以在行尾加上”，这个符号表明下一行与此行会合并为同一行。 编辑完毕，将脚本存盘为filename.sh，文件名后缀sh表明这是一个Bash脚本文件。执行脚本的时候，要先将脚本文件的属性改为可执行的： chmod +x filename.sh 执行脚本的方法是： ./filename.sh 下面我们从经典的“hello world”入手，看一看最简单的Shell脚本的模样。 #!/bin/sh #print hello world in the console window a = “hello world” echo $a Shell Script是一种弱类型语言，使用变量的时候无需首先声明其类型。新的变量会在本地数据区分配内存进行存储，这个变量归当前的Shell所有，任何子进 程都不能访问本地变量。这些变量与环境变量不同，环境变量被存储在另一内存区，叫做用户环境区，这块内存中的变量可以被子进程访问。变量赋值的方式是： variable_name = variable_value 如果对一个已经有值的变量赋值，新值将取代旧值。取值的时候要在变量名前加$，$variable_name可以在引号中使用，这一点和其他高级语言是明显不同的。如果出现混淆的情况，可以使用花括号来区分，例如： echo “Hi, $as” 就不会输出“Hi, hello worlds”，而是输出“Hi，”。这是因为Shell把$as当成一个变量，而$as未被赋值，其值为空。正确的方法是： echo “Hi, ${a}s” 单引号中的变量不会进行变量替换操作。 关于变量，还需要知道几个与其相关的Linux命令。 env用于显示用户环境区中的变量及其取值；set用于显示本地数据区和用户环境区中的变量及其取值；unset用于删除指定变量当前的取值，该值将被指定为NULL；export命令用于将本地数据区中的变量转移到用户环境区。 下面我们来看一个更复杂的例子，结合这个例子，我们来讲述Shell Script的语法。</p>
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>从程序员的角度来看， Shell本身是一种用C语言编写的程序，从用户的角度来看，Shell是用户与Linux操作系统沟通的桥梁。用户既可以输入命令执行，又可以利用 Shell脚本编程，完成更加复杂的操作。在Linux GUI日益完善的今天，在系统管理等领域，Shell编程仍然起着不可忽视的作用。深入地了解和熟练地掌握Shell编程，是每一个Linux用户的必修 功课之一。 Linux的Shell种类众多，常见的有：Bourne Shell（/usr/bin/sh或/bin/sh）、Bourne Again Shell（/bin/bash）、C Shell（/usr/bin/csh）、K Shell（/usr/bin/ksh）、Shell for Root（/sbin/sh），等等。不同的Shell语言的语法有所不同，所以不能交换使用。每种Shell都有其特色之处，基本上，掌握其中任何一种 就足够了。在本文中，我们关注的重点是Bash，也就是Bourne Again Shell，由于易用和免费，Bash在日常工作中被广泛使用；同时，Bash也是大多数Linux系统默认的Shell。在一般情况下，人们并不区分 Bourne Shell和Bourne Again Shell，所以，在下面的文字中，我们可以看到#!/bin/sh，它同样也可以改为#!/bin/bash。 利用vi等文本编辑器编写Shell脚本的格式是固定的，如下： #!/bin/sh #comments Your commands go here 首行中的符号#!告诉系统其后路径所指定的程序即是解释此脚本文件的Shell程 序。如果首行没有这句话，在执行脚本文件的时候，将会出现错误。后续的部分就是主程序，Shell脚本像高级语言一样，也有变量赋值，也有控制语句。除第 一行外，以#开头的行就是注释行，直到此行的结束。如果一行未完成，可以在行尾加上”，这个符号表明下一行与此行会合并为同一行。 编辑完毕，将脚本存盘为filename.sh，文件名后缀sh表明这是一个Bash脚本文件。执行脚本的时候，要先将脚本文件的属性改为可执行的： chmod +x filename.sh 执行脚本的方法是： ./filename.sh 下面我们从经典的“hello world”入手，看一看最简单的Shell脚本的模样。 #!/bin/sh #print hello world in the console window a = “hello world” echo $a Shell Script是一种弱类型语言，使用变量的时候无需首先声明其类型。新的变量会在本地数据区分配内存进行存储，这个变量归当前的Shell所有，任何子进 程都不能访问本地变量。这些变量与环境变量不同，环境变量被存储在另一内存区，叫做用户环境区，这块内存中的变量可以被子进程访问。变量赋值的方式是： variable_name = variable_value 如果对一个已经有值的变量赋值，新值将取代旧值。取值的时候要在变量名前加$，$variable_name可以在引号中使用，这一点和其他高级语言是明显不同的。如果出现混淆的情况，可以使用花括号来区分，例如： echo “Hi, $as” 就不会输出“Hi, hello worlds”，而是输出“Hi，”。这是因为Shell把$as当成一个变量，而$as未被赋值，其值为空。正确的方法是： echo “Hi, ${a}s” 单引号中的变量不会进行变量替换操作。 关于变量，还需要知道几个与其相关的Linux命令。 env用于显示用户环境区中的变量及其取值；set用于显示本地数据区和用户环境区中的变量及其取值；unset用于删除指定变量当前的取值，该值将被指定为NULL；export命令用于将本地数据区中的变量转移到用户环境区。 下面我们来看一个更复杂的例子，结合这个例子，我们来讲述Shell Script的语法。</p>
 <p>{C} 1 #!/bin/bash 2 # we have less than 3 arguments. Print the help text: 3 if [ $# -lt 3 ]; then 4 cat&lt;&lt;HELP 5      ren – renames a number of files using sed regular expressions 6 7      USAGE: ren ‘regexp’ ‘replacement’ files<img src="file:///C:/Users/yunlong/AppData/Local/YNote/data/qqAB881ABE4AEE31C2A6CFF94728E8E5E9/18f272aea603417cb2eef6c5c01d8308/22431433c-0.gif"> 8      EXAMPLE: rename all <em>.HTM files in *.html: 9      ren ‘HTM$’ ‘html’ *.HTM 10 11 HELP 12      exit 0 13 fi 14 OLD=”$1” 15 NEW=”$2” 16 # The shift command removes one argument from the list of 17 # command line arguments. 18 shift 19 shift 20 # $</em> contains now all the files: 21 for file in $*; do 22 if [ -f “$file” ]; then 23     newfile=`echo “$file” | sed  “s/${OLD}/${NEW}/g”` 24         if [ -f “$newfile” ]; then 25             echo “ERROR: $newfile exists already” 26         else 27             echo “renaming $file to $newfile <img src="file:///C:/Users/yunlong/AppData/Local/YNote/data/qqAB881ABE4AEE31C2A6CFF94728E8E5E9/18f272aea603417cb2eef6c5c01d8308/22431433c-0.gif">“ 28             mv “$file” “$newfile” 29         fi 30 fi 31 done</p>
 <p>  我们从头来看，前面两行上一个例子中已经解释过了，从第三行开始，有新的内容。if语句和其他编程语言相似，都是流程控制语句。它的语法是： if …; then … elif …; then … else … fi 与其他语言不同，Shell Script中if语句的条件部分要以分号来分隔。第三行中的[]表示条件测试，常用的条件测试有下面几种： [ -f “$file” ] 判断$file是否是一个文件 [ $a -lt 3 ] 判断$a的值是否小于3，同样-gt和-le分别表示大于或小于等于 [ -x “$file” ] 判断$file是否存在且有可执行权限，同样-r测试文件可读性 [ -n “$a” ] 判断变量$a是否有值，测试空串用-z [ “$a” = “$b” ] 判断$a和$b的取值是否相等 [ cond1 -a cond2 ] 判断cond1和cond2是否同时成立，-o表示cond1和cond2有一成立 要注意条件测试部分中的空格。在方括号的两侧都有空格，在-f、-lt、=等符号两侧同样也有空格。如果没有这些空格，Shell解释脚本的时候就会出错。 $#表示包括$0在内的命令行参数的个数。在Shell中，脚本名称本身是$0，剩下的依次是$0、$1、$2…、${10}、${11}，等等。$*表示整个参数列表，不包括$0，也就是说不包括文件名的参数列表。 现在我们明白第三行的含义是如果脚本文件的参数少于三个，则执行if和fi语句之间 的内容。然后，从第四行到第十一行之间的内容在Shell Script编程中被称为Here文档，Here文档用于将多行文本传递给某一命令。Here文档的格式是以&lt;&lt;开始，后跟一个字符串，在 Here文档结束的时候，这个字符串同样也要出现，表示文档结束。在本例中，Here文档被输出给cat命令，也即将文档内容打印在屏幕上，起到显示帮助 信息的作用。 第十二行的exit是Linux的命令，表示退出当前进程。在Shell脚本中可以使用所有的Linux命令，利用上面的cat和exit，从一方面来说，熟练使用Linux命令也可以大大减少Shell脚本的长度。 十四、十五两句是赋值语句，分别将第一和第二参数赋值给变量OLD和NEW。紧接下来的两句是注释，注释下面的两条shift的作用是将参数列表中的第一个和第二个参数删除，后面的参数依次变为新的第一和第二参数，注意参数列表原本也不包括$0。 然后，自二十一行到三十一行是一个循环语句。Shell Script中的循环有下面几种格式： while [ cond1 ] &amp;&amp; { || } [ cond2 ] …; do … done for var in …; do … done for (( cond1; cond2; cond3 )) do … done until [ cond1 ] &amp;&amp; { || } [ cond2 ] …; do … done 在上面这些循环中，也可以使用类似C语言中的break和continue语句中断 当前的循环操作。第二十一行的循环是将参数列表中的参数一个一个地放入变量file中。然后进入循环，判断file是否为一个文件，如果是文件的话，则用 sed命令搜索和生成新的文件名。sed基本上可以看成一个查找替换程序，从标准输入，例如管道读入文本，并将结果输出到标准输出，sed使用正则表达式 进行搜索。在第二十三行中，backtick（`）的作用是取出两个backtick之间的命令输出结果，在这里，也就是将结果取出赋给变量 newfile。此后，判断newfile是否已经存在，否则就把file改成newfile。这样我们就明白这个脚本的作用了，Shell Script编写的其他脚本与此相似，只不过是语法和用法稍有不同而已。 通过这个例子我们明白了Shell Script的编写规则，但还有几件事情需要讲述一下。 第一个，除了if语句之外，Shell Script中也有类似C语言中多分支结构的case语句，它的语法是： case var in pattern 1 ) … ;; pattern 2 ) … ;; *) … ;; esac   我们再就下面一个例子，看看case语句的用法。 while getopts vc: OPTION do case $OPTION in c) COPIES=$OPTARG ehco “$COPIES”;; v) echo “suyang”;; \?) exit 1;; esac done 上面的getopts类似于C语言提供的函数getopts，在Shell Script中，getopts经常和while语句联合起来使用。getopts的语法如下： getopts option_string variable option_string中包含一串单字符选项，若getopts在命令行参数中 发现了连字符，那么它会将连字符之后的字符与option_string进行比较，若匹配成功，则把变量variable的值设为该选项，若无匹配，则把 变量的值设为？。有时候，选项还会带一个值，例如-c5等，这时要在option_string中该选项字母后面加上一个冒号，getopts发现冒号 后，会读取该值，然后将该值放入特殊变量OPTARG中。这个命令比较复杂，如有需要，读者可以详细参阅Shell编写的相关资料。 上面这个循环的作用就是依次取出脚本名称后面的选项，进行处理，如果输入了非法选项，则进入”?指定的部分，退出脚本程序。 第二个，Bash提供了一种用于交互式应用的扩展select，用户可以从一组不同的值中进行选择。其语法如下： select var in …; do break; done 例如，下面这段程序的输出是： #!/bin/bash echo “Your choice?” select var in “a” “b” “c”; do break done echo $var —————————- Your choice? 1) a 2) b 3) c 第三，Shell Script中也可以使用自定义的函数，其语法形式如下： functionname() { … } 例如我们可以把上面第二个例子中第四到第十二行放入一个名为help函数体内，以后每次调用的时候直接写help即可。函数中处理函数调用参数的方法是，直接用上面讲过的$1、$2来分别表示第一、第二个参数，用$*表示参数列表。 第四，我们也可以在Shell下调试Shell Script脚本，当然最简单的方法就是用echo输出查看变量取值了。Bash也提供了真正的调试方法，就是执行脚本的时候用-x参数。 sh ?x filename.sh 这会执行脚本并显示脚本中所有变量的取值，也可以使用参数-n，它并不执行脚本，只是返回所有的语法错误。</p>
 
+        
+            <div id="toc-article">
+                
+  <div class="widget-wrap" id="toc-wrap">
+    <h3 class="widget-title"><i class="fa fa-toc"></i> 文章目录</h3>
+    <div class="widget">
+      
     </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-          <div class="reward-container">
-  <div>请我一杯咖啡吧！</div>
-  <button>
-    赞赏
-  </button>
-  <div class="post-reward">
-      <div>
-        <img src="/images/wechatpay.png" alt="michaeldyl520 微信">
-        <span>微信</span>
-      </div>
-      <div>
-        <img src="/images/alipay.png" alt="michaeldyl520 支付宝">
-        <span>支付宝</span>
-      </div>
-
   </div>
-</div>
 
-          <div class="post-tags">
-              <a href="/tags/centos/" rel="tag"># centos</a>
-              <a href="/tags/shell/" rel="tag"># shell</a>
-          </div>
 
+            </div>
+        
+        
+          <blockquote id="copyright">
+              <p>原文链接: <a href="http://www.jiliuke.com/2015/08/11/centos-shell-e7-bc-96-e7-a8-8b-e5-85-a5-e9-97-a8/">http://www.jiliuke.com/2015/08/11/centos-shell-e7-bc-96-e7-a8-8b-e5-85-a5-e9-97-a8/</a></p>
+              <p>版权声明: 转载请注明出处.</p>
+          </blockquote>
+        
+      
+    </div>
+    <footer class="article-footer">
+      
+        <div class="article-tag-wrap">
+          
+
+          
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/centos/" rel="tag">centos</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/shell/" rel="tag">shell</a></li></ul>
+
+          
+
+
+        </div>
+      
+      
+        
+<nav id="article-nav">
+  
+    <a href="/2015/08/11/nfs-mount-errors-with-clnt-create-rpc-unknown-host-for-centos-6/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">older</strong>
+      <div class="article-nav-title">
+        
+          NFS mount errors with &#34;clnt_create: RPC: Unknown host&#34; for CentOS 6
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2015/08/11/centos-e5-ae-89-e8-a3-85sensors-e6-9f-a5-e7-9c-8bcpu-e6-b8-a9-e5-ba-a6/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">newer</strong>
+      <div class="article-nav-title">
+        
+          centos 安装sensors查看cpu温度
+        
+      </div>
+    </a>
+  
+</nav>
+
+      
+      
         
 
-          <div class="post-nav">
-            <div class="post-nav-item">
-                <a href="/2015/08/11/nfs-mount-errors-with-clnt-create-rpc-unknown-host-for-centos-6/" rel="prev" title="NFS mount errors with "clnt_create: RPC: Unknown host" for CentOS 6">
-                  <i class="fa fa-angle-left"></i> NFS mount errors with "clnt_create: RPC: Unknown host" for CentOS 6
-                </a>
-            </div>
-            <div class="post-nav-item">
-                <a href="/2015/08/11/centos-e5-ae-89-e8-a3-85sensors-e6-9f-a5-e7-9c-8bcpu-e6-b8-a9-e5-ba-a6/" rel="next" title="centos 安装sensors查看cpu温度">
-                  centos 安装sensors查看cpu温度 <i class="fa fa-angle-right"></i>
-                </a>
-            </div>
-          </div>
+
+
+
+
+
+
+
+      
     </footer>
-  </article>
-</div>
-
-
-
-
-
-
-</div>
-  </main>
-
-  <footer class="footer">
-    <div class="footer-inner">
-
-  <div class="copyright">
-    &copy; 
-    <span itemprop="copyrightYear">2024</span>
-    <span class="with-love">
-      <i class="fa fa-heart"></i>
-    </span>
-    <span class="author" itemprop="copyrightHolder">michaeldyl520</span>
   </div>
+</article>
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title"><i class="fa fa-posts"></i> 最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2024/08/13/rabbitmq/">Rabbitmq 一些有用的用法</a>
+          </li>
+        
+          <li>
+            <a href="/2024/08/07/debian-tips/">Linux debian 系统一些小技巧</a>
+          </li>
+        
+          <li>
+            <a href="/2024/08/02/docker-tips/">docker使用小技巧</a>
+          </li>
+        
+          <li>
+            <a href="/2024/04/11/wakeonlan/">Linux 系统远程开机(WOL)</a>
+          </li>
+        
+          <li>
+            <a href="/2024/03/29/magento2-unit-test/">magento2 单元测试</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title"><i class="fa fa-tag"></i> 标签云</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/etc-passwd/" style="font-size: 10px;">/etc/passwd</a> <a href="/tags/etc-shadow/" style="font-size: 10px;">/etc/shadow</a> <a href="/tags/301/" style="font-size: 10px;">301</a> <a href="/tags/403/" style="font-size: 10px;">403</a> <a href="/tags/ADT/" style="font-size: 11.25px;">ADT</a> <a href="/tags/Adobe-Photoshop-CS6/" style="font-size: 10px;">Adobe Photoshop CS6</a> <a href="/tags/Android-SDK/" style="font-size: 10px;">Android SDK</a> <a href="/tags/CPU/" style="font-size: 10px;">CPU</a> <a href="/tags/Crond/" style="font-size: 10px;">Crond</a> <a href="/tags/LAMP/" style="font-size: 10px;">LAMP</a> <a href="/tags/LayoutInflater/" style="font-size: 10px;">LayoutInflater</a> <a href="/tags/MYSQL/" style="font-size: 16.25px;">MYSQL</a> <a href="/tags/Magento2/" style="font-size: 10px;">Magento2</a> <a href="/tags/PHP/" style="font-size: 16.25px;">PHP</a> <a href="/tags/PHP-FPM%E4%BC%98%E5%8C%96/" style="font-size: 10px;">PHP-FPM优化</a> <a href="/tags/PHP-FPM%E9%85%8D%E7%BD%AE/" style="font-size: 10px;">PHP-FPM配置</a> <a href="/tags/PHP%E4%BA%8C%E7%BB%B4%E6%95%B0%E7%BB%84/" style="font-size: 10px;">PHP二维数组</a> <a href="/tags/PHP%E6%B5%AE%E7%82%B9%E6%95%B0/" style="font-size: 10px;">PHP浮点数</a> <a href="/tags/PayPal/" style="font-size: 10px;">PayPal</a> <a href="/tags/RPC/" style="font-size: 10px;">RPC</a> <a href="/tags/SELINUX/" style="font-size: 12.5px;">SELINUX</a> <a href="/tags/SMTP/" style="font-size: 11.25px;">SMTP</a> <a href="/tags/Subversion/" style="font-size: 10px;">Subversion</a> <a href="/tags/TabHost/" style="font-size: 11.25px;">TabHost</a> <a href="/tags/VNC/" style="font-size: 10px;">VNC</a> <a href="/tags/Zend-Http-Client/" style="font-size: 10px;">Zend_Http_Client</a> <a href="/tags/android/" style="font-size: 15px;">android</a> <a href="/tags/apache/" style="font-size: 11.25px;">apache</a> <a href="/tags/appcompat-v7/" style="font-size: 10px;">appcompat v7</a> <a href="/tags/attr/" style="font-size: 10px;">attr</a> <a href="/tags/buster/" style="font-size: 10px;">buster</a> <a href="/tags/cdn/" style="font-size: 10px;">cdn</a> <a href="/tags/centos/" style="font-size: 20px;">centos</a> <a href="/tags/chcon/" style="font-size: 10px;">chcon</a> <a href="/tags/chkconfig/" style="font-size: 10px;">chkconfig</a> <a href="/tags/cmake/" style="font-size: 11.25px;">cmake</a> <a href="/tags/cms-block/" style="font-size: 10px;">cms_block</a> <a href="/tags/cms-page/" style="font-size: 10px;">cms_page</a> <a href="/tags/composer/" style="font-size: 10px;">composer</a> <a href="/tags/configure/" style="font-size: 11.25px;">configure</a> <a href="/tags/crontab/" style="font-size: 11.25px;">crontab</a> <a href="/tags/crossover/" style="font-size: 10px;">crossover</a> <a href="/tags/curl/" style="font-size: 11.25px;">curl</a> <a href="/tags/datepicker/" style="font-size: 10px;">datepicker</a> <a href="/tags/debian/" style="font-size: 11.25px;">debian</a> <a href="/tags/deepin/" style="font-size: 12.5px;">deepin</a> <a href="/tags/desktop/" style="font-size: 10px;">desktop</a> <a href="/tags/docker/" style="font-size: 11.25px;">docker</a> <a href="/tags/elasticsearch/" style="font-size: 10px;">elasticsearch</a> <a href="/tags/fakepath/" style="font-size: 10px;">fakepath</a> <a href="/tags/flexslider/" style="font-size: 10px;">flexslider</a> <a href="/tags/fpm/" style="font-size: 10px;">fpm</a> <a href="/tags/getApplication/" style="font-size: 10px;">getApplication</a> <a href="/tags/getApplicationContext/" style="font-size: 10px;">getApplicationContext</a> <a href="/tags/getsebool/" style="font-size: 10px;">getsebool</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/horizontal/" style="font-size: 10px;">horizontal</a> <a href="/tags/htaccess/" style="font-size: 10px;">htaccess</a> <a href="/tags/http-proxy/" style="font-size: 10px;">http_proxy</a> <a href="/tags/https/" style="font-size: 10px;">https</a> <a href="/tags/invalidate/" style="font-size: 10px;">invalidate</a> <a href="/tags/ip/" style="font-size: 11.25px;">ip</a> <a href="/tags/ip2long/" style="font-size: 10px;">ip2long</a> <a href="/tags/iredmail/" style="font-size: 11.25px;">iredmail</a> <a href="/tags/javascript-testing/" style="font-size: 10px;">javascript testing</a> <a href="/tags/jquery/" style="font-size: 13.75px;">jquery</a> <a href="/tags/jquery-ui/" style="font-size: 10px;">jquery ui</a> <a href="/tags/jquery-validate/" style="font-size: 10px;">jquery.validate</a> <a href="/tags/kill/" style="font-size: 10px;">kill</a> <a href="/tags/linux/" style="font-size: 18.75px;">linux</a> <a href="/tags/lm-sensors/" style="font-size: 10px;">lm_sensors</a> <a href="/tags/lnmp/" style="font-size: 10px;">lnmp</a> <a href="/tags/logrotate/" style="font-size: 10px;">logrotate</a> <a href="/tags/magento-cloud/" style="font-size: 10px;">magento-cloud</a> <a href="/tags/magento2/" style="font-size: 17.5px;">magento2</a> <a href="/tags/mantisbt/" style="font-size: 10px;">mantisbt</a> <a href="/tags/md5/" style="font-size: 10px;">md5</a> <a href="/tags/modal/" style="font-size: 10px;">modal</a> <a href="/tags/mount/" style="font-size: 11.25px;">mount</a> <a href="/tags/msql/" style="font-size: 10px;">msql</a> <a href="/tags/myql/" style="font-size: 10px;">myql</a> <a href="/tags/mysql/" style="font-size: 11.25px;">mysql</a> <a href="/tags/mysqld/" style="font-size: 10px;">mysqld</a> <a href="/tags/mysqldump/" style="font-size: 10px;">mysqldump</a> <a href="/tags/mysql%E4%BC%98%E5%8C%96/" style="font-size: 10px;">mysql优化</a> <a href="/tags/nameserver/" style="font-size: 10px;">nameserver</a> <a href="/tags/nfs/" style="font-size: 11.25px;">nfs</a> <a href="/tags/nginx/" style="font-size: 12.5px;">nginx</a> <a href="/tags/nvidia-linux/" style="font-size: 10px;">nvidia linux</a> <a href="/tags/orientation/" style="font-size: 10px;">orientation</a> <a href="/tags/php/" style="font-size: 10px;">php</a> <a href="/tags/php-md5-16/" style="font-size: 10px;">php md5 16</a> <a href="/tags/php-fpm/" style="font-size: 12.5px;">php-fpm</a> <a href="/tags/phpcs/" style="font-size: 10px;">phpcs</a> <a href="/tags/phpstorm/" style="font-size: 10px;">phpstorm</a> <a href="/tags/phpunit-testing/" style="font-size: 10px;">phpunit testing</a> <a href="/tags/ping/" style="font-size: 10px;">ping</a> <a href="/tags/pkill/" style="font-size: 10px;">pkill</a> <a href="/tags/postman/" style="font-size: 10px;">postman</a> <a href="/tags/problem/" style="font-size: 10px;">problem</a> <a href="/tags/prop/" style="font-size: 10px;">prop</a> <a href="/tags/rabbitmq/" style="font-size: 10px;">rabbitmq</a> <a href="/tags/rar/" style="font-size: 10px;">rar</a> <a href="/tags/redis/" style="font-size: 10px;">redis</a> <a href="/tags/reduce/" style="font-size: 10px;">reduce</a> <a href="/tags/rewrite/" style="font-size: 10px;">rewrite</a> <a href="/tags/rpm/" style="font-size: 10px;">rpm</a> <a href="/tags/samba/" style="font-size: 13.75px;">samba</a> <a href="/tags/scp/" style="font-size: 11.25px;">scp</a> <a href="/tags/sensors/" style="font-size: 10px;">sensors</a> <a href="/tags/setsebool/" style="font-size: 10px;">setsebool</a> <a href="/tags/shell/" style="font-size: 10px;">shell</a> <a href="/tags/ssd/" style="font-size: 10px;">ssd</a> <a href="/tags/ssh/" style="font-size: 12.5px;">ssh</a> <a href="/tags/sshd/" style="font-size: 10px;">sshd</a> <a href="/tags/ssl/" style="font-size: 10px;">ssl</a> <a href="/tags/str-replace/" style="font-size: 10px;">str_replace</a> <a href="/tags/swipe/" style="font-size: 10px;">swipe</a> <a href="/tags/token/" style="font-size: 10px;">token</a> <a href="/tags/touch/" style="font-size: 10px;">touch</a> <a href="/tags/user/" style="font-size: 10px;">user</a> <a href="/tags/validate/" style="font-size: 10px;">validate</a> <a href="/tags/vsftp/" style="font-size: 12.5px;">vsftp</a> <a href="/tags/wakeonlan/" style="font-size: 10px;">wakeonlan</a> <a href="/tags/wol/" style="font-size: 10px;">wol</a> <a href="/tags/xhgui/" style="font-size: 10px;">xhgui</a> <a href="/tags/xunsearch/" style="font-size: 10px;">xunsearch</a> <a href="/tags/yum/" style="font-size: 10px;">yum</a> <a href="/tags/zepto/" style="font-size: 10px;">zepto</a> <a href="/tags/%E4%B8%BB%E4%BB%8E%E9%85%8D%E7%BD%AE/" style="font-size: 10px;">主从配置</a> <a href="/tags/%E4%B8%BB%E9%94%AE/" style="font-size: 10px;">主键</a> <a href="/tags/%E4%BC%98%E5%8C%96/" style="font-size: 10px;">优化</a> <a href="/tags/%E5%8C%BA%E5%88%AB/" style="font-size: 10px;">区别</a> <a href="/tags/%E5%AE%89%E5%8D%93/" style="font-size: 13.75px;">安卓</a> <a href="/tags/%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/" style="font-size: 10px;">常用命令</a> <a href="/tags/%E5%BC%80%E6%9C%BA%E5%90%AF%E5%8A%A8/" style="font-size: 10px;">开机启动</a> <a href="/tags/%E5%BC%80%E6%BA%90/" style="font-size: 10px;">开源</a> <a href="/tags/%E6%89%A7%E8%A1%8C/" style="font-size: 10px;">执行</a> <a href="/tags/%E6%96%87%E4%BB%B6%E5%88%A0%E9%99%A4/" style="font-size: 10px;">文件删除</a> <a href="/tags/%E6%97%A5%E5%BF%97/" style="font-size: 10px;">日志</a> <a href="/tags/%E6%9F%A5%E7%9C%8BIP/" style="font-size: 10px;">查看IP</a> <a href="/tags/%E7%8B%AC%E7%AB%8B%E6%98%BE%E5%8D%A1-%E5%AE%89%E8%A3%85/" style="font-size: 10px;">独立显卡 安装</a> <a href="/tags/%E7%A1%AC%E4%BB%B6/" style="font-size: 10px;">硬件</a> <a href="/tags/%E7%B1%BB%E5%9E%8B%E6%96%87%E4%BB%B6/" style="font-size: 10px;">类型文件</a> <a href="/tags/%E7%BB%9F%E8%AE%A1/" style="font-size: 10px;">统计</a> <a href="/tags/%E7%BD%91%E9%A1%B5/" style="font-size: 10px;">网页</a> <a href="/tags/%E8%87%AA%E8%BF%90%E8%A1%8C/" style="font-size: 10px;">自运行</a> <a href="/tags/%E8%99%9A%E6%8B%9F%E7%9B%AE%E5%BD%95/" style="font-size: 10px;">虚拟目录</a> <a href="/tags/%E8%B0%B7%E6%AD%8C%E6%8F%92%E4%BB%B6/" style="font-size: 10px;">谷歌插件</a> <a href="/tags/%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1/" style="font-size: 10px;">负载均衡</a> <a href="/tags/%E8%BF%81%E7%A7%BB/" style="font-size: 10px;">迁移</a> <a href="/tags/%E9%87%8D%E5%AE%9A%E5%90%91/" style="font-size: 10px;">重定向</a> <a href="/tags/%E9%95%9C%E5%83%8F/" style="font-size: 10px;">镜像</a> <a href="/tags/%E9%9B%86%E7%BE%A4/" style="font-size: 10px;">集群</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title"><i class="fa fa-classify"></i> 分类</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/CentOS/">CentOS</a><span class="category-list-count">45</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/CentOS/%E5%B7%A5%E5%85%B7/">工具</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/LAMP%E6%8A%80%E6%9C%AF%E4%B8%AD%E5%BF%83/">LAMP技术中心</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/MYSQL/">MYSQL</a><span class="category-list-count">11</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/PHP/">PHP</a><span class="category-list-count">9</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Ubuntu/">Ubuntu</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/android/">android</a><span class="category-list-count">4</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/android/%E5%AE%89%E5%8D%93%E9%97%AE%E9%A2%98%E9%9B%86%E9%94%A6/">安卓问题集锦</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/apache/">apache</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/cdn/">cdn</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/iredMail/">iredMail</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/javascript/">javascript</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/jquery/">jquery</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/jquery-validate/">jquery.validate</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/lnmp/">lnmp</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/magento2/">magento2</a><span class="category-list-count">4</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/magento2/PayPal-PayFlow/">PayPal PayFlow</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/magento2/elasticsearch/">elasticsearch</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/magento2/magento-cloud/">magento-cloud</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/mantisbt/">mantisbt</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/nginx/">nginx</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/php-fpm/">php-fpm</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/redis/">redis</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/samba/">samba</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/ssh/">ssh</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/ssh/git/">git</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/vsftp/">vsftp</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/xunsearch/">xunsearch</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%AE%89%E5%8D%93%E9%97%AE%E9%A2%98%E9%9B%86%E9%94%A6/">安卓问题集锦</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%9C%AA%E5%88%86%E7%B1%BB/">未分类</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%A7%BB%E5%8A%A8%E7%AB%AFjs/">移动端js</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%B0%B7%E6%AD%8C%E6%8F%92%E4%BB%B6/">谷歌插件</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%BF%90%E7%BB%B4/">运维</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%BF%90%E7%BB%B4/%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C/">文件操作</a><span class="category-list-count">1</span></li></ul></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title"><i class="fa fa-archive"></i> 归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/">2024年</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/">2023年</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/">2022年</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/">2021年</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/">2020年</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/">2019年</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/">2018年</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/">2015年</a><span class="archive-list-count">46</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/">2014年</a><span class="archive-list-count">62</span></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title"><i class="fa fa-tag"></i> 标签</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/etc-passwd/" rel="tag">/etc/passwd</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/etc-shadow/" rel="tag">/etc/shadow</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/301/" rel="tag">301</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/403/" rel="tag">403</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ADT/" rel="tag">ADT</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Adobe-Photoshop-CS6/" rel="tag">Adobe Photoshop CS6</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android-SDK/" rel="tag">Android SDK</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CPU/" rel="tag">CPU</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Crond/" rel="tag">Crond</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/LAMP/" rel="tag">LAMP</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/LayoutInflater/" rel="tag">LayoutInflater</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MYSQL/" rel="tag">MYSQL</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Magento2/" rel="tag">Magento2</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PHP/" rel="tag">PHP</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PHP-FPM%E4%BC%98%E5%8C%96/" rel="tag">PHP-FPM优化</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PHP-FPM%E9%85%8D%E7%BD%AE/" rel="tag">PHP-FPM配置</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PHP%E4%BA%8C%E7%BB%B4%E6%95%B0%E7%BB%84/" rel="tag">PHP二维数组</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PHP%E6%B5%AE%E7%82%B9%E6%95%B0/" rel="tag">PHP浮点数</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PayPal/" rel="tag">PayPal</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/RPC/" rel="tag">RPC</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SELINUX/" rel="tag">SELINUX</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SMTP/" rel="tag">SMTP</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Subversion/" rel="tag">Subversion</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TabHost/" rel="tag">TabHost</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/VNC/" rel="tag">VNC</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Zend-Http-Client/" rel="tag">Zend_Http_Client</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/android/" rel="tag">android</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/apache/" rel="tag">apache</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/appcompat-v7/" rel="tag">appcompat v7</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/attr/" rel="tag">attr</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/buster/" rel="tag">buster</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cdn/" rel="tag">cdn</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/centos/" rel="tag">centos</a><span class="tag-list-count">41</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/chcon/" rel="tag">chcon</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/chkconfig/" rel="tag">chkconfig</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cmake/" rel="tag">cmake</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cms-block/" rel="tag">cms_block</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cms-page/" rel="tag">cms_page</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/composer/" rel="tag">composer</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/configure/" rel="tag">configure</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/crontab/" rel="tag">crontab</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/crossover/" rel="tag">crossover</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/curl/" rel="tag">curl</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/datepicker/" rel="tag">datepicker</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/debian/" rel="tag">debian</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/deepin/" rel="tag">deepin</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/desktop/" rel="tag">desktop</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/docker/" rel="tag">docker</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/elasticsearch/" rel="tag">elasticsearch</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/fakepath/" rel="tag">fakepath</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/flexslider/" rel="tag">flexslider</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/fpm/" rel="tag">fpm</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/getApplication/" rel="tag">getApplication</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/getApplicationContext/" rel="tag">getApplicationContext</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/getsebool/" rel="tag">getsebool</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/" rel="tag">git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/horizontal/" rel="tag">horizontal</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/htaccess/" rel="tag">htaccess</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/http-proxy/" rel="tag">http_proxy</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/https/" rel="tag">https</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/invalidate/" rel="tag">invalidate</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ip/" rel="tag">ip</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ip2long/" rel="tag">ip2long</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/iredmail/" rel="tag">iredmail</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript-testing/" rel="tag">javascript testing</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jquery/" rel="tag">jquery</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jquery-ui/" rel="tag">jquery ui</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jquery-validate/" rel="tag">jquery.validate</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/kill/" rel="tag">kill</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/" rel="tag">linux</a><span class="tag-list-count">10</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/lm-sensors/" rel="tag">lm_sensors</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/lnmp/" rel="tag">lnmp</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/logrotate/" rel="tag">logrotate</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/magento-cloud/" rel="tag">magento-cloud</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/magento2/" rel="tag">magento2</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mantisbt/" rel="tag">mantisbt</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/md5/" rel="tag">md5</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/modal/" rel="tag">modal</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mount/" rel="tag">mount</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/msql/" rel="tag">msql</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/myql/" rel="tag">myql</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mysql/" rel="tag">mysql</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mysqld/" rel="tag">mysqld</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mysqldump/" rel="tag">mysqldump</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mysql%E4%BC%98%E5%8C%96/" rel="tag">mysql优化</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/nameserver/" rel="tag">nameserver</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/nfs/" rel="tag">nfs</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/nginx/" rel="tag">nginx</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/nvidia-linux/" rel="tag">nvidia linux</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/orientation/" rel="tag">orientation</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/php/" rel="tag">php</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/php-md5-16/" rel="tag">php md5 16</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/php-fpm/" rel="tag">php-fpm</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/phpcs/" rel="tag">phpcs</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/phpstorm/" rel="tag">phpstorm</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/phpunit-testing/" rel="tag">phpunit testing</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ping/" rel="tag">ping</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/pkill/" rel="tag">pkill</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/postman/" rel="tag">postman</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/problem/" rel="tag">problem</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/prop/" rel="tag">prop</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/rabbitmq/" rel="tag">rabbitmq</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/rar/" rel="tag">rar</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/redis/" rel="tag">redis</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/reduce/" rel="tag">reduce</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/rewrite/" rel="tag">rewrite</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/rpm/" rel="tag">rpm</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/samba/" rel="tag">samba</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/scp/" rel="tag">scp</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sensors/" rel="tag">sensors</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/setsebool/" rel="tag">setsebool</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/shell/" rel="tag">shell</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ssd/" rel="tag">ssd</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ssh/" rel="tag">ssh</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sshd/" rel="tag">sshd</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ssl/" rel="tag">ssl</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/str-replace/" rel="tag">str_replace</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/swipe/" rel="tag">swipe</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/token/" rel="tag">token</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/touch/" rel="tag">touch</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/user/" rel="tag">user</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/validate/" rel="tag">validate</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vsftp/" rel="tag">vsftp</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/wakeonlan/" rel="tag">wakeonlan</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/wol/" rel="tag">wol</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/xhgui/" rel="tag">xhgui</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/xunsearch/" rel="tag">xunsearch</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/yum/" rel="tag">yum</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/zepto/" rel="tag">zepto</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%B8%BB%E4%BB%8E%E9%85%8D%E7%BD%AE/" rel="tag">主从配置</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%B8%BB%E9%94%AE/" rel="tag">主键</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BC%98%E5%8C%96/" rel="tag">优化</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%8C%BA%E5%88%AB/" rel="tag">区别</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AE%89%E5%8D%93/" rel="tag">安卓</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/" rel="tag">常用命令</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BC%80%E6%9C%BA%E5%90%AF%E5%8A%A8/" rel="tag">开机启动</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BC%80%E6%BA%90/" rel="tag">开源</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%89%A7%E8%A1%8C/" rel="tag">执行</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%96%87%E4%BB%B6%E5%88%A0%E9%99%A4/" rel="tag">文件删除</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%97%A5%E5%BF%97/" rel="tag">日志</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%9F%A5%E7%9C%8BIP/" rel="tag">查看IP</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%8B%AC%E7%AB%8B%E6%98%BE%E5%8D%A1-%E5%AE%89%E8%A3%85/" rel="tag">独立显卡 安装</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%A1%AC%E4%BB%B6/" rel="tag">硬件</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%B1%BB%E5%9E%8B%E6%96%87%E4%BB%B6/" rel="tag">类型文件</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BB%9F%E8%AE%A1/" rel="tag">统计</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BD%91%E9%A1%B5/" rel="tag">网页</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%87%AA%E8%BF%90%E8%A1%8C/" rel="tag">自运行</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%99%9A%E6%8B%9F%E7%9B%AE%E5%BD%95/" rel="tag">虚拟目录</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%B0%B7%E6%AD%8C%E6%8F%92%E4%BB%B6/" rel="tag">谷歌插件</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1/" rel="tag">负载均衡</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%BF%81%E7%A7%BB/" rel="tag">迁移</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%87%8D%E5%AE%9A%E5%90%91/" rel="tag">重定向</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%95%9C%E5%83%8F/" rel="tag">镜像</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%9B%86%E7%BE%A4/" rel="tag">集群</a><span class="tag-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+
+  
+</aside>
+        
+      </div>
+      <a id="totop" href="#top"></a>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      <p>
+        <a href="/sitemap.xml">网站地图</a>
+        <span> | </span><a href="/atom.xml">订阅本站</a>
+        <span> | </span><a href="/about/">联系博主</a>
+      </p>
+      
+        <p>
+          <i class="fa fa-visitors"></i>
+          <i id="busuanzi_container_site_uv"><i id="busuanzi_value_site_uv"></i></i>
+          ，
+          <i class="fa fa-views"></i>
+          <i id="busuanzi_container_site_pv"><i id="busuanzi_value_site_pv"></i></i>
+        </p>
+      
+      <p>
+        <span>Copyright &copy; 2025 michaeldyl520.</span>
+        <span>Theme by <a href="https://github.com/chaooo/hexo-theme-BlueLake/" target="_blank">BlueLake.</a></span>
+        <span>Powered by <a href="https://hexo.io/" target="_blank">Hexo.</a></span>
+      </p>
+    </div>
+  </div>
+</footer>
 
     </div>
-  </footer>
-
-  
-  <div class="back-to-top" role="button" aria-label="返回顶部">
-    <i class="fa fa-arrow-up fa-lg"></i>
-    <span>0%</span>
   </div>
+  
+<script src="/js/jquery-3.4.1.min.js"></script>
 
-<noscript>
-  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
-</noscript>
+
+<script src="/js/search.json.js"></script>
 
 
   
-  <script size="300" alpha="0.6" zIndex="-1" src="https://cdn.bootcdn.net/ajax/libs/ribbon.js/1.0.2/ribbon.min.js"></script>
-  <script src="https://cdn.bootcdn.net/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
-<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
-
-  <script src="https://cdn.bootcdn.net/ajax/libs/hexo-generator-searchdb/1.4.1/search.js" integrity="sha256-1kfA5uHPf65M5cphT2dvymhkuyHPQp5A53EGZOnOLmc=" crossorigin="anonymous"></script>
-<script src="/js/third-party/search/local-search.js"></script>
+<script src="/fancybox/jquery.fancybox.min.js"></script>
 
 
+
+
+<script src="/js/script.js"></script>
 
 
 
 
 
+
+  
+<script src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+  
+  
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
   
 
 
