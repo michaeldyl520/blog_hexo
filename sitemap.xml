@@ -182,7 +182,7 @@
   </url>
   
   <url>
-    <loc>http://www.jiliuke.com/2018/06/06/PayPal-PayFlow-test-method/</loc>
+    <loc>http://www.jiliuke.com/2018/06/06/about-magento-cloud-connect-git-failed/</loc>
     
     <lastmod>2022-04-15</lastmod>
     
@@ -191,7 +191,7 @@
   </url>
   
   <url>
-    <loc>http://www.jiliuke.com/2018/06/06/about-magento-cloud-connect-git-failed/</loc>
+    <loc>http://www.jiliuke.com/2018/06/06/PayPal-PayFlow-test-method/</loc>
     
     <lastmod>2022-04-15</lastmod>
     
@@ -209,34 +209,7 @@
   </url>
   
   <url>
-    <loc>http://www.jiliuke.com/2015/08/11/android-e4-b8-adinvalidate-e5-87-bd-e6-95-b0-e8-af-a6-e8-a7-a3-e7-bb-93-e5-90-88android-4-0-4-e6-9c-80-e6-96-b0-e6-ba-90-e7-a0-81/</loc>
-    
-    <lastmod>2022-04-15</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>http://www.jiliuke.com/2014/10/31/android-e4-b9-8btabhost-e5-b8-83-e5-b1-80/</loc>
-    
-    <lastmod>2022-04-15</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://www.jiliuke.com/2014/10/31/android-layoutinflater-e8-af-a6-e8-a7-a3/</loc>
-    
-    <lastmod>2022-04-15</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://www.jiliuke.com/2015/03/30/android-sdk-e6-9b-b4-e6-96-b0-e4-bb-a5-e5-8f-8aadt-e6-9b-b4-e6-96-b0-e5-87-ba-e7-8e-b0-e9-97-ae-e9-a2-98-e7-9a-84-e8-a7-a3-e5-86-b3-e5-8a-9e-e6-b3-95/</loc>
     
     <lastmod>2022-04-15</lastmod>
     
@@ -263,6 +236,24 @@
   </url>
   
   <url>
+    <loc>http://www.jiliuke.com/2014/10/31/android-layoutinflater-e8-af-a6-e8-a7-a3/</loc>
+    
+    <lastmod>2022-04-15</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.jiliuke.com/2015/03/30/android-sdk-e6-9b-b4-e6-96-b0-e4-bb-a5-e5-8f-8aadt-e6-9b-b4-e6-96-b0-e5-87-ba-e7-8e-b0-e9-97-ae-e9-a2-98-e7-9a-84-e8-a7-a3-e5-86-b3-e5-8a-9e-e6-b3-95/</loc>
+    
+    <lastmod>2022-04-15</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>http://www.jiliuke.com/2019/12/28/bulk-delete-operation/</loc>
     
     <lastmod>2022-04-15</lastmod>
@@ -272,16 +263,7 @@
   </url>
   
   <url>
-    <loc>http://www.jiliuke.com/2014/08/28/cdn-e5-8a-a0-e9-80-9f-e5-90-8e-e8-8e-b7-e5-8f-96-e7-9c-9f-e5-ae-9eip-e7-9a-84-e6-96-b9-e6-b3-95/</loc>
-    
-    <lastmod>2022-04-15</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://www.jiliuke.com/2014/02/19/centos-6-0-e4-b8-8b-vnc-e9-85-8d-e7-bd-ae-e6-96-b9-e6-b3-95/</loc>
+    <loc>http://www.jiliuke.com/2015/08/11/android-e4-b8-adinvalidate-e5-87-bd-e6-95-b0-e8-af-a6-e8-a7-a3-e7-bb-93-e5-90-88android-4-0-4-e6-9c-80-e6-96-b0-e6-ba-90-e7-a0-81/</loc>
     
     <lastmod>2022-04-15</lastmod>
     
@@ -299,6 +281,15 @@
   </url>
   
   <url>
+    <loc>http://www.jiliuke.com/2014/08/28/cdn-e5-8a-a0-e9-80-9f-e5-90-8e-e8-8e-b7-e5-8f-96-e7-9c-9f-e5-ae-9eip-e7-9a-84-e6-96-b9-e6-b3-95/</loc>
+    
+    <lastmod>2022-04-15</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>http://www.jiliuke.com/2015/03/30/centos-6-3-nfs-e7-9a-84-e5-ae-89-e8-a3-85-e9-85-8d-e7-bd-ae-e3-80-81-e5-90-af-e5-8a-a8-e5-8f-8amount-e6-8c-82-e8-bd-bd-e6-96-b9-e6-b3-95-2/</loc>
     
     <lastmod>2022-04-15</lastmod>
@@ -308,7 +299,7 @@
   </url>
   
   <url>
-    <loc>http://www.jiliuke.com/2015/03/11/centos-6-3-nfs-e7-9a-84-e5-ae-89-e8-a3-85-e9-85-8d-e7-bd-ae-e3-80-81-e5-90-af-e5-8a-a8-e5-8f-8amount-e6-8c-82-e8-bd-bd-e6-96-b9-e6-b3-95/</loc>
+    <loc>http://www.jiliuke.com/2014/02/19/centos-6-0-e4-b8-8b-vnc-e9-85-8d-e7-bd-ae-e6-96-b9-e6-b3-95/</loc>
     
     <lastmod>2022-04-15</lastmod>
     
@@ -326,7 +317,7 @@
   </url>
   
   <url>
-    <loc>http://www.jiliuke.com/2014/05/14/centos-e4-b8-8b-e5-b8-b8-e7-94-a8-e6-9f-a5-e7-9c-8b-e5-91-bd-e4-bb-a4/</loc>
+    <loc>http://www.jiliuke.com/2015/03/11/centos-6-3-nfs-e7-9a-84-e5-ae-89-e8-a3-85-e9-85-8d-e7-bd-ae-e3-80-81-e5-90-af-e5-8a-a8-e5-8f-8amount-e6-8c-82-e8-bd-bd-e6-96-b9-e6-b3-95/</loc>
     
     <lastmod>2022-04-15</lastmod>
     
@@ -335,7 +326,7 @@
   </url>
   
   <url>
-    <loc>http://www.jiliuke.com/2014/03/18/centos-e4-b8-8b-e6-8f-90-e7-a4-bamysqld-e6-9c-aa-e8-af-86-e5-88-ab-e9-94-99-e8-af-af-e7-9a-84-e6-97-b6-e5-80-99/</loc>
+    <loc>http://www.jiliuke.com/2014/05/14/centos-e4-b8-8b-e5-b8-b8-e7-94-a8-e6-9f-a5-e7-9c-8b-e5-91-bd-e4-bb-a4/</loc>
     
     <lastmod>2022-04-15</lastmod>
     
@@ -353,7 +344,7 @@
   </url>
   
   <url>
-    <loc>http://www.jiliuke.com/2014/02/26/centos-e4-b8-8b-e6-9f-a5-e7-9c-8b-e6-9c-8d-e5-8a-a1-e5-99-a8-e7-9a-84cpu-e7-9a-84-e4-bf-a1-e6-81-af/</loc>
+    <loc>http://www.jiliuke.com/2014/03/13/centos-e4-b8-8b-e9-80-9a-e8-bf-87smtp-e5-8f-91-e9-80-81-e9-82-ae-e4-bb-b6-e5-a4-b1-e8-b4-a5-e8-a7-a3-e5-86-b3/</loc>
     
     <lastmod>2022-04-15</lastmod>
     
@@ -362,7 +353,7 @@
   </url>
   
   <url>
-    <loc>http://www.jiliuke.com/2014/03/13/centos-e4-b8-8b-e9-80-9a-e8-bf-87smtp-e5-8f-91-e9-80-81-e9-82-ae-e4-bb-b6-e5-a4-b1-e8-b4-a5-e8-a7-a3-e5-86-b3/</loc>
+    <loc>http://www.jiliuke.com/2014/02/26/centos-e4-b8-8b-e6-9f-a5-e7-9c-8b-e6-9c-8d-e5-8a-a1-e5-99-a8-e7-9a-84cpu-e7-9a-84-e4-bf-a1-e6-81-af/</loc>
     
     <lastmod>2022-04-15</lastmod>
     
@@ -389,6 +380,15 @@
   </url>
   
   <url>
+    <loc>http://www.jiliuke.com/2014/03/18/centos-e4-b8-8b-e6-8f-90-e7-a4-bamysqld-e6-9c-aa-e8-af-86-e5-88-ab-e9-94-99-e8-af-af-e7-9a-84-e6-97-b6-e5-80-99/</loc>
+    
+    <lastmod>2022-04-15</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>http://www.jiliuke.com/2014/09/22/centos-e5-ae-89-e8-a3-85-e7-a0-b4-e8-a7-a3sublime-text-2/</loc>
     
     <lastmod>2022-04-15</lastmod>
@@ -407,7 +407,7 @@
   </url>
   
   <url>
-    <loc>http://www.jiliuke.com/2015/08/11/centos-e5-ae-89-e8-a3-85sensors-e6-9f-a5-e7-9c-8bcpu-e6-b8-a9-e5-ba-a6/</loc>
+    <loc>http://www.jiliuke.com/2015/08/11/centos-e6-94-af-e6-8c-81rar-e8-a7-a3-e5-8e-8b/</loc>
     
     <lastmod>2022-04-15</lastmod>
     
@@ -425,25 +425,16 @@
   </url>
   
   <url>
+    <loc>http://www.jiliuke.com/2015/08/11/centos-e5-ae-89-e8-a3-85sensors-e6-9f-a5-e7-9c-8bcpu-e6-b8-a9-e5-ba-a6/</loc>
+    
+    <lastmod>2022-04-15</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>http://www.jiliuke.com/2014/05/15/centos-e6-9f-90-e7-9b-ae-e5-bd-95-e7-a8-8b-e5-ba-8f-e5-8a-a0-e5-85-a5-e5-bc-80-e6-9c-ba-e5-90-af-e5-8a-a8-e6-96-b9-e6-b3-95/</loc>
-    
-    <lastmod>2022-04-15</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://www.jiliuke.com/2015/08/11/centos-e6-94-af-e6-8c-81rar-e8-a7-a3-e5-8e-8b/</loc>
-    
-    <lastmod>2022-04-15</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://www.jiliuke.com/2014/05/15/centos-e7-9a-84-e8-bd-af-e4-bb-b6-e5-ae-89-e8-a3-85-e6-96-b9-e6-b3-95rpm-e5-92-8cyum/</loc>
     
     <lastmod>2022-04-15</lastmod>
     
@@ -461,16 +452,7 @@
   </url>
   
   <url>
-    <loc>http://www.jiliuke.com/2014/03/14/centos-ftp-e6-9c-8d-e5-8a-a1-e5-99-a8-e6-9e-b6-e8-ae-be/</loc>
-    
-    <lastmod>2022-04-15</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://www.jiliuke.com/2014/03/17/centos-e7-b3-bb-e7-bb-9fmysql-e4-bc-98-e5-8c-96-e8-af-a6-e8-a7-a3/</loc>
+    <loc>http://www.jiliuke.com/2014/05/15/centos-e7-9a-84-e8-bd-af-e4-bb-b6-e5-ae-89-e8-a3-85-e6-96-b9-e6-b3-95rpm-e5-92-8cyum/</loc>
     
     <lastmod>2022-04-15</lastmod>
     
@@ -497,7 +479,7 @@
   </url>
   
   <url>
-    <loc>http://www.jiliuke.com/2015/08/11/centos-mini-e9-bb-98-e8-ae-a4-e6-97-a0-e6-b3-95-e4-b8-8a-e7-bd-91-e5-92-8c-e9-85-8d-e7-bd-aeip/</loc>
+    <loc>http://www.jiliuke.com/2014/03/17/centos-e7-b3-bb-e7-bb-9fmysql-e4-bc-98-e5-8c-96-e8-af-a6-e8-a7-a3/</loc>
     
     <lastmod>2022-04-15</lastmod>
     
@@ -506,7 +488,7 @@
   </url>
   
   <url>
-    <loc>http://www.jiliuke.com/2015/08/11/centos-shell-e7-bc-96-e7-a8-8b-e5-85-a5-e9-97-a8/</loc>
+    <loc>http://www.jiliuke.com/2015/08/11/centos-mini-e9-bb-98-e8-ae-a4-e6-97-a0-e6-b3-95-e4-b8-8a-e7-bd-91-e5-92-8c-e9-85-8d-e7-bd-aeip/</loc>
     
     <lastmod>2022-04-15</lastmod>
     
@@ -551,6 +533,15 @@
   </url>
   
   <url>
+    <loc>http://www.jiliuke.com/2014/03/14/centos-ftp-e6-9c-8d-e5-8a-a1-e5-99-a8-e6-9e-b6-e8-ae-be/</loc>
+    
+    <lastmod>2022-04-15</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>http://www.jiliuke.com/2014/03/06/crond-e6-89-a7-e8-a1-8c-e9-a2-84-e5-ae-9a-e4-bb-bb-e5-8a-a1/</loc>
     
     <lastmod>2022-04-15</lastmod>
@@ -578,34 +569,16 @@
   </url>
   
   <url>
+    <loc>http://www.jiliuke.com/2015/08/11/centos-shell-e7-bc-96-e7-a8-8b-e5-85-a5-e9-97-a8/</loc>
+    
+    <lastmod>2022-04-15</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>http://www.jiliuke.com/2021/10/19/dbbackshell/</loc>
-    
-    <lastmod>2022-04-15</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://www.jiliuke.com/2015/03/30/e3-80-90-e6-b1-87-e6-80-bb-e3-80-91php-fpm-e9-85-8d-e7-bd-ae-e4-bc-98-e5-8c-96/</loc>
-    
-    <lastmod>2022-04-15</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://www.jiliuke.com/2015/03/30/e3-80-90-e8-87-aa-e6-88-91-e5-bc-80-e5-8f-91-e3-80-91-e5-bc-80-e5-8f-91-e4-b8-80-e4-b8-aa-e8-bf-94-e5-9b-9e-e9-a1-b6-e9-83-a8-e6-8f-92-e4-bb-b6-ef-bc-88-e8-b0-b7-e6-ad-8c-e6-8f-92-e4-bb-b6-e7-bc-96/</loc>
-    
-    <lastmod>2022-04-15</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://www.jiliuke.com/2015/08/11/e4-b8-ad-e6-96-87-e4-bc-a0-e5-80-bc-e7-81-ab-e7-8b-90-e3-80-81google-e6-b5-8f-e8-a7-88-e5-99-a8-e6-97-a0-e9-97-ae-e9-a2-98-ef-bc-8c-e4-bd-86ie-e6-9c-89-e4-b9-b1-e7-a0-81-e9-97-ae-e9-a2-98-e7-9a-84/</loc>
     
     <lastmod>2022-04-15</lastmod>
     
@@ -623,7 +596,25 @@
   </url>
   
   <url>
-    <loc>http://www.jiliuke.com/2015/03/11/e4-bd-bf-e7-94-a8-telnet-e7-ab-af-e5-8f-a3-25-e6-b5-8b-e8-af-95-smtp-e9-80-9a-e4-bf-a1/</loc>
+    <loc>http://www.jiliuke.com/2015/08/11/e4-b8-ad-e6-96-87-e4-bc-a0-e5-80-bc-e7-81-ab-e7-8b-90-e3-80-81google-e6-b5-8f-e8-a7-88-e5-99-a8-e6-97-a0-e9-97-ae-e9-a2-98-ef-bc-8c-e4-bd-86ie-e6-9c-89-e4-b9-b1-e7-a0-81-e9-97-ae-e9-a2-98-e7-9a-84/</loc>
+    
+    <lastmod>2022-04-15</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.jiliuke.com/2015/03/30/e3-80-90-e8-87-aa-e6-88-91-e5-bc-80-e5-8f-91-e3-80-91-e5-bc-80-e5-8f-91-e4-b8-80-e4-b8-aa-e8-bf-94-e5-9b-9e-e9-a1-b6-e9-83-a8-e6-8f-92-e4-bb-b6-ef-bc-88-e8-b0-b7-e6-ad-8c-e6-8f-92-e4-bb-b6-e7-bc-96/</loc>
+    
+    <lastmod>2022-04-15</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.jiliuke.com/2015/03/30/e3-80-90-e6-b1-87-e6-80-bb-e3-80-91php-fpm-e9-85-8d-e7-bd-ae-e4-bc-98-e5-8c-96/</loc>
     
     <lastmod>2022-04-15</lastmod>
     
@@ -633,6 +624,15 @@
   
   <url>
     <loc>http://www.jiliuke.com/2015/03/30/e4-bd-bf-e7-94-a8android-adt-e6-9c-80-e6-96-b0-e5-bc-80-e5-8f-91-e5-b7-a5-e5-85-b7-e5-90-8e-ef-bc-8c-e6-96-b0-e5-bb-ba-e9-a1-b9-e7-9b-ae-e5-87-ba-e7-8e-b0appcompat-v7-e4-bb-96-e6-98-af-e4-bb-80/</loc>
+    
+    <lastmod>2022-04-15</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.jiliuke.com/2015/03/11/e4-bd-bf-e7-94-a8-telnet-e7-ab-af-e5-8f-a3-25-e6-b5-8b-e8-af-95-smtp-e9-80-9a-e4-bf-a1/</loc>
     
     <lastmod>2022-04-15</lastmod>
     
@@ -677,15 +677,6 @@
   </url>
   
   <url>
-    <loc>http://www.jiliuke.com/2015/08/11/e5-9c-a8ubuntu-e4-b8-8b-e5-a6-82-e4-bd-95-e8-8e-b7-e5-8f-96-e8-b6-85-e7-ba-a7-e7-94-a8-e6-88-b7-e6-9d-83-e9-99-90/</loc>
-    
-    <lastmod>2022-04-15</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>http://www.jiliuke.com/2015/08/11/e5-ae-89-e8-a3-85ssh/</loc>
     
     <lastmod>2022-04-15</lastmod>
@@ -695,7 +686,7 @@
   </url>
   
   <url>
-    <loc>http://www.jiliuke.com/2014/04/14/e5-ae-8c-e7-be-8e-e8-a7-a3-e5-86-b3failed-to-open-stream-http-request-failed/</loc>
+    <loc>http://www.jiliuke.com/2015/08/11/e5-9c-a8ubuntu-e4-b8-8b-e5-a6-82-e4-bd-95-e8-8e-b7-e5-8f-96-e8-b6-85-e7-ba-a7-e7-94-a8-e6-88-b7-e6-9d-83-e9-99-90/</loc>
     
     <lastmod>2022-04-15</lastmod>
     
@@ -713,16 +704,7 @@
   </url>
   
   <url>
-    <loc>http://www.jiliuke.com/2014/06/20/e5-bc-80-e6-ba-90-e9-95-9c-e5-83-8f-e7-ab-99-e7-82-b9-e5-9c-b0-e5-9d-80-e6-b1-87-e6-80-bb/</loc>
-    
-    <lastmod>2022-04-15</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://www.jiliuke.com/2015/08/11/e6-8e-a2-e8-ae-a8php-e5-87-bd-e6-95-b0ip2long-e8-bd-ac-e6-8d-a2ip-e6-97-b6-e6-95-b0-e5-80-bc-e5-a4-aa-e5-a4-a7-e4-ba-a7-e7-94-9f-e8-b4-9f-e6-95-b0-e7-9a-84-e8-a7-a3-e5-86-b3-e6-96-b9-e6-b3-95/</loc>
+    <loc>http://www.jiliuke.com/2014/04/14/e5-ae-8c-e7-be-8e-e8-a7-a3-e5-86-b3failed-to-open-stream-http-request-failed/</loc>
     
     <lastmod>2022-04-15</lastmod>
     
@@ -749,7 +731,16 @@
   </url>
   
   <url>
-    <loc>http://www.jiliuke.com/2015/08/11/e7-8e-a9-e7-8e-a9-e8-b4-9f-e8-bd-bd-e5-9d-87-e8-a1-a1-e5-9c-a8window-e4-b8-8elinux-e4-b8-8b-e9-85-8d-e7-bd-aenginx/</loc>
+    <loc>http://www.jiliuke.com/2015/08/11/e6-8e-a2-e8-ae-a8php-e5-87-bd-e6-95-b0ip2long-e8-bd-ac-e6-8d-a2ip-e6-97-b6-e6-95-b0-e5-80-bc-e5-a4-aa-e5-a4-a7-e4-ba-a7-e7-94-9f-e8-b4-9f-e6-95-b0-e7-9a-84-e8-a7-a3-e5-86-b3-e6-96-b9-e6-b3-95/</loc>
+    
+    <lastmod>2022-04-15</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.jiliuke.com/2014/06/20/e5-bc-80-e6-ba-90-e9-95-9c-e5-83-8f-e7-ab-99-e7-82-b9-e5-9c-b0-e5-9d-80-e6-b1-87-e6-80-bb/</loc>
     
     <lastmod>2022-04-15</lastmod>
     
@@ -776,15 +767,6 @@
   </url>
   
   <url>
-    <loc>http://www.jiliuke.com/2014/04/08/e8-a7-a3-e5-86-b3samba-e5-92-8cselinux-e5-86-b2-e7-aa-81/</loc>
-    
-    <lastmod>2022-04-15</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>http://www.jiliuke.com/2014/10/31/e8-87-aa-e5-bb-batabhost-ef-bc-8c-e4-b8-ba-e4-bb-80-e4-b9-88r-java-e4-b8-ad-e6-97-a0tabhost-e7-9a-84id/</loc>
     
     <lastmod>2022-04-15</lastmod>
@@ -794,7 +776,7 @@
   </url>
   
   <url>
-    <loc>http://www.jiliuke.com/2014/03/20/e8-bd-ac-ef-bc-9amysql-e9-9b-86-e7-be-a4-e5-ae-89-e8-a3-85-e4-b8-8e-e9-85-8d-e7-bd-ae/</loc>
+    <loc>http://www.jiliuke.com/2014/04/08/e8-a7-a3-e5-86-b3samba-e5-92-8cselinux-e5-86-b2-e7-aa-81/</loc>
     
     <lastmod>2022-04-15</lastmod>
     
@@ -812,7 +794,43 @@
   </url>
   
   <url>
+    <loc>http://www.jiliuke.com/2014/03/20/e8-bd-ac-ef-bc-9amysql-e9-9b-86-e7-be-a4-e5-ae-89-e8-a3-85-e4-b8-8e-e9-85-8d-e7-bd-ae/</loc>
+    
+    <lastmod>2022-04-15</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.jiliuke.com/2021/01/18/flatpak-tips/</loc>
+    
+    <lastmod>2022-04-15</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>http://www.jiliuke.com/2015/03/11/iredmail-e9-97-ae-e9-a2-98-e9-9b-86-e9-94-a6/</loc>
+    
+    <lastmod>2022-04-15</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.jiliuke.com/2015/08/11/e7-8e-a9-e7-8e-a9-e8-b4-9f-e8-bd-bd-e5-9d-87-e8-a1-a1-e5-9c-a8window-e4-b8-8elinux-e4-b8-8b-e9-85-8d-e7-bd-aenginx/</loc>
+    
+    <lastmod>2022-04-15</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.jiliuke.com/2015/03/30/etcpasswd-e5-92-8c-etcshadow-e6-96-87-e4-bb-b6-e5-86-85-e5-ae-b9-e5-8f-8a-e5-85-b6-e8-a7-a3-e9-87-8a/</loc>
     
     <lastmod>2022-04-15</lastmod>
     
@@ -839,16 +857,7 @@
   </url>
   
   <url>
-    <loc>http://www.jiliuke.com/2015/01/07/jquery-ui-datepicker-e4-bd-bf-e7-94-a8-e6-96-b9-e6-b3-95/</loc>
-    
-    <lastmod>2022-04-15</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://www.jiliuke.com/2014/08/26/jquery-validate-e5-b8-b8-e7-94-a8-e7-9a-84-e4-b8-80-e4-ba-9b-e8-a7-84-e5-88-99/</loc>
+    <loc>http://www.jiliuke.com/2015/08/11/kill-hup-pid/</loc>
     
     <lastmod>2022-04-15</lastmod>
     
@@ -866,7 +875,16 @@
   </url>
   
   <url>
-    <loc>http://www.jiliuke.com/2015/08/11/kill-hup-pid/</loc>
+    <loc>http://www.jiliuke.com/2014/08/26/jquery-validate-e5-b8-b8-e7-94-a8-e7-9a-84-e4-b8-80-e4-ba-9b-e8-a7-84-e5-88-99/</loc>
+    
+    <lastmod>2022-04-15</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.jiliuke.com/2014/03/07/linux-e4-b8-8b-e5-88-a0-e9-99-a4-e6-9f-90-e7-9b-ae-e5-bd-95-e4-b8-8b-e6-89-80-e6-9c-89-svn/</loc>
     
     <lastmod>2022-04-15</lastmod>
     
@@ -885,15 +903,6 @@
   
   <url>
     <loc>http://www.jiliuke.com/2014/05/15/linux-centos-e4-bf-ae-e6-94-b9ip-e5-9c-b0-e5-9d-80-ef-bc-8c-e9-87-8d-e5-90-af-e4-b8-a2-e5-a4-b1-e8-ae-be-e7-bd-ae-e7-9a-84-e9-97-ae-e9-a2-98/</loc>
-    
-    <lastmod>2022-04-15</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://www.jiliuke.com/2014/03/07/linux-e4-b8-8b-e5-88-a0-e9-99-a4-e6-9f-90-e7-9b-ae-e5-bd-95-e4-b8-8b-e6-89-80-e6-9c-89-svn/</loc>
     
     <lastmod>2022-04-15</lastmod>
     
@@ -947,15 +956,6 @@
   </url>
   
   <url>
-    <loc>http://www.jiliuke.com/2015/08/11/linux-e7-b3-bb-e7-bb-9f-e5-a6-82-e4-bd-95-e7-a6-81ping-centos-e7-a6-81ping/</loc>
-    
-    <lastmod>2022-04-15</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>http://www.jiliuke.com/2014/05/14/linux-ip-e9-85-8d-e7-bd-ae-e6-96-b9-e6-b3-95/</loc>
     
     <lastmod>2022-04-15</lastmod>
@@ -965,7 +965,16 @@
   </url>
   
   <url>
-    <loc>http://www.jiliuke.com/2014/08/27/linux-scp-e4-b8-a4-e5-8f-b0-e6-9c-8d-e5-8a-a1-e5-99-a8-e4-b9-8b-e9-97-b4-e4-bc-a0-e8-be-93-e6-95-b0-e6-8d-ae-e7-9a-84-e5-91-bd-e4-bb-a4/</loc>
+    <loc>http://www.jiliuke.com/2015/08/11/linux-e7-b3-bb-e7-bb-9f-e5-a6-82-e4-bd-95-e7-a6-81ping-centos-e7-a6-81ping/</loc>
+    
+    <lastmod>2022-04-15</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.jiliuke.com/2015/01/07/jquery-ui-datepicker-e4-bd-bf-e7-94-a8-e6-96-b9-e6-b3-95/</loc>
     
     <lastmod>2022-04-15</lastmod>
     
@@ -975,6 +984,15 @@
   
   <url>
     <loc>http://www.jiliuke.com/2022/01/13/logrotate-magento2/</loc>
+    
+    <lastmod>2022-04-15</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.jiliuke.com/2014/08/27/linux-scp-e4-b8-a4-e5-8f-b0-e6-9c-8d-e5-8a-a1-e5-99-a8-e4-b9-8b-e9-97-b4-e4-bc-a0-e8-be-93-e6-95-b0-e6-8d-ae-e7-9a-84-e5-91-bd-e4-bb-a4/</loc>
     
     <lastmod>2022-04-15</lastmod>
     
@@ -1001,25 +1019,16 @@
   </url>
   
   <url>
-    <loc>http://www.jiliuke.com/2015/08/11/mantisbt-tips/</loc>
-    
-    <lastmod>2022-04-15</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://www.jiliuke.com/2015/03/30/etcpasswd-e5-92-8c-etcshadow-e6-96-87-e4-bb-b6-e5-86-85-e5-ae-b9-e5-8f-8a-e5-85-b6-e8-a7-a3-e9-87-8a/</loc>
-    
-    <lastmod>2022-04-15</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>http://www.jiliuke.com/2014/03/28/msql-e9-97-ae-e9-a2-98-e9-9b-86-e4-b8-ad-e8-90-a5/</loc>
+    
+    <lastmod>2022-04-15</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.jiliuke.com/2015/08/11/mantisbt-tips/</loc>
     
     <lastmod>2022-04-15</lastmod>
     
@@ -1046,7 +1055,7 @@
   </url>
   
   <url>
-    <loc>http://www.jiliuke.com/2014/03/19/mysql-e6-97-a5-e5-bf-97-e8-ae-be-e7-bd-ae-e4-bc-98-e5-8c-96/</loc>
+    <loc>http://www.jiliuke.com/2015/08/11/nfs-mount-errors-with-clnt-create-rpc-unknown-host-for-centos-6/</loc>
     
     <lastmod>2022-04-15</lastmod>
     
@@ -1064,15 +1073,6 @@
   </url>
   
   <url>
-    <loc>http://www.jiliuke.com/2015/08/11/nfs-mount-errors-with-clnt-create-rpc-unknown-host-for-centos-6/</loc>
-    
-    <lastmod>2022-04-15</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>http://www.jiliuke.com/2015/08/11/nginx-e6-97-a5-e5-bf-97-e8-87-aa-e5-8a-a8-e5-88-86-e5-89-b2-e7-9a-84-e5-ae-8c-e7-be-8e-e5-ae-9e-e7-8e-b0/</loc>
     
     <lastmod>2022-04-15</lastmod>
@@ -1082,7 +1082,7 @@
   </url>
   
   <url>
-    <loc>http://www.jiliuke.com/2014/08/22/nginx-rewrite-e5-8f-82-e6-95-b0-e5-92-8c-e4-be-8b-e5-ad-90/</loc>
+    <loc>http://www.jiliuke.com/2014/10/27/no-orientation-specified-and-the-default-is-horizontal/</loc>
     
     <lastmod>2022-04-15</lastmod>
     
@@ -1109,15 +1109,6 @@
   </url>
   
   <url>
-    <loc>http://www.jiliuke.com/2014/10/27/no-orientation-specified-and-the-default-is-horizontal/</loc>
-    
-    <lastmod>2022-04-15</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>http://www.jiliuke.com/2021/07/01/package-deb-tips/</loc>
     
     <lastmod>2022-04-15</lastmod>
@@ -1136,7 +1127,7 @@
   </url>
   
   <url>
-    <loc>http://www.jiliuke.com/2015/03/30/php-e4-ba-8c-e7-bb-b4-e6-95-b0-e7-bb-84-e6-8e-92-e5-ba-8f-e7-9a-843-e7-a7-8d-e6-96-b9-e6-b3-95-e5-92-8c-e8-87-aa-e5-ae-9a-e4-b9-89-e5-87-bd-e6-95-b0-e5-88-86-e4-ba-ab/</loc>
+    <loc>http://www.jiliuke.com/2014/08/22/nginx-rewrite-e5-8f-82-e6-95-b0-e5-92-8c-e4-be-8b-e5-ad-90/</loc>
     
     <lastmod>2022-04-15</lastmod>
     
@@ -1154,7 +1145,25 @@
   </url>
   
   <url>
+    <loc>http://www.jiliuke.com/2014/03/19/mysql-e6-97-a5-e5-bf-97-e8-ae-be-e7-bd-ae-e4-bc-98-e5-8c-96/</loc>
+    
+    <lastmod>2022-04-15</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>http://www.jiliuke.com/2015/03/30/php-e6-b5-ae-e7-82-b9-e6-95-b0-e7-9a-84-e4-b8-80-e4-b8-aa-e5-b8-b8-e8-a7-81-e9-97-ae-e9-a2-98-e7-9a-84-e8-a7-a3-e7-ad-94/</loc>
+    
+    <lastmod>2022-04-15</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.jiliuke.com/2015/03/30/php-e4-ba-8c-e7-bb-b4-e6-95-b0-e7-bb-84-e6-8e-92-e5-ba-8f-e7-9a-843-e7-a7-8d-e6-96-b9-e6-b3-95-e5-92-8c-e8-87-aa-e5-ae-9a-e4-b9-89-e5-87-bd-e6-95-b0-e5-88-86-e4-ba-ab/</loc>
     
     <lastmod>2022-04-15</lastmod>
     
@@ -1190,7 +1199,7 @@
   </url>
   
   <url>
-    <loc>http://www.jiliuke.com/2014/04/14/php-curl-e7-94-a8-e6-b3-95/</loc>
+    <loc>http://www.jiliuke.com/2015/08/11/sshd-e7-99-bb-e9-99-86-e6-85-a2-e9-97-ae-e9-a2-98-e8-a7-a3-e5-86-b3/</loc>
     
     <lastmod>2022-04-15</lastmod>
     
@@ -1200,15 +1209,6 @@
   
   <url>
     <loc>http://www.jiliuke.com/2018/06/20/ssh-must-be-logged-in-with-an-account-password/</loc>
-    
-    <lastmod>2022-04-15</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://www.jiliuke.com/2015/08/11/sshd-e7-99-bb-e9-99-86-e6-85-a2-e9-97-ae-e9-a2-98-e8-a7-a3-e5-86-b3/</loc>
     
     <lastmod>2022-04-15</lastmod>
     
@@ -1271,16 +1271,7 @@
   </url>
   
   <url>
-    <loc>http://www.jiliuke.com/2021/01/18/flatpak-tips/</loc>
-    
-    <lastmod>2022-04-15</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://www.jiliuke.com/tags/index.html</loc>
+    <loc>http://www.jiliuke.com/2014/04/14/php-curl-e7-94-a8-e6-b3-95/</loc>
     
     <lastmod>2022-04-15</lastmod>
     
@@ -1290,6 +1281,15 @@
   
   <url>
     <loc>http://www.jiliuke.com/categories/index.html</loc>
+    
+    <lastmod>2022-04-15</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.jiliuke.com/tags/index.html</loc>
     
     <lastmod>2022-04-15</lastmod>
     
@@ -1328,6 +1328,13 @@
   </url>
   
   <url>
+    <loc>http://www.jiliuke.com/tags/magento-cloud/</loc>
+    <lastmod>2025-01-14</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>http://www.jiliuke.com/tags/PayPal/</loc>
     <lastmod>2025-01-14</lastmod>
     <changefreq>weekly</changefreq>
@@ -1343,13 +1350,6 @@
   
   <url>
     <loc>http://www.jiliuke.com/tags/git/</loc>
-    <lastmod>2025-01-14</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>http://www.jiliuke.com/tags/magento-cloud/</loc>
     <lastmod>2025-01-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -1384,35 +1384,7 @@
   </url>
   
   <url>
-    <loc>http://www.jiliuke.com/tags/invalidate/</loc>
-    <lastmod>2025-01-14</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>http://www.jiliuke.com/tags/TabHost/</loc>
-    <lastmod>2025-01-14</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>http://www.jiliuke.com/tags/LayoutInflater/</loc>
-    <lastmod>2025-01-14</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>http://www.jiliuke.com/tags/ADT/</loc>
-    <lastmod>2025-01-14</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>http://www.jiliuke.com/tags/Android-SDK/</loc>
     <lastmod>2025-01-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -1447,6 +1419,27 @@
   </url>
   
   <url>
+    <loc>http://www.jiliuke.com/tags/LayoutInflater/</loc>
+    <lastmod>2025-01-14</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.jiliuke.com/tags/ADT/</loc>
+    <lastmod>2025-01-14</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.jiliuke.com/tags/Android-SDK/</loc>
+    <lastmod>2025-01-14</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>http://www.jiliuke.com/tags/%E6%96%87%E4%BB%B6%E5%88%A0%E9%99%A4/</loc>
     <lastmod>2025-01-14</lastmod>
     <changefreq>weekly</changefreq>
@@ -1454,14 +1447,7 @@
   </url>
   
   <url>
-    <loc>http://www.jiliuke.com/tags/cdn/</loc>
-    <lastmod>2025-01-14</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>http://www.jiliuke.com/tags/VNC/</loc>
+    <loc>http://www.jiliuke.com/tags/invalidate/</loc>
     <lastmod>2025-01-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -1482,7 +1468,21 @@
   </url>
   
   <url>
+    <loc>http://www.jiliuke.com/tags/cdn/</loc>
+    <lastmod>2025-01-14</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>http://www.jiliuke.com/tags/nfs/</loc>
+    <lastmod>2025-01-14</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.jiliuke.com/tags/VNC/</loc>
     <lastmod>2025-01-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -1503,13 +1503,6 @@
   </url>
   
   <url>
-    <loc>http://www.jiliuke.com/tags/mysqld/</loc>
-    <lastmod>2025-01-14</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>http://www.jiliuke.com/tags/pkill/</loc>
     <lastmod>2025-01-14</lastmod>
     <changefreq>weekly</changefreq>
@@ -1524,14 +1517,14 @@
   </url>
   
   <url>
-    <loc>http://www.jiliuke.com/tags/CPU/</loc>
+    <loc>http://www.jiliuke.com/tags/SMTP/</loc>
     <lastmod>2025-01-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>http://www.jiliuke.com/tags/SMTP/</loc>
+    <loc>http://www.jiliuke.com/tags/CPU/</loc>
     <lastmod>2025-01-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -1545,6 +1538,13 @@
   </url>
   
   <url>
+    <loc>http://www.jiliuke.com/tags/mysqld/</loc>
+    <lastmod>2025-01-14</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>http://www.jiliuke.com/tags/samba/</loc>
     <lastmod>2025-01-14</lastmod>
     <changefreq>weekly</changefreq>
@@ -1552,14 +1552,7 @@
   </url>
   
   <url>
-    <loc>http://www.jiliuke.com/tags/lm-sensors/</loc>
-    <lastmod>2025-01-14</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>http://www.jiliuke.com/tags/sensors/</loc>
+    <loc>http://www.jiliuke.com/tags/rar/</loc>
     <lastmod>2025-01-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -1580,6 +1573,20 @@
   </url>
   
   <url>
+    <loc>http://www.jiliuke.com/tags/lm-sensors/</loc>
+    <lastmod>2025-01-14</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.jiliuke.com/tags/sensors/</loc>
+    <lastmod>2025-01-14</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>http://www.jiliuke.com/tags/%E5%BC%80%E6%9C%BA%E5%90%AF%E5%8A%A8/</loc>
     <lastmod>2025-01-14</lastmod>
     <changefreq>weekly</changefreq>
@@ -1587,7 +1594,7 @@
   </url>
   
   <url>
-    <loc>http://www.jiliuke.com/tags/rar/</loc>
+    <loc>http://www.jiliuke.com/tags/%E7%A1%AC%E4%BB%B6/</loc>
     <lastmod>2025-01-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -1608,27 +1615,6 @@
   </url>
   
   <url>
-    <loc>http://www.jiliuke.com/tags/%E7%A1%AC%E4%BB%B6/</loc>
-    <lastmod>2025-01-14</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>http://www.jiliuke.com/tags/vsftp/</loc>
-    <lastmod>2025-01-14</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>http://www.jiliuke.com/tags/mysql%E4%BC%98%E5%8C%96/</loc>
-    <lastmod>2025-01-14</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>http://www.jiliuke.com/tags/linux/</loc>
     <lastmod>2025-01-14</lastmod>
     <changefreq>weekly</changefreq>
@@ -1636,7 +1622,7 @@
   </url>
   
   <url>
-    <loc>http://www.jiliuke.com/tags/shell/</loc>
+    <loc>http://www.jiliuke.com/tags/mysql%E4%BC%98%E5%8C%96/</loc>
     <lastmod>2025-01-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -1685,6 +1671,13 @@
   </url>
   
   <url>
+    <loc>http://www.jiliuke.com/tags/vsftp/</loc>
+    <lastmod>2025-01-14</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>http://www.jiliuke.com/tags/Crond/</loc>
     <lastmod>2025-01-14</lastmod>
     <changefreq>weekly</changefreq>
@@ -1714,6 +1707,13 @@
   
   <url>
     <loc>http://www.jiliuke.com/tags/https/</loc>
+    <lastmod>2025-01-14</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.jiliuke.com/tags/shell/</loc>
     <lastmod>2025-01-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -1755,6 +1755,20 @@
   </url>
   
   <url>
+    <loc>http://www.jiliuke.com/tags/scp/</loc>
+    <lastmod>2025-01-14</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.jiliuke.com/tags/%E8%B0%B7%E6%AD%8C%E6%8F%92%E4%BB%B6/</loc>
+    <lastmod>2025-01-14</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>http://www.jiliuke.com/tags/PHP-FPM%E4%BC%98%E5%8C%96/</loc>
     <lastmod>2025-01-14</lastmod>
     <changefreq>weekly</changefreq>
@@ -1769,14 +1783,7 @@
   </url>
   
   <url>
-    <loc>http://www.jiliuke.com/tags/%E8%B0%B7%E6%AD%8C%E6%8F%92%E4%BB%B6/</loc>
-    <lastmod>2025-01-14</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>http://www.jiliuke.com/tags/scp/</loc>
+    <loc>http://www.jiliuke.com/tags/appcompat-v7/</loc>
     <lastmod>2025-01-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -1784,13 +1791,6 @@
   
   <url>
     <loc>http://www.jiliuke.com/tags/iredmail/</loc>
-    <lastmod>2025-01-14</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>http://www.jiliuke.com/tags/appcompat-v7/</loc>
     <lastmod>2025-01-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -1853,6 +1853,20 @@
   </url>
   
   <url>
+    <loc>http://www.jiliuke.com/tags/lnmp/</loc>
+    <lastmod>2025-01-14</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.jiliuke.com/tags/ip2long/</loc>
+    <lastmod>2025-01-14</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>http://www.jiliuke.com/tags/%E5%BC%80%E6%BA%90/</loc>
     <lastmod>2025-01-14</lastmod>
     <changefreq>weekly</changefreq>
@@ -1867,21 +1881,14 @@
   </url>
   
   <url>
-    <loc>http://www.jiliuke.com/tags/ip2long/</loc>
+    <loc>http://www.jiliuke.com/tags/elasticsearch/</loc>
     <lastmod>2025-01-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>http://www.jiliuke.com/tags/lnmp/</loc>
-    <lastmod>2025-01-14</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>http://www.jiliuke.com/tags/%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1/</loc>
+    <loc>http://www.jiliuke.com/tags/redis/</loc>
     <lastmod>2025-01-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -1895,7 +1902,21 @@
   </url>
   
   <url>
-    <loc>http://www.jiliuke.com/tags/redis/</loc>
+    <loc>http://www.jiliuke.com/tags/%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1/</loc>
+    <lastmod>2025-01-14</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.jiliuke.com/tags/etc-passwd/</loc>
+    <lastmod>2025-01-14</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.jiliuke.com/tags/etc-shadow/</loc>
     <lastmod>2025-01-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -1937,21 +1958,7 @@
   </url>
   
   <url>
-    <loc>http://www.jiliuke.com/tags/datepicker/</loc>
-    <lastmod>2025-01-14</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>http://www.jiliuke.com/tags/jquery-ui/</loc>
-    <lastmod>2025-01-14</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>http://www.jiliuke.com/tags/elasticsearch/</loc>
+    <loc>http://www.jiliuke.com/tags/kill/</loc>
     <lastmod>2025-01-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -1966,13 +1973,6 @@
   
   <url>
     <loc>http://www.jiliuke.com/tags/validate/</loc>
-    <lastmod>2025-01-14</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>http://www.jiliuke.com/tags/kill/</loc>
     <lastmod>2025-01-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -2022,6 +2022,20 @@
   
   <url>
     <loc>http://www.jiliuke.com/tags/ping/</loc>
+    <lastmod>2025-01-14</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.jiliuke.com/tags/datepicker/</loc>
+    <lastmod>2025-01-14</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.jiliuke.com/tags/jquery-ui/</loc>
     <lastmod>2025-01-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -2105,27 +2119,6 @@
   </url>
   
   <url>
-    <loc>http://www.jiliuke.com/tags/mantisbt/</loc>
-    <lastmod>2025-01-14</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>http://www.jiliuke.com/tags/etc-passwd/</loc>
-    <lastmod>2025-01-14</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>http://www.jiliuke.com/tags/etc-shadow/</loc>
-    <lastmod>2025-01-14</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>http://www.jiliuke.com/tags/msql/</loc>
     <lastmod>2025-01-14</lastmod>
     <changefreq>weekly</changefreq>
@@ -2140,35 +2133,14 @@
   </url>
   
   <url>
+    <loc>http://www.jiliuke.com/tags/mantisbt/</loc>
+    <lastmod>2025-01-14</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>http://www.jiliuke.com/tags/%E4%B8%BB%E4%BB%8E%E9%85%8D%E7%BD%AE/</loc>
-    <lastmod>2025-01-14</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>http://www.jiliuke.com/tags/myql/</loc>
-    <lastmod>2025-01-14</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>http://www.jiliuke.com/tags/%E4%BC%98%E5%8C%96/</loc>
-    <lastmod>2025-01-14</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>http://www.jiliuke.com/tags/%E6%97%A5%E5%BF%97/</loc>
-    <lastmod>2025-01-14</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>http://www.jiliuke.com/tags/%E4%B8%BB%E9%94%AE/</loc>
     <lastmod>2025-01-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -2196,6 +2168,13 @@
   </url>
   
   <url>
+    <loc>http://www.jiliuke.com/tags/%E4%B8%BB%E9%94%AE/</loc>
+    <lastmod>2025-01-14</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>http://www.jiliuke.com/tags/nginx/</loc>
     <lastmod>2025-01-14</lastmod>
     <changefreq>weekly</changefreq>
@@ -2203,7 +2182,14 @@
   </url>
   
   <url>
-    <loc>http://www.jiliuke.com/tags/rewrite/</loc>
+    <loc>http://www.jiliuke.com/tags/horizontal/</loc>
+    <lastmod>2025-01-14</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.jiliuke.com/tags/orientation/</loc>
     <lastmod>2025-01-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -2231,20 +2217,6 @@
   </url>
   
   <url>
-    <loc>http://www.jiliuke.com/tags/horizontal/</loc>
-    <lastmod>2025-01-14</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>http://www.jiliuke.com/tags/orientation/</loc>
-    <lastmod>2025-01-14</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>http://www.jiliuke.com/tags/md5/</loc>
     <lastmod>2025-01-14</lastmod>
     <changefreq>weekly</changefreq>
@@ -2259,7 +2231,28 @@
   </url>
   
   <url>
-    <loc>http://www.jiliuke.com/tags/PHP%E4%BA%8C%E7%BB%B4%E6%95%B0%E7%BB%84/</loc>
+    <loc>http://www.jiliuke.com/tags/rewrite/</loc>
+    <lastmod>2025-01-14</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.jiliuke.com/tags/myql/</loc>
+    <lastmod>2025-01-14</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.jiliuke.com/tags/%E4%BC%98%E5%8C%96/</loc>
+    <lastmod>2025-01-14</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.jiliuke.com/tags/%E6%97%A5%E5%BF%97/</loc>
     <lastmod>2025-01-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -2267,6 +2260,13 @@
   
   <url>
     <loc>http://www.jiliuke.com/tags/PHP%E6%B5%AE%E7%82%B9%E6%95%B0/</loc>
+    <lastmod>2025-01-14</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.jiliuke.com/tags/PHP%E4%BA%8C%E7%BB%B4%E6%95%B0%E7%BB%84/</loc>
     <lastmod>2025-01-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -2308,6 +2308,13 @@
   </url>
   
   <url>
+    <loc>http://www.jiliuke.com/tags/rabbitmq/</loc>
+    <lastmod>2025-01-14</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>http://www.jiliuke.com/tags/getsebool/</loc>
     <lastmod>2025-01-14</lastmod>
     <changefreq>weekly</changefreq>
@@ -2316,13 +2323,6 @@
   
   <url>
     <loc>http://www.jiliuke.com/tags/setsebool/</loc>
-    <lastmod>2025-01-14</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>http://www.jiliuke.com/tags/rabbitmq/</loc>
     <lastmod>2025-01-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -2357,13 +2357,6 @@
   </url>
   
   <url>
-    <loc>http://www.jiliuke.com/tags/nameserver/</loc>
-    <lastmod>2025-01-14</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>http://www.jiliuke.com/tags/wakeonlan/</loc>
     <lastmod>2025-01-14</lastmod>
     <changefreq>weekly</changefreq>
@@ -2372,6 +2365,13 @@
   
   <url>
     <loc>http://www.jiliuke.com/tags/wol/</loc>
+    <lastmod>2025-01-14</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.jiliuke.com/tags/nameserver/</loc>
     <lastmod>2025-01-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -2429,42 +2429,7 @@
   </url>
   
   <url>
-    <loc>http://www.jiliuke.com/categories/magento2/PayPal-PayFlow/</loc>
-    <lastmod>2025-01-14</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>http://www.jiliuke.com/categories/%E5%AE%89%E5%8D%93%E9%97%AE%E9%A2%98%E9%9B%86%E9%94%A6/</loc>
-    <lastmod>2025-01-14</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>http://www.jiliuke.com/categories/apache/</loc>
-    <lastmod>2025-01-14</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>http://www.jiliuke.com/categories/ssh/git/</loc>
-    <lastmod>2025-01-14</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>http://www.jiliuke.com/categories/lnmp/</loc>
-    <lastmod>2025-01-14</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>http://www.jiliuke.com/categories/%E8%BF%90%E7%BB%B4/</loc>
     <lastmod>2025-01-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -2478,7 +2443,35 @@
   </url>
   
   <url>
-    <loc>http://www.jiliuke.com/categories/cdn/</loc>
+    <loc>http://www.jiliuke.com/categories/lnmp/</loc>
+    <lastmod>2025-01-14</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.jiliuke.com/categories/%E5%AE%89%E5%8D%93%E9%97%AE%E9%A2%98%E9%9B%86%E9%94%A6/</loc>
+    <lastmod>2025-01-14</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.jiliuke.com/categories/magento2/PayPal-PayFlow/</loc>
+    <lastmod>2025-01-14</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.jiliuke.com/categories/%E8%BF%90%E7%BB%B4/</loc>
+    <lastmod>2025-01-14</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.jiliuke.com/categories/ssh/git/</loc>
     <lastmod>2025-01-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -2486,6 +2479,13 @@
   
   <url>
     <loc>http://www.jiliuke.com/categories/CentOS/</loc>
+    <lastmod>2025-01-14</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.jiliuke.com/categories/cdn/</loc>
     <lastmod>2025-01-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -2513,13 +2513,6 @@
   </url>
   
   <url>
-    <loc>http://www.jiliuke.com/categories/vsftp/</loc>
-    <lastmod>2025-01-14</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>http://www.jiliuke.com/categories/samba/</loc>
     <lastmod>2025-01-14</lastmod>
     <changefreq>weekly</changefreq>
@@ -2527,14 +2520,14 @@
   </url>
   
   <url>
-    <loc>http://www.jiliuke.com/categories/CentOS/%E5%B7%A5%E5%85%B7/</loc>
+    <loc>http://www.jiliuke.com/categories/vsftp/</loc>
     <lastmod>2025-01-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>http://www.jiliuke.com/categories/php-fpm/</loc>
+    <loc>http://www.jiliuke.com/categories/javascript/</loc>
     <lastmod>2025-01-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -2548,7 +2541,7 @@
   </url>
   
   <url>
-    <loc>http://www.jiliuke.com/categories/javascript/</loc>
+    <loc>http://www.jiliuke.com/categories/php-fpm/</loc>
     <lastmod>2025-01-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -2576,7 +2569,7 @@
   </url>
   
   <url>
-    <loc>http://www.jiliuke.com/categories/nginx/</loc>
+    <loc>http://www.jiliuke.com/categories/CentOS/%E5%B7%A5%E5%85%B7/</loc>
     <lastmod>2025-01-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -2590,6 +2583,13 @@
   </url>
   
   <url>
+    <loc>http://www.jiliuke.com/categories/magento2/elasticsearch/</loc>
+    <lastmod>2025-01-14</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>http://www.jiliuke.com/categories/redis/</loc>
     <lastmod>2025-01-14</lastmod>
     <changefreq>weekly</changefreq>
@@ -2597,14 +2597,14 @@
   </url>
   
   <url>
-    <loc>http://www.jiliuke.com/categories/jquery/</loc>
+    <loc>http://www.jiliuke.com/categories/nginx/</loc>
     <lastmod>2025-01-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>http://www.jiliuke.com/categories/magento2/elasticsearch/</loc>
+    <loc>http://www.jiliuke.com/categories/jquery/</loc>
     <lastmod>2025-01-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
