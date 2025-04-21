@@ -1858,35 +1858,6 @@
       </tags>
   </entry>
   <entry>
-    <title>源码安装lnmp</title>
-    <url>/2015/03/30/e6-ba-90-e7-a0-81-e5-ae-89-e8-a3-85lnmp/</url>
-    <content><![CDATA[<p>1.nginx <a href="http://nginx.org/en/docs/configure.html">http://nginx.org/en/docs/configure.html</a></p>
-<p>2.php <a href="http://php.net/manual/en/install.unix.nginx.php">http://php.net/manual/en/install.unix.nginx.php</a></p>
-<p>3.cmake <a href="http://www.cmake.org/download/">http://www.cmake.org/download/</a></p>
-<p>4.mysql</p>
-<p>/lnmp/cmake/bin/cmake <br>-DCMAKE_INSTALL_PREFIX=/lnmp/mysql <br>-DMYSQL_DATADIR=/lnmp/mysql/data <br>-DSYSCONFDIR=/lnmp/mysql/etc <br>-DWITH_MYISAM_STORAGE_ENGINE=1 <br>-DWITH_INNOBASE_STORAGE_ENGINE=1 <br>-DWITH_MEMORY_STORAGE_ENGINE=1 <br>-DWITH_READLINE=1 <br>-DMYSQL_UNIX_ADDR=/lnmp/mysql/mysql.sock <br>-DMYSQL_TCP_PORT=3306 <br>-DENABLED_LOCAL_INFILE=1 <br>-DWITH_PARTITION_STORAGE_ENGINE=1 <br>-DEXTRA_CHARSETS=all <br>-DDEFAULT_CHARSET=utf8 <br>-DDEFAULT_COLLATION=utf8_general_ci</p>
-<p>make &amp;&amp; make install</p>
-<p>yum -y install ncurses-devel</p>
-<p>新安装的mysql如果需要密码，查看cat /root/.mysql_secret中即为mysql的默认root密码</p>
-<p>进入后set password=”123456”;</p>
-<p>安装完成后需要添加php扩展，先cd到php安装源文件ext/gd(以安装gd为例)</p>
-<p>/php路径/bin/phpize 生成configure文件</p>
-<p>./configure –with-php-config=/php路径/bin/php-config</p>
-<p>php查看安装的模块php -m</p>
-<p>加入环境变量例子(环境变量地址：/etc/profile)</p>
-<p>PATH=/lnmp/mysql/bin:$PATH</p>
-<p>export PATH</p>
-<p>source /etc/profile</p>
-]]></content>
-      <categories>
-        <category>LAMP技术中心</category>
-      </categories>
-      <tags>
-        <tag>centos</tag>
-        <tag>lnmp</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>探讨PHP函数ip2long转换IP时数值太大产生负数的解决方法</title>
     <url>/2015/08/11/e6-8e-a2-e8-ae-a8php-e5-87-bd-e6-95-b0ip2long-e8-bd-ac-e6-8d-a2ip-e6-97-b6-e6-95-b0-e5-80-bc-e5-a4-aa-e5-a4-a7-e4-ba-a7-e7-94-9f-e8-b4-9f-e6-95-b0-e7-9a-84-e8-a7-a3-e5-86-b3-e6-96-b9-e6-b3-95/</url>
     <content><![CDATA[<p>本篇文章是对PHP函数ip2long转换IP时数值太大产生负数的解决方法进行了详细的分析介绍，需要的朋友参考下 【造成原因】：Because PHP’s integer type is signed, and many IP addresses will result in negative integers. 【解决办法】：其官方手册中提到，可以“you need to use the “%u” formatter of sprintf() or printf() to get the string representation of the unsigned IP address” 即，printf( ‘%u’,ip2long(‘IP地址’ ) ); 或者将其先转换为二进制然后在转换为十进制，bindec(decbinip2long( ‘IP地址’ ) ) ); 【测试】</p>
@@ -3804,6 +3775,43 @@ $("#datepicker").datepicker('option', 'dateFormat','yy-mm-dd');//set dateFormat
       <tags>
         <tag>PHP</tag>
         <tag>curl</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>源码安装lnmp</title>
+    <url>/2025/04/20/lnmp/</url>
+    <content><![CDATA[<p>1.nginx <a href="http://nginx.org/en/docs/configure.html">http://nginx.org/en/docs/configure.html</a></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo apt update</span><br><span class="line">sudo apt-get install build-essential libpcre3 libpcre3-dev zlib1g zlib1g-dev libssl-dev libgd-dev libxml2 libxml2-dev uuid-dev</span><br><span class="line"></span><br><span class="line">cd ~</span><br><span class="line">wget https://nginx.org/download/nginx-1.26.3.tar.gz</span><br><span class="line">tar -zxvf nginx-1.26.3.tar.gz</span><br><span class="line">cd nginx-1.26.3</span><br><span class="line">./configure --prefix=/var/www/html --sbin-path=/usr/sbin/nginx --conf-path=/etc/nginx/nginx.conf --http-log-path=/var/log/nginx/access.log --error-log-path=/var/log/nginx/error.log --with-pcre  --lock-path=/var/lock/nginx.lock --pid-path=/var/run/nginx.pid --with-http_ssl_module --with-http_image_filter_module=dynamic --modules-path=/etc/nginx/modules --with-http_v2_module --with-stream=dynamic --with-http_addition_module --with-http_mp4_module</span><br><span class="line">sudo make -j 4</span><br><span class="line">sudo make install</span><br><span class="line">nginx -V</span><br></pre></td></tr></table></figure>
+<p>安装nginx service</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo deepin-editor /lib/systemd/system/nginx.service</span><br></pre></td></tr></table></figure>
+<p>粘贴以下代码并保存</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">[Unit]</span><br><span class="line">Description=The NGINX HTTP and reverse proxy server</span><br><span class="line">After=syslog.target network-online.target remote-fs.target nss-lookup.target</span><br><span class="line">Wants=network-online.target</span><br><span class="line"></span><br><span class="line">[Service]</span><br><span class="line">Type=forking</span><br><span class="line">PIDFile=/var/run/nginx.pid</span><br><span class="line">ExecStartPre=/usr/sbin/nginx -t</span><br><span class="line">ExecStart=/usr/sbin/nginx</span><br><span class="line">ExecReload=/usr/sbin/nginx -s reload</span><br><span class="line">ExecStop=/bin/kill -s QUIT $MAINPID</span><br><span class="line">PrivateTmp=true</span><br><span class="line"></span><br><span class="line">[Install]</span><br><span class="line">WantedBy=multi-user.target</span><br></pre></td></tr></table></figure>
+<p>开启自启动</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo systemctl enable nginx</span><br></pre></td></tr></table></figure>
+
+<p>2.php <a href="http://php.net/manual/en/install.unix.nginx.php">http://php.net/manual/en/install.unix.nginx.php</a></p>
+<p>3.cmake <a href="http://www.cmake.org/download/">http://www.cmake.org/download/</a></p>
+<p>4.mysql</p>
+<p>/lnmp/cmake/bin/cmake <br>-DCMAKE_INSTALL_PREFIX=/lnmp/mysql <br>-DMYSQL_DATADIR=/lnmp/mysql/data <br>-DSYSCONFDIR=/lnmp/mysql/etc <br>-DWITH_MYISAM_STORAGE_ENGINE=1 <br>-DWITH_INNOBASE_STORAGE_ENGINE=1 <br>-DWITH_MEMORY_STORAGE_ENGINE=1 <br>-DWITH_READLINE=1 <br>-DMYSQL_UNIX_ADDR=/lnmp/mysql/mysql.sock <br>-DMYSQL_TCP_PORT=3306 <br>-DENABLED_LOCAL_INFILE=1 <br>-DWITH_PARTITION_STORAGE_ENGINE=1 <br>-DEXTRA_CHARSETS=all <br>-DDEFAULT_CHARSET=utf8 <br>-DDEFAULT_COLLATION=utf8_general_ci</p>
+<p>make &amp;&amp; make install</p>
+<p>yum -y install ncurses-devel</p>
+<p>新安装的mysql如果需要密码，查看cat /root/.mysql_secret中即为mysql的默认root密码</p>
+<p>进入后set password=”123456”;</p>
+<p>安装完成后需要添加php扩展，先cd到php安装源文件ext/gd(以安装gd为例)</p>
+<p>/php路径/bin/phpize 生成configure文件</p>
+<p>./configure –with-php-config=/php路径/bin/php-config</p>
+<p>php查看安装的模块php -m</p>
+<p>加入环境变量例子(环境变量地址：/etc/profile)</p>
+<p>PATH=/lnmp/mysql/bin:$PATH</p>
+<p>export PATH</p>
+<p>source /etc/profile</p>
+]]></content>
+      <categories>
+        <category>LAMP技术中心</category>
+      </categories>
+      <tags>
+        <tag>centos</tag>
+        <tag>lnmp</tag>
       </tags>
   </entry>
 </search>

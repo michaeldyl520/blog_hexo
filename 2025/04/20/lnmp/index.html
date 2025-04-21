@@ -84,7 +84,7 @@
 </header>
 
       <div class="outer">
-        <section id="main"><article id="post-e6-ba-90-e7-a0-81-e5-ae-89-e8-a3-85lnmp" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+        <section id="main"><article id="post-lnmp" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-inner">
     
     
@@ -103,7 +103,7 @@
       
       <span class="article-date">
   <i class="fa fa-date"></i>
-  <time class="dt-published" datetime="2015-03-30T03:16:25.000Z" itemprop="datePublished">2015年03月30日</time>
+  <time class="dt-published" datetime="2025-04-20T03:16:25.000Z" itemprop="datePublished">2025年04月20日</time>
 </span>
       
   <div class="article-category">
@@ -121,7 +121,7 @@
 
       
       
-<a href="/2015/03/30/e6-ba-90-e7-a0-81-e5-ae-89-e8-a3-85lnmp/#comments" class="article-comment-link">
+<a href="/2025/04/20/lnmp/#comments" class="article-comment-link">
   
     
     
@@ -138,6 +138,14 @@
     <div class="e-content article-entry" itemprop="articleBody">
       
         <p>1.nginx <a target="_blank" rel="noopener" href="http://nginx.org/en/docs/configure.html">http://nginx.org/en/docs/configure.html</a></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">sudo apt update</span><br><span class="line">sudo apt-get install build-essential libpcre3 libpcre3-dev zlib1g zlib1g-dev libssl-dev libgd-dev libxml2 libxml2-dev uuid-dev</span><br><span class="line"></span><br><span class="line">cd ~</span><br><span class="line">wget https://nginx.org/download/nginx-1.26.3.tar.gz</span><br><span class="line">tar -zxvf nginx-1.26.3.tar.gz</span><br><span class="line">cd nginx-1.26.3</span><br><span class="line">./configure --prefix=/var/www/html --sbin-path=/usr/sbin/nginx --conf-path=/etc/nginx/nginx.conf --http-log-path=/var/log/nginx/access.log --error-log-path=/var/log/nginx/error.log --with-pcre  --lock-path=/var/lock/nginx.lock --pid-path=/var/run/nginx.pid --with-http_ssl_module --with-http_image_filter_module=dynamic --modules-path=/etc/nginx/modules --with-http_v2_module --with-stream=dynamic --with-http_addition_module --with-http_mp4_module</span><br><span class="line">sudo make -j 4</span><br><span class="line">sudo make install</span><br><span class="line">nginx -V</span><br></pre></td></tr></table></figure>
+<p>安装nginx service</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo deepin-editor /lib/systemd/system/nginx.service</span><br></pre></td></tr></table></figure>
+<p>粘贴以下代码并保存</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">[Unit]</span><br><span class="line">Description=The NGINX HTTP and reverse proxy server</span><br><span class="line">After=syslog.target network-online.target remote-fs.target nss-lookup.target</span><br><span class="line">Wants=network-online.target</span><br><span class="line"></span><br><span class="line">[Service]</span><br><span class="line">Type=forking</span><br><span class="line">PIDFile=/var/run/nginx.pid</span><br><span class="line">ExecStartPre=/usr/sbin/nginx -t</span><br><span class="line">ExecStart=/usr/sbin/nginx</span><br><span class="line">ExecReload=/usr/sbin/nginx -s reload</span><br><span class="line">ExecStop=/bin/kill -s QUIT $MAINPID</span><br><span class="line">PrivateTmp=true</span><br><span class="line"></span><br><span class="line">[Install]</span><br><span class="line">WantedBy=multi-user.target</span><br></pre></td></tr></table></figure>
+<p>开启自启动</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo systemctl enable nginx</span><br></pre></td></tr></table></figure>
+
 <p>2.php <a target="_blank" rel="noopener" href="http://php.net/manual/en/install.unix.nginx.php">http://php.net/manual/en/install.unix.nginx.php</a></p>
 <p>3.cmake <a target="_blank" rel="noopener" href="http://www.cmake.org/download/">http://www.cmake.org/download/</a></p>
 <p>4.mysql</p>
@@ -170,7 +178,7 @@
         
         
           <blockquote id="copyright">
-              <p>原文链接: <a href="http://www.jiliuke.com/2015/03/30/e6-ba-90-e7-a0-81-e5-ae-89-e8-a3-85lnmp/">http://www.jiliuke.com/2015/03/30/e6-ba-90-e7-a0-81-e5-ae-89-e8-a3-85lnmp/</a></p>
+              <p>原文链接: <a href="http://www.jiliuke.com/2025/04/20/lnmp/">http://www.jiliuke.com/2025/04/20/lnmp/</a></p>
               <p>版权声明: 转载请注明出处.</p>
           </blockquote>
         
@@ -193,24 +201,15 @@
         
 <nav id="article-nav">
   
-    <a href="/2015/03/30/etcpasswd-e5-92-8c-etcshadow-e6-96-87-e4-bb-b6-e5-86-85-e5-ae-b9-e5-8f-8a-e5-85-b6-e8-a7-a3-e9-87-8a/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2024/08/13/rabbitmq/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">older</strong>
       <div class="article-nav-title">
         
-          /etc/passwd 和 /etc/shadow 文件内容及其解释
+          Rabbitmq 一些有用的用法
         
       </div>
     </a>
   
-  
-    <a href="/2015/08/11/cmake-e5-92-8cconfigure-e9-a1-b9-e7-9b-ae-e7-9a-84-e5-ae-89-e8-a3-85-e4-b8-8e-e5-8f-8d-e5-ae-89-e8-a3-85-2/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">newer</strong>
-      <div class="article-nav-title">
-        
-          CMake和Configure项目的安装与反安装
-        
-      </div>
-    </a>
   
 </nav>
 
@@ -240,6 +239,10 @@
       <ul>
         
           <li>
+            <a href="/2025/04/20/lnmp/">源码安装lnmp</a>
+          </li>
+        
+          <li>
             <a href="/2024/08/13/rabbitmq/">Rabbitmq 一些有用的用法</a>
           </li>
         
@@ -253,10 +256,6 @@
         
           <li>
             <a href="/2024/04/11/wakeonlan/">Linux 系统远程开机(WOL)</a>
-          </li>
-        
-          <li>
-            <a href="/2024/03/29/magento2-unit-test/">magento2 单元测试</a>
           </li>
         
       </ul>
@@ -288,7 +287,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title"><i class="fa fa-archive"></i> 归档</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/">2024年</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/">2023年</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/">2022年</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/">2021年</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/">2020年</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/">2019年</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/">2018年</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/">2015年</a><span class="archive-list-count">46</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/">2014年</a><span class="archive-list-count">62</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/">2025年</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/">2024年</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/">2023年</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/">2022年</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/">2021年</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/">2020年</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/">2019年</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/">2018年</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/">2015年</a><span class="archive-list-count">45</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/">2014年</a><span class="archive-list-count">62</span></li></ul>
     </div>
   </div>
 

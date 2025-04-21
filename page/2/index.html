@@ -85,6 +85,80 @@
 
       <div class="outer">
         <section id="main">
+  <article id="post-magento-coding-standard" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2023/03/24/magento-coding-standard/">magento2 代码规范设置方法</a>
+    </h1>
+  
+
+
+      </header>
+    
+    <div class="article-meta">
+      
+      <span class="article-date">
+  <i class="fa fa-date"></i>
+  <time class="dt-published" datetime="2023-03-24T05:19:28.000Z" itemprop="datePublished">2023年03月24日</time>
+</span>
+      
+      
+      
+<a href="/2023/03/24/magento-coding-standard/#comments" class="article-comment-link">
+  
+  <i class="fa fa-commt"></i>
+  留言
+</a>
+
+
+    </div>
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="安装代码标准"><a href="#安装代码标准" class="headerlink" title="安装代码标准"></a>安装代码标准</h1><p>使用magento2官方的代码标准，如果需要在开发工具中提示代码规范的问题，需要在安装magento2后执行以下shell</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vendor/bin/phpcs --config-set installed_paths vendor/magento/magento-coding-standard,vendor/phpcompatibility/php-compatibility/PHPCompatibility</span><br></pre></td></tr></table></figure>
+<h1 id="PhpStorm-自动格式化的一些配置"><a href="#PhpStorm-自动格式化的一些配置" class="headerlink" title="PhpStorm 自动格式化的一些配置"></a>PhpStorm 自动格式化的一些配置</h1><h2 id="自动对齐的问题"><a href="#自动对齐的问题" class="headerlink" title="自动对齐的问题"></a>自动对齐的问题</h2><p>高版本PhpStorm Function如果有多个变量并换行，会自动两边对齐属性，不符合代码规范，需要在<code>Settings&gt;Editor&gt;Code Style&gt;PHP-&gt;Wrapping and Braces-&gt;Function declaration parameters</code>中去掉<code>Align when multiline</code>的勾选框且勾选<code>Keep &#39;)&#39; and &#39;&#123;&#39; on one line</code></p>
+<p><img src="/images/%E4%BF%AE%E5%A4%8D%E8%87%AA%E5%8A%A8%E5%AF%B9%E9%BD%90%E7%9A%84%E9%97%AE%E9%A2%98.png" alt="自动对齐的问题"></p>
+<h2 id="强制限定类型的提示问题"><a href="#强制限定类型的提示问题" class="headerlink" title="强制限定类型的提示问题"></a>强制限定类型的提示问题</h2><p>Magento2 PHP不需要做强制类型限定参照图去掉以下两个复选框。</p>
+<p><img src="/images/%E5%BC%BA%E7%B1%BB%E5%9E%8B%E6%8F%90%E7%A4%BA%E7%9A%84%E9%97%AE%E9%A2%98.png" alt="强制限定类型的提示问题"></p>
+<h2 id="去掉js相等警告"><a href="#去掉js相等警告" class="headerlink" title="去掉js相等警告"></a>去掉js相等警告</h2><p><img src="/images/%E5%8E%BB%E6%8E%89js%E7%9B%B8%E7%AD%89%E8%AD%A6%E5%91%8A.png" alt="去掉js相等警告"></p>
+<h2 id="eslint-搭法"><a href="#eslint-搭法" class="headerlink" title="eslint 搭法"></a>eslint 搭法</h2><p><img src="/images/eslint-1.png" alt="eslint 搭法"><br><img src="/images/eslint-2.png" alt="eslint 搭法"></p>
+<h2 id="phpcs搭法"><a href="#phpcs搭法" class="headerlink" title="phpcs搭法"></a>phpcs搭法</h2><p>如果最新的vendor如果没有包含phpcs等检测工具，我们可以间接使用默认的2.4.5-p1中的phpcs进行项目的检测</p>
+<h2 id="右键phpcs添加方法"><a href="#右键phpcs添加方法" class="headerlink" title="右键phpcs添加方法"></a>右键phpcs添加方法</h2><p><img src="/images/%E5%8F%B3%E9%94%AEphpcs%E8%AE%BE%E7%BD%AE%E6%96%B9%E6%B3%95.png" alt="右键phpcs设置方法.png"></p>
+
+        
+        
+          <blockquote id="copyright">
+              <p>原文链接: <a href="http://www.jiliuke.com/page/2/index.html">http://www.jiliuke.com/page/2/index.html</a></p>
+              <p>版权声明: 转载请注明出处.</p>
+          </blockquote>
+        
+      
+    </div>
+    <footer class="article-footer">
+      
+        <div class="article-tag-wrap">
+          
+
+          
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/magento2/" rel="tag">magento2</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/phpcs/" rel="tag">phpcs</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/phpstorm/" rel="tag">phpstorm</a></li></ul>
+
+          
+
+
+        </div>
+      
+      
+      
+    </footer>
+  </div>
+</article>
+
+
   <article id="post-postman-tips" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-inner">
     
@@ -731,70 +805,6 @@
 </article>
 
 
-  <article id="post-package-deb-tips" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2021/07/01/package-deb-tips/">deepin中打包出现的问题汇总</a>
-    </h1>
-  
-
-
-      </header>
-    
-    <div class="article-meta">
-      
-      <span class="article-date">
-  <i class="fa fa-date"></i>
-  <time class="dt-published" datetime="2021-07-01T03:11:05.000Z" itemprop="datePublished">2021年07月01日</time>
-</span>
-      
-      
-      
-<a href="/2021/07/01/package-deb-tips/#comments" class="article-comment-link">
-  
-  <i class="fa fa-commt"></i>
-  留言
-</a>
-
-
-    </div>
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h1 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h1><p>打包后安装出现双图标</p>
-<h1 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h1><p>desktop中添加StartupWMClass=xxx<br>xxx通过终端中执行xprop WM_CLASS点击应用程序获取。</p>
-
-        
-        
-          <blockquote id="copyright">
-              <p>原文链接: <a href="http://www.jiliuke.com/page/2/index.html">http://www.jiliuke.com/page/2/index.html</a></p>
-              <p>版权声明: 转载请注明出处.</p>
-          </blockquote>
-        
-      
-    </div>
-    <footer class="article-footer">
-      
-        <div class="article-tag-wrap">
-          
-
-          
-          
-
-
-        </div>
-      
-      
-      
-    </footer>
-  </div>
-</article>
-
-
 
     <nav id="page-nav">
 
@@ -813,6 +823,10 @@
       <ul>
         
           <li>
+            <a href="/2025/04/20/lnmp/">源码安装lnmp</a>
+          </li>
+        
+          <li>
             <a href="/2024/08/13/rabbitmq/">Rabbitmq 一些有用的用法</a>
           </li>
         
@@ -826,10 +840,6 @@
         
           <li>
             <a href="/2024/04/11/wakeonlan/">Linux 系统远程开机(WOL)</a>
-          </li>
-        
-          <li>
-            <a href="/2024/03/29/magento2-unit-test/">magento2 单元测试</a>
           </li>
         
       </ul>
@@ -861,7 +871,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title"><i class="fa fa-archive"></i> 归档</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/">2024年</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/">2023年</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/">2022年</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/">2021年</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/">2020年</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/">2019年</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/">2018年</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/">2015年</a><span class="archive-list-count">46</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/">2014年</a><span class="archive-list-count">62</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/">2025年</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/">2024年</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/">2023年</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/">2022年</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/">2021年</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/">2020年</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/">2019年</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/">2018年</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/">2015年</a><span class="archive-list-count">45</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/">2014年</a><span class="archive-list-count">62</span></li></ul>
     </div>
   </div>
 
