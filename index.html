@@ -83,6 +83,76 @@
 
       <div class="outer">
         <section id="main">
+  <article id="post-reduce-size-after-mysqldump" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2025/10/14/reduce-size-after-mysqldump/">使用mysqldump备份文件后删除日志数据</a>
+    </h1>
+  
+
+
+      </header>
+    
+    <div class="article-meta">
+      
+      <span class="article-date">
+  <i class="fa fa-date"></i>
+  <time class="dt-published" datetime="2025-10-14T08:00:00.000Z" itemprop="datePublished">2025年10月14日</time>
+</span>
+      
+      
+      
+<a href="/2025/10/14/reduce-size-after-mysqldump/#comments" class="article-comment-link">
+  
+  <i class="fa fa-commt"></i>
+  留言
+</a>
+
+
+    </div>
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>实际应用中会出现需要减少导出的备份体积，然后在本地导入再开发，可以大幅缩短导入等待时间,方法如下</p>
+<pre><code class="shell">sed &#39;/INSERT INTO `tablelog1`/d&#39; xxxx.sql | sed &#39;/INSERT INTO `tablelog2`/d&#39; | sed &#39;/INSERT INTO `tablelog3`/d&#39; | sed &#39;/INSERT INTO `tablelog4`/d&#39; | sed &#39;/INSERT INTO `tablelog5`/d&#39; &gt; reduced.sql
+</code></pre>
+<p>更好的方法</p>
+<pre><code class="shell">grep -vE &#39;INSERT INTO `(tablelog1|tablelog2|tablelog3|tablelog4)`&#39; xxxx.sql &gt; reduced.sql
+</code></pre>
+
+        
+        
+          <blockquote id="copyright">
+              <p>原文链接: <a href="http://www.jiliuke.com/index.html">http://www.jiliuke.com/index.html</a></p>
+              <p>版权声明: 转载请注明出处.</p>
+          </blockquote>
+        
+      
+    </div>
+    <footer class="article-footer">
+      
+        <div class="article-tag-wrap">
+          
+
+          
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/mysql/" rel="tag">mysql</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/mysqldump/" rel="tag">mysqldump</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/reduce/" rel="tag">reduce</a></li></ul>
+
+          
+
+
+        </div>
+      
+      
+      
+    </footer>
+  </div>
+</article>
+
+
   <article id="post-lnmp" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-inner">
     
@@ -739,74 +809,6 @@
 </article>
 
 
-  <article id="post-composer-tips" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2023/10/09/composer-tips/">composer tips</a>
-    </h1>
-  
-
-
-      </header>
-    
-    <div class="article-meta">
-      
-      <span class="article-date">
-  <i class="fa fa-date"></i>
-  <time class="dt-published" datetime="2023-10-09T05:22:34.000Z" itemprop="datePublished">2023年10月09日</time>
-</span>
-      
-      
-      
-<a href="/2023/10/09/composer-tips/#comments" class="article-comment-link">
-  
-  <i class="fa fa-commt"></i>
-  留言
-</a>
-
-
-    </div>
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h1 id="Composer-小技巧"><a href="#Composer-小技巧" class="headerlink" title="Composer 小技巧"></a>Composer 小技巧</h1><h2 id="1-自定义安装包的方法"><a href="#1-自定义安装包的方法" class="headerlink" title="1. 自定义安装包的方法"></a>1. 自定义安装包的方法</h2><p>adobe 官方已不支持stripe-payment 3.2.8,需要用composer 自定义的方式安装包<br>composer配置方法</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    ......</span><br><span class="line">    &quot;repositories&quot;: &#123;</span><br><span class="line">        &quot;0&quot;:&#123;</span><br><span class="line">            &quot;type&quot;: &quot;composer&quot;,</span><br><span class="line">            &quot;url&quot;: &quot;https://repo.magento.com/&quot;</span><br><span class="line">        &#125;,</span><br><span class="line">        &quot;1&quot;: &#123;</span><br><span class="line">            &quot;type&quot;: &quot;package&quot;,</span><br><span class="line">            &quot;package&quot;: &#123;</span><br><span class="line">                &quot;name&quot;: &quot;stripe/module-payments&quot;,</span><br><span class="line">                &quot;version&quot;: &quot;3.2.8&quot;,</span><br><span class="line">                &quot;dist&quot;: &#123;</span><br><span class="line">                    &quot;url&quot;: &quot;https://github.com/stripe/stripe-magento2-releases/raw/master/stripe-magento2-3.2.8.tgz&quot;,</span><br><span class="line">                    &quot;type&quot;: &quot;tar&quot;</span><br><span class="line">                &#125;,</span><br><span class="line">                &quot;autoload&quot;:&#123;</span><br><span class="line">                    &quot;files&quot;: [</span><br><span class="line">                        &quot;code/StripeIntegration/Payments/registration.php&quot;</span><br><span class="line">                    ],</span><br><span class="line">                    &quot;psr-4&quot;: &#123;</span><br><span class="line">                        &quot;StripeIntegration\\Payments\\&quot;: &quot;code/StripeIntegration/Payments/&quot;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    ......</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>然后终端中在项目目录下使用 <code>composer require stripe/module-payments:3.2.8</code> 安装。</p>
-<h2 id="2-自定义文件夹方式安装的方法"><a href="#2-自定义文件夹方式安装的方法" class="headerlink" title="2.自定义文件夹方式安装的方法"></a>2.自定义文件夹方式安装的方法</h2><p>composer 配置方法</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    ......</span><br><span class="line">    &quot;repositories&quot;: &#123;</span><br><span class="line">        &quot;0&quot;:&#123;</span><br><span class="line">            &quot;type&quot;: &quot;composer&quot;,</span><br><span class="line">            &quot;url&quot;: &quot;https://repo.magento.com/&quot;</span><br><span class="line">        &#125;,</span><br><span class="line">        &quot;1&quot;: &#123;</span><br><span class="line">            &quot;type&quot;: &quot;path&quot;,</span><br><span class="line">            &quot;url&quot;: &quot;app/vendor/*/*&quot;,</span><br><span class="line">            &quot;options&quot;: &#123;</span><br><span class="line">                &quot;symlink&quot;: true</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    &quot;config&quot;: &#123;</span><br><span class="line">        ......</span><br><span class="line">        &quot;preferred-install&quot;: &quot;source&quot;, //告诉 Composer 优先使用源代码（包括本地存在的包）而不是下载压缩包。</span><br><span class="line">        ......</span><br><span class="line">    &#125;</span><br><span class="line">    ......</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-        
-        
-          <blockquote id="copyright">
-              <p>原文链接: <a href="http://www.jiliuke.com/index.html">http://www.jiliuke.com/index.html</a></p>
-              <p>版权声明: 转载请注明出处.</p>
-          </blockquote>
-        
-      
-    </div>
-    <footer class="article-footer">
-      
-        <div class="article-tag-wrap">
-          
-
-          
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/composer/" rel="tag">composer</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/composer-repositories/" rel="tag">composer repositories</a></li></ul>
-
-          
-
-
-        </div>
-      
-      
-      
-    </footer>
-  </div>
-</article>
-
-
 
     <nav id="page-nav">
 
@@ -825,6 +827,10 @@
       <ul>
         
           <li>
+            <a href="/2025/10/14/reduce-size-after-mysqldump/">使用mysqldump备份文件后删除日志数据</a>
+          </li>
+        
+          <li>
             <a href="/2025/04/20/lnmp/">源码安装lnmp</a>
           </li>
         
@@ -838,10 +844,6 @@
         
           <li>
             <a href="/2024/08/02/docker-tips/">docker使用小技巧</a>
-          </li>
-        
-          <li>
-            <a href="/2024/04/11/wakeonlan/">Linux 系统远程开机(WOL)</a>
           </li>
         
       </ul>
@@ -873,7 +875,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title"><i class="fa fa-archive"></i> 归档</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/">2025年</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/">2024年</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/">2023年</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/">2022年</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/">2021年</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/">2020年</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/">2019年</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/">2018年</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/">2015年</a><span class="archive-list-count">45</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/">2014年</a><span class="archive-list-count">62</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/">2025年</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/">2024年</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/">2023年</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/">2022年</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/">2021年</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/">2020年</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/">2019年</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/">2018年</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/">2015年</a><span class="archive-list-count">45</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/">2014年</a><span class="archive-list-count">62</span></li></ul>
     </div>
   </div>
 

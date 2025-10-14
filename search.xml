@@ -3566,9 +3566,14 @@ $("#datepicker").datepicker('option', 'dateFormat','yy-mm-dd');//set dateFormat
   </entry>
   <entry>
     <title>使用mysqldump备份文件后删除日志数据</title>
-    <url>/2022/06/30/reduce-size-after-mysqldump/</url>
+    <url>/2025/10/14/reduce-size-after-mysqldump/</url>
     <content><![CDATA[<p>实际应用中会出现需要减少导出的备份体积，然后在本地导入再开发，可以大幅缩短导入等待时间,方法如下</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sed &#x27;/INSERT INTO `tablelog1`/d&#x27; xxxx.sql | sed &#x27;/INSERT INTO `tablelog2`/d&#x27; | sed &#x27;/INSERT INTO `tablelog3`/d&#x27; | sed &#x27;/INSERT INTO `tablelog4`/d&#x27; | sed &#x27;/INSERT INTO `tablelog5`/d&#x27; &gt; reduced.sql</span><br></pre></td></tr></table></figure>]]></content>
+<pre><code class="shell">sed &#39;/INSERT INTO `tablelog1`/d&#39; xxxx.sql | sed &#39;/INSERT INTO `tablelog2`/d&#39; | sed &#39;/INSERT INTO `tablelog3`/d&#39; | sed &#39;/INSERT INTO `tablelog4`/d&#39; | sed &#39;/INSERT INTO `tablelog5`/d&#39; &gt; reduced.sql
+</code></pre>
+<p>更好的方法</p>
+<pre><code class="shell">grep -vE &#39;INSERT INTO `(tablelog1|tablelog2|tablelog3|tablelog4)`&#39; xxxx.sql &gt; reduced.sql
+</code></pre>
+]]></content>
       <tags>
         <tag>mysql</tag>
         <tag>mysqldump</tag>

@@ -6,7 +6,7 @@
   <link href="http://www.jiliuke.com/atom.xml" rel="self"/>
   
   <link href="http://www.jiliuke.com/"/>
-  <updated>2025-04-21T01:53:52.342Z</updated>
+  <updated>2025-10-14T08:00:55.738Z</updated>
   <id>http://www.jiliuke.com/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>使用mysqldump备份文件后删除日志数据</title>
+    <link href="http://www.jiliuke.com/2025/10/14/reduce-size-after-mysqldump/"/>
+    <id>http://www.jiliuke.com/2025/10/14/reduce-size-after-mysqldump/</id>
+    <published>2025-10-14T08:00:00.000Z</published>
+    <updated>2025-10-14T08:00:55.738Z</updated>
+    
+    <content type="html"><![CDATA[<p>实际应用中会出现需要减少导出的备份体积，然后在本地导入再开发，可以大幅缩短导入等待时间,方法如下</p><pre><code class="shell">sed &#39;/INSERT INTO `tablelog1`/d&#39; xxxx.sql | sed &#39;/INSERT INTO `tablelog2`/d&#39; | sed &#39;/INSERT INTO `tablelog3`/d&#39; | sed &#39;/INSERT INTO `tablelog4`/d&#39; | sed &#39;/INSERT INTO `tablelog5`/d&#39; &gt; reduced.sql</code></pre><p>更好的方法</p><pre><code class="shell">grep -vE &#39;INSERT INTO `(tablelog1|tablelog2|tablelog3|tablelog4)`&#39; xxxx.sql &gt; reduced.sql</code></pre>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;实际应用中会出现需要减少导出的备份体积，然后在本地导入再开发，可以大幅缩短导入等待时间,方法如下&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;shell&quot;&gt;sed &amp;#39;/INSERT INTO `tablelog1`/d&amp;#39; xxxx.sql | sed &amp;#3</summary>
+      
+    
+    
+    
+    
+    <category term="mysql" scheme="http://www.jiliuke.com/tags/mysql/"/>
+    
+    <category term="mysqldump" scheme="http://www.jiliuke.com/tags/mysqldump/"/>
+    
+    <category term="reduce" scheme="http://www.jiliuke.com/tags/reduce/"/>
+    
+  </entry>
   
   <entry>
     <title>源码安装lnmp</title>
@@ -339,33 +366,6 @@
     <category term="linux" scheme="http://www.jiliuke.com/tags/linux/"/>
     
     <category term="ssd" scheme="http://www.jiliuke.com/tags/ssd/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>使用mysqldump备份文件后删除日志数据</title>
-    <link href="http://www.jiliuke.com/2022/06/30/reduce-size-after-mysqldump/"/>
-    <id>http://www.jiliuke.com/2022/06/30/reduce-size-after-mysqldump/</id>
-    <published>2022-06-30T01:58:31.000Z</published>
-    <updated>2022-06-30T02:02:58.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>实际应用中会出现需要减少导出的备份体积，然后在本地导入再开发，可以大幅缩短导入等待时间,方法如下</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sed &#x27;/INSERT INTO `tablelog1`/d&#x27; xxxx.sql | sed &#x27;/INSERT INTO `tablelog2`/d&#x27; | sed &#x27;/INSERT INTO `tablelog3`/d&#x27; | sed &#x27;/INSERT INTO `tablelog4`/d&#x27; | sed &#x27;/INSERT INTO `tablelog5`/d&#x27; &gt; reduced.sql</span><br></pre></td></tr></table></figure>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;p&gt;实际应用中会出现需要减少导出的备份体积，然后在本地导入再开发，可以大幅缩短导入等待时间,方法如下&lt;/p&gt;
-&lt;figure class=&quot;highlight shell&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line</summary>
-      
-    
-    
-    
-    
-    <category term="mysql" scheme="http://www.jiliuke.com/tags/mysql/"/>
-    
-    <category term="mysqldump" scheme="http://www.jiliuke.com/tags/mysqldump/"/>
-    
-    <category term="reduce" scheme="http://www.jiliuke.com/tags/reduce/"/>
     
   </entry>
   
