@@ -1555,12 +1555,47 @@
     <title>docker使用小技巧</title>
     <url>/2024/08/02/docker-tips/</url>
     <content><![CDATA[<p>如果 <code>docker ps -a</code> 中太多，一次性删除方法</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">docker rm `docker ps -a -q --filter &#x27;status=exited&#x27;`</span><br></pre></td></tr></table></figure>
-
-<h1 id="debian-apparmor-linux内核安全模块影响docker运行，本地操作系统可以直接移除此包"><a href="#debian-apparmor-linux内核安全模块影响docker运行，本地操作系统可以直接移除此包" class="headerlink" title="debian apparmor linux内核安全模块影响docker运行，本地操作系统可以直接移除此包"></a>debian apparmor linux内核安全模块影响docker运行，本地操作系统可以直接移除此包</h1><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sudo apt-get purge apparmor</span><br></pre></td></tr></table></figure>
-
+<pre><code class="shell">docker rm `docker ps -a -q --filter &#39;status=exited&#39;`
+</code></pre>
+<h1 id="debian-apparmor-linux内核安全模块影响docker运行，本地操作系统可以直接移除此包"><a href="#debian-apparmor-linux内核安全模块影响docker运行，本地操作系统可以直接移除此包" class="headerlink" title="debian apparmor linux内核安全模块影响docker运行，本地操作系统可以直接移除此包"></a>debian apparmor linux内核安全模块影响docker运行，本地操作系统可以直接移除此包</h1><pre><code class="shell">sudo apt-get purge apparmor
+</code></pre>
 <p>docker使用代理获取镜像</p>
-<h1 id="某些原因docker被封禁，使用以下方法可以绕过"><a href="#某些原因docker被封禁，使用以下方法可以绕过" class="headerlink" title="某些原因docker被封禁，使用以下方法可以绕过"></a>某些原因docker被封禁，使用以下方法可以绕过</h1><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">修改 daemon.json 文件</span><br><span class="line"></span><br><span class="line">sudo vi /etc/docker/daemon.json</span><br><span class="line">添加如下内容，使用官方镜像</span><br><span class="line"></span><br><span class="line">&#123;</span><br><span class="line"> &quot;registry-mirrors&quot;: [</span><br><span class="line">    &quot;https://hub.docker.com/&quot;]</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">新建 proxy.conf 文件</span><br><span class="line"></span><br><span class="line">mkdir -p /etc/systemd/system/docker.service.d</span><br><span class="line">cd /etc/systemd/system/docker.service.d</span><br><span class="line">touch proxy.conf</span><br><span class="line">sudi vi /etc/systemd/system/docker.service.d/proxy.conf</span><br><span class="line">添加如下内容：</span><br><span class="line"></span><br><span class="line">[Service]</span><br><span class="line">Environment=&quot;HTTP_PROXY=http://127.0.0.1:8889&quot;</span><br><span class="line">Environment=&quot;HTTPS_PROXY=http://127.0.0.1:8889&quot;</span><br><span class="line">重启 docker 服务</span><br><span class="line"></span><br><span class="line">#加载变更的配置</span><br><span class="line">systemctl daemon-reload</span><br><span class="line">#重启docker服务</span><br><span class="line">systemctl restart docker</span><br><span class="line">查看配置是否生效</span><br><span class="line"></span><br><span class="line">systemctl show --property=Environment docker</span><br></pre></td></tr></table></figure>]]></content>
+<h1 id="某些原因docker被封禁，使用以下方法可以绕过"><a href="#某些原因docker被封禁，使用以下方法可以绕过" class="headerlink" title="某些原因docker被封禁，使用以下方法可以绕过"></a>某些原因docker被封禁，使用以下方法可以绕过</h1><pre><code>修改 daemon.json 文件
+
+sudo vi /etc/docker/daemon.json
+添加如下内容，使用官方镜像
+
+&#123;
+ &quot;registry-mirrors&quot;: [
+    &quot;https://hub.docker.com/&quot;]
+&#125;
+
+新建 proxy.conf 文件
+
+mkdir -p /etc/systemd/system/docker.service.d
+cd /etc/systemd/system/docker.service.d
+touch proxy.conf
+sudi vi /etc/systemd/system/docker.service.d/proxy.conf
+添加如下内容：
+
+[Service]
+Environment=&quot;HTTP_PROXY=http://127.0.0.1:8889&quot;
+Environment=&quot;HTTPS_PROXY=http://127.0.0.1:8889&quot;
+重启 docker 服务
+
+#加载变更的配置
+systemctl daemon-reload
+#重启docker服务
+systemctl restart docker
+查看配置是否生效
+
+systemctl show --property=Environment docker
+</code></pre>
+<p>可用的docker镜像加速器，配置到daemon.json中</p>
+<pre><code>&quot;https://docker.m.daocloud.io&quot;,
+&quot;https://docker.xuanyuan.me&quot;
+</code></pre>
+]]></content>
       <tags>
         <tag>docker</tag>
       </tags>
