@@ -1,993 +1,464 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh-CN">
 <head>
   <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   
-  
-  <title>Jiliuke</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  
-    <meta name="description" content="Bring the crowds together, inspire unlimited">
-  
-  
-    <meta name="keywords" content="Magento2, Magento, PHP, JavaScript, MySQL, Linux, Redis, Elasticsearch">
-  
-  
-    <link rel="alternate" href="/atom.xml" title="Jiliuke" type="application/atom+xml">
-  
-  
-    <link rel="shortcut icon" href="/favicon.png">
-  
-  
-  
-<link rel="stylesheet" href="/css/style.css">
-
-  
-    
-<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
-
-  
-  
-  
-  
+  <title>Jiliuke — 激流客</title>
+  <meta name="description" content="Bring the crowds together, inspire unlimited">
+  <meta name="keywords" content="Magento2, Magento, PHP, JavaScript, MySQL, Linux, Redis, Elasticsearch">
+  <meta name="theme-color" content="#0B1824">
+  <link rel="canonical" href="http://www.jiliuke.com/page/5/index.html">
+  <link rel="alternate" type="application/atom+xml" title="Jiliuke" href="/atom.xml">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="alternate icon" href="/favicon.ico" sizes="any">
+  <link rel="apple-touch-icon" href="/png/apple-touch-icon-180.png">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Jiliuke — 激流客">
+  <meta property="og:description" content="Bring the crowds together, inspire unlimited">
+  <meta property="og:url" content="http://www.jiliuke.com/page/5/index.html">
+  <meta property="og:site_name" content="Jiliuke">
+  <link rel="stylesheet" href="/css/style.css">
 <meta name="generator" content="Hexo 5.4.2"></head>
+<body class="is-home">
+  <a class="skip-link" href="#main">跳到主要内容</a>
+  <header class="site-head">
+  <div class="wrap site-head__inner">
+    <a class="brand" href="/" aria-label="Jiliuke">
+      <img class="brand__logo" src="/logo-on-dark.svg" alt="" height="40">
+    </a>
 
-<body>
-  <div id="container">
-    <div id="wrap">
-      <header id="header">
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/" id="logo">Jiliuke</a>
-      </h1>
+    <nav class="nav" id="site-nav" aria-label="主导航">
+      <ul class="nav__list">
+        
+          <li class="nav__item is-active">
+            
+              <a href="/">
+                <span class="nav__zh">首页</span>
+                <span class="nav__en" aria-hidden="true">HOME</span>
+              </a>
+            
+          </li>
+        
+          <li class="nav__item">
+            
+              <a href="/archives/">
+                <span class="nav__zh">归档</span>
+                <span class="nav__en" aria-hidden="true">ARCHIVE</span>
+              </a>
+            
+          </li>
+        
+          <li class="nav__item">
+            
+              <a href="/tags/">
+                <span class="nav__zh">标签</span>
+                <span class="nav__en" aria-hidden="true">TAGS</span>
+              </a>
+            
+          </li>
+        
+          <li class="nav__item">
+            
+              <a href="/categories/">
+                <span class="nav__zh">分类</span>
+                <span class="nav__en" aria-hidden="true">INDEX</span>
+              </a>
+            
+          </li>
+        
+          <li class="nav__item">
+            
+              <a href="/about/">
+                <span class="nav__zh">关于</span>
+                <span class="nav__en" aria-hidden="true">ABOUT</span>
+              </a>
+            
+          </li>
+        
+          <li class="nav__item">
+            
+              <a href="/atom.xml">
+                <span class="nav__zh">订阅</span>
+                <span class="nav__en" aria-hidden="true">RSS</span>
+              </a>
+            
+          </li>
+        
+      </ul>
+    </nav>
+
+    <div class="site-head__tools">
       
-        <h2 id="subtitle-wrap">
-          <a href="/" id="subtitle">激流客</a>
-        </h2>
+        <button type="button" class="icon-btn" id="search-open" aria-label="搜索" title="搜索">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5 21 21"/></svg>
+        </button>
       
-    </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        
-          <a class="main-nav-link" href="/."><i class="fa fa-home"></i> 首页</a>
-        
-          <a class="main-nav-link" href="/archives/"><i class="fa fa-archive"></i> 归档</a>
-        
-          <a class="main-nav-link" href="/about/"><i class="fa fa-user"></i> 关于</a>
-        
-          <a class="main-nav-link" href="/atom.xml"><i class="fa fa-rss"></i> 订阅</a>
-        
-      </nav>
-    </div>
-    <div id="search-form">
-      <div id="result-mask" class="hide"></div>
-      <label><input id="search-key" type="text" autocomplete="off" placeholder="搜索"></label>
-      <div id="result-wrap" class="hide">
-        <div id="search-result"></div>
-      </div>
-      <div class="hide">
-        <template id="search-tpl">
-          <div class="item">
-            <a href="/{path}" title="{title}">
-              <div class="title">{title}</div>
-              <div class="time">{date}</div>
-              <div class="tags">{tags}</div>
-            </a>
-          </div>
-        </template>
-      </div>
+      <button type="button" class="icon-btn nav-toggle" id="nav-toggle" aria-label="菜单" aria-expanded="false" aria-controls="site-nav">
+        <svg class="nav-toggle__open" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        <svg class="nav-toggle__close" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
     </div>
   </div>
 </header>
 
-      <div class="outer">
-        <section id="main">
-  <article id="post-e5-88-9b-e5-bb-ba-e6-95-b0-e6-8d-ae-e5-ba-93-e6-8c-87-e5-ae-9a-e5-ad-97-e7-ac-a6-e9-9b-86" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2015/08/11/e5-88-9b-e5-bb-ba-e6-95-b0-e6-8d-ae-e5-ba-93-e6-8c-87-e5-ae-9a-e5-ad-97-e7-ac-a6-e9-9b-86/">创建数据库指定字符集</a>
-    </h1>
-  
-
-
-      </header>
-    
-    <div class="article-meta">
-      
-      <span class="article-date">
-  <i class="fa fa-date"></i>
-  <time class="dt-published" datetime="2015-08-11T01:54:33.000Z" itemprop="datePublished">2015年08月11日</time>
-</span>
-      
-  <div class="article-category">
-    <i class="fa fa-classify"></i>
-    <a class="article-category-link" href="/categories/MYSQL/">MYSQL</a>
+  <main id="main">
+    <section class="masthead">
+  <div class="wrap masthead__inner">
+    <p class="masthead__eyebrow">JILIUKE.COM · 技术札记 · EST. 2014</p>
+    <h1 class="masthead__title">激流客</h1>
+    <p class="masthead__desc">Bring the crowds together, inspire unlimited</p>
+    <p class="masthead__keys">Magento2, Magento, PHP, JavaScript, MySQL, Linux, Redis, Elasticsearch</p>
   </div>
+  <div class="masthead__current" aria-hidden="true">
+    <svg class="current" viewBox="0 0 1440 160" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+  <g class="current__drift">
+    <g class="current__set">
+      <path class="current__s1" d="M0,96 C240,40 480,140 720,88 C960,36 1200,120 1440,72"/>
+      <path class="current__s2" d="M0,118 C260,70 520,150 780,104 C1040,58 1240,132 1440,96"/>
+      <path class="current__s3" d="M0,72 C220,120 460,30 700,78 C940,126 1180,44 1440,92"/>
+      <path class="current__s4" d="M0,134 C300,96 560,154 820,122 C1080,90 1260,146 1440,118"/>
+      <path class="current__s5" d="M0,54 C200,88 440,18 680,56 C920,94 1220,20 1440,50"/>
+    </g>
+    <g class="current__set" transform="translate(1440,0)">
+      <path class="current__s1" d="M0,96 C240,40 480,140 720,88 C960,36 1200,120 1440,72"/>
+      <path class="current__s2" d="M0,118 C260,70 520,150 780,104 C1040,58 1240,132 1440,96"/>
+      <path class="current__s3" d="M0,72 C220,120 460,30 700,78 C940,126 1180,44 1440,92"/>
+      <path class="current__s4" d="M0,134 C300,96 560,154 820,122 C1080,90 1260,146 1440,118"/>
+      <path class="current__s5" d="M0,54 C200,88 440,18 680,56 C920,94 1220,20 1440,50"/>
+    </g>
+  </g>
+</svg>
 
-      
-      
-<a href="/2015/08/11/e5-88-9b-e5-bb-ba-e6-95-b0-e6-8d-ae-e5-ba-93-e6-8c-87-e5-ae-9a-e5-ad-97-e7-ac-a6-e9-9b-86/#comments" class="article-comment-link">
-  
-  <i class="fa fa-commt"></i>
-  留言
-</a>
-
-
-    </div>
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>create database bugtracker default character set=utf8;</p>
-
-        
-        
-          <blockquote id="copyright">
-              <p>原文链接: <a href="http://www.jiliuke.com/page/5/index.html">http://www.jiliuke.com/page/5/index.html</a></p>
-              <p>版权声明: 转载请注明出处.</p>
-          </blockquote>
-        
-      
-    </div>
-    <footer class="article-footer">
-      
-        <div class="article-tag-wrap">
-          
-
-          
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MYSQL/" rel="tag">MYSQL</a></li></ul>
-
-          
-
-
-        </div>
-      
-      
-      
-    </footer>
   </div>
+</section>
+
+<section class="stream wrap" aria-label="文章列表">
+  
+    <div class="stream__list">
+      
+        <article class="row">
+  <div class="row__meta">
+    <time class="row__date" datetime="2015-08-11T01:54:33.000Z">2015-08-11</time>
+    <p class="row__reading">
+      <span class="row__minutes">1 分钟</span>
+      <span class="flow" aria-hidden="true"><span class="flow__bar" style="--flow-w: 4%"></span></span>
+    </p>
+  </div>
+  <div class="row__main">
+    <h2 class="row__title"><a href="/2015/08/11/e5-88-9b-e5-bb-ba-e6-95-b0-e6-8d-ae-e5-ba-93-e6-8c-87-e5-ae-9a-e5-ad-97-e7-ac-a6-e9-9b-86/">创建数据库指定字符集</a></h2>
+    <p class="row__excerpt">create database bugtracker default character set=utf8;</p>
+    <a class="row__more" href="/2015/08/11/e5-88-9b-e5-bb-ba-e6-95-b0-e6-8d-ae-e5-ba-93-e6-8c-87-e5-ae-9a-e5-ad-97-e7-ac-a6-e9-9b-86/">阅读全文<span aria-hidden="true"> →</span></a>
+  </div>
+  <ul class="row__tags">
+    
+      <li><a href="/tags/MYSQL/">MYSQL</a></li>
+    
+  </ul>
 </article>
 
-
-  <article id="post-centos-e6-94-af-e6-8c-81rar-e8-a7-a3-e5-8e-8b" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2015/08/11/centos-e6-94-af-e6-8c-81rar-e8-a7-a3-e5-8e-8b/">centos支持rar解压</a>
-    </h1>
-  
-
-
-      </header>
-    
-    <div class="article-meta">
       
-      <span class="article-date">
-  <i class="fa fa-date"></i>
-  <time class="dt-published" datetime="2015-08-11T01:53:50.000Z" itemprop="datePublished">2015年08月11日</time>
-</span>
-      
-  <div class="article-category">
-    <i class="fa fa-classify"></i>
-    <a class="article-category-link" href="/categories/CentOS/">CentOS</a>
+        <article class="row">
+  <div class="row__meta">
+    <time class="row__date" datetime="2015-08-11T01:53:50.000Z">2015-08-11</time>
+    <p class="row__reading">
+      <span class="row__minutes">2 分钟</span>
+      <span class="flow" aria-hidden="true"><span class="flow__bar" style="--flow-w: 7%"></span></span>
+    </p>
   </div>
-
-      
-      
-<a href="/2015/08/11/centos-e6-94-af-e6-8c-81rar-e8-a7-a3-e5-8e-8b/#comments" class="article-comment-link">
-  
-  <i class="fa fa-commt"></i>
-  留言
-</a>
-
-
-    </div>
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>添加centos系统对rar文件的支持。 <strong>[root@localhost ~]# wget <a target="_blank" rel="noopener" href="http://www.rarsoft.com/rar/rarlinux-4.0.1.tar.gz">http://www.rarsoft.com/rar/rarlinux-4.0.1.tar.gz</a> [root@localhost ~]# tar -zxvf rarlinux-4.0.1.tar.gz</strong> rar/ rar/readme.txt rar/default.sfx rar/whatsnew.txt rar/license.txt rar/order.htm rar/rar rar/unrar rar/rar_static rar/technote.txt rar/rarfiles.lst rar/makefile rar/rar.txt <strong>[root@localhost ~]# cd rar [root@localhost rar]# make</strong> mkdir -p /usr/local/bin mkdir -p /usr/local/lib cp rar unrar /usr/local/bin cp rarfiles.lst /etc cp default.sfx /usr/local/lib [<strong>root@localhost rar]# rar x moumou.rar</strong> -bash: /usr/local/bin/rar: /lib/ld-linux.so.2: bad ELF interpreter: No such file or directory 处理这个问题 <strong>[root@localhost rar]# cp rar_static /usr/local/bin/rar</strong> cp: overwrite `/usr/local/bin/rar’? y 已可以正常解压 <strong>root@localhost rar]# rar x moumou.rar</strong> RAR 4.01 Copyright (c) 1993-2011 Alexander Roshal 28 May 2011 Shareware version Type RAR -? for help Extracting from moumou.rar Creating moumou OK Creating moumou/css OK Extracting moumou/css/default.css OK</p>
-
-        
-        
-          <blockquote id="copyright">
-              <p>原文链接: <a href="http://www.jiliuke.com/page/5/index.html">http://www.jiliuke.com/page/5/index.html</a></p>
-              <p>版权声明: 转载请注明出处.</p>
-          </blockquote>
-        
-      
-    </div>
-    <footer class="article-footer">
-      
-        <div class="article-tag-wrap">
-          
-
-          
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/centos/" rel="tag">centos</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/rar/" rel="tag">rar</a></li></ul>
-
-          
-
-
-        </div>
-      
-      
-      
-    </footer>
+  <div class="row__main">
+    <h2 class="row__title"><a href="/2015/08/11/centos-e6-94-af-e6-8c-81rar-e8-a7-a3-e5-8e-8b/">centos支持rar解压</a></h2>
+    <p class="row__excerpt">添加centos系统对rar文件的支持。 [root@localhost ~]# wget http://www.rarsoft.com/rar/rarlinux-4.0.1.tar.gz [root@localho…</p>
+    <a class="row__more" href="/2015/08/11/centos-e6-94-af-e6-8c-81rar-e8-a7-a3-e5-8e-8b/">阅读全文<span aria-hidden="true"> →</span></a>
   </div>
+  <ul class="row__tags">
+    
+      <li><a href="/tags/centos/">centos</a></li>
+    
+      <li><a href="/tags/rar/">rar</a></li>
+    
+  </ul>
 </article>
 
-
-  <article id="post-e4-b8-ad-e6-96-87-e4-bc-a0-e5-80-bc-e7-81-ab-e7-8b-90-e3-80-81google-e6-b5-8f-e8-a7-88-e5-99-a8-e6-97-a0-e9-97-ae-e9-a2-98-ef-bc-8c-e4-bd-86ie-e6-9c-89-e4-b9-b1-e7-a0-81-e9-97-ae-e9-a2-98-e7-9a-84" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2015/08/11/e4-b8-ad-e6-96-87-e4-bc-a0-e5-80-bc-e7-81-ab-e7-8b-90-e3-80-81google-e6-b5-8f-e8-a7-88-e5-99-a8-e6-97-a0-e9-97-ae-e9-a2-98-ef-bc-8c-e4-bd-86ie-e6-9c-89-e4-b9-b1-e7-a0-81-e9-97-ae-e9-a2-98-e7-9a-84/">中文传值火狐、google浏览器无问题，但IE有乱码问题的解决</a>
-    </h1>
-  
-
-
-      </header>
-    
-    <div class="article-meta">
       
-      <span class="article-date">
-  <i class="fa fa-date"></i>
-  <time class="dt-published" datetime="2015-08-11T01:53:22.000Z" itemprop="datePublished">2015年08月11日</time>
-</span>
-      
-  <div class="article-category">
-    <i class="fa fa-classify"></i>
-    <a class="article-category-link" href="/categories/javascript/">javascript</a>
+        <article class="row">
+  <div class="row__meta">
+    <time class="row__date" datetime="2015-08-11T01:53:22.000Z">2015-08-11</time>
+    <p class="row__reading">
+      <span class="row__minutes">1 分钟</span>
+      <span class="flow" aria-hidden="true"><span class="flow__bar" style="--flow-w: 4%"></span></span>
+    </p>
   </div>
-
-      
-      
-<a href="/2015/08/11/e4-b8-ad-e6-96-87-e4-bc-a0-e5-80-bc-e7-81-ab-e7-8b-90-e3-80-81google-e6-b5-8f-e8-a7-88-e5-99-a8-e6-97-a0-e9-97-ae-e9-a2-98-ef-bc-8c-e4-bd-86ie-e6-9c-89-e4-b9-b1-e7-a0-81-e9-97-ae-e9-a2-98-e7-9a-84/#comments" class="article-comment-link">
-  
-  <i class="fa fa-commt"></i>
-  留言
-</a>
-
-
-    </div>
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>encodeURI(uriname) //uriname为中文字符</p>
-
-        
-        
-          <blockquote id="copyright">
-              <p>原文链接: <a href="http://www.jiliuke.com/page/5/index.html">http://www.jiliuke.com/page/5/index.html</a></p>
-              <p>版权声明: 转载请注明出处.</p>
-          </blockquote>
-        
-      
-    </div>
-    <footer class="article-footer">
-      
-        <div class="article-tag-wrap">
-          
-
-          
-          
-
-
-        </div>
-      
-      
-      
-    </footer>
+  <div class="row__main">
+    <h2 class="row__title"><a href="/2015/08/11/e4-b8-ad-e6-96-87-e4-bc-a0-e5-80-bc-e7-81-ab-e7-8b-90-e3-80-81google-e6-b5-8f-e8-a7-88-e5-99-a8-e6-97-a0-e9-97-ae-e9-a2-98-ef-bc-8c-e4-bd-86ie-e6-9c-89-e4-b9-b1-e7-a0-81-e9-97-ae-e9-a2-98-e7-9a-84/">中文传值火狐、google浏览器无问题，但IE有乱码问题的解决</a></h2>
+    <p class="row__excerpt">encodeURI(uriname) //uriname为中文字符</p>
+    <a class="row__more" href="/2015/08/11/e4-b8-ad-e6-96-87-e4-bc-a0-e5-80-bc-e7-81-ab-e7-8b-90-e3-80-81google-e6-b5-8f-e8-a7-88-e5-99-a8-e6-97-a0-e9-97-ae-e9-a2-98-ef-bc-8c-e4-bd-86ie-e6-9c-89-e4-b9-b1-e7-a0-81-e9-97-ae-e9-a2-98-e7-9a-84/">阅读全文<span aria-hidden="true"> →</span></a>
   </div>
+  <ul class="row__tags">
+    
+  </ul>
 </article>
 
-
-  <article id="post-mysql-e6-90-9c-e7-b4-a2-e6-8c-89-e7-85-a7in-e4-b8-ad-e9-a1-ba-e5-ba-8f-e6-8e-92-e5-ba-8f" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2015/08/11/mysql-e6-90-9c-e7-b4-a2-e6-8c-89-e7-85-a7in-e4-b8-ad-e9-a1-ba-e5-ba-8f-e6-8e-92-e5-ba-8f/">mysql 搜索按照in中顺序排序</a>
-    </h1>
-  
-
-
-      </header>
-    
-    <div class="article-meta">
       
-      <span class="article-date">
-  <i class="fa fa-date"></i>
-  <time class="dt-published" datetime="2015-08-11T01:52:38.000Z" itemprop="datePublished">2015年08月11日</time>
-</span>
-      
-  <div class="article-category">
-    <i class="fa fa-classify"></i>
-    <a class="article-category-link" href="/categories/MYSQL/">MYSQL</a>
+        <article class="row">
+  <div class="row__meta">
+    <time class="row__date" datetime="2015-08-11T01:52:38.000Z">2015-08-11</time>
+    <p class="row__reading">
+      <span class="row__minutes">1 分钟</span>
+      <span class="flow" aria-hidden="true"><span class="flow__bar" style="--flow-w: 4%"></span></span>
+    </p>
   </div>
-
-      
-      
-<a href="/2015/08/11/mysql-e6-90-9c-e7-b4-a2-e6-8c-89-e7-85-a7in-e4-b8-ad-e9-a1-ba-e5-ba-8f-e6-8e-92-e5-ba-8f/#comments" class="article-comment-link">
-  
-  <i class="fa fa-commt"></i>
-  留言
-</a>
-
-
-    </div>
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>select * from shopnc_order where order_id in (1225,1228,1231,1233) order by FIND_IN_SET(order_id,’1228,1225,1231,1233’);</p>
-
-        
-        
-          <blockquote id="copyright">
-              <p>原文链接: <a href="http://www.jiliuke.com/page/5/index.html">http://www.jiliuke.com/page/5/index.html</a></p>
-              <p>版权声明: 转载请注明出处.</p>
-          </blockquote>
-        
-      
-    </div>
-    <footer class="article-footer">
-      
-        <div class="article-tag-wrap">
-          
-
-          
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MYSQL/" rel="tag">MYSQL</a></li></ul>
-
-          
-
-
-        </div>
-      
-      
-      
-    </footer>
+  <div class="row__main">
+    <h2 class="row__title"><a href="/2015/08/11/mysql-e6-90-9c-e7-b4-a2-e6-8c-89-e7-85-a7in-e4-b8-ad-e9-a1-ba-e5-ba-8f-e6-8e-92-e5-ba-8f/">mysql 搜索按照in中顺序排序</a></h2>
+    <p class="row__excerpt">select * from shopnc_order where order_id in (1225,1228,1231,1233) order by FIND_IN_SET(order_id,’1228,1225,…</p>
+    <a class="row__more" href="/2015/08/11/mysql-e6-90-9c-e7-b4-a2-e6-8c-89-e7-85-a7in-e4-b8-ad-e9-a1-ba-e5-ba-8f-e6-8e-92-e5-ba-8f/">阅读全文<span aria-hidden="true"> →</span></a>
   </div>
+  <ul class="row__tags">
+    
+      <li><a href="/tags/MYSQL/">MYSQL</a></li>
+    
+  </ul>
 </article>
 
-
-  <article id="post-centos-e5-ae-89-e8-a3-85sensors-e6-9f-a5-e7-9c-8bcpu-e6-b8-a9-e5-ba-a6" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2015/08/11/centos-e5-ae-89-e8-a3-85sensors-e6-9f-a5-e7-9c-8bcpu-e6-b8-a9-e5-ba-a6/">centos 安装sensors查看cpu温度</a>
-    </h1>
-  
-
-
-      </header>
-    
-    <div class="article-meta">
       
-      <span class="article-date">
-  <i class="fa fa-date"></i>
-  <time class="dt-published" datetime="2015-08-11T01:52:08.000Z" itemprop="datePublished">2015年08月11日</time>
-</span>
-      
-  <div class="article-category">
-    <i class="fa fa-classify"></i>
-    <a class="article-category-link" href="/categories/CentOS/">CentOS</a>
+        <article class="row">
+  <div class="row__meta">
+    <time class="row__date" datetime="2015-08-11T01:52:08.000Z">2015-08-11</time>
+    <p class="row__reading">
+      <span class="row__minutes">1 分钟</span>
+      <span class="flow" aria-hidden="true"><span class="flow__bar" style="--flow-w: 4%"></span></span>
+    </p>
   </div>
-
-      
-      
-<a href="/2015/08/11/centos-e5-ae-89-e8-a3-85sensors-e6-9f-a5-e7-9c-8bcpu-e6-b8-a9-e5-ba-a6/#comments" class="article-comment-link">
-  
-  <i class="fa fa-commt"></i>
-  留言
-</a>
-
-
-    </div>
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>root#:yum -y install lm_sensors</p>
-<p>root#:sensors</p>
-<p>如果提示No sensors found</p>
-<p>运行：</p>
-<p>root#:sensors-detect</p>
-<p>一路回车就行了</p>
-<p><img src="file:///C:/Users/yunlong/AppData/Local/YNote/data/qqAB881ABE4AEE31C2A6CFF94728E8E5E9/10809dbc100a41c19a9c96dabce12936/clipboard.png"></p>
-
-        
-        
-          <blockquote id="copyright">
-              <p>原文链接: <a href="http://www.jiliuke.com/page/5/index.html">http://www.jiliuke.com/page/5/index.html</a></p>
-              <p>版权声明: 转载请注明出处.</p>
-          </blockquote>
-        
-      
-    </div>
-    <footer class="article-footer">
-      
-        <div class="article-tag-wrap">
-          
-
-          
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/lm-sensors/" rel="tag">lm_sensors</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/sensors/" rel="tag">sensors</a></li></ul>
-
-          
-
-
-        </div>
-      
-      
-      
-    </footer>
+  <div class="row__main">
+    <h2 class="row__title"><a href="/2015/08/11/centos-e5-ae-89-e8-a3-85sensors-e6-9f-a5-e7-9c-8bcpu-e6-b8-a9-e5-ba-a6/">centos 安装sensors查看cpu温度</a></h2>
+    <p class="row__excerpt">root#:yum -y install lm_sensors root#:sensors 如果提示No sensors found 运行： root#:sensors-detect 一路回车就行了</p>
+    <a class="row__more" href="/2015/08/11/centos-e5-ae-89-e8-a3-85sensors-e6-9f-a5-e7-9c-8bcpu-e6-b8-a9-e5-ba-a6/">阅读全文<span aria-hidden="true"> →</span></a>
   </div>
+  <ul class="row__tags">
+    
+      <li><a href="/tags/lm-sensors/">lm_sensors</a></li>
+    
+      <li><a href="/tags/sensors/">sensors</a></li>
+    
+  </ul>
 </article>
 
-
-  <article id="post-centos-shell-e7-bc-96-e7-a8-8b-e5-85-a5-e9-97-a8" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2015/08/11/centos-shell-e7-bc-96-e7-a8-8b-e5-85-a5-e9-97-a8/">Centos Shell编程入门</a>
-    </h1>
-  
-
-
-      </header>
-    
-    <div class="article-meta">
       
-      <span class="article-date">
-  <i class="fa fa-date"></i>
-  <time class="dt-published" datetime="2015-08-11T01:51:14.000Z" itemprop="datePublished">2015年08月11日</time>
-</span>
-      
-  <div class="article-category">
-    <i class="fa fa-classify"></i>
-    <a class="article-category-link" href="/categories/CentOS/">CentOS</a>
+        <article class="row">
+  <div class="row__meta">
+    <time class="row__date" datetime="2015-08-11T01:51:14.000Z">2015-08-11</time>
+    <p class="row__reading">
+      <span class="row__minutes">9 分钟</span>
+      <span class="flow" aria-hidden="true"><span class="flow__bar" style="--flow-w: 32%"></span></span>
+    </p>
   </div>
-
-      
-      
-<a href="/2015/08/11/centos-shell-e7-bc-96-e7-a8-8b-e5-85-a5-e9-97-a8/#comments" class="article-comment-link">
-  
-  <i class="fa fa-commt"></i>
-  留言
-</a>
-
-
-    </div>
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>从程序员的角度来看， Shell本身是一种用C语言编写的程序，从用户的角度来看，Shell是用户与Linux操作系统沟通的桥梁。用户既可以输入命令执行，又可以利用 Shell脚本编程，完成更加复杂的操作。在Linux GUI日益完善的今天，在系统管理等领域，Shell编程仍然起着不可忽视的作用。深入地了解和熟练地掌握Shell编程，是每一个Linux用户的必修 功课之一。 Linux的Shell种类众多，常见的有：Bourne Shell（/usr/bin/sh或/bin/sh）、Bourne Again Shell（/bin/bash）、C Shell（/usr/bin/csh）、K Shell（/usr/bin/ksh）、Shell for Root（/sbin/sh），等等。不同的Shell语言的语法有所不同，所以不能交换使用。每种Shell都有其特色之处，基本上，掌握其中任何一种 就足够了。在本文中，我们关注的重点是Bash，也就是Bourne Again Shell，由于易用和免费，Bash在日常工作中被广泛使用；同时，Bash也是大多数Linux系统默认的Shell。在一般情况下，人们并不区分 Bourne Shell和Bourne Again Shell，所以，在下面的文字中，我们可以看到#!/bin/sh，它同样也可以改为#!/bin/bash。 利用vi等文本编辑器编写Shell脚本的格式是固定的，如下： #!/bin/sh #comments Your commands go here 首行中的符号#!告诉系统其后路径所指定的程序即是解释此脚本文件的Shell程 序。如果首行没有这句话，在执行脚本文件的时候，将会出现错误。后续的部分就是主程序，Shell脚本像高级语言一样，也有变量赋值，也有控制语句。除第 一行外，以#开头的行就是注释行，直到此行的结束。如果一行未完成，可以在行尾加上”，这个符号表明下一行与此行会合并为同一行。 编辑完毕，将脚本存盘为filename.sh，文件名后缀sh表明这是一个Bash脚本文件。执行脚本的时候，要先将脚本文件的属性改为可执行的： chmod +x filename.sh 执行脚本的方法是： ./filename.sh 下面我们从经典的“hello world”入手，看一看最简单的Shell脚本的模样。 #!/bin/sh #print hello world in the console window a = “hello world” echo $a Shell Script是一种弱类型语言，使用变量的时候无需首先声明其类型。新的变量会在本地数据区分配内存进行存储，这个变量归当前的Shell所有，任何子进 程都不能访问本地变量。这些变量与环境变量不同，环境变量被存储在另一内存区，叫做用户环境区，这块内存中的变量可以被子进程访问。变量赋值的方式是： variable_name = variable_value 如果对一个已经有值的变量赋值，新值将取代旧值。取值的时候要在变量名前加$，$variable_name可以在引号中使用，这一点和其他高级语言是明显不同的。如果出现混淆的情况，可以使用花括号来区分，例如： echo “Hi, $as” 就不会输出“Hi, hello worlds”，而是输出“Hi，”。这是因为Shell把$as当成一个变量，而$as未被赋值，其值为空。正确的方法是： echo “Hi, ${a}s” 单引号中的变量不会进行变量替换操作。 关于变量，还需要知道几个与其相关的Linux命令。 env用于显示用户环境区中的变量及其取值；set用于显示本地数据区和用户环境区中的变量及其取值；unset用于删除指定变量当前的取值，该值将被指定为NULL；export命令用于将本地数据区中的变量转移到用户环境区。 下面我们来看一个更复杂的例子，结合这个例子，我们来讲述Shell Script的语法。</p>
-<p>{C} 1 #!/bin/bash 2 # we have less than 3 arguments. Print the help text: 3 if [ $# -lt 3 ]; then 4 cat&lt;&lt;HELP 5      ren – renames a number of files using sed regular expressions 6 7      USAGE: ren ‘regexp’ ‘replacement’ files<img src="file:///C:/Users/yunlong/AppData/Local/YNote/data/qqAB881ABE4AEE31C2A6CFF94728E8E5E9/18f272aea603417cb2eef6c5c01d8308/22431433c-0.gif"> 8      EXAMPLE: rename all <em>.HTM files in *.html: 9      ren ‘HTM$’ ‘html’ *.HTM 10 11 HELP 12      exit 0 13 fi 14 OLD=”$1” 15 NEW=”$2” 16 # The shift command removes one argument from the list of 17 # command line arguments. 18 shift 19 shift 20 # $</em> contains now all the files: 21 for file in $*; do 22 if [ -f “$file” ]; then 23     newfile=`echo “$file” | sed  “s/${OLD}/${NEW}/g”` 24         if [ -f “$newfile” ]; then 25             echo “ERROR: $newfile exists already” 26         else 27             echo “renaming $file to $newfile <img src="file:///C:/Users/yunlong/AppData/Local/YNote/data/qqAB881ABE4AEE31C2A6CFF94728E8E5E9/18f272aea603417cb2eef6c5c01d8308/22431433c-0.gif">“ 28             mv “$file” “$newfile” 29         fi 30 fi 31 done</p>
-<p>  我们从头来看，前面两行上一个例子中已经解释过了，从第三行开始，有新的内容。if语句和其他编程语言相似，都是流程控制语句。它的语法是： if …; then … elif …; then … else … fi 与其他语言不同，Shell Script中if语句的条件部分要以分号来分隔。第三行中的[]表示条件测试，常用的条件测试有下面几种： [ -f “$file” ] 判断$file是否是一个文件 [ $a -lt 3 ] 判断$a的值是否小于3，同样-gt和-le分别表示大于或小于等于 [ -x “$file” ] 判断$file是否存在且有可执行权限，同样-r测试文件可读性 [ -n “$a” ] 判断变量$a是否有值，测试空串用-z [ “$a” = “$b” ] 判断$a和$b的取值是否相等 [ cond1 -a cond2 ] 判断cond1和cond2是否同时成立，-o表示cond1和cond2有一成立 要注意条件测试部分中的空格。在方括号的两侧都有空格，在-f、-lt、=等符号两侧同样也有空格。如果没有这些空格，Shell解释脚本的时候就会出错。 $#表示包括$0在内的命令行参数的个数。在Shell中，脚本名称本身是$0，剩下的依次是$0、$1、$2…、${10}、${11}，等等。$*表示整个参数列表，不包括$0，也就是说不包括文件名的参数列表。 现在我们明白第三行的含义是如果脚本文件的参数少于三个，则执行if和fi语句之间 的内容。然后，从第四行到第十一行之间的内容在Shell Script编程中被称为Here文档，Here文档用于将多行文本传递给某一命令。Here文档的格式是以&lt;&lt;开始，后跟一个字符串，在 Here文档结束的时候，这个字符串同样也要出现，表示文档结束。在本例中，Here文档被输出给cat命令，也即将文档内容打印在屏幕上，起到显示帮助 信息的作用。 第十二行的exit是Linux的命令，表示退出当前进程。在Shell脚本中可以使用所有的Linux命令，利用上面的cat和exit，从一方面来说，熟练使用Linux命令也可以大大减少Shell脚本的长度。 十四、十五两句是赋值语句，分别将第一和第二参数赋值给变量OLD和NEW。紧接下来的两句是注释，注释下面的两条shift的作用是将参数列表中的第一个和第二个参数删除，后面的参数依次变为新的第一和第二参数，注意参数列表原本也不包括$0。 然后，自二十一行到三十一行是一个循环语句。Shell Script中的循环有下面几种格式： while [ cond1 ] &amp;&amp; { || } [ cond2 ] …; do … done for var in …; do … done for (( cond1; cond2; cond3 )) do … done until [ cond1 ] &amp;&amp; { || } [ cond2 ] …; do … done 在上面这些循环中，也可以使用类似C语言中的break和continue语句中断 当前的循环操作。第二十一行的循环是将参数列表中的参数一个一个地放入变量file中。然后进入循环，判断file是否为一个文件，如果是文件的话，则用 sed命令搜索和生成新的文件名。sed基本上可以看成一个查找替换程序，从标准输入，例如管道读入文本，并将结果输出到标准输出，sed使用正则表达式 进行搜索。在第二十三行中，backtick（`）的作用是取出两个backtick之间的命令输出结果，在这里，也就是将结果取出赋给变量 newfile。此后，判断newfile是否已经存在，否则就把file改成newfile。这样我们就明白这个脚本的作用了，Shell Script编写的其他脚本与此相似，只不过是语法和用法稍有不同而已。 通过这个例子我们明白了Shell Script的编写规则，但还有几件事情需要讲述一下。 第一个，除了if语句之外，Shell Script中也有类似C语言中多分支结构的case语句，它的语法是： case var in pattern 1 ) … ;; pattern 2 ) … ;; *) … ;; esac   我们再就下面一个例子，看看case语句的用法。 while getopts vc: OPTION do case $OPTION in c) COPIES=$OPTARG ehco “$COPIES”;; v) echo “suyang”;; \?) exit 1;; esac done 上面的getopts类似于C语言提供的函数getopts，在Shell Script中，getopts经常和while语句联合起来使用。getopts的语法如下： getopts option_string variable option_string中包含一串单字符选项，若getopts在命令行参数中 发现了连字符，那么它会将连字符之后的字符与option_string进行比较，若匹配成功，则把变量variable的值设为该选项，若无匹配，则把 变量的值设为？。有时候，选项还会带一个值，例如-c5等，这时要在option_string中该选项字母后面加上一个冒号，getopts发现冒号 后，会读取该值，然后将该值放入特殊变量OPTARG中。这个命令比较复杂，如有需要，读者可以详细参阅Shell编写的相关资料。 上面这个循环的作用就是依次取出脚本名称后面的选项，进行处理，如果输入了非法选项，则进入”?指定的部分，退出脚本程序。 第二个，Bash提供了一种用于交互式应用的扩展select，用户可以从一组不同的值中进行选择。其语法如下： select var in …; do break; done 例如，下面这段程序的输出是： #!/bin/bash echo “Your choice?” select var in “a” “b” “c”; do break done echo $var —————————- Your choice? 1) a 2) b 3) c 第三，Shell Script中也可以使用自定义的函数，其语法形式如下： functionname() { … } 例如我们可以把上面第二个例子中第四到第十二行放入一个名为help函数体内，以后每次调用的时候直接写help即可。函数中处理函数调用参数的方法是，直接用上面讲过的$1、$2来分别表示第一、第二个参数，用$*表示参数列表。 第四，我们也可以在Shell下调试Shell Script脚本，当然最简单的方法就是用echo输出查看变量取值了。Bash也提供了真正的调试方法，就是执行脚本的时候用-x参数。 sh ?x filename.sh 这会执行脚本并显示脚本中所有变量的取值，也可以使用参数-n，它并不执行脚本，只是返回所有的语法错误。</p>
-
-        
-        
-          <blockquote id="copyright">
-              <p>原文链接: <a href="http://www.jiliuke.com/page/5/index.html">http://www.jiliuke.com/page/5/index.html</a></p>
-              <p>版权声明: 转载请注明出处.</p>
-          </blockquote>
-        
-      
-    </div>
-    <footer class="article-footer">
-      
-        <div class="article-tag-wrap">
-          
-
-          
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/centos/" rel="tag">centos</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/shell/" rel="tag">shell</a></li></ul>
-
-          
-
-
-        </div>
-      
-      
-      
-    </footer>
+  <div class="row__main">
+    <h2 class="row__title"><a href="/2015/08/11/centos-shell-e7-bc-96-e7-a8-8b-e5-85-a5-e9-97-a8/">Centos Shell编程入门</a></h2>
+    <p class="row__excerpt">从程序员的角度来看， Shell本身是一种用C语言编写的程序，从用户的角度来看，Shell是用户与Linux操作系统沟通的桥梁。用户既可以输入命令执行，又可以利用 Shell脚本编程，完成更加复杂的操作。在Linux…</p>
+    <a class="row__more" href="/2015/08/11/centos-shell-e7-bc-96-e7-a8-8b-e5-85-a5-e9-97-a8/">阅读全文<span aria-hidden="true"> →</span></a>
   </div>
+  <ul class="row__tags">
+    
+      <li><a href="/tags/centos/">centos</a></li>
+    
+      <li><a href="/tags/shell/">shell</a></li>
+    
+  </ul>
 </article>
 
-
-  <article id="post-nfs-mount-errors-with-clnt-create-rpc-unknown-host-for-centos-6" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2015/08/11/nfs-mount-errors-with-clnt-create-rpc-unknown-host-for-centos-6/">NFS mount errors with &#34;clnt_create: RPC: Unknown host&#34; for CentOS 6</a>
-    </h1>
-  
-
-
-      </header>
-    
-    <div class="article-meta">
       
-      <span class="article-date">
-  <i class="fa fa-date"></i>
-  <time class="dt-published" datetime="2015-08-11T01:50:13.000Z" itemprop="datePublished">2015年08月11日</time>
-</span>
-      
-  <div class="article-category">
-    <i class="fa fa-classify"></i>
-    <a class="article-category-link" href="/categories/CentOS/">CentOS</a>
+        <article class="row">
+  <div class="row__meta">
+    <time class="row__date" datetime="2015-08-11T01:50:13.000Z">2015-08-11</time>
+    <p class="row__reading">
+      <span class="row__minutes">1 分钟</span>
+      <span class="flow" aria-hidden="true"><span class="flow__bar" style="--flow-w: 4%"></span></span>
+    </p>
   </div>
-
-      
-      
-<a href="/2015/08/11/nfs-mount-errors-with-clnt-create-rpc-unknown-host-for-centos-6/#comments" class="article-comment-link">
-  
-  <i class="fa fa-commt"></i>
-  留言
-</a>
-
-
-    </div>
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>When attempting to mount CentOS 6, my mount fails with</p>
-<p>clnt_create: RPC: Unknown host</p>
-<p><strong>Diagnostic:</strong> If we do a more thorough diagnostic, this is the issue</p>
-<p># showmount -e <br>clnt_create: RPC: Unknown host <br># showmount -e localhost <br>Export list for localhost: <br>/export/my_data \*</p>
-<p><strong>Resolution:</strong> Taken from Redhat Site Implement forward and reverse lookups (A records and CNAME records) in DNS and have the system point towards the DNS servers. Implement for both IPv4 and IPv6.<strong>If unable to resolve DNS issues</strong>, change the /etc/hosts file from this: Change from</p>
-<p>::1          localhost localhost.localdomain localhost6 localhost6.localdomain6</p>
-<p>To</p>
-<p>::1          machine_hostname localhost localhost.localdomain localhost6 localhost6.localdomain6</p>
-<p>Restart the NFS service and check on the showmount -e localhost and showmount -e and attempt to mount the share.</p>
-<p># service nfs restart <br># showmount -e localhost <br># showmount -e</p>
-
-        
-        
-          <blockquote id="copyright">
-              <p>原文链接: <a href="http://www.jiliuke.com/page/5/index.html">http://www.jiliuke.com/page/5/index.html</a></p>
-              <p>版权声明: 转载请注明出处.</p>
-          </blockquote>
-        
-      
-    </div>
-    <footer class="article-footer">
-      
-        <div class="article-tag-wrap">
-          
-
-          
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/RPC/" rel="tag">RPC</a></li></ul>
-
-          
-
-
-        </div>
-      
-      
-      
-    </footer>
+  <div class="row__main">
+    <h2 class="row__title"><a href="/2015/08/11/nfs-mount-errors-with-clnt-create-rpc-unknown-host-for-centos-6/">NFS mount errors with &#34;clnt_create: RPC: Unknown host&#34; for CentOS 6</a></h2>
+    <p class="row__excerpt">When attempting to mount CentOS 6, my mount fails with clnt_create: RPC: Unknown host Diagnostic: If we do a…</p>
+    <a class="row__more" href="/2015/08/11/nfs-mount-errors-with-clnt-create-rpc-unknown-host-for-centos-6/">阅读全文<span aria-hidden="true"> →</span></a>
   </div>
+  <ul class="row__tags">
+    
+      <li><a href="/tags/RPC/">RPC</a></li>
+    
+  </ul>
 </article>
 
-
-  <article id="post-e7-8e-a9-e7-8e-a9-e8-b4-9f-e8-bd-bd-e5-9d-87-e8-a1-a1-e5-9c-a8window-e4-b8-8elinux-e4-b8-8b-e9-85-8d-e7-bd-aenginx" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2015/08/11/e7-8e-a9-e7-8e-a9-e8-b4-9f-e8-bd-bd-e5-9d-87-e8-a1-a1-e5-9c-a8window-e4-b8-8elinux-e4-b8-8b-e9-85-8d-e7-bd-aenginx/">玩玩负载均衡---在window与linux下配置nginx</a>
-    </h1>
-  
-
-
-      </header>
-    
-    <div class="article-meta">
       
-      <span class="article-date">
-  <i class="fa fa-date"></i>
-  <time class="dt-published" datetime="2015-08-11T01:49:21.000Z" itemprop="datePublished">2015年08月11日</time>
-</span>
-      
-  <div class="article-category">
-    <i class="fa fa-classify"></i>
-    <a class="article-category-link" href="/categories/nginx/">nginx</a>
+        <article class="row">
+  <div class="row__meta">
+    <time class="row__date" datetime="2015-08-11T01:49:21.000Z">2015-08-11</time>
+    <p class="row__reading">
+      <span class="row__minutes">8 分钟</span>
+      <span class="flow" aria-hidden="true"><span class="flow__bar" style="--flow-w: 28%"></span></span>
+    </p>
   </div>
-
-      
-      
-<a href="/2015/08/11/e7-8e-a9-e7-8e-a9-e8-b4-9f-e8-bd-bd-e5-9d-87-e8-a1-a1-e5-9c-a8window-e4-b8-8elinux-e4-b8-8b-e9-85-8d-e7-bd-aenginx/#comments" class="article-comment-link">
-  
-  <i class="fa fa-commt"></i>
-  留言
-</a>
-
-
-    </div>
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>最近有些时间，开始接触负载均衡方面的东西，从硬件F5再到Citrix Netscalar。不过因为硬件的配置虽然不复杂，但昂贵的价格也让一般用户望而却步(十几万到几十万)，所以只能转向<a target="_blank" rel="noopener" href="http://nginx.net/">nginx</a>,squid这类有反向代理功能的软件了。好在其设置都不是很麻烦。 本文就之前所做过的安装和配置步骤做一下总结分享出来，以免日后忘记了。 首先是windows系统，这里建议使用window 2003企业版，而不要作用win7（太新了，我遇到无法启动nginx的问题）。要说的是，在windows下配置安装nginx还是很容易的，少了linux下下载tar再配置编译参数等等步骤，我们只要从下面的地址下载相应的zip包(大约750kb)即可，地址如下： <a target="_blank" rel="noopener" href="http://sysoev.ru/nginx/nginx-0.8.21.zip">http://sysoev.ru/nginx/nginx-0.8.21.zip</a>       需要说明的是这个下载包是nginx 0.8.21开发版，换句话说其只能用于搭建测试环境等用途的，不能用于实际的生产环境（受限于windows文件句柄数限制）。 下载并将该包中的文件解压到c盘上，为了配置使用方便，我将其解压后的文件夹名称从“nginx-0.8.19”改为”nginx”，这样我们只要将要负载均衡的站点在iis中设置好之后，将相应的链接地址放到nginx的相应配置文件中即可，这里我们打开C:\nginx\conf\nginx.conf文件，将下面的内容放到该文件的“server { ”上方行处：</p>
-<p>upstream  mylocalsite { server   10.0.2.137:8088; server   10.0.2.137:8089; }</p>
-<p>  因为nginx无法运行动态脚本，所以这里要使用proxy_pass属性进行代理，所以找到该配置文件的如下内容：</p>
-<p>location / { root   html; index  index.html index.htm; }</p>
-<p>  修改其内容如下：  </p>
-<p>location / { proxy_pass <a target="_blank" rel="noopener" href="http://mylocalsite/">http://mylocalsite</a>; #proxy_set_header   Host             $host; #proxy_set_header   X-Real-IP        $remote_addr;  ;#防止ajax安全请求问题 #proxy_set_header   REMOTE-HOST        $remote_addr; ;#防止ajax安全请求问题 }</p>
-<p>  修改完之后，还要修改一下server的侦听端口，原内容如下：</p>
-<p>server { listen       80; server_name  localhost; ……</p>
-<p>  修改完后的内容如下：</p>
-<p> server { listen       8086; server_name  10.0.2.136; ……</p>
-<p>  这样,nginx就会在启动之后开始侦听本地IP（10.0.2.136）的8086端口请求，然后将其请求转向到<strong>mylocalsite</strong> 中所指定的两个iis站点，并将执行的结果转发给客户端。如果一切配置正确，这时可以运行 c:/nginx/nginx.exe （或在cmd下运行“start nginx”），就可以在任务管理器中看到一个nginx进程启动了。（注:如果配置文件有错误，可以到C:\nginx\logs\error.log查看错误日志，进一步排错）。 注： 关闭ngnix的命令： <strong>nginx -s stop</strong> 配置文件ngnix.conf正确性判断的命令: <strong>nginx -t **   当然</strong>Nginx 负载均衡**的功能也是很强的，并且其一般作为七层负载均衡（应用协议层）。下面就其upstream所支持的四个常用设置进行说明：</p>
-<p><img src="file:///C:/Users/yunlong/AppData/Local/YNote/data/qqAB881ABE4AEE31C2A6CFF94728E8E5E9/6cf311f22a2c49a3935c5e093260d0a3/copycode.gif" alt="复制代码"></p>
-<p>1)、轮询（默认）：每个请求按时间顺序逐一分配到不同的后端服务器，如果后端服务器down掉，能自动剔除。 2)、weight ：指定轮询几率，weight和访问比率成正比，用于后端服务器性能不均的情况。 2)、ip_hash ：每个请求按访问ip的hash结果分配，这样每个访客固定访问一个后端服务器，可以解决session的问题。 3)、fair（第三方）：按后端服务器的响应时间来分配请求，响应时间短的优先分配。 4)、url_hash（第三方）</p>
-<p><img src="file:///C:/Users/yunlong/AppData/Local/YNote/data/qqAB881ABE4AEE31C2A6CFF94728E8E5E9/6cf311f22a2c49a3935c5e093260d0a3/copycode.gif" alt="复制代码"></p>
-<p>  按上面的说明，可以将之前我们的upstream做如下修改：  </p>
-<p>upstream  mylocalsite { #ip_hash; server   10.0.2.137:8088 weight=2; server   10.0.2.137:8089 weight=1; }</p>
-<p>  这个当来了三个http请求时，其中的两个会被分配到10.0.2.137:8088 上，一个分配到10.0.2.137:8089 。当然一开始可以其分摊的请求可以不是太严格按其设置，但当请求数多了之后，基本上就接近于我们分指派的权值了。当然就负载均衡的算法而言，使用weight只是其中的一种，而经常使用的还有许多，比如lvs就在其内部实现了<a target="_blank" rel="noopener" href="http://id-phatman.spaces.live.com/blog/cns%21CA763CA8DB2378D1%21627.entry?sa=467434071">多种的负载均衡算法</a>，可以根据用户的实际环境进行设置布署。。当然就目前而言，nginx的算法相比较还是少了许多，呵呵。 可以说在windows下安装配置还是很方便的，但如果使用loadrunner做并发测试时，就会发现其logs/error.log就会报如下错误： maximum number of descriptors supported by select() is 1024 while connecting to upstream 我曾经在网上查过解决方案，包括修改配置文件的worker_connections ，如下:</p>
-<p> worker_rlimit_nofile 20240; events { #use epoll;//linux下使用 worker_connections  20240; }</p>
-<p>  但依旧不能将文件句柄数扩充到20240，还是报1024最大句柄数错误。最后实在没办法了，只得开始尝试在linux下安装配置nginx。也就引发了下面的内容。 其实在网上有关介绍如何在linux下安装nginx的要比windows下的要多得多，必定这是‘本家’吧。 因为之前网管只在虚拟机上安装了CentOS5，所以只能就尝试在该linux分支版本下安装了。好在虚拟机已安装完了，剩下的工作并不太多。 首先需要以root身份登陆系统，然后切换身份为<strong>超级管理员：</strong></p>
-<p> sudo -s          # 先成为超级管理员</p>
-<p>  然后进入到src目前下，并在当前目录下download nginx.tar.gz包</p>
-<p>    cd /usr/src      # 将文件下载到这个目录 wget <a target="_blank" rel="noopener" href="http://sysoev.ru/nginx/nginx-0.7.62.tar.gz#">http://sysoev.ru/nginx/nginx-0.7.62.tar.gz#</a> 下载安装包 tar xzvf nginx-0.7.62.tar.gz   #解压</p>
-<p>  如果下载的nginx 中默认可能没有 rewirte规则，因此需要下载pcre包的扩展来实现这个功能：</p>
-<p>      wget <a target="_blank" rel="noopener" href="http://blog.s135.com/soft/linux/nginx_php/pcre/pcre-7.8.tar.gz">http://blog.s135.com/soft/linux/nginx_php/pcre/pcre-7.8.tar.gz</a>    # 下载pcre tar xzvf pcre-7.8.tar.gz                   # 解压pcre</p>
-<p>  下面编译安装pcre</p>
-<p> cd /usr/src/pcre-7.8; ./configure –prefix=/usr/local/pcre –enable-utf8 –enable-unicode-properties</p>
-<p>  下面编译安装nginx</p>
-<p> cd /usr/src/nginx-0.7.62</p>
-<p>  开始配置要编译的参数（注：内容较长，容易输错。具体参数设置参见<a target="_blank" rel="noopener" href="http://wiki.codemongers.com/NginxChsInstall">http://wiki.codemongers.com/NginxChsInstall</a>）   ./configure –prefix=/usr/local/nginx  –sbin-path=/usr/local/nginx/sbin/nginx  –conf-path=/usr/local/nginx/conf/nginx.conf –error-log-path=/usr/local/nginx/logs/error.log –http-log-path=/usr/local/nginx/logs/access.log –pid-path=/usr/local/nginx/var/nginx.pid –lock-path=/usr/local/nginx/var/nginx.lock –http-client-body-temp-path=/dev/shm/nginx_temp/client_body –http-proxy-temp-path=/dev/shm/nginx_temp/proxy –without-http_rewrite_module –without-http-cache  –without-http_map_module –without-http_gzip_module ＃使用debuginfo 信息–_with-debug_＃ 接下来就开始编译生成相应的文件了：</p>
-<p>   make make install</p>
-<p>  然后/dev/shm 也就是内存中，建立一个nginx_temp文件夹</p>
-<p>   mkdir /dev/shm/nginx_temp</p>
-<p>  接着创建www用户和组，以及其使用的目录：</p>
-<p>   /usr/sbin/groupadd www -g 48 /usr/sbin/useradd -u 48 -g www www mkdir -p /data0/vshare/htdocs chmod +w /data0/vshare/htdocs chown -R www:www /data0/vshare/htdocs</p>
-<p>  这时可以扩充一下文件句柄数（windows下就没这么容易扩展了，哎）</p>
-<p> ulimit -SHn 51200 #设置打开文件句柄</p>
-<p>  到这里，我们就可以使用linux下的vi编辑器编辑一下：</p>
-<p>   cd /usr/src/nginx-0.7.62/conf/ vi nginx.conf</p>
-<p>  将之前在window下的修改内容替换(按下insert键进入到编辑模式)到当前的文件中，当修改完成了，按冒号（”:”）切换到命令模式下，然后敲入“wq”，保存并退出。(强制退出（不保存）的话，输入q!，然后回车) 注：</p>
-<p>events { use epoll; worker_connections  20240; }</p>
-<p>注：use epoll; //linux下使用,更多内容参见<a target="_blank" rel="noopener" href="http://wiki.nginx.org/NginxChsOptimizations">NginxChsOptimizations</a> 这样就可以运行nginx了：</p>
-<p> /usr/local/nginx/sbin/nginx -t –c</p>
-<p>创建个软链接： $ sudo ln -s /user/local/nginx/sbin/nginx  /usr/bin/nginx #之前安过的话要先删除sudo rm  /usr/bin/nginx 启动完成后，可以通过如下指令查看其在内存中的运行信息： <strong># ps aux | egrep ‘(PID|nginx)’</strong> <a target="_blank" rel="noopener" href="http://images.cnblogs.com/cnblogs_com/daizhj/WindowsLiveWriter/windowlinuxnginx_A335/nginx_config1_2.gif"><img src="file:///C:/Users/yunlong/AppData/Local/YNote/data/qqAB881ABE4AEE31C2A6CFF94728E8E5E9/fcf21d67a5414a3196dce407409a2fee/onfig1_thumb.gif" alt="nginx_config1" title="nginx_config1"></a>   这样当我们再使用loadrunner运行时，就可以看到error.log中就不再报那个恼人的“1024错误了”。 当然在nginx中，还支持文件缓存，以便于将那些静态文件缓存到本地的nginx服务器上，只不过要修改一下其config文件配置，如下： <strong>vi nginx.conf</strong> 在文件中的相应节点处输入如下内容:</p>
-<p><img src="file:///C:/Users/yunlong/AppData/Local/YNote/data/qqAB881ABE4AEE31C2A6CFF94728E8E5E9/6cf311f22a2c49a3935c5e093260d0a3/copycode.gif" alt="复制代码"></p>
-<p>location ~ .*\.(gif|jpg|jpeg|png|bmp|swf|js|html|htm|css)$ {        #指定缓存文件类型 expires 7d;      #设置浏览器过期时间7天 root data/nginx_cache/iis;          #静态文件根目录目录(必须对应proxy_temp_path) proxy_store on;        #开启缓存机制 proxy_store_access user:rw group:rw all:rw;       #缓存读写规则 proxy_temp_path data/nginx_cache/iis;            #存放静态文件的缓存目录 #    include proxy.conf;          # 外联proxy理的详细配置如proxy_set_header， client_max_body_size <img src="file:///C:/Users/yunlong/AppData/Local/YNote/data/qqAB881ABE4AEE31C2A6CFF94728E8E5E9/a60b929bb5fd45f2a1bac4de1ace414c/dot.gif">. if (!-e $request_filename) { proxy_pass <a target="_blank" rel="noopener" href="http://10.0.2.136;/">http://10.0.2.136;/</a> } }</p>
-<p><img src="file:///C:/Users/yunlong/AppData/Local/YNote/data/qqAB881ABE4AEE31C2A6CFF94728E8E5E9/6cf311f22a2c49a3935c5e093260d0a3/copycode.gif" alt="复制代码"></p>
-<p>  这样就会在data/nginx_cache/iis目前下生成相应的gif,jpg等文件的临时信息，当客户端请求到来时，就会从该目录中检索相应文件绑定之后返回给客户端，以减轻iis服务器和网络带宽的压力。 最后附上一个我在那台Centos上的配置文件，大家可以对比参照一下，因为nginx本身提供的配置结点信息过多，更多信息可以参见<a target="_blank" rel="noopener" href="http://www.bordf.com.cn/220">这篇文章</a>。 相关链接如下： 张宴 <a target="_blank" rel="noopener" href="http://blog.s135.com/nginx_php_v5/">搭建胜过Apache十倍的Web服务器（第5版）[原创]</a> 守住每一天（网名）       <a target="_blank" rel="noopener" href="http://liuyu.blog.51cto.com/183345/166381">nginx反向代理配置及优化</a>   原文链接: <a target="_blank" rel="noopener" href="http://www.cnblogs.com/daizhj/archive/2009/11/03/1595292.html" title="view: 玩玩负载均衡---在window与linux下配置nginx">http://www.cnblogs.com/daizhj/archive/2009/11/03/1595292.html</a> 作者: daizhj, 代震军 Tags: nginx,负载均衡 网址: <a target="_blank" rel="noopener" href="http://daizhj.cnblogs.com/">http://daizhj.cnblogs.com/</a></p>
-
-        
-        
-          <blockquote id="copyright">
-              <p>原文链接: <a href="http://www.jiliuke.com/page/5/index.html">http://www.jiliuke.com/page/5/index.html</a></p>
-              <p>版权声明: 转载请注明出处.</p>
-          </blockquote>
-        
-      
-    </div>
-    <footer class="article-footer">
-      
-        <div class="article-tag-wrap">
-          
-
-          
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1/" rel="tag">负载均衡</a></li></ul>
-
-          
-
-
-        </div>
-      
-      
-      
-    </footer>
+  <div class="row__main">
+    <h2 class="row__title"><a href="/2015/08/11/e7-8e-a9-e7-8e-a9-e8-b4-9f-e8-bd-bd-e5-9d-87-e8-a1-a1-e5-9c-a8window-e4-b8-8elinux-e4-b8-8b-e9-85-8d-e7-bd-aenginx/">玩玩负载均衡---在window与linux下配置nginx</a></h2>
+    <p class="row__excerpt">最近有些时间，开始接触负载均衡方面的东西，从硬件F5再到Citrix Netscalar。不过因为硬件的配置虽然不复杂，但昂贵的价格也让一般用户望而却步(十几万到几十万)，所以只能转向 nginx ,squid这类有…</p>
+    <a class="row__more" href="/2015/08/11/e7-8e-a9-e7-8e-a9-e8-b4-9f-e8-bd-bd-e5-9d-87-e8-a1-a1-e5-9c-a8window-e4-b8-8elinux-e4-b8-8b-e9-85-8d-e7-bd-aenginx/">阅读全文<span aria-hidden="true"> →</span></a>
   </div>
+  <ul class="row__tags">
+    
+      <li><a href="/tags/%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1/">负载均衡</a></li>
+    
+  </ul>
 </article>
 
-
-  <article id="post-e5-85-81-e8-ae-b8-e8-bf-9c-e7-ab-af-e4-bd-bf-e7-94-a8mysql" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2015/08/11/e5-85-81-e8-ae-b8-e8-bf-9c-e7-ab-af-e4-bd-bf-e7-94-a8mysql/">允许远端使用mysql</a>
-    </h1>
-  
-
-
-      </header>
-    
-    <div class="article-meta">
       
-      <span class="article-date">
-  <i class="fa fa-date"></i>
-  <time class="dt-published" datetime="2015-08-11T01:48:47.000Z" itemprop="datePublished">2015年08月11日</time>
-</span>
-      
-  <div class="article-category">
-    <i class="fa fa-classify"></i>
-    <a class="article-category-link" href="/categories/MYSQL/">MYSQL</a>
+        <article class="row">
+  <div class="row__meta">
+    <time class="row__date" datetime="2015-08-11T01:48:47.000Z">2015-08-11</time>
+    <p class="row__reading">
+      <span class="row__minutes">1 分钟</span>
+      <span class="flow" aria-hidden="true"><span class="flow__bar" style="--flow-w: 4%"></span></span>
+    </p>
   </div>
-
-      
-      
-<a href="/2015/08/11/e5-85-81-e8-ae-b8-e8-bf-9c-e7-ab-af-e4-bd-bf-e7-94-a8mysql/#comments" class="article-comment-link">
-  
-  <i class="fa fa-commt"></i>
-  留言
-</a>
-
-
-    </div>
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>mysql中敲命令</p>
-<p>grant all privileges on <em>.</em> to ‘root’@’%’ identified by ‘123456’ with grant option;</p>
-
-        
-        
-          <blockquote id="copyright">
-              <p>原文链接: <a href="http://www.jiliuke.com/page/5/index.html">http://www.jiliuke.com/page/5/index.html</a></p>
-              <p>版权声明: 转载请注明出处.</p>
-          </blockquote>
-        
-      
-    </div>
-    <footer class="article-footer">
-      
-        <div class="article-tag-wrap">
-          
-
-          
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MYSQL/" rel="tag">MYSQL</a></li></ul>
-
-          
-
-
-        </div>
-      
-      
-      
-    </footer>
+  <div class="row__main">
+    <h2 class="row__title"><a href="/2015/08/11/e5-85-81-e8-ae-b8-e8-bf-9c-e7-ab-af-e4-bd-bf-e7-94-a8mysql/">允许远端使用mysql</a></h2>
+    <p class="row__excerpt">mysql中敲命令 grant all privileges on . to ‘root’@’%’ identified by ‘123456’ with grant option;</p>
+    <a class="row__more" href="/2015/08/11/e5-85-81-e8-ae-b8-e8-bf-9c-e7-ab-af-e4-bd-bf-e7-94-a8mysql/">阅读全文<span aria-hidden="true"> →</span></a>
   </div>
+  <ul class="row__tags">
+    
+      <li><a href="/tags/MYSQL/">MYSQL</a></li>
+    
+  </ul>
 </article>
 
-
-  <article id="post-sshd-e7-99-bb-e9-99-86-e6-85-a2-e9-97-ae-e9-a2-98-e8-a7-a3-e5-86-b3" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2015/08/11/sshd-e7-99-bb-e9-99-86-e6-85-a2-e9-97-ae-e9-a2-98-e8-a7-a3-e5-86-b3/">sshd 登陆慢问题解决</a>
-    </h1>
-  
-
-
-      </header>
-    
-    <div class="article-meta">
       
-      <span class="article-date">
-  <i class="fa fa-date"></i>
-  <time class="dt-published" datetime="2015-08-11T01:47:33.000Z" itemprop="datePublished">2015年08月11日</time>
-</span>
-      
-  <div class="article-category">
-    <i class="fa fa-classify"></i>
-    <a class="article-category-link" href="/categories/CentOS/">CentOS</a>
+        <article class="row">
+  <div class="row__meta">
+    <time class="row__date" datetime="2015-08-11T01:47:33.000Z">2015-08-11</time>
+    <p class="row__reading">
+      <span class="row__minutes">1 分钟</span>
+      <span class="flow" aria-hidden="true"><span class="flow__bar" style="--flow-w: 4%"></span></span>
+    </p>
   </div>
-
-      
-      
-<a href="/2015/08/11/sshd-e7-99-bb-e9-99-86-e6-85-a2-e9-97-ae-e9-a2-98-e8-a7-a3-e5-86-b3/#comments" class="article-comment-link">
-  
-  <i class="fa fa-commt"></i>
-  留言
-</a>
-
-
-    </div>
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>修改客户端配置文件sshd_conf # vi /etc/ssh/sshd_conf 找到 GSSAPIAuthentication yes 改为 GSSAPIAuthentication no 如果没有，则创建</p>
-
-        
-        
-          <blockquote id="copyright">
-              <p>原文链接: <a href="http://www.jiliuke.com/page/5/index.html">http://www.jiliuke.com/page/5/index.html</a></p>
-              <p>版权声明: 转载请注明出处.</p>
-          </blockquote>
-        
-      
-    </div>
-    <footer class="article-footer">
-      
-        <div class="article-tag-wrap">
-          
-
-          
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/sshd/" rel="tag">sshd</a></li></ul>
-
-          
-
-
-        </div>
-      
-      
-      
-    </footer>
+  <div class="row__main">
+    <h2 class="row__title"><a href="/2015/08/11/sshd-e7-99-bb-e9-99-86-e6-85-a2-e9-97-ae-e9-a2-98-e8-a7-a3-e5-86-b3/">sshd 登陆慢问题解决</a></h2>
+    <p class="row__excerpt">修改客户端配置文件sshd_conf # vi /etc/ssh/sshd_conf 找到 GSSAPIAuthentication yes 改为 GSSAPIAuthentication no 如果没有，则创建</p>
+    <a class="row__more" href="/2015/08/11/sshd-e7-99-bb-e9-99-86-e6-85-a2-e9-97-ae-e9-a2-98-e8-a7-a3-e5-86-b3/">阅读全文<span aria-hidden="true"> →</span></a>
   </div>
+  <ul class="row__tags">
+    
+      <li><a href="/tags/sshd/">sshd</a></li>
+    
+  </ul>
 </article>
 
+      
+    </div>
+    
+<nav class="pager" aria-label="分页">
+  
+    <a class="pager__edge pager__prev" href="/page/4/" rel="prev">‹ 上一页</a>
+  
 
+  <ol class="pager__list">
+    
+    
+      
+        <li><a class="pager__num" href="/">01</a></li>
+      
+    
+      
+        <li class="pager__gap" aria-hidden="true">…</li>
+      
+    
+      
+        <li><a class="pager__num" href="/page/3/">03</a></li>
+      
+    
+      
+        <li><a class="pager__num" href="/page/4/">04</a></li>
+      
+    
+      
+        <li><span class="pager__num is-current" aria-current="page">05</span></li>
+      
+    
+      
+        <li><a class="pager__num" href="/page/6/">06</a></li>
+      
+    
+      
+        <li><a class="pager__num" href="/page/7/">07</a></li>
+      
+    
+      
+        <li class="pager__gap" aria-hidden="true">…</li>
+      
+    
+      
+        <li><a class="pager__num" href="/page/15/">15</a></li>
+      
+    
+  </ol>
 
-    <nav id="page-nav">
-
-<a class="extend prev" rel="prev" href="/page/4/">上一页</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><a class="page-number" href="/page/7/">7</a><span class="space">&hellip;</span><a class="page-number" href="/page/15/">15</a><a class="extend next" rel="next" href="/page/6/">下一页</a>
+  
+    <a class="pager__edge pager__next" href="/page/6/" rel="next">下一页 ›</a>
+  
 </nav>
 
 
+  
 </section>
-        
-          <aside id="sidebar">
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title"><i class="fa fa-posts"></i> 最新文章</h3>
-    <div class="widget">
-      <ul>
-        
-          <li>
-            <a href="/2025/10/14/reduce-size-after-mysqldump/">使用mysqldump备份文件后删除日志数据</a>
-          </li>
-        
-          <li>
-            <a href="/2025/04/20/lnmp/">源码安装lnmp</a>
-          </li>
-        
-          <li>
-            <a href="/2024/08/13/rabbitmq/">Rabbitmq 一些有用的用法</a>
-          </li>
-        
-          <li>
-            <a href="/2024/08/07/debian-tips/">Linux debian 系统一些小技巧</a>
-          </li>
-        
-          <li>
-            <a href="/2024/08/02/docker-tips/">docker使用小技巧</a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
 
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title"><i class="fa fa-tag"></i> 标签云</h3>
-    <div class="widget tagcloud">
-      <a href="/tags/etc-passwd/" style="font-size: 10px;">/etc/passwd</a> <a href="/tags/etc-shadow/" style="font-size: 10px;">/etc/shadow</a> <a href="/tags/301/" style="font-size: 10px;">301</a> <a href="/tags/403/" style="font-size: 10px;">403</a> <a href="/tags/ADT/" style="font-size: 11.25px;">ADT</a> <a href="/tags/Adobe-Photoshop-CS6/" style="font-size: 10px;">Adobe Photoshop CS6</a> <a href="/tags/Android-SDK/" style="font-size: 10px;">Android SDK</a> <a href="/tags/CPU/" style="font-size: 10px;">CPU</a> <a href="/tags/Crond/" style="font-size: 10px;">Crond</a> <a href="/tags/LAMP/" style="font-size: 10px;">LAMP</a> <a href="/tags/LayoutInflater/" style="font-size: 10px;">LayoutInflater</a> <a href="/tags/MYSQL/" style="font-size: 16.25px;">MYSQL</a> <a href="/tags/Magento2/" style="font-size: 10px;">Magento2</a> <a href="/tags/PHP/" style="font-size: 16.25px;">PHP</a> <a href="/tags/PHP-FPM%E4%BC%98%E5%8C%96/" style="font-size: 10px;">PHP-FPM优化</a> <a href="/tags/PHP-FPM%E9%85%8D%E7%BD%AE/" style="font-size: 10px;">PHP-FPM配置</a> <a href="/tags/PHP%E4%BA%8C%E7%BB%B4%E6%95%B0%E7%BB%84/" style="font-size: 10px;">PHP二维数组</a> <a href="/tags/PHP%E6%B5%AE%E7%82%B9%E6%95%B0/" style="font-size: 10px;">PHP浮点数</a> <a href="/tags/PayPal/" style="font-size: 10px;">PayPal</a> <a href="/tags/RPC/" style="font-size: 10px;">RPC</a> <a href="/tags/SELINUX/" style="font-size: 12.5px;">SELINUX</a> <a href="/tags/SMTP/" style="font-size: 11.25px;">SMTP</a> <a href="/tags/Subversion/" style="font-size: 10px;">Subversion</a> <a href="/tags/TabHost/" style="font-size: 11.25px;">TabHost</a> <a href="/tags/VNC/" style="font-size: 10px;">VNC</a> <a href="/tags/Zend-Http-Client/" style="font-size: 10px;">Zend_Http_Client</a> <a href="/tags/android/" style="font-size: 15px;">android</a> <a href="/tags/apache/" style="font-size: 11.25px;">apache</a> <a href="/tags/appcompat-v7/" style="font-size: 10px;">appcompat v7</a> <a href="/tags/attr/" style="font-size: 10px;">attr</a> <a href="/tags/buster/" style="font-size: 10px;">buster</a> <a href="/tags/cdn/" style="font-size: 10px;">cdn</a> <a href="/tags/centos/" style="font-size: 20px;">centos</a> <a href="/tags/chcon/" style="font-size: 10px;">chcon</a> <a href="/tags/chkconfig/" style="font-size: 10px;">chkconfig</a> <a href="/tags/cmake/" style="font-size: 11.25px;">cmake</a> <a href="/tags/cms-block/" style="font-size: 10px;">cms_block</a> <a href="/tags/cms-page/" style="font-size: 10px;">cms_page</a> <a href="/tags/composer/" style="font-size: 10px;">composer</a> <a href="/tags/composer-repositories/" style="font-size: 10px;">composer repositories</a> <a href="/tags/configure/" style="font-size: 11.25px;">configure</a> <a href="/tags/crontab/" style="font-size: 11.25px;">crontab</a> <a href="/tags/crossover/" style="font-size: 10px;">crossover</a> <a href="/tags/curl/" style="font-size: 11.25px;">curl</a> <a href="/tags/datepicker/" style="font-size: 10px;">datepicker</a> <a href="/tags/debian/" style="font-size: 11.25px;">debian</a> <a href="/tags/deepin/" style="font-size: 12.5px;">deepin</a> <a href="/tags/desktop/" style="font-size: 10px;">desktop</a> <a href="/tags/docker/" style="font-size: 11.25px;">docker</a> <a href="/tags/elasticsearch/" style="font-size: 10px;">elasticsearch</a> <a href="/tags/fakepath/" style="font-size: 10px;">fakepath</a> <a href="/tags/flexslider/" style="font-size: 10px;">flexslider</a> <a href="/tags/fpm/" style="font-size: 10px;">fpm</a> <a href="/tags/getApplication/" style="font-size: 10px;">getApplication</a> <a href="/tags/getApplicationContext/" style="font-size: 10px;">getApplicationContext</a> <a href="/tags/getsebool/" style="font-size: 10px;">getsebool</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/horizontal/" style="font-size: 10px;">horizontal</a> <a href="/tags/htaccess/" style="font-size: 10px;">htaccess</a> <a href="/tags/http-proxy/" style="font-size: 10px;">http_proxy</a> <a href="/tags/https/" style="font-size: 10px;">https</a> <a href="/tags/invalidate/" style="font-size: 10px;">invalidate</a> <a href="/tags/ip/" style="font-size: 11.25px;">ip</a> <a href="/tags/ip2long/" style="font-size: 10px;">ip2long</a> <a href="/tags/iredmail/" style="font-size: 11.25px;">iredmail</a> <a href="/tags/javascript-testing/" style="font-size: 10px;">javascript testing</a> <a href="/tags/jquery/" style="font-size: 13.75px;">jquery</a> <a href="/tags/jquery-ui/" style="font-size: 10px;">jquery ui</a> <a href="/tags/jquery-validate/" style="font-size: 10px;">jquery.validate</a> <a href="/tags/kill/" style="font-size: 10px;">kill</a> <a href="/tags/linux/" style="font-size: 18.75px;">linux</a> <a href="/tags/lm-sensors/" style="font-size: 10px;">lm_sensors</a> <a href="/tags/lnmp/" style="font-size: 10px;">lnmp</a> <a href="/tags/logrotate/" style="font-size: 10px;">logrotate</a> <a href="/tags/magento-cloud/" style="font-size: 10px;">magento-cloud</a> <a href="/tags/magento2/" style="font-size: 17.5px;">magento2</a> <a href="/tags/mantisbt/" style="font-size: 10px;">mantisbt</a> <a href="/tags/md5/" style="font-size: 10px;">md5</a> <a href="/tags/modal/" style="font-size: 10px;">modal</a> <a href="/tags/mount/" style="font-size: 11.25px;">mount</a> <a href="/tags/msql/" style="font-size: 10px;">msql</a> <a href="/tags/myql/" style="font-size: 10px;">myql</a> <a href="/tags/mysql/" style="font-size: 11.25px;">mysql</a> <a href="/tags/mysqld/" style="font-size: 10px;">mysqld</a> <a href="/tags/mysqldump/" style="font-size: 10px;">mysqldump</a> <a href="/tags/mysql%E4%BC%98%E5%8C%96/" style="font-size: 10px;">mysql优化</a> <a href="/tags/nameserver/" style="font-size: 10px;">nameserver</a> <a href="/tags/nfs/" style="font-size: 11.25px;">nfs</a> <a href="/tags/nginx/" style="font-size: 12.5px;">nginx</a> <a href="/tags/nvidia-linux/" style="font-size: 10px;">nvidia linux</a> <a href="/tags/orientation/" style="font-size: 10px;">orientation</a> <a href="/tags/php/" style="font-size: 10px;">php</a> <a href="/tags/php-md5-16/" style="font-size: 10px;">php md5 16</a> <a href="/tags/php-fpm/" style="font-size: 12.5px;">php-fpm</a> <a href="/tags/phpcs/" style="font-size: 10px;">phpcs</a> <a href="/tags/phpstorm/" style="font-size: 10px;">phpstorm</a> <a href="/tags/phpunit-testing/" style="font-size: 10px;">phpunit testing</a> <a href="/tags/ping/" style="font-size: 10px;">ping</a> <a href="/tags/pkill/" style="font-size: 10px;">pkill</a> <a href="/tags/postman/" style="font-size: 10px;">postman</a> <a href="/tags/problem/" style="font-size: 10px;">problem</a> <a href="/tags/prop/" style="font-size: 10px;">prop</a> <a href="/tags/rabbitmq/" style="font-size: 10px;">rabbitmq</a> <a href="/tags/rar/" style="font-size: 10px;">rar</a> <a href="/tags/redis/" style="font-size: 10px;">redis</a> <a href="/tags/reduce/" style="font-size: 10px;">reduce</a> <a href="/tags/rewrite/" style="font-size: 10px;">rewrite</a> <a href="/tags/rpm/" style="font-size: 10px;">rpm</a> <a href="/tags/samba/" style="font-size: 13.75px;">samba</a> <a href="/tags/scp/" style="font-size: 11.25px;">scp</a> <a href="/tags/sensors/" style="font-size: 10px;">sensors</a> <a href="/tags/setsebool/" style="font-size: 10px;">setsebool</a> <a href="/tags/shell/" style="font-size: 10px;">shell</a> <a href="/tags/ssd/" style="font-size: 10px;">ssd</a> <a href="/tags/ssh/" style="font-size: 12.5px;">ssh</a> <a href="/tags/sshd/" style="font-size: 10px;">sshd</a> <a href="/tags/ssl/" style="font-size: 10px;">ssl</a> <a href="/tags/str-replace/" style="font-size: 10px;">str_replace</a> <a href="/tags/swipe/" style="font-size: 10px;">swipe</a> <a href="/tags/token/" style="font-size: 10px;">token</a> <a href="/tags/touch/" style="font-size: 10px;">touch</a> <a href="/tags/user/" style="font-size: 10px;">user</a> <a href="/tags/validate/" style="font-size: 10px;">validate</a> <a href="/tags/vsftp/" style="font-size: 12.5px;">vsftp</a> <a href="/tags/wakeonlan/" style="font-size: 10px;">wakeonlan</a> <a href="/tags/wol/" style="font-size: 10px;">wol</a> <a href="/tags/xhgui/" style="font-size: 10px;">xhgui</a> <a href="/tags/xunsearch/" style="font-size: 10px;">xunsearch</a> <a href="/tags/yum/" style="font-size: 10px;">yum</a> <a href="/tags/zepto/" style="font-size: 10px;">zepto</a> <a href="/tags/%E4%B8%BB%E4%BB%8E%E9%85%8D%E7%BD%AE/" style="font-size: 10px;">主从配置</a> <a href="/tags/%E4%B8%BB%E9%94%AE/" style="font-size: 10px;">主键</a> <a href="/tags/%E4%BC%98%E5%8C%96/" style="font-size: 10px;">优化</a> <a href="/tags/%E5%8C%BA%E5%88%AB/" style="font-size: 10px;">区别</a> <a href="/tags/%E5%AE%89%E5%8D%93/" style="font-size: 13.75px;">安卓</a> <a href="/tags/%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/" style="font-size: 10px;">常用命令</a> <a href="/tags/%E5%BC%80%E6%9C%BA%E5%90%AF%E5%8A%A8/" style="font-size: 10px;">开机启动</a> <a href="/tags/%E5%BC%80%E6%BA%90/" style="font-size: 10px;">开源</a> <a href="/tags/%E6%89%A7%E8%A1%8C/" style="font-size: 10px;">执行</a> <a href="/tags/%E6%96%87%E4%BB%B6%E5%88%A0%E9%99%A4/" style="font-size: 10px;">文件删除</a> <a href="/tags/%E6%97%A5%E5%BF%97/" style="font-size: 10px;">日志</a> <a href="/tags/%E6%9F%A5%E7%9C%8BIP/" style="font-size: 10px;">查看IP</a> <a href="/tags/%E7%8B%AC%E7%AB%8B%E6%98%BE%E5%8D%A1-%E5%AE%89%E8%A3%85/" style="font-size: 10px;">独立显卡 安装</a> <a href="/tags/%E7%A1%AC%E4%BB%B6/" style="font-size: 10px;">硬件</a> <a href="/tags/%E7%B1%BB%E5%9E%8B%E6%96%87%E4%BB%B6/" style="font-size: 10px;">类型文件</a> <a href="/tags/%E7%BB%9F%E8%AE%A1/" style="font-size: 10px;">统计</a> <a href="/tags/%E7%BD%91%E9%A1%B5/" style="font-size: 10px;">网页</a> <a href="/tags/%E8%87%AA%E8%BF%90%E8%A1%8C/" style="font-size: 10px;">自运行</a> <a href="/tags/%E8%99%9A%E6%8B%9F%E7%9B%AE%E5%BD%95/" style="font-size: 10px;">虚拟目录</a> <a href="/tags/%E8%B0%B7%E6%AD%8C%E6%8F%92%E4%BB%B6/" style="font-size: 10px;">谷歌插件</a> <a href="/tags/%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1/" style="font-size: 10px;">负载均衡</a> <a href="/tags/%E8%BF%81%E7%A7%BB/" style="font-size: 10px;">迁移</a> <a href="/tags/%E9%87%8D%E5%AE%9A%E5%90%91/" style="font-size: 10px;">重定向</a> <a href="/tags/%E9%95%9C%E5%83%8F/" style="font-size: 10px;">镜像</a> <a href="/tags/%E9%9B%86%E7%BE%A4/" style="font-size: 10px;">集群</a>
-    </div>
-  </div>
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title"><i class="fa fa-classify"></i> 分类</h3>
-    <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/CentOS/">CentOS</a><span class="category-list-count">45</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/CentOS/%E5%B7%A5%E5%85%B7/">工具</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/LAMP%E6%8A%80%E6%9C%AF%E4%B8%AD%E5%BF%83/">LAMP技术中心</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/MYSQL/">MYSQL</a><span class="category-list-count">11</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/PHP/">PHP</a><span class="category-list-count">9</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Ubuntu/">Ubuntu</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/android/">android</a><span class="category-list-count">4</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/android/%E5%AE%89%E5%8D%93%E9%97%AE%E9%A2%98%E9%9B%86%E9%94%A6/">安卓问题集锦</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/apache/">apache</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/cdn/">cdn</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/iredMail/">iredMail</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/javascript/">javascript</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/jquery/">jquery</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/jquery-validate/">jquery.validate</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/lnmp/">lnmp</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/magento2/">magento2</a><span class="category-list-count">4</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/magento2/PayPal-PayFlow/">PayPal PayFlow</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/magento2/elasticsearch/">elasticsearch</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/magento2/magento-cloud/">magento-cloud</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/mantisbt/">mantisbt</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/nginx/">nginx</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/php-fpm/">php-fpm</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/redis/">redis</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/samba/">samba</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/ssh/">ssh</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/ssh/git/">git</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/vsftp/">vsftp</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/xunsearch/">xunsearch</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%AE%89%E5%8D%93%E9%97%AE%E9%A2%98%E9%9B%86%E9%94%A6/">安卓问题集锦</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%9C%AA%E5%88%86%E7%B1%BB/">未分类</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%A7%BB%E5%8A%A8%E7%AB%AFjs/">移动端js</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%B0%B7%E6%AD%8C%E6%8F%92%E4%BB%B6/">谷歌插件</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%BF%90%E7%BB%B4/">运维</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%BF%90%E7%BB%B4/%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C/">文件操作</a><span class="category-list-count">1</span></li></ul></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title"><i class="fa fa-archive"></i> 归档</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/">2025年</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/">2024年</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/">2023年</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/">2022年</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/">2021年</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/">2020年</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/">2019年</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/">2018年</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/">2015年</a><span class="archive-list-count">45</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/">2014年</a><span class="archive-list-count">62</span></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title"><i class="fa fa-tag"></i> 标签</h3>
-    <div class="widget">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/etc-passwd/" rel="tag">/etc/passwd</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/etc-shadow/" rel="tag">/etc/shadow</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/301/" rel="tag">301</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/403/" rel="tag">403</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ADT/" rel="tag">ADT</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Adobe-Photoshop-CS6/" rel="tag">Adobe Photoshop CS6</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android-SDK/" rel="tag">Android SDK</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CPU/" rel="tag">CPU</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Crond/" rel="tag">Crond</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/LAMP/" rel="tag">LAMP</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/LayoutInflater/" rel="tag">LayoutInflater</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MYSQL/" rel="tag">MYSQL</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Magento2/" rel="tag">Magento2</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PHP/" rel="tag">PHP</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PHP-FPM%E4%BC%98%E5%8C%96/" rel="tag">PHP-FPM优化</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PHP-FPM%E9%85%8D%E7%BD%AE/" rel="tag">PHP-FPM配置</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PHP%E4%BA%8C%E7%BB%B4%E6%95%B0%E7%BB%84/" rel="tag">PHP二维数组</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PHP%E6%B5%AE%E7%82%B9%E6%95%B0/" rel="tag">PHP浮点数</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PayPal/" rel="tag">PayPal</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/RPC/" rel="tag">RPC</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SELINUX/" rel="tag">SELINUX</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SMTP/" rel="tag">SMTP</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Subversion/" rel="tag">Subversion</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TabHost/" rel="tag">TabHost</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/VNC/" rel="tag">VNC</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Zend-Http-Client/" rel="tag">Zend_Http_Client</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/android/" rel="tag">android</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/apache/" rel="tag">apache</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/appcompat-v7/" rel="tag">appcompat v7</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/attr/" rel="tag">attr</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/buster/" rel="tag">buster</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cdn/" rel="tag">cdn</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/centos/" rel="tag">centos</a><span class="tag-list-count">41</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/chcon/" rel="tag">chcon</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/chkconfig/" rel="tag">chkconfig</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cmake/" rel="tag">cmake</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cms-block/" rel="tag">cms_block</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cms-page/" rel="tag">cms_page</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/composer/" rel="tag">composer</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/composer-repositories/" rel="tag">composer repositories</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/configure/" rel="tag">configure</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/crontab/" rel="tag">crontab</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/crossover/" rel="tag">crossover</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/curl/" rel="tag">curl</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/datepicker/" rel="tag">datepicker</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/debian/" rel="tag">debian</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/deepin/" rel="tag">deepin</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/desktop/" rel="tag">desktop</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/docker/" rel="tag">docker</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/elasticsearch/" rel="tag">elasticsearch</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/fakepath/" rel="tag">fakepath</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/flexslider/" rel="tag">flexslider</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/fpm/" rel="tag">fpm</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/getApplication/" rel="tag">getApplication</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/getApplicationContext/" rel="tag">getApplicationContext</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/getsebool/" rel="tag">getsebool</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/" rel="tag">git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/horizontal/" rel="tag">horizontal</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/htaccess/" rel="tag">htaccess</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/http-proxy/" rel="tag">http_proxy</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/https/" rel="tag">https</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/invalidate/" rel="tag">invalidate</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ip/" rel="tag">ip</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ip2long/" rel="tag">ip2long</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/iredmail/" rel="tag">iredmail</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript-testing/" rel="tag">javascript testing</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jquery/" rel="tag">jquery</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jquery-ui/" rel="tag">jquery ui</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jquery-validate/" rel="tag">jquery.validate</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/kill/" rel="tag">kill</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/" rel="tag">linux</a><span class="tag-list-count">10</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/lm-sensors/" rel="tag">lm_sensors</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/lnmp/" rel="tag">lnmp</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/logrotate/" rel="tag">logrotate</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/magento-cloud/" rel="tag">magento-cloud</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/magento2/" rel="tag">magento2</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mantisbt/" rel="tag">mantisbt</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/md5/" rel="tag">md5</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/modal/" rel="tag">modal</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mount/" rel="tag">mount</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/msql/" rel="tag">msql</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/myql/" rel="tag">myql</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mysql/" rel="tag">mysql</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mysqld/" rel="tag">mysqld</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mysqldump/" rel="tag">mysqldump</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mysql%E4%BC%98%E5%8C%96/" rel="tag">mysql优化</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/nameserver/" rel="tag">nameserver</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/nfs/" rel="tag">nfs</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/nginx/" rel="tag">nginx</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/nvidia-linux/" rel="tag">nvidia linux</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/orientation/" rel="tag">orientation</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/php/" rel="tag">php</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/php-md5-16/" rel="tag">php md5 16</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/php-fpm/" rel="tag">php-fpm</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/phpcs/" rel="tag">phpcs</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/phpstorm/" rel="tag">phpstorm</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/phpunit-testing/" rel="tag">phpunit testing</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ping/" rel="tag">ping</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/pkill/" rel="tag">pkill</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/postman/" rel="tag">postman</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/problem/" rel="tag">problem</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/prop/" rel="tag">prop</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/rabbitmq/" rel="tag">rabbitmq</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/rar/" rel="tag">rar</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/redis/" rel="tag">redis</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/reduce/" rel="tag">reduce</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/rewrite/" rel="tag">rewrite</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/rpm/" rel="tag">rpm</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/samba/" rel="tag">samba</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/scp/" rel="tag">scp</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sensors/" rel="tag">sensors</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/setsebool/" rel="tag">setsebool</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/shell/" rel="tag">shell</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ssd/" rel="tag">ssd</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ssh/" rel="tag">ssh</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sshd/" rel="tag">sshd</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ssl/" rel="tag">ssl</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/str-replace/" rel="tag">str_replace</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/swipe/" rel="tag">swipe</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/token/" rel="tag">token</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/touch/" rel="tag">touch</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/user/" rel="tag">user</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/validate/" rel="tag">validate</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vsftp/" rel="tag">vsftp</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/wakeonlan/" rel="tag">wakeonlan</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/wol/" rel="tag">wol</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/xhgui/" rel="tag">xhgui</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/xunsearch/" rel="tag">xunsearch</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/yum/" rel="tag">yum</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/zepto/" rel="tag">zepto</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%B8%BB%E4%BB%8E%E9%85%8D%E7%BD%AE/" rel="tag">主从配置</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%B8%BB%E9%94%AE/" rel="tag">主键</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BC%98%E5%8C%96/" rel="tag">优化</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%8C%BA%E5%88%AB/" rel="tag">区别</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AE%89%E5%8D%93/" rel="tag">安卓</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/" rel="tag">常用命令</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BC%80%E6%9C%BA%E5%90%AF%E5%8A%A8/" rel="tag">开机启动</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BC%80%E6%BA%90/" rel="tag">开源</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%89%A7%E8%A1%8C/" rel="tag">执行</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%96%87%E4%BB%B6%E5%88%A0%E9%99%A4/" rel="tag">文件删除</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%97%A5%E5%BF%97/" rel="tag">日志</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%9F%A5%E7%9C%8BIP/" rel="tag">查看IP</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%8B%AC%E7%AB%8B%E6%98%BE%E5%8D%A1-%E5%AE%89%E8%A3%85/" rel="tag">独立显卡 安装</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%A1%AC%E4%BB%B6/" rel="tag">硬件</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%B1%BB%E5%9E%8B%E6%96%87%E4%BB%B6/" rel="tag">类型文件</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BB%9F%E8%AE%A1/" rel="tag">统计</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BD%91%E9%A1%B5/" rel="tag">网页</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%87%AA%E8%BF%90%E8%A1%8C/" rel="tag">自运行</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%99%9A%E6%8B%9F%E7%9B%AE%E5%BD%95/" rel="tag">虚拟目录</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%B0%B7%E6%AD%8C%E6%8F%92%E4%BB%B6/" rel="tag">谷歌插件</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1/" rel="tag">负载均衡</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%BF%81%E7%A7%BB/" rel="tag">迁移</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%87%8D%E5%AE%9A%E5%90%91/" rel="tag">重定向</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%95%9C%E5%83%8F/" rel="tag">镜像</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%9B%86%E7%BE%A4/" rel="tag">集群</a><span class="tag-list-count">1</span></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-
-  
-</aside>
-        
-      </div>
-      <a id="totop" href="#top"></a>
-      <footer id="footer">
-  
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      <p>
-        <a href="/sitemap.xml">网站地图</a>
-        <span> | </span><a href="/atom.xml">订阅本站</a>
-        <span> | </span><a href="/about/">联系博主</a>
-      </p>
-      
-      <p>
-        <span>Copyright &copy; 2025 michaeldyl520.</span>
-        <span>Theme by <a href="https://github.com/chaooo/hexo-theme-BlueLake/" target="_blank">BlueLake.</a></span>
-        <span>Powered by <a href="https://hexo.io/" target="_blank">Hexo.</a></span>
-      </p>
-    </div>
+  </main>
+  <footer class="site-foot">
+  <div class="wrap site-foot__inner">
+    <p class="site-foot__copy">© 2026 Jiliuke</p>
+    <p class="site-foot__links">
+      <a href="/atom.xml">订阅</a>
+      <span aria-hidden="true">·</span>
+      <a href="/sitemap.xml">站点地图</a>
+      <span aria-hidden="true">·</span>
+      <span>由 Hexo 驱动</span>
+    </p>
   </div>
 </footer>
 
+  
+    <div class="search" id="search" hidden>
+  <div class="search__backdrop" data-search-close></div>
+  <div class="search__panel" role="dialog" aria-modal="true" aria-label="搜索">
+    <div class="search__bar">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5 21 21"/></svg>
+      <input type="search" id="search-input" placeholder="搜索文章…" autocomplete="off" spellcheck="false" aria-label="搜索文章…">
+      <button type="button" class="search__close" data-search-close aria-label="关闭">ESC</button>
     </div>
+    <p class="search__status" id="search-status" aria-live="polite">输入关键词，在文章中搜索</p>
+    <ul class="search__results" id="search-results"></ul>
   </div>
-  
-<script src="/js/jquery-3.4.1.min.js"></script>
-
-
-<script src="/js/search.json.js"></script>
-
-
-  
-<script src="/fancybox/jquery.fancybox.min.js"></script>
-
-
-
-
-<script src="/js/script.js"></script>
-
-
-
-
-
-  <script charset="UTF-8" id="LA_COLLECT" src="//sdk.51.la/js-sdk-pro.min.js"></script>
-  <script>LA.init({id:"3GZdzbQGrDvdjET8",ck:"3GZdzbQGrDvdjET8"})</script>
-
-
-
-
-
-
-
-
+</div>
+<script>
+  window.__RAPIDS_SEARCH__ = {
+    index: "/content.json",
+    i18n: {
+      empty: "未找到相关内容",
+      error: "搜索索引加载失败，请重试",
+      count: "共 {n} 篇文章",
+      hint: "输入关键词，在文章中搜索"
+    }
+  };
+</script>
 
   
-
-
-
+  <script>
+    window.__RAPIDS_I18N__ = {
+      copy: "复制",
+      copied: "已复制"
+    };
+  </script>
+  <script src="/js/main.js" defer></script>
+  
+    <script charset="UTF-8" id="LA_COLLECT" src="//sdk.51.la/js-sdk-pro.min.js"></script>
+    <script>LA.init({id:"3GZdzbQGrDvdjET8",ck:"3GZdzbQGrDvdjET8"})</script>
+  
+  
 </body>
 </html>
